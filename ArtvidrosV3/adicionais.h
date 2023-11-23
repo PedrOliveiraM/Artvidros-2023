@@ -17,10 +17,16 @@ public:
     ~Adicionais();
 
     void mostrarAdicoes();
+    void atualizarValores();
+
+    float getSumPrice();
+    float getSumProfit();
 
     std::list<AdicionaisOBJ> listaDeAdicionais;
 
 private slots:
+    void removerLinha();
+
     void on_pushButtonADDkit_clicked();
 
     void on_pushButtonADDvidro_clicked();

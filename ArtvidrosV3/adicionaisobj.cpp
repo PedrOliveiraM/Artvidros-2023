@@ -2,18 +2,12 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
+#include <thread>
+#include <chrono>
+
 QString AdicionaisOBJ::getId() const
 {
-    if (id.toInt() > 0 && id.toInt() < 9999){
-        unsigned seed = static_cast<unsigned>(time(0));
-        // Inicializa o gerador de números aleatórios com a semente
-        std::srand(seed);
-
-        // Gera e imprime um número aleatório de 4 dígitos
-        int randomValue = 1 + std::rand() % 20;
-        return  QString::number(randomValue);
-    }
-
     return id;
 }
 
@@ -105,13 +99,16 @@ float AdicionaisOBJ::metrage(float width , float height)
 
 QString AdicionaisOBJ::geraID()
 {
-    unsigned seed = static_cast<unsigned>(std::time(0));
+    // aguardar 0.5 s
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    // Coloque isso em algum lugar do seu código, talvez no início do programa
+    std::srand(static_cast<unsigned>(std::time(0)));
 
-    // Inicializa o gerador de números aleatórios com a semente
-    std::srand(seed);
+    // Agora, remova a chamada para std::srand(seed) de dentro da função geraID
 
-    // Gera e imprime um número aleatório de 4 dígitos
+    // Restante do código permanece o mesmo
     int randomValue = 1000 + std::rand() % 9000;
+    return QString::number(randomValue);000;
     return  QString::number(randomValue);
 }
 float AdicionaisOBJ::calcularPreco(float value, float metragem, int quant)

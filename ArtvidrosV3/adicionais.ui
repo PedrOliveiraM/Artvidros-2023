@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>720</x>
-     <y>160</y>
+     <y>120</y>
      <width>281</width>
      <height>61</height>
     </rect>
@@ -37,7 +37,7 @@
    <property name="geometry">
     <rect>
      <x>320</x>
-     <y>40</y>
+     <y>0</y>
      <width>631</width>
      <height>161</height>
     </rect>
@@ -56,9 +56,9 @@
   <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
-     <x>820</x>
-     <y>320</y>
-     <width>521</width>
+     <x>750</x>
+     <y>270</y>
+     <width>601</width>
      <height>331</height>
     </rect>
    </property>
@@ -66,8 +66,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>970</x>
-     <y>260</y>
+     <x>960</x>
+     <y>210</y>
      <width>201</width>
      <height>31</height>
     </rect>
@@ -86,10 +86,10 @@
   <widget class="Line" name="line">
    <property name="geometry">
     <rect>
-     <x>790</x>
-     <y>250</y>
+     <x>730</x>
+     <y>190</y>
      <width>20</width>
-     <height>481</height>
+     <height>501</height>
     </rect>
    </property>
    <property name="orientation">
@@ -99,10 +99,10 @@
   <widget class="Line" name="line_2">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>240</y>
+     <x>390</x>
+     <y>190</y>
      <width>20</width>
-     <height>481</height>
+     <height>501</height>
     </rect>
    </property>
    <property name="orientation">
@@ -112,8 +112,8 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>550</y>
+     <x>150</x>
+     <y>500</y>
      <width>111</width>
      <height>31</height>
     </rect>
@@ -132,9 +132,9 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>260</y>
-     <width>131</width>
+     <x>150</x>
+     <y>210</y>
+     <width>111</width>
      <height>31</height>
     </rect>
    </property>
@@ -152,8 +152,8 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>320</y>
+     <x>210</x>
+     <y>270</y>
      <width>131</width>
      <height>71</height>
     </rect>
@@ -193,8 +193,8 @@
   <widget class="QWidget" name="layoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>320</y>
+     <x>50</x>
+     <y>270</y>
      <width>131</width>
      <height>71</height>
     </rect>
@@ -234,8 +234,8 @@
   <widget class="QWidget" name="layoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>410</y>
+     <x>50</x>
+     <y>360</y>
      <width>291</width>
      <height>71</height>
     </rect>
@@ -280,8 +280,8 @@
   <widget class="QPushButton" name="pushButtonADDvidro">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>500</y>
+     <x>140</x>
+     <y>450</y>
      <width>151</width>
      <height>41</height>
     </rect>
@@ -299,8 +299,8 @@
   <widget class="QWidget" name="layoutWidget_4">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>600</y>
+     <x>20</x>
+     <y>550</y>
      <width>138</width>
      <height>71</height>
     </rect>
@@ -340,8 +340,8 @@
   <widget class="QWidget" name="layoutWidget_5">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>410</y>
+     <x>420</x>
+     <y>370</y>
      <width>211</width>
      <height>71</height>
     </rect>
@@ -386,9 +386,9 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>260</y>
-     <width>101</width>
+     <x>540</x>
+     <y>210</y>
+     <width>71</width>
      <height>31</height>
     </rect>
    </property>
@@ -406,8 +406,8 @@
   <widget class="QWidget" name="layoutWidget_7">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>600</y>
+     <x>420</x>
+     <y>570</y>
      <width>211</width>
      <height>71</height>
     </rect>
@@ -452,8 +452,8 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>600</y>
+     <x>170</x>
+     <y>550</y>
      <width>211</width>
      <height>71</height>
     </rect>
@@ -498,8 +498,8 @@
   <widget class="QPushButton" name="pushButtonADDvidro_2">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>690</y>
+     <x>150</x>
+     <y>640</y>
      <width>151</width>
      <height>41</height>
     </rect>
@@ -517,8 +517,8 @@
   <widget class="QWidget" name="layoutWidget_8">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>320</y>
+     <x>420</x>
+     <y>270</y>
      <width>211</width>
      <height>71</height>
     </rect>
@@ -564,7 +564,7 @@
    <property name="geometry">
     <rect>
      <x>-10</x>
-     <y>280</y>
+     <y>230</y>
      <width>1401</width>
      <height>41</height>
     </rect>
@@ -576,8 +576,8 @@
   <widget class="QWidget" name="layoutWidget_6">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>500</y>
+     <x>420</x>
+     <y>470</y>
      <width>211</width>
      <height>71</height>
     </rect>
@@ -622,8 +622,8 @@
   <widget class="QWidget" name="layoutWidget_9">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>450</y>
+     <x>640</x>
+     <y>410</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -679,8 +679,8 @@
   <widget class="QWidget" name="layoutWidget_10">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>540</y>
+     <x>640</x>
+     <y>510</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -736,64 +736,8 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>960</x>
-     <y>660</y>
-     <width>135</width>
-     <height>58</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_9">
-    <item>
-     <widget class="QLabel" name="labelLargura_7">
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Valor&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEditValor"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>1110</x>
-     <y>660</y>
-     <width>135</width>
-     <height>58</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_10">
-    <item>
-     <widget class="QLabel" name="labelLargura_8">
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Lucro&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEditLucro"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>690</x>
-     <y>360</y>
+     <x>640</x>
+     <y>310</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -849,8 +793,8 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>640</y>
+     <x>640</x>
+     <y>610</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -906,8 +850,8 @@
   <widget class="QSpinBox" name="spinBoxVidro">
    <property name="geometry">
     <rect>
-     <x>126</x>
-     <y>500</y>
+     <x>96</x>
+     <y>450</y>
      <width>41</width>
      <height>41</height>
     </rect>
@@ -928,8 +872,8 @@
   <widget class="QSpinBox" name="spinBox_Aluminio">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>690</y>
+     <x>100</x>
+     <y>640</y>
      <width>41</width>
      <height>41</height>
     </rect>
@@ -947,7 +891,131 @@
     </font>
    </property>
   </widget>
+  <widget class="Line" name="line_5">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>670</y>
+     <width>1401</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>700</y>
+     <width>291</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Incluir no Orçamento</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>600</y>
+     <width>191</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QLabel" name="label_price">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="labelLargura_7">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Valor:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_8">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Lucro:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLabel" name="label_profit">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
  </widget>
+ <tabstops>
+  <tabstop>lineEditLargura</tabstop>
+  <tabstop>lineEditAltura</tabstop>
+  <tabstop>comboBoxVidros</tabstop>
+  <tabstop>spinBoxVidro</tabstop>
+  <tabstop>pushButtonADDvidro</tabstop>
+  <tabstop>lineEditComprimento</tabstop>
+  <tabstop>comboBoxAluminio</tabstop>
+  <tabstop>spinBox_Aluminio</tabstop>
+  <tabstop>pushButtonADDvidro_2</tabstop>
+  <tabstop>comboBoxKit</tabstop>
+  <tabstop>spinBox_kit</tabstop>
+  <tabstop>pushButtonADDkit</tabstop>
+  <tabstop>comboBoxFechadura</tabstop>
+  <tabstop>spinBox_fechadura</tabstop>
+  <tabstop>pushButtonADDfechadura</tabstop>
+  <tabstop>comboBoxPuxador</tabstop>
+  <tabstop>spinBox_puxador</tabstop>
+  <tabstop>pushButtonADDpuxador</tabstop>
+  <tabstop>comboBoxTrinco</tabstop>
+  <tabstop>spinBox_trinco</tabstop>
+  <tabstop>pushButtonADDtrinco</tabstop>
+  <tabstop>tableWidget</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
  <resources>
   <include location="files.qrc"/>
  </resources>
