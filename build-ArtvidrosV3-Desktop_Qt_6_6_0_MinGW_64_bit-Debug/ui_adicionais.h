@@ -67,8 +67,7 @@ public:
     QComboBox *comboBoxTrinco;
     QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_5;
-    QLabel *labelLargura_3;
-    QComboBox *comboBoxAluminio;
+    QLabel *labelpushButtonADDaluminiosoBox *comboBoxAluminio;
     QPushButton *pushButtonADDvidro_2;
     QWidget *layoutWidget_8;
     QVBoxLayout *verticalLayout_11;
@@ -97,8 +96,7 @@ public:
     QPushButton *pushButtonADDtrinco;
     QSpinBox *spinBoxVidro;
     QSpinBox *spinBox_Aluminio;
-    QFrame *line_5;
-    QPushButton *pushButton;
+    QFrame *line_pushButtonIncluirNoOrcamentoshButton *pushButton;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
     QLabel *label_price;
@@ -321,10 +319,10 @@ public:
         comboBoxAluminio->setSizePolicy(sizePolicy1);
         comboBoxAluminio->setFont(font4);
 
-        verticalLayout_5->addWidget(comboBoxAluminio);
+        pushButtonADDaluminiosdWidget(comboBoxAluminio);
 
-        pushButtonADDvidro_2 = new QPushButton(Adicionais);
-        pushButtonADDvidro_2->setObjectName("pushButtonADDvidro_2");
+       puspushButtonADDaluminios = new QPushButton(Adicionais);
+        pushButtonADDaluminios->setObjectName("pushButtonADDvidro_2");
         pushButtonADDvidro_2->setGeometry(QRect(150, 640, 151, 41));
         pushButtonADDvidro_2->setFont(font5);
         layoutWidget_8 = new QWidget(Adicionais);
@@ -494,10 +492,10 @@ public:
         line_5->setObjectName("line_5");
         line_5->setGeometry(QRect(0, 670, 1401, 41));
         line_5->setFrameShape(QFrame::HLine);
-        line_5->setFrameShadow(QFrame::Sunken);
-        pushButton = new QPushButton(Adicionais);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(530, 700, 291, 51));
+        pushButtonIncluirNoOrcamentotFrameShadow(QFrame::Sunken);
+        pushButtonIncluirNoOrcamento = new QPushButton(Adicionais);
+        pushButtonIncluirNoOrcamento->setObjectName("pushButton");
+        pushButtonIncluirNoOrcamento->setGeometry(QRect(530, 700, 291, 51));
         pushButton->setFont(font3);
         gridLayoutWidget = new QWidget(Adicionais);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
@@ -537,8 +535,8 @@ public:
         QWidget::setTabOrder(comboBoxVidros, spinBoxVidro);
         QWidget::setTabOrder(spinBoxVidro, pushButtonADDvidro);
         QWidget::setTabOrder(pushButtonADDvidro, lineEditComprimento);
-        QWidget::setTabOrder(lineEditComprimento, comboBoxAluminio);
-        QWidget::setTabOrder(comboBoxAluminio, spinBox_Aluminio);
+        QWidget::setTabOrder(lineEditComprimentpushButtonADDaluminios;
+        QWidget::setTabOrder(pushButtonADDaluminiosinBox_Aluminio);
         QWidget::setTabOrder(spinBox_Aluminio, pushButtonADDvidro_2);
         QWidget::setTabOrder(pushButtonADDvidro_2, comboBoxKit);
         QWidget::setTabOrder(comboBoxKit, spinBox_kit);
@@ -552,7 +550,7 @@ public:
         QWidget::setTabOrder(pushButtonADDpuxador, comboBoxTrinco);
         QWidget::setTabOrder(comboBoxTrinco, spinBox_trinco);
         QWidget::setTabOrder(spinBox_trinco, pushButtonADDtrinco);
-        QWidget::setTabOrder(pushButtonADDtrinco, tableWidget);
+        QWidget::setTabOrder(pushButtonADDpushButtonIncluirNoOrcamentobleWidget);
         QWidget::setTabOrder(tableWidget, pushButton);
 
         retranslateUi(Adicionais);
@@ -583,7 +581,7 @@ public:
         comboBoxTrinco->setItemText(0, QString());
 
         labelLargura_3->setText(QCoreApplication::translate("Adicionais", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt;\">Modelo</span></p></body></html>", nullptr));
-        comboBoxAluminio->setItemText(0, QString());
+        pushButtonADDaluminiostItemText(0, QString());
 
         pushButtonADDvidro_2->setText(QCoreApplication::translate("Adicionais", "Adicionar", nullptr));
         labelLargura_9->setText(QCoreApplication::translate("Adicionais", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt;\">Kit</span></p></body></html>", nullptr));
@@ -595,7 +593,7 @@ public:
         pushButtonADDfechadura->setText(QString());
         pushButtonADDpuxador->setText(QString());
         pushButtonADDkit->setText(QString());
-        pushButtonADDtrinco->setText(QString());
+        pushButtonIncluirNoOrcamentoADDtrinco->setText(QString());
         pushButton->setText(QCoreApplication::translate("Adicionais", "Incluir no Or\303\247amento", nullptr));
 #if QT_CONFIG(whatsthis)
         label_price->setWhatsThis(QCoreApplication::translate("Adicionais", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));

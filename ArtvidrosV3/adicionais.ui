@@ -495,7 +495,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButtonADDvidro_2">
+  <widget class="QPushButton" name="pushButtonADDaluminios">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -904,7 +904,7 @@
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="pushButtonIncluirNoOrcamento">
    <property name="geometry">
     <rect>
      <x>530</x>
@@ -1000,7 +1000,7 @@
   <tabstop>lineEditComprimento</tabstop>
   <tabstop>comboBoxAluminio</tabstop>
   <tabstop>spinBox_Aluminio</tabstop>
-  <tabstop>pushButtonADDvidro_2</tabstop>
+  <tabstop>pushButtonADDaluminios</tabstop>
   <tabstop>comboBoxKit</tabstop>
   <tabstop>spinBox_kit</tabstop>
   <tabstop>pushButtonADDkit</tabstop>
@@ -1014,7 +1014,7 @@
   <tabstop>spinBox_trinco</tabstop>
   <tabstop>pushButtonADDtrinco</tabstop>
   <tabstop>tableWidget</tabstop>
-  <tabstop>pushButton</tabstop>
+  <tabstop>pushButtonIncluirNoOrcamento</tabstop>
  </tabstops>
  <resources>
   <include location="files.qrc"/>

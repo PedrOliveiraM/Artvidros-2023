@@ -15,6 +15,7 @@ public:
     AdicionaisOBJ(const QString &id, const QString &name, const QString &quant, const QString &price, const QString &profit);
 
     float metrage(float width , float height);
+    float comprimento(float compriemnto);
     QString geraID();
 
     float calcularPreco(float value , float metragem, int quant);

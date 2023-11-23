@@ -27,9 +27,18 @@ public:
 private slots:
     void removerLinha();
 
+    void on_pushButtonADDvidro_clicked();
+
     void on_pushButtonADDkit_clicked();
 
-    void on_pushButtonADDvidro_clicked();
+
+    void on_pushButtonADDaluminios_clicked();
+
+    void on_pushButtonADDfechadura_clicked();
+
+    void on_pushButtonADDpuxador_clicked();
+
+    void on_pushButtonADDtrinco_clicked();
 
 private:
     Ui::Adicionais *ui;

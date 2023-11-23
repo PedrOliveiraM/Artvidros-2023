@@ -156,10 +156,6 @@ void Adicionais::removerLinha()
     }
     mostrarAdicoes();
 }
-void Adicionais::on_pushButtonADDkit_clicked()
-{
-
-}
 
 
 void Adicionais::on_pushButtonADDvidro_clicked()
@@ -194,6 +190,100 @@ void Adicionais::on_pushButtonADDvidro_clicked()
 
     listaDeAdicionais.push_front(adicional);
 
+    mostrarAdicoes();
+}
+
+void Adicionais::on_pushButtonADDaluminios_clicked()
+{
+    sqlDataBaseControl BD;
+    AdicionaisOBJ aux;
+    // pegar atributos
+    QString id = aux.geraID();
+    QString nome = ui->comboBoxAluminio->currentText();
+    QString tipo = "aluminio";
+    int quant = ui->spinBox_Aluminio->text().toInt();
+    float comprimento = ui->lineEditComprimento->text().toFloat();
+    float price = BD.buscarNoBDprice(nome,tipo); // vai buscar
+    float profit = BD.buscarNoBDprofit(nome,tipo);// vai buscar
+    price =
+    // buscar no bd
+    // adicionar na list
+    // mostrar
+    mostrarAdicoes();
+}
+
+void Adicionais::on_pushButtonADDkit_clicked()
+{
+    sqlDataBaseControl BD;
+    AdicionaisOBJ aux;
+    // pegar atributos
+    QString id = aux.geraID();
+    QString nome;
+    QString tipo;
+    int quant;
+    float price; // vai buscar
+    float profit;// vai buscar
+
+    // buscar no bd
+    // adicionar na list
+    // mostrar
+    mostrarAdicoes();
+
+}
+
+void Adicionais::on_pushButtonADDfechadura_clicked()
+{
+    sqlDataBaseControl BD;
+    AdicionaisOBJ aux;
+    // pegar atributos
+    QString id = aux.geraID();
+    QString nome;
+    QString tipo;
+    int quant;
+    float price; // vai buscar
+    float profit;// vai buscar
+
+    // buscar no bd
+    // adicionar na list
+    // mostrar
+    mostrarAdicoes();
+}
+
+
+void Adicionais::on_pushButtonADDpuxador_clicked()
+{
+    sqlDataBaseControl BD;
+    AdicionaisOBJ aux;
+    // pegar atributos
+    QString id = aux.geraID();
+    QString nome;
+    QString tipo;
+    int quant;
+    float price; // vai buscar
+    float profit;// vai buscar
+
+    // buscar no bd
+    // adicionar na list
+    // mostrar
+    mostrarAdicoes();
+}
+
+
+void Adicionais::on_pushButtonADDtrinco_clicked()
+{
+    sqlDataBaseControl BD;
+    AdicionaisOBJ aux;
+    // pegar atributos
+    QString id = aux.geraID();
+    QString nome;
+    QString tipo;
+    int quant;
+    float price; // vai buscar
+    float profit;// vai buscar
+
+    // buscar no bd
+    // adicionar na list
+    // mostrar
     mostrarAdicoes();
 }
 
