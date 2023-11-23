@@ -40,8 +40,9 @@ public:
     QPushButton *pushButtonBox;
     QPushButton *pushButtonOrcamentos;
     QPushButton *pushButtonAreaPrecos;
-    QPushButton *pushButtonAdicionaismuns;
+    QPushButton *pushButtonVidrosComuns;
     QPushButton *pushButtonPortas;
+    QPushButton *pushButtonAdicionais;
     QMenuBar *menubar;
     QMenu *menuMenu;
     QStatusBar *statusbar;
@@ -181,13 +182,25 @@ public:
 
         gridLayout->addWidget(pushButtonPortas, 0, 0, 1, 1);
 
-       puspushButtonAdicionaistralWidget(centralwidget);
-        pushButtonAdicionaisuBar(MainWindow);
-        menubar->setObjectName("menubpushButtonAdiciopushButtonAdicionaisry(QRect(0, 0, 800, 22));
-        pushButtonAdicionaisnu(menubar);
-        pushButtonAdicionaistName("menuMenu");
-        pushButtonAdicionaisuBar(menubar);
-        pushButtonAdicionaistatusBar(MainWindow);
+        pushButtonAdicionais = new QPushButton(centralwidget);
+        pushButtonAdicionais->setObjectName("pushButtonAdicionais");
+        pushButtonAdicionais->setGeometry(QRect(270, 460, 287, 53));
+        sizePolicy.setHeightForWidth(pushButtonAdicionais->sizePolicy().hasHeightForWidth());
+        pushButtonAdicionais->setSizePolicy(sizePolicy);
+        pushButtonAdicionais->setFont(font1);
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/imagens/adicionar-a-cesta.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButtonAdicionais->setIcon(icon9);
+        pushButtonAdicionais->setIconSize(QSize(32, 32));
+        pushButtonAdicionais->setCheckable(false);
+        MainWindow->setCentralWidget(centralwidget);
+        menubar = new QMenuBar(MainWindow);
+        menubar->setObjectName("menubar");
+        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menuMenu = new QMenu(menubar);
+        menuMenu->setObjectName("menuMenu");
+        MainWindow->setMenuBar(menubar);
+        statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
 
@@ -216,6 +229,7 @@ public:
         pushButtonAreaPrecos->setText(QCoreApplication::translate("MainWindow", "  \303\201rea de Pre\303\247os    ", nullptr));
         pushButtonVidrosComuns->setText(QCoreApplication::translate("MainWindow", "    Vidros Comuns  ", nullptr));
         pushButtonPortas->setText(QCoreApplication::translate("MainWindow", "             Portas               ", nullptr));
+        pushButtonAdicionais->setText(QCoreApplication::translate("MainWindow", "             Adicionais               ", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
     } // retranslateUi
 
@@ -225,4 +239,6 @@ namespace Ui {
     class MainWindow: public Ui_MainWindow {};
 } // namespace Ui
 
-QT_END_pushButtonAdicionais// UI_MAINWINDOW_H
+QT_END_NAMESPACE
+
+#endif // UI_MAINWINDOW_H

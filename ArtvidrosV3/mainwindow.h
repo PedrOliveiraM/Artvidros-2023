@@ -5,6 +5,7 @@
 #include "dialogareaprecos.h"
 #include "dialogportas.h"
 #include "portadeabrir.h"
+#include "adicionais.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -42,11 +43,14 @@ private slots:
 
     void on_actionVendas_triggered();
 
+    void on_pushButtonAdicionais_clicked();
+
 private:
     Ui::MainWindow *ui;
     DialogAreaPrecos *telaAreaPreco;
     Dialogareaorcamentos *telaAreaOrcamento;
     DialogPortas *telaPortas;
+    Adicionais *telaAdicionais;
 
 
 

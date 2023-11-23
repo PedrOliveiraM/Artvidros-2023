@@ -1,3 +1,5 @@
+debug/adicionais.o
+debug/adicionaisobj.o
 debug/classportadeabrir.o
 debug/dialogareaorcamentos.o
 debug/dialogareaprecos.o
@@ -10,6 +12,7 @@ debug/portadeabrir.o
 debug/sqlarea.o
 debug/sqldatabasecontrol.o
 debug/qrc_files.o
+debug/moc_adicionais.o
 debug/moc_dialogareaorcamentos.o
 debug/moc_dialogareaprecos.o
 debug/moc_dialogportas.o

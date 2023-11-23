@@ -1,3 +1,5 @@
+release/adicionais.o
+release/adicionaisobj.o
 release/classportadeabrir.o
 release/dialogareaorcamentos.o
 release/dialogareaprecos.o
@@ -10,6 +12,7 @@ release/portadeabrir.o
 release/sqlarea.o
 release/sqldatabasecontrol.o
 release/qrc_files.o
+release/moc_adicionais.o
 release/moc_dialogareaorcamentos.o
 release/moc_dialogareaprecos.o
 release/moc_dialogportas.o

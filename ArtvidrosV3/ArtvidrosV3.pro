@@ -11,6 +11,7 @@ CONFIG += c++17
 
 SOURCES += \
     adicionais.cpp \
+    adicionaisobj.cpp \
     classportadeabrir.cpp \
     dialogareaorcamentos.cpp \
     dialogareaprecos.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 
 HEADERS += \
     adicionais.h \
+    adicionaisobj.h \
     classportadeabrir.h \
     dialogareaorcamentos.h \
     dialogareaprecos.h \

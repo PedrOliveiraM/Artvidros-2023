@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "E:/Dia 10/ArtvidrosV3/portadeabrir.h"
+#include "../../ArtvidrosV3/portadeabrir.h"
 #include <QtCore/qmetatype.h>
 
 #if __has_include(<QtCore/qtmochelpers.h>)

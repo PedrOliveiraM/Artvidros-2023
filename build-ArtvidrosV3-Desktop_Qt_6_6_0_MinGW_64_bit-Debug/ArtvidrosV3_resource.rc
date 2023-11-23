@@ -1,6 +1,6 @@
 #include <windows.h>
 
-IDI_ICON1	ICON	"E:\\Dia 10\\ArtvidrosV3\\Artvidros.ico"
+IDI_ICON1	ICON	"C:\\Users\\pedro.monteiro\\Documents\\Pedro\\Projeto\\Artvidros-2023-master\\ArtvidrosV3\\Artvidros.ico"
 
 VS_VERSION_INFO VERSIONINFO
 	FILEVERSION 0,0,0,0

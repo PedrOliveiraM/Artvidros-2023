@@ -25,5 +25,6 @@
         <file>imagens/lupa.png</file>
         <file>imagens/voltar.png</file>
         <file>imagens/botao-adicionar.png</file>
+        <file>imagens/adicionar.png</file>
     </qresource>
 </RCC>
