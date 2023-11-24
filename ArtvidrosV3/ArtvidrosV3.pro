@@ -16,6 +16,7 @@ SOURCES += \
     dialogareaorcamentos.cpp \
     dialogareaprecos.cpp \
     dialogportas.cpp \
+    dialogsalvar.cpp \
     herdavidros.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -31,6 +32,7 @@ HEADERS += \
     dialogareaorcamentos.h \
     dialogareaprecos.h \
     dialogportas.h \
+    dialogsalvar.h \
     herdavidros.h \
     mainwindow.h \
     orcamento.h \
@@ -43,6 +45,7 @@ FORMS += \
     dialogareaorcamentos.ui \
     dialogareaprecos.ui \
     dialogportas.ui \
+    dialogsalvar.ui \
     mainwindow.ui \
     portadeabrir.ui \
     sqlarea.ui

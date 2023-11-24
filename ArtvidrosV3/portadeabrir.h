@@ -2,6 +2,7 @@
 #define PORTADEABRIR_H
 #include <adicionais.h>
 #include <QDialog>
+#include <dialogsalvar.h>
 
 namespace Ui {
 class PortaDeAbrir;
@@ -22,11 +23,14 @@ private slots:
 
     void atualizarValoresImportados(const QString& valor, const QString& lucro);
 
+    void on_pushButtonLimpar_clicked();
 
+    void on_pushButtonSalvar_clicked();
 
 private:
     Ui::PortaDeAbrir *ui;
     Adicionais *telaAdicionais;
+    DialogSalvar *telaSalvar;
 };
 
 #endif // PORTADEABRIR_H

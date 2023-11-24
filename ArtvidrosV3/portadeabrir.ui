@@ -90,7 +90,7 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>520</x>
+     <x>560</x>
      <y>540</y>
      <width>221</width>
      <height>41</height>
@@ -125,7 +125,7 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>520</x>
+     <x>560</x>
      <y>590</y>
      <width>221</width>
      <height>41</height>
@@ -164,8 +164,8 @@
   <widget class="QPushButton" name="pushButtonSalvar">
    <property name="geometry">
     <rect>
-     <x>750</x>
-     <y>590</y>
+     <x>810</x>
+     <y>540</y>
      <width>51</width>
      <height>41</height>
     </rect>
@@ -187,8 +187,8 @@
   <widget class="QPushButton" name="pushButtonDesconto">
    <property name="geometry">
     <rect>
-     <x>750</x>
-     <y>540</y>
+     <x>810</x>
+     <y>490</y>
      <width>51</width>
      <height>41</height>
     </rect>
@@ -328,7 +328,7 @@
       </property>
       <item>
        <property name="text">
-        <string> </string>
+        <string/>
        </property>
       </item>
      </widget>
@@ -374,7 +374,7 @@
       </property>
       <item>
        <property name="text">
-        <string> </string>
+        <string/>
        </property>
       </item>
      </widget>
@@ -414,7 +414,7 @@
       </property>
       <item>
        <property name="text">
-        <string> </string>
+        <string/>
        </property>
       </item>
      </widget>
@@ -454,7 +454,7 @@
       </property>
       <item>
        <property name="text">
-        <string> </string>
+        <string/>
        </property>
       </item>
      </widget>
@@ -494,12 +494,35 @@
       </property>
       <item>
        <property name="text">
-        <string> </string>
+        <string/>
        </property>
       </item>
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButtonLimpar">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>590</y>
+     <width>51</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="files.qrc">
+     <normaloff>:/imagens/limpar.png</normaloff>:/imagens/limpar.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
   </widget>
  </widget>
  <resources>

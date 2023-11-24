@@ -10,11 +10,8 @@ PortaDeAbrir::PortaDeAbrir(QWidget *parent) :
     ui->setupUi(this);
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditAltura->setInputMask("X.XX");
-    // portaDeAbrir.cpp
-    // No construtor de portaDeAbrir, conecte o sinal da tela "Adicionais" ao slot de portaDeAbrir
-    connect(telaAdicionais, &Adicionais::valoresImportados, this, &PortaDeAbrir::atualizarValoresImportados);
-
-    // parte do bd
+    ui->lineEditLucro->setEnabled(false);
+    ui->lineEditValor->setEnabled(false);
 
     QString array[] = {"temperado", "puxador", "kitabrir" , "pelicula" , "trinco"};
     QSqlQuery query;
@@ -75,6 +72,7 @@ void PortaDeAbrir::on_pushButtonAdicionais_clicked()
     QString valorRetornado = telaAdicionais.getValor();
     QString lucroRetornado = telaAdicionais.getLucro();
 
+
     atualizarValoresImportados(valorRetornado,lucroRetornado);
 }
 
@@ -91,5 +89,16 @@ void PortaDeAbrir::atualizarValoresImportados(const QString &valor, const QStrin
 }
 
 
+void PortaDeAbrir::on_pushButtonLimpar_clicked()
+{
+    ui->lineEditLucro->clear();
+    ui->lineEditValor->clear();
+}
 
+
+void PortaDeAbrir::on_pushButtonSalvar_clicked()
+{
+    telaSalvar = new DialogSalvar;
+    telaSalvar->exec();
+}
 
