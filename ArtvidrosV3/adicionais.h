@@ -19,10 +19,16 @@ public:
     void mostrarAdicoes();
     void atualizarValores();
 
+    QString getValor();
+    QString getLucro();
+
     float getSumPrice();
     float getSumProfit();
 
     std::list<AdicionaisOBJ> listaDeAdicionais;
+
+signals:
+    void valoresImportados(const QString& valor, const QString& lucro);
 
 private slots:
     void removerLinha();
@@ -31,7 +37,6 @@ private slots:
 
     void on_pushButtonADDkit_clicked();
 
-
     void on_pushButtonADDaluminios_clicked();
 
     void on_pushButtonADDfechadura_clicked();
@@ -39,6 +44,8 @@ private slots:
     void on_pushButtonADDpuxador_clicked();
 
     void on_pushButtonADDtrinco_clicked();
+
+    void on_pushButtonIncluirNoOrcamento_clicked();
 
 private:
     Ui::Adicionais *ui;

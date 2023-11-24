@@ -89,18 +89,24 @@ void Adicionais::mostrarAdicoes()
         QPushButton *btnRemover = new QPushButton;
         btnRemover->setIcon(QIcon(":/imagens/excluir.png"));
         connect(btnRemover, &QPushButton::clicked, this, &Adicionais::removerLinha);
-        ui->tableWidget->setCellWidget(linha, 5, btnRemover);
 
         ui->tableWidget->setItem(linha, 0, itemCodigo);
         ui->tableWidget->setItem(linha, 1, itemProduto);
         ui->tableWidget->setItem(linha, 2, itemQuant);
         ui->tableWidget->setItem(linha, 3, itemPreco);
         ui->tableWidget->setItem(linha, 4, itemLucro);
+        ui->tableWidget->setCellWidget(linha, 5, btnRemover);
         ui->tableWidget->setRowHeight(linha, 20);
         linha++;
     }
 
     QStringList rotulo = {"Código", "Produto", "Quant", "Valor", "Lucro", ""};
+    ui->tableWidget->setColumnWidth(0, 70);  // Coluna 0
+    ui->tableWidget->setColumnWidth(1, 170);  // Coluna 1
+    ui->tableWidget->setColumnWidth(2, 95);   // Coluna 2
+    ui->tableWidget->setColumnWidth(3, 100);  // Coluna 3
+    ui->tableWidget->setColumnWidth(4, 100);  // Coluna 4
+    ui->tableWidget->setColumnWidth(5, 60);   // Coluna 5 (botões)
     ui->tableWidget->verticalHeader()->setVisible(false);
     ui->tableWidget->setHorizontalHeaderLabels(rotulo);
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -108,9 +114,21 @@ void Adicionais::mostrarAdicoes()
     ui->tableWidget->verticalHeader()->setVisible(false);
     ui->tableWidget->setStyleSheet("QTableView {selection-background-color:orange}");
     ui->tableWidget->setStyleSheet("QTableView QHeaderView::section { font-weight: bold; }");
+    ui->tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
 
     ui->label_price->setText(QString::number(getSumPrice()));
     ui->label_profit->setText(QString::number(getSumProfit()));
+}
+
+QString Adicionais::getValor()
+{
+    return ui->label_price->text();
+}
+
+QString Adicionais::getLucro()
+{
+    return ui->label_profit->text();
 }
 
 float Adicionais::getSumPrice()
@@ -167,9 +185,9 @@ void Adicionais::on_pushButtonADDvidro_clicked()
 
     QString id = aux.geraID();
     float largura = ui->lineEditLargura->text().toFloat();
-    float altura = ui->lineEditAltura->text().toFloat();
-
+    float altura = ui->lineEditAltura->text().toFloat(); 
     QString vidro = ui->comboBoxVidros->currentText();
+    QString metro = QString::number(largura)+ "x" + QString::number(altura) + "m " + vidro;
     QString tipo = "temperado";
 
     QString quant = ui->spinBoxVidro->text();
@@ -186,9 +204,9 @@ void Adicionais::on_pushButtonADDvidro_clicked()
     QString QSprice = QString::number(price); // vai buscar
     QString QSprofit = QString::number(profit);// vai buscar
 
-    AdicionaisOBJ adicional(id,vidro,quant,QSprice,QSprofit);
+    AdicionaisOBJ adicional(id,metro,quant,QSprice,QSprofit);
 
-    listaDeAdicionais.push_front(adicional);
+    listaDeAdicionais.push_back(adicional);
 
     mostrarAdicoes();
 }
@@ -198,16 +216,25 @@ void Adicionais::on_pushButtonADDaluminios_clicked()
     sqlDataBaseControl BD;
     AdicionaisOBJ aux;
     // pegar atributos
+    QString comp = ui->lineEditComprimento->text();
     QString id = aux.geraID();
     QString nome = ui->comboBoxAluminio->currentText();
+    QString prod = comp + "m "+ nome;
     QString tipo = "aluminio";
     int quant = ui->spinBox_Aluminio->text().toInt();
+    QString QSquant = QString::number(quant);
     float comprimento = ui->lineEditComprimento->text().toFloat();
+    // buscar no bd
     float price = BD.buscarNoBDprice(nome,tipo); // vai buscar
     float profit = BD.buscarNoBDprofit(nome,tipo);// vai buscar
-    price =
-    // buscar no bd
+    price = (quant * (aux.comprimento(comprimento) * price));
+    profit = (quant * (aux.comprimento(comprimento) * profit));
+
+    QString QSprice = QString::number(price);
+    QString QSprofit = QString::number(profit);
     // adicionar na list
+    AdicionaisOBJ adicional(id,prod,QSquant,QSprice,QSprofit);
+    listaDeAdicionais.push_back(adicional);
     // mostrar
     mostrarAdicoes();
 }
@@ -218,14 +245,22 @@ void Adicionais::on_pushButtonADDkit_clicked()
     AdicionaisOBJ aux;
     // pegar atributos
     QString id = aux.geraID();
-    QString nome;
-    QString tipo;
-    int quant;
-    float price; // vai buscar
-    float profit;// vai buscar
+    QString nome = ui->comboBoxKit->currentText();
+    QString tipo = "kitabrir";
+    int quant = ui->spinBox_kit->text().toInt();
+    QString QSquant = QString::number(quant);
 
     // buscar no bd
+    float price = BD.buscarNoBDprice(nome,tipo); // vai buscar
+    float profit = BD.buscarNoBDprofit(nome,tipo);// vai buscar
+    price = (quant * price);
+    profit = (quant * profit);
+
+    QString QSprice = QString::number(price);
+    QString QSprofit = QString::number(profit);
     // adicionar na list
+    AdicionaisOBJ adicional(id,nome,QSquant,QSprice,QSprofit);
+    listaDeAdicionais.push_back(adicional);
     // mostrar
     mostrarAdicoes();
 
@@ -237,14 +272,22 @@ void Adicionais::on_pushButtonADDfechadura_clicked()
     AdicionaisOBJ aux;
     // pegar atributos
     QString id = aux.geraID();
-    QString nome;
-    QString tipo;
-    int quant;
-    float price; // vai buscar
-    float profit;// vai buscar
+    QString nome =ui->comboBoxFechadura->currentText();
+    QString tipo = "fechadura";
+    int quant = ui->spinBox_fechadura->text().toInt();
+    QString QSquant = QString::number(quant);
 
     // buscar no bd
+    float price = BD.buscarNoBDprice(nome,tipo); // vai buscar
+    float profit = BD.buscarNoBDprofit(nome,tipo);// vai buscar
+    price = (quant * price);
+    profit = (quant * profit);
+
+    QString QSprice = QString::number(price);
+    QString QSprofit = QString::number(profit);
     // adicionar na list
+    AdicionaisOBJ adicional(id,nome,QSquant,QSprice,QSprofit);
+    listaDeAdicionais.push_back(adicional);
     // mostrar
     mostrarAdicoes();
 }
@@ -256,14 +299,22 @@ void Adicionais::on_pushButtonADDpuxador_clicked()
     AdicionaisOBJ aux;
     // pegar atributos
     QString id = aux.geraID();
-    QString nome;
-    QString tipo;
-    int quant;
-    float price; // vai buscar
-    float profit;// vai buscar
+    QString nome =ui->comboBoxPuxador->currentText();
+    QString tipo = "puxador";
+    int quant = ui->spinBox_puxador->text().toInt();
+    QString QSquant = QString::number(quant);
 
     // buscar no bd
+    float price = BD.buscarNoBDprice(nome,tipo); // vai buscar
+    float profit = BD.buscarNoBDprofit(nome,tipo);// vai buscar
+    price = (quant * price);
+    profit = (quant * profit);
+
+    QString QSprice = QString::number(price);
+    QString QSprofit = QString::number(profit);
     // adicionar na list
+    AdicionaisOBJ adicional(id,nome,QSquant,QSprice,QSprofit);
+    listaDeAdicionais.push_back(adicional);
     // mostrar
     mostrarAdicoes();
 }
@@ -275,15 +326,35 @@ void Adicionais::on_pushButtonADDtrinco_clicked()
     AdicionaisOBJ aux;
     // pegar atributos
     QString id = aux.geraID();
-    QString nome;
-    QString tipo;
-    int quant;
-    float price; // vai buscar
-    float profit;// vai buscar
+    QString nome =ui->comboBoxTrinco->currentText();
+    QString tipo = "trinco";
+    int quant = ui->spinBox_trinco->text().toInt();
+    QString QSquant = QString::number(quant);
 
     // buscar no bd
+    float price = BD.buscarNoBDprice(nome,tipo); // vai buscar
+    float profit = BD.buscarNoBDprofit(nome,tipo);// vai buscar
+    price = (quant * price);
+    profit = (quant * profit);
+
+    QString QSprice = QString::number(price);
+    QString QSprofit = QString::number(profit);
     // adicionar na list
+    AdicionaisOBJ adicional(id,nome,QSquant,QSprice,QSprofit);
+    listaDeAdicionais.push_back(adicional);
     // mostrar
     mostrarAdicoes();
+}
+
+
+void Adicionais::on_pushButtonIncluirNoOrcamento_clicked()
+{
+    // Obtenha os valores e o lucro das labels ou de onde quer que estejam armazenados
+    QString valor = ui->label_price->text();
+    QString lucro = ui->label_profit->text();
+
+
+    close();
+
 }
 

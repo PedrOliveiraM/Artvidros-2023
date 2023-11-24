@@ -10,6 +10,9 @@ PortaDeAbrir::PortaDeAbrir(QWidget *parent) :
     ui->setupUi(this);
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditAltura->setInputMask("X.XX");
+    // portaDeAbrir.cpp
+    // No construtor de portaDeAbrir, conecte o sinal da tela "Adicionais" ao slot de portaDeAbrir
+    connect(telaAdicionais, &Adicionais::valoresImportados, this, &PortaDeAbrir::atualizarValoresImportados);
 
     // parte do bd
 
@@ -62,4 +65,31 @@ void PortaDeAbrir::on_pushButtonCalcular_clicked()
     ui->lineEditValor->setText(price);
     ui->lineEditLucro->setText(profit);
 }
+
+
+void PortaDeAbrir::on_pushButtonAdicionais_clicked()
+{
+    Adicionais telaAdicionais;
+    telaAdicionais.exec();
+
+    QString valorRetornado = telaAdicionais.getValor();
+    QString lucroRetornado = telaAdicionais.getLucro();
+
+    atualizarValoresImportados(valorRetornado,lucroRetornado);
+}
+
+void PortaDeAbrir::atualizarValoresImportados(const QString &valor, const QString &lucro)
+{
+    float price = ui->lineEditValor->text().toFloat();
+    float profit = ui->lineEditLucro->text().toFloat();
+
+    price = price + valor.toFloat();
+    profit = profit + lucro.toFloat();
+
+    ui->lineEditValor->setText(QString::number(price));
+    ui->lineEditLucro->setText(QString::number(profit));
+}
+
+
+
 

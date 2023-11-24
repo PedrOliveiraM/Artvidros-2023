@@ -97,9 +97,26 @@ float AdicionaisOBJ::metrage(float width , float height)
     return metrageVidro;
 }
 
+float AdicionaisOBJ::comprimento(float comprimento)
+{
+    float largura = comprimento;
+
+    int larg = 0;
+    larg += largura*100;
+
+    while(larg%5 != 0){
+        larg += 1;
+    }
+
+    float x = larg;
+    double comp = (x/100);
+
+    return comp;
+}
+
 QString AdicionaisOBJ::geraID()
 {
-    // aguardar 0.5 s
+    // aguardar 1 s
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     // Coloque isso em algum lugar do seu código, talvez no início do programa
     std::srand(static_cast<unsigned>(std::time(0)));
