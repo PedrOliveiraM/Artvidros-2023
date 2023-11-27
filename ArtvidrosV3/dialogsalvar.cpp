@@ -24,4 +24,11 @@ DialogSalvar::~DialogSalvar()
 void DialogSalvar::on_pushButtonSalvar_clicked()
 {
 
+    QString cod = ui->lineEditCodigo->text();
+    QString cliente = ui->lineEditCliente->text();
+    QString preco = ui->lineEditPrice->text();
+    QString lucro = ui->lineEditProfit->text();
+    QString data =ui->lineEditData->text();
+    QString vendedor= ui->lineEditVendedor->text();
+
 }

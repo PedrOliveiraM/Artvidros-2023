@@ -15,6 +15,7 @@ public:
     explicit Dialogareaorcamentos(QWidget *parent = nullptr);
     ~Dialogareaorcamentos();
 
+    void showBD();
 private:
     Ui::Dialogareaorcamentos *ui;
 
