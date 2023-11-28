@@ -98,7 +98,19 @@ void PortaDeAbrir::on_pushButtonLimpar_clicked()
 
 void PortaDeAbrir::on_pushButtonSalvar_clicked()
 {
-    telaSalvar = new DialogSalvar;
+    QString width = ui->lineEditLargura->text();
+    QString height = ui->lineEditAltura->text();
+    QString glass = ui->comboBoxVidros->currentText();
+    QString puller = ui->comboBoxPuxador->currentText();
+    QString kit = ui->comboBoxKit->currentText();
+    QString film = ui->comboBoxPelicula->currentText();
+    QString latch = ui->comboBoxTrinco->currentText();
+
+    QString price = ui->lineEditValor->text();
+    QString profit = ui->lineEditLucro->text();
+
+    QString produto = width + " x " + height +" "+ glass +" "+ puller +" "+ kit +" "+ film +" "+ latch;
+    telaSalvar = new DialogSalvar(this,produto,price,profit);
     telaSalvar->exec();
 }
 

@@ -49,6 +49,19 @@ bool sqlDataBaseControl::deleteBD(QString codID)
 
 }
 
+bool sqlDataBaseControl::insertBDSalvar(QString codID, QString client, QString product, QString price, QString profit, QString data, QString seller)
+{
+    QSqlQuery query;
+    QString queryString = "INSERT INTO sale (cod_sale, customer, product, price, profit, date,seller) VALUES ('" + codID + "', '" + client + "', '" + product + "', '" + price + "', '" + profit + "', '" + data + "', '" + seller + "')";
+
+    if (query.exec(queryString)) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
 float sqlDataBaseControl::buscarNoBDprice(QString name, QString type)
 {
     QSqlQuery query;

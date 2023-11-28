@@ -114,7 +114,7 @@
       </property>
       <property name="font">
        <font>
-        <pointsize>11</pointsize>
+        <pointsize>16</pointsize>
         <bold>true</bold>
        </font>
       </property>
@@ -154,6 +154,9 @@
           <pointsize>11</pointsize>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>

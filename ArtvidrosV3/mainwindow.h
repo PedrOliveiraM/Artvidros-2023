@@ -45,6 +45,7 @@ private slots:
 
     void on_pushButtonAdicionais_clicked();
 
+
 private:
     Ui::MainWindow *ui;
     DialogAreaPrecos *telaAreaPreco;

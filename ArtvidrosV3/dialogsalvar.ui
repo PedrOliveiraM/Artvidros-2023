@@ -16,8 +16,8 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>300</y>
+     <x>410</x>
+     <y>350</y>
      <width>121</width>
      <height>61</height>
     </rect>
@@ -53,8 +53,8 @@
   <widget class="QWidget" name="layoutWidget_5">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>300</y>
+     <x>130</x>
+     <y>350</y>
      <width>175</width>
      <height>36</height>
     </rect>
@@ -95,7 +95,7 @@
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>480</y>
+     <y>510</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -116,8 +116,8 @@
   <widget class="QWidget" name="layoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>350</y>
+     <x>130</x>
+     <y>400</y>
      <width>175</width>
      <height>36</height>
     </rect>
@@ -158,7 +158,7 @@
    <property name="geometry">
     <rect>
      <x>480</x>
-     <y>480</y>
+     <y>510</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -179,7 +179,7 @@
   <widget class="QWidget" name="layoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>130</x>
      <y>250</y>
      <width>381</width>
      <height>36</height>
@@ -241,7 +241,7 @@
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>480</y>
+     <y>510</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -279,55 +279,11 @@
     <string>Área de Salvar Orçamento</string>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget_6">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>200</y>
-     <width>181</width>
-     <height>36</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QLabel" name="label_Id">
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Código</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEditCodigo">
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QWidget" name="layoutWidget_4">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>400</y>
+     <x>130</x>
+     <y>450</y>
      <width>381</width>
      <height>36</height>
     </rect>
@@ -364,9 +320,127 @@
     </item>
    </layout>
   </widget>
+  <widget class="QWidget" name="layoutWidget_7">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>300</y>
+     <width>561</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <item>
+     <widget class="QLabel" name="label_name_3">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Produto</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEditProduct">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>false</bold>
+       </font>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_8">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>200</y>
+     <width>181</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_7">
+    <item>
+     <widget class="QLabel" name="label_Id_2">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Código</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBoxID">
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="labelNomeOrcamento">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>200</y>
+     <width>191</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonMostrar">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>203</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
  <tabstops>
-  <tabstop>lineEditCodigo</tabstop>
   <tabstop>lineEditCliente</tabstop>
   <tabstop>lineEditPrice</tabstop>
   <tabstop>lineEditData</tabstop>
