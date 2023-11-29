@@ -3,6 +3,7 @@
 #include <list>
 #include <QDialog>
 #include <adicionaisobj.h>
+#include <dialogsalvar.h>
 
 namespace Ui {
 class Adicionais;
@@ -13,8 +14,12 @@ class Adicionais : public QDialog
     Q_OBJECT
 
 public:
-    explicit Adicionais(QWidget *parent = nullptr);
+    explicit Adicionais(QWidget *parent = nullptr , QString type = "default");
     ~Adicionais();
+
+
+    QString tipo;
+    std::list<AdicionaisOBJ> listaDeAdicionais;
 
     void mostrarAdicoes();
     void atualizarValores();
@@ -22,13 +27,20 @@ public:
     QString getValor();
     QString getLucro();
 
+
     float getSumPrice();
     float getSumProfit();
 
-    std::list<AdicionaisOBJ> listaDeAdicionais;
+    QString exporAdicionais();
 
-signals:
-    void valoresImportados(const QString& valor, const QString& lucro);
+    QString getGetType() const;
+    void setGetType(const QString &newGetType);
+
+    QString getTipo() const;
+    void setTipo(const QString &newTipo);
+
+//signals:
+//    void valoresImportados(const QString& valor, const QString& lucro);
 
 private slots:
     void removerLinha();
@@ -49,6 +61,7 @@ private slots:
 
 private:
     Ui::Adicionais *ui;
+    DialogSalvar *telaSalvar;
 };
 
 #endif // ADICIONAIS_H

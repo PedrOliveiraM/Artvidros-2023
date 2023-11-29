@@ -126,6 +126,7 @@ void DialogAreaPrecos::showBD()
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableWidget->verticalHeader()->setVisible(false);
     ui->tableWidget->setStyleSheet("QTableView {selection-background-color:orange}");
+    ui->tableWidget->setStyleSheet("QTableView QHeaderView::section { font-weight: bold; }");
 }
 
 void DialogAreaPrecos::on_pushButtonADD_clicked()

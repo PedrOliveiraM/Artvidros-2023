@@ -95,8 +95,9 @@ void MainWindow::on_actionVendas_triggered()
 void MainWindow::on_pushButtonAdicionais_clicked()
 {
     //adicionais
-    telaAdicionais = new Adicionais;
+    telaAdicionais = new Adicionais(this,"mainWindow");
     telaAdicionais->exec();
 
 }
+
 

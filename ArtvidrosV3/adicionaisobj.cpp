@@ -132,3 +132,7 @@ float AdicionaisOBJ::calcularPreco(float value, float metragem, int quant)
 {
     return (quant * (metragem * value));
 }
+
+
+
+

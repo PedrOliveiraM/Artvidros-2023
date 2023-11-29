@@ -52,14 +52,27 @@ bool sqlDataBaseControl::deleteBD(QString codID)
 bool sqlDataBaseControl::insertBDSalvar(QString codID, QString client, QString product, QString price, QString profit, QString data, QString seller)
 {
     QSqlQuery query;
-    QString queryString = "INSERT INTO sale (cod_sale, customer, product, price, profit, date,seller) VALUES ('" + codID + "', '" + client + "', '" + product + "', '" + price + "', '" + profit + "', '" + data + "', '" + seller + "')";
-
-    if (query.exec(queryString)) {
+    if (query.exec("INSERT INTO sale (cod_sale,customer,product,price,profit,data,seller) VALUES ('"+codID+"','"+client+"','"+product+"', '"+price+"', '"+profit+"' ,'"+data+"','"+seller+"')")) {
         return true;
-    } else {
+    }else {
         return false;
     }
+    return 0;
 
+}
+
+bool sqlDataBaseControl::deleteBDSalvar(QString codID,QString name)
+{
+
+    QSqlQuery query;
+    QString deleteQuery = ("DELETE FROM sale "
+                           "WHERE cod_sale = '"+codID+"' and customer = '"+name+"'");
+    if (query.exec(deleteQuery)) {
+        return true;
+    } else {
+        qDebug() << "Erro ao deletar ";
+        return false;
+    }
 }
 
 float sqlDataBaseControl::buscarNoBDprice(QString name, QString type)

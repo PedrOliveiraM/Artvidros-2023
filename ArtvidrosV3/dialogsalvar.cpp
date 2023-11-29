@@ -23,7 +23,6 @@ DialogSalvar::DialogSalvar(QWidget *parent , QString produto , QString price , Q
         }
     }
 
-
     QDate dataAtual = QDate::currentDate();
     QString dataFormatada = dataAtual.toString("dd/MM/yyyy");
     ui->lineEditData->setInputMask("xx/xx/xxxx");
@@ -45,17 +44,19 @@ void DialogSalvar::on_pushButtonAdicionar_clicked()
     QString cod = ui->comboBoxID->currentText();
     if (cod == "")
         cod = aux2.geraID();
-    QString cliente = ui->lineEditCliente->text();
+    QString cliente = ui->lineEditCliente->text().toUpper();
     QString produto = ui->lineEditProduct->text();
     QString preco = ui->lineEditPrice->text();
     QString lucro = ui->lineEditProfit->text();
     QString data =ui->lineEditData->text();
-    QString vendedor= ui->lineEditVendedor->text();
+    QString vendedor= ui->lineEditVendedor->text().toUpper();
 
     if (aux.insertBDSalvar(cod,cliente,produto,preco,lucro,data,vendedor))
         QMessageBox::about(this,"Mensagem","Salvo com Sucesso");
     else
         QMessageBox::warning(this,"Mensagem","Falha ao Salvar");
+
+    close();
 }
 
 
@@ -91,7 +92,7 @@ void DialogSalvar::on_pushButtonMostrar_clicked()
         while (query.next()) {
             QString value = query.value(1).toString();  // Suponho que o valor desejado esteja na primeira coluna
             ui->labelNomeOrcamento->setText(value);
-            ui->lineEditCliente->setText(value);
+            ui->lineEditCliente->setText(value.toUpper());
         }
     }
 }

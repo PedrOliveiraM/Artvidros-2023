@@ -1,6 +1,8 @@
 #include "dialogareaorcamentos.h"
 #include "ui_dialogareaorcamentos.h"
 #include <QSqlQuery>
+#include <sqldatabasecontrol.h>
+#include <QMessageBox>
 Dialogareaorcamentos::Dialogareaorcamentos(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialogareaorcamentos)
@@ -50,10 +52,44 @@ void Dialogareaorcamentos::showBD()
     }
 
     QStringList rotulo = {"Código Venda", "Cliente", "Produto", "Valor", "Lucro", "Data", "Vendedor"};
-                         ui->tableWidget->verticalHeader()->setVisible(false);
+    ui->tableWidget->setColumnWidth(0, 117);
+    ui->tableWidget->setColumnWidth(1, 157);
+    ui->tableWidget->setColumnWidth(2, 455);
+    ui->tableWidget->setColumnWidth(3, 115);
+    ui->tableWidget->setColumnWidth(4, 115);
+    ui->tableWidget->setColumnWidth(5, 115);
+    ui->tableWidget->setColumnWidth(6, 125);
+
+    ui->tableWidget->verticalHeader()->setVisible(false);
     ui->tableWidget->setHorizontalHeaderLabels(rotulo);
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableWidget->setStyleSheet("QTableView QHeaderView::section { font-weight: bold; }");
+    ui->tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
+
+}
+
+
+void Dialogareaorcamentos::on_pushButton_Excluir_clicked()
+{
+    QString id;
+    QString name;
+    if (!ui->tableWidget->selectedItems().isEmpty()) {
+        // Obtém o item da célula selecionada
+        QTableWidgetItem *item = ui->tableWidget->selectedItems().at(0);
+        QTableWidgetItem *item2 = ui->tableWidget->selectedItems().at(1);
+        // Obtém o valor do texto da célula
+        id = item->text();
+        name = item2->text();
+    }
+    sqlDataBaseControl aux;
+
+    if(aux.deleteBDSalvar(id , name))
+        QMessageBox::about(this,"","O Item selecionado foi Deletado");
+    else
+        QMessageBox::warning(this,"ERRO","O Item selecionado Não foi Deletado");
+
+    showBD();
 }
 

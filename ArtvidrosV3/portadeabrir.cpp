@@ -78,6 +78,8 @@ void PortaDeAbrir::on_pushButtonAdicionais_clicked()
 
 void PortaDeAbrir::atualizarValoresImportados(const QString &valor, const QString &lucro)
 {
+
+
     float price = ui->lineEditValor->text().toFloat();
     float profit = ui->lineEditLucro->text().toFloat();
 

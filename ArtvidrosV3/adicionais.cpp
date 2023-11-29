@@ -7,11 +7,15 @@
 #include <sqldatabasecontrol.h>
 #include <QMessageBox>
 #include <algorithm>
-Adicionais::Adicionais(QWidget *parent) :
+Adicionais::Adicionais(QWidget *parent, QString type) :
     QDialog(parent),
     ui(new Ui::Adicionais)
 {
+
     ui->setupUi(this);
+
+    setTipo(type);
+
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditComprimento->setInputMask("X.XX");
@@ -60,6 +64,9 @@ Adicionais::Adicionais(QWidget *parent) :
             qDebug() << "Erro ao executar a consulta para tipo ";
         }
     }
+
+
+
 
 }
 
@@ -131,6 +138,16 @@ QString Adicionais::getLucro()
     return ui->label_profit->text();
 }
 
+QString Adicionais::getTipo() const
+{
+    return tipo;
+}
+
+void Adicionais::setTipo(const QString &newTipo)
+{
+    tipo = newTipo;
+}
+
 float Adicionais::getSumPrice()
 {
     float soma = 0.0; // Inicialize a variável soma com 0.0
@@ -147,6 +164,28 @@ float Adicionais::getSumProfit()
         soma += adicional.getProfit().toFloat();
     }
     return soma;
+
+}
+
+QString Adicionais::exporAdicionais()
+{
+    QString produtos  ="";
+    float price = 0.0;
+    float profit = 0.0;
+
+    for (const AdicionaisOBJ& adicional : listaDeAdicionais) {
+        produtos += adicional.getName();
+    }
+
+    price = getSumPrice();
+    profit = getSumProfit();
+
+    QString QSprice = QString::number(price);
+    QString QSprofit = QString::number(profit);
+
+    telaSalvar = new DialogSalvar(this,produtos,QSprice,QSprofit);
+    telaSalvar->exec();
+
 
 }
 
@@ -349,11 +388,16 @@ void Adicionais::on_pushButtonADDtrinco_clicked()
 
 void Adicionais::on_pushButtonIncluirNoOrcamento_clicked()
 {
-    // Obtenha os valores e o lucro das labels ou de onde quer que estejam armazenados
-    QString valor = ui->label_price->text();
-    QString lucro = ui->label_profit->text();
+//    if (getTipo() == "default" ) {
+//        // Obtenha os valores e o lucro das labels ou de onde quer que estejam armazenados
+//        QString valor = ui->label_price->text();
+//        QString lucro = ui->label_profit->text();
+//    }
+//    else {
+//        exporAdicionais();
+//    }
 
-
+    exporAdicionais();
     close();
 
 }
