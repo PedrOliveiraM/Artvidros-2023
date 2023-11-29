@@ -65,9 +65,6 @@ Adicionais::Adicionais(QWidget *parent, QString type) :
         }
     }
 
-
-
-
 }
 
 
@@ -167,7 +164,7 @@ float Adicionais::getSumProfit()
 
 }
 
-QString Adicionais::exporAdicionais()
+void Adicionais::exporAdicionais()
 {
     QString produtos  ="";
     float price = 0.0;
@@ -185,8 +182,6 @@ QString Adicionais::exporAdicionais()
 
     telaSalvar = new DialogSalvar(this,produtos,QSprice,QSprofit);
     telaSalvar->exec();
-
-
 }
 
 void Adicionais::removerLinha()
@@ -388,13 +383,12 @@ void Adicionais::on_pushButtonADDtrinco_clicked()
 
 void Adicionais::on_pushButtonIncluirNoOrcamento_clicked()
 {
-//    if (getTipo() == "default" ) {
-//        // Obtenha os valores e o lucro das labels ou de onde quer que estejam armazenados
+//    QString tip = getTipo();
+
+//    if (tip == "default"){
 //        QString valor = ui->label_price->text();
 //        QString lucro = ui->label_profit->text();
-//    }
-//    else {
-//        exporAdicionais();
+//        close();
 //    }
 
     exporAdicionais();

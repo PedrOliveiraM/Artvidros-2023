@@ -14,7 +14,7 @@ class Adicionais : public QDialog
     Q_OBJECT
 
 public:
-    explicit Adicionais(QWidget *parent = nullptr , QString type = "default");
+    explicit Adicionais(QWidget *parent = nullptr , QString type = " ");
     ~Adicionais();
 
 
@@ -31,10 +31,7 @@ public:
     float getSumPrice();
     float getSumProfit();
 
-    QString exporAdicionais();
-
-    QString getGetType() const;
-    void setGetType(const QString &newGetType);
+    void exporAdicionais();
 
     QString getTipo() const;
     void setTipo(const QString &newTipo);
