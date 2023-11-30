@@ -1,21 +1,23 @@
-#ifndef ADICIONAIS_H
-#define ADICIONAIS_H
+#ifndef ADICIONAISDEF_H
+#define ADICIONAISDEF_H
+//**************************
+
 #include <list>
 #include <QDialog>
 #include <adicionaisobj.h>
 #include <dialogsalvar.h>
 
 namespace Ui {
-class Adicionais;
+class AdicionaisDef;
 }
 
-class Adicionais : public QDialog
+class AdicionaisDef : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Adicionais(QWidget *parent = nullptr);
-    ~Adicionais();
+    explicit AdicionaisDef(QWidget *parent = nullptr);
+    ~AdicionaisDef();
 
 
     QString tipo;
@@ -27,11 +29,8 @@ public:
     QString getValor();
     QString getLucro();
 
-
     float getSumPrice();
     float getSumProfit();
-
-    void exporAdicionais();
 
 private slots:
     void removerLinha();
@@ -51,8 +50,12 @@ private slots:
     void on_pushButtonIncluirNoOrcamento_clicked();
 
 private:
-    Ui::Adicionais *ui;
+    Ui::AdicionaisDef *ui;
     DialogSalvar *telaSalvar;
+
+    QString valor;
+    QString lucro;
 };
 
-#endif // ADICIONAIS_H
+//**************************
+#endif // ADICIONAISDEF_H

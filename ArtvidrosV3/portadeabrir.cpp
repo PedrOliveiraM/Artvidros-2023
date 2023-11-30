@@ -3,6 +3,7 @@
 #include "ui_portadeabrir.h"
 #include <classportadeabrir.h>
 #include "qsqldatabase.h"
+#include <adicionaisdef.h>
 PortaDeAbrir::PortaDeAbrir(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::PortaDeAbrir)
@@ -67,14 +68,14 @@ void PortaDeAbrir::on_pushButtonCalcular_clicked()
 void PortaDeAbrir::on_pushButtonAdicionais_clicked()
 {
 
-    Adicionais telaAdicionais;
-    telaAdicionais.exec();
+    AdicionaisDef telaAdicionais;
+    int resultado = telaAdicionais.exec();
 
     QString valorRetornado = telaAdicionais.getValor();
     QString lucroRetornado = telaAdicionais.getLucro();
 
-
     atualizarValoresImportados(valorRetornado,lucroRetornado);
+
 }
 
 void PortaDeAbrir::atualizarValoresImportados(const QString &valor, const QString &lucro)

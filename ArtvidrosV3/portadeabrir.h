@@ -2,6 +2,7 @@
 #define PORTADEABRIR_H
 #include <adicionais.h>
 #include <QDialog>
+#include <adicionaisdef.h>
 #include <dialogsalvar.h>
 
 namespace Ui {
@@ -29,7 +30,7 @@ private slots:
 
 private:
     Ui::PortaDeAbrir *ui;
-    Adicionais *telaAdicionais;
+    AdicionaisDef *telaAdicionais;
     DialogSalvar *telaSalvar;
 };
 

@@ -11,6 +11,7 @@ CONFIG += c++17
 
 SOURCES += \
     adicionais.cpp \
+    adicionaisdef.cpp \
     adicionaisobj.cpp \
     classportadeabrir.cpp \
     dialogareaorcamentos.cpp \
@@ -27,6 +28,7 @@ SOURCES += \
 
 HEADERS += \
     adicionais.h \
+    adicionaisdef.h \
     adicionaisobj.h \
     classportadeabrir.h \
     dialogareaorcamentos.h \
@@ -42,6 +44,7 @@ HEADERS += \
 
 FORMS += \
     adicionais.ui \
+    adicionaisdef.ui \
     dialogareaorcamentos.ui \
     dialogareaprecos.ui \
     dialogportas.ui \

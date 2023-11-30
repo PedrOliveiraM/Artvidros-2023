@@ -1,21 +1,21 @@
-#ifndef ADICIONAIS_H
-#define ADICIONAIS_H
+#ifndef ADICIONAISDEFAULT_H
+#define ADICIONAISDEFAULT_H
 #include <list>
 #include <QDialog>
 #include <adicionaisobj.h>
 #include <dialogsalvar.h>
 
 namespace Ui {
-class Adicionais;
+class adicionais;
 }
 
-class Adicionais : public QDialog
+class AdicionaisDef : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Adicionais(QWidget *parent = nullptr);
-    ~Adicionais();
+    explicit AdicionaisDef(QWidget *parent = nullptr);
+    ~AdicionaisDef();
 
 
     QString tipo;
@@ -55,4 +55,4 @@ private:
     DialogSalvar *telaSalvar;
 };
 
-#endif // ADICIONAIS_H
+#endif // ADICIONAISDEFAULT_H

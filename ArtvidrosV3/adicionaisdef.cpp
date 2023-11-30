@@ -1,3 +1,5 @@
+#include "adicionaisdef.h"
+#include "ui_adicionaisdef.h"
 #include "adicionais.h"
 #include "ui_adicionais.h"
 #include "qsqldatabase.h"
@@ -7,13 +9,12 @@
 #include <sqldatabasecontrol.h>
 #include <QMessageBox>
 #include <algorithm>
-Adicionais::Adicionais(QWidget *parent) :
+
+AdicionaisDef::AdicionaisDef(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Adicionais)
+    ui(new Ui::AdicionaisDef)
 {
-
     ui->setupUi(this);
-
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditComprimento->setInputMask("X.XX");
@@ -66,12 +67,12 @@ Adicionais::Adicionais(QWidget *parent) :
 }
 
 
-Adicionais::~Adicionais()
+AdicionaisDef::~AdicionaisDef()
 {
     delete ui;
 }
 
-void Adicionais::mostrarAdicoes()
+void AdicionaisDef::mostrarAdicoes()
 {
     ui->tableWidget->setRowCount(0);
     ui->tableWidget->setColumnCount(6); // Adicionando uma coluna extra para os botões
@@ -90,7 +91,7 @@ void Adicionais::mostrarAdicoes()
         // Adicionando widgets de botões à célula da coluna "Ações"
         QPushButton *btnRemover = new QPushButton;
         btnRemover->setIcon(QIcon(":/imagens/excluir.png"));
-        connect(btnRemover, &QPushButton::clicked, this, &Adicionais::removerLinha);
+        connect(btnRemover, &QPushButton::clicked, this, &AdicionaisDef::removerLinha);
 
         ui->tableWidget->setItem(linha, 0, itemCodigo);
         ui->tableWidget->setItem(linha, 1, itemProduto);
@@ -123,18 +124,18 @@ void Adicionais::mostrarAdicoes()
     ui->label_profit->setText(QString::number(getSumProfit()));
 }
 
-QString Adicionais::getValor()
+QString AdicionaisDef::getValor()
 {
-    return ui->label_price->text();
+    return valor;
 }
 
-QString Adicionais::getLucro()
+QString AdicionaisDef::getLucro()
 {
-    return ui->label_profit->text();
+    return lucro;
 }
 
 
-float Adicionais::getSumPrice()
+float AdicionaisDef::getSumPrice()
 {
     float soma = 0.0; // Inicialize a variável soma com 0.0
     for (const AdicionaisOBJ& adicional : listaDeAdicionais) {
@@ -143,7 +144,7 @@ float Adicionais::getSumPrice()
     return soma;
 }
 
-float Adicionais::getSumProfit()
+float AdicionaisDef::getSumProfit()
 {
     float soma = 0.0; // Inicialize a variável soma com 0.0
     for (const AdicionaisOBJ& adicional : listaDeAdicionais) {
@@ -153,9 +154,7 @@ float Adicionais::getSumProfit()
 
 }
 
-
-
-void Adicionais::removerLinha()
+void AdicionaisDef::removerLinha()
 {
     // Obtém a linha selecionada
     int linhaSelecionada = ui->tableWidget->currentRow();
@@ -181,7 +180,7 @@ void Adicionais::removerLinha()
 }
 
 
-void Adicionais::on_pushButtonADDvidro_clicked()
+void AdicionaisDef::on_pushButtonADDvidro_clicked()
 {
     //adicionar vidro
 
@@ -190,7 +189,7 @@ void Adicionais::on_pushButtonADDvidro_clicked()
 
     QString id = aux.geraID();
     float largura = ui->lineEditLargura->text().toFloat();
-    float altura = ui->lineEditAltura->text().toFloat(); 
+    float altura = ui->lineEditAltura->text().toFloat();
     QString vidro = ui->comboBoxVidros->currentText();
     QString metro = QString::number(largura)+ "x" + QString::number(altura) + "m " + vidro;
     QString tipo = "temperado";
@@ -216,7 +215,7 @@ void Adicionais::on_pushButtonADDvidro_clicked()
     mostrarAdicoes();
 }
 
-void Adicionais::on_pushButtonADDaluminios_clicked()
+void AdicionaisDef::on_pushButtonADDaluminios_clicked()
 {
     sqlDataBaseControl BD;
     AdicionaisOBJ aux;
@@ -244,7 +243,7 @@ void Adicionais::on_pushButtonADDaluminios_clicked()
     mostrarAdicoes();
 }
 
-void Adicionais::on_pushButtonADDkit_clicked()
+void AdicionaisDef::on_pushButtonADDkit_clicked()
 {
     sqlDataBaseControl BD;
     AdicionaisOBJ aux;
@@ -271,7 +270,7 @@ void Adicionais::on_pushButtonADDkit_clicked()
 
 }
 
-void Adicionais::on_pushButtonADDfechadura_clicked()
+void AdicionaisDef::on_pushButtonADDfechadura_clicked()
 {
     sqlDataBaseControl BD;
     AdicionaisOBJ aux;
@@ -298,7 +297,7 @@ void Adicionais::on_pushButtonADDfechadura_clicked()
 }
 
 
-void Adicionais::on_pushButtonADDpuxador_clicked()
+void AdicionaisDef::on_pushButtonADDpuxador_clicked()
 {
     sqlDataBaseControl BD;
     AdicionaisOBJ aux;
@@ -325,7 +324,7 @@ void Adicionais::on_pushButtonADDpuxador_clicked()
 }
 
 
-void Adicionais::on_pushButtonADDtrinco_clicked()
+void AdicionaisDef::on_pushButtonADDtrinco_clicked()
 {
     sqlDataBaseControl BD;
     AdicionaisOBJ aux;
@@ -352,26 +351,10 @@ void Adicionais::on_pushButtonADDtrinco_clicked()
 }
 
 
-void Adicionais::on_pushButtonIncluirNoOrcamento_clicked()
+void AdicionaisDef::on_pushButtonIncluirNoOrcamento_clicked()
 {
-    exporAdicionais();
+    valor = ui->label_price->text();
+    lucro = ui->label_profit->text();
+    close();
 }
-void Adicionais::exporAdicionais()
-{
-    QString produtos  ="";
-    float price = 0.0;
-    float profit = 0.0;
 
-    for (const AdicionaisOBJ& adicional : listaDeAdicionais) {
-        produtos += adicional.getName();
-    }
-
-    price = getSumPrice();
-    profit = getSumProfit();
-
-    QString QSprice = QString::number(price);
-    QString QSprofit = QString::number(profit);
-
-    telaSalvar = new DialogSalvar(this,produtos,QSprice,QSprofit);
-    telaSalvar->exec();
-}
