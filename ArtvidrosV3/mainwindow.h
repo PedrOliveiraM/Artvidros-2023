@@ -5,7 +5,7 @@
 #include "dialogareaprecos.h"
 #include "dialogportas.h"
 #include "portadeabrir.h"
-#include "adicionais.h"
+#include "adicionaisref.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -50,7 +50,7 @@ private:
     DialogAreaPrecos *telaAreaPreco;
     Dialogareaorcamentos *telaAreaOrcamento;
     DialogPortas *telaPortas;
-    Adicionais *telaAdicionais;
+    AdicionaisRef *telaAdicionais;
 
 
 

@@ -95,7 +95,8 @@ void MainWindow::on_actionVendas_triggered()
 void MainWindow::on_pushButtonAdicionais_clicked()
 {
     //adicionais
-    telaAdicionais = new Adicionais(this);
+    std::list<AdicionaisOBJ> null;
+    telaAdicionais = new AdicionaisRef(this,null,"Main");
     telaAdicionais->exec();
 
 }

@@ -2,7 +2,7 @@
 #define PORTADEABRIR_H
 #include <adicionais.h>
 #include <QDialog>
-#include <adicionaisdef.h>
+#include <adicionaisref.h>
 #include <dialogsalvar.h>
 
 namespace Ui {
@@ -17,6 +17,7 @@ public:
     explicit PortaDeAbrir(QWidget *parent = nullptr);
     ~PortaDeAbrir();
 
+
 private slots:
     void on_pushButtonCalcular_clicked();
 
@@ -28,9 +29,11 @@ private slots:
 
     void on_pushButtonSalvar_clicked();
 
+    void on_pushButtonRefatorando_clicked();
+
 private:
     Ui::PortaDeAbrir *ui;
-    AdicionaisDef *telaAdicionais;
+    AdicionaisRef *telaAdicionais;
     DialogSalvar *telaSalvar;
 };
 

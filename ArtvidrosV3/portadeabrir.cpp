@@ -44,6 +44,7 @@ PortaDeAbrir::~PortaDeAbrir()
     delete ui;
 }
 
+
 void PortaDeAbrir::on_pushButtonCalcular_clicked()
 {
     //calcular orçamento
@@ -67,11 +68,11 @@ void PortaDeAbrir::on_pushButtonCalcular_clicked()
 
 void PortaDeAbrir::on_pushButtonAdicionais_clicked()
 {
+    std::list<AdicionaisOBJ> listaAenviar;
+    AdicionaisRef telaAdicionais(this,listaAenviar,"PortaDeAbrir");
+    telaAdicionais.exec();
 
-    AdicionaisDef telaAdicionais;
-    int resultado = telaAdicionais.exec();
-
-    QString valorRetornado = telaAdicionais.getValor();
+    QString valorRetornado = telaAdicionais.getPrice();
     QString lucroRetornado = telaAdicionais.getLucro();
 
     atualizarValoresImportados(valorRetornado,lucroRetornado);
@@ -80,6 +81,8 @@ void PortaDeAbrir::on_pushButtonAdicionais_clicked()
 
 void PortaDeAbrir::atualizarValoresImportados(const QString &valor, const QString &lucro)
 {
+
+    on_pushButtonCalcular_clicked();
 
     float price = ui->lineEditValor->text().toFloat();
     float profit = ui->lineEditLucro->text().toFloat();
@@ -115,5 +118,26 @@ void PortaDeAbrir::on_pushButtonSalvar_clicked()
     QString produto = width + " x " + height +" "+ glass +" "+ puller +" "+ kit +" "+ film +" "+ latch;
     telaSalvar = new DialogSalvar(this,produto,price,profit);
     telaSalvar->exec();
+}
+
+
+void PortaDeAbrir::on_pushButtonRefatorando_clicked()
+{
+    AdicionaisOBJ obj("1150","puxador","2","200","100");
+    AdicionaisOBJ obj2("1111","puxador 2","1","50","10");
+    AdicionaisOBJ obj3("1112","puxador 2","1","5","5");
+
+    std::list<AdicionaisOBJ> listaAenviar;
+    listaAenviar.push_front(obj);
+    listaAenviar.push_front(obj2);
+    listaAenviar.push_front(obj3);
+
+    AdicionaisRef telaAdicionais(this,listaAenviar,"PortaDeAbrir");
+    telaAdicionais.exec();
+
+    QString valorRetornado = telaAdicionais.getPrice();
+    QString lucroRetornado = telaAdicionais.getLucro();
+
+    atualizarValoresImportados(valorRetornado,lucroRetornado);
 }
 
