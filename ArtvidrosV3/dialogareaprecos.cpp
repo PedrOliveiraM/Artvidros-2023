@@ -25,7 +25,6 @@ QString DialogAreaPrecos::returnTyperByOrder()
     QString typeOrder = ui->comboBox_OrdenarPor->currentText();
     QString orderColumn;
 
-
     if (typeOrder == "Produto") {
         orderColumn = "name_product";
     } else if (typeOrder == "Valor") {
@@ -135,7 +134,7 @@ void DialogAreaPrecos::on_pushButtonADD_clicked()
 
     telaSQL = new SQLarea(this,"add",numberRow);
     telaSQL->exec();
-    showBD();
+    on_pushButtonOrdem_clicked();
 }
 
 
@@ -155,7 +154,7 @@ void DialogAreaPrecos::on_pushButtonALTER_clicked()
         telaSQL = new SQLarea(this,"alter",row);
         telaSQL->exec();
     }
-    showBD();
+    on_pushButtonOrdem_clicked();
 }
 
 
@@ -175,13 +174,13 @@ void DialogAreaPrecos::on_pushButtonDELETE_clicked()
     else
         QMessageBox::warning(this,"ERRO","O Item selecionado Não foi Deletado");
 
-    showBD();
+    on_pushButtonOrdem_clicked();
 }
 
 
 void DialogAreaPrecos::on_pushButtonOrdem_clicked()
 {
-    ;
+
     QString orderPor = "";
     if (ordenacaoCrescente) {
         // Lógica para ordenação crescente

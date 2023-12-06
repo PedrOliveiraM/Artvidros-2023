@@ -20,7 +20,6 @@ SOURCES += \
     herdavidros.cpp \
     main.cpp \
     mainwindow.cpp \
-    orcamento.cpp \
     portadeabrir.cpp \
     sqlarea.cpp \
     sqldatabasecontrol.cpp
@@ -35,7 +34,6 @@ HEADERS += \
     dialogsalvar.h \
     herdavidros.h \
     mainwindow.h \
-    orcamento.h \
     portadeabrir.h \
     sqlarea.h \
     sqldatabasecontrol.h
