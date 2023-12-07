@@ -12,6 +12,7 @@ CONFIG += c++17
 SOURCES += \
     adicionaisobj.cpp \
     adicionaisref.cpp \
+    classportade2folhas.cpp \
     classportadeabrir.cpp \
     dialogareaorcamentos.cpp \
     dialogareaprecos.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
     herdavidros.cpp \
     main.cpp \
     mainwindow.cpp \
+    portade2folhas.cpp \
     portadeabrir.cpp \
     sqlarea.cpp \
     sqldatabasecontrol.cpp
@@ -27,6 +29,7 @@ SOURCES += \
 HEADERS += \
     adicionaisobj.h \
     adicionaisref.h \
+    classportade2folhas.h \
     classportadeabrir.h \
     dialogareaorcamentos.h \
     dialogareaprecos.h \
@@ -34,6 +37,7 @@ HEADERS += \
     dialogsalvar.h \
     herdavidros.h \
     mainwindow.h \
+    portade2folhas.h \
     portadeabrir.h \
     sqlarea.h \
     sqldatabasecontrol.h
@@ -45,6 +49,7 @@ FORMS += \
     dialogportas.ui \
     dialogsalvar.ui \
     mainwindow.ui \
+    portade2folhas.ui \
     portadeabrir.ui \
     sqlarea.ui
 

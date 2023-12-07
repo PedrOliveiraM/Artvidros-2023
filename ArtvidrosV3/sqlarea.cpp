@@ -8,8 +8,11 @@ SQLarea::SQLarea(QWidget *parent,QString type, QString id) :
     QDialog(parent),
     ui(new Ui::SQLarea)
 {
+
     ui->setupUi(this);
     this->setWindowTitle("ArtVidros");
+    ui->lineEditTipo->setVisible(false);
+    ui->checkBox->setVisible(false);
     setTipo(type);
     qDebug()<<"O type é "<<getTipo();
     qDebug()<<"O tipo de tela é "<<tipo;
@@ -79,6 +82,12 @@ void SQLarea::on_pushButtonAdicionar_clicked()
     QString profit = ui->lineEditProductProfit->text();
     profit = profit.replace(",", ".");
 
+
+    if (ui->checkBox->isChecked()) {
+        // O QCheckBox está marcado
+        type = ui->lineEditTipo->text();
+        qDebug() << "O checkbox está marcado!";
+    }
     sqlDataBaseControl aux;
     if (tipo == "add"){
         if(aux.insertBD(codID,product,price,type,profit))
@@ -125,5 +134,12 @@ void SQLarea::on_pushButtonLimpar_clicked()
 void SQLarea::on_pushButtonVoltar_clicked()
 {
     close();
+}
+
+
+void SQLarea::on_pushButtonExcecao_clicked()
+{
+   ui->lineEditTipo->setVisible(true);
+   ui->checkBox->setVisible(true);
 }
 

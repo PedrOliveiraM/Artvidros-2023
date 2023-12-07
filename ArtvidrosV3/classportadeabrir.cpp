@@ -78,10 +78,11 @@ float ClassPortaDeAbrir::calculatePrice()
 
     qDebug()<<"calcular Price";
     qDebug()<<"metragem"<<metragem();
+    qDebug()<<"vidro"<<(metragem() * Vglass);
     qDebug()<<"puxador"<<Vpuller;
     qDebug()<<"kit"<<Vkit;
-    qDebug()<<"pelicula"<<Vfilm;
     qDebug()<<"trinco"<<Vlatch;
+    qDebug()<<"pelicula"<<Vfilm;
 
     float value = (metragem() * Vglass) + Vpuller + Vkit + Vfilm + Vlatch;
     return value;

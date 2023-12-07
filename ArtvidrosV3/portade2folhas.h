@@ -1,24 +1,27 @@
-#ifndef PORTADEABRIR_H
-#define PORTADEABRIR_H
-#include <adicionais.h>
+#ifndef PORTADE2FOLHAS_H
+#define PORTADE2FOLHAS_H
 #include <QDialog>
+#include <adicionais.h>
 #include <adicionaisref.h>
 #include <dialogsalvar.h>
+#include "qsqlquery.h"
+#include "qsqldatabase.h"
+#include <adicionaisdef.h>
+#include <classportade2folhas.h>
 
 namespace Ui {
-class PortaDeAbrir;
+class PortaDe2Folhas;
 }
 
-class PortaDeAbrir : public QDialog
+class PortaDe2Folhas : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit PortaDeAbrir(QWidget *parent = nullptr);
-    ~PortaDeAbrir();
+    explicit PortaDe2Folhas(QWidget *parent = nullptr);
+    ~PortaDe2Folhas();
 
     std::list<AdicionaisOBJ> listaDeAdicionais;
-
     std::list<AdicionaisOBJ> getListaDeAdicionais() const;
     void setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais);
 
@@ -34,9 +37,9 @@ private slots:
     void on_pushButtonRefatorando_clicked();
 
 private:
-    Ui::PortaDeAbrir *ui;
+    Ui::PortaDe2Folhas *ui;
     AdicionaisRef *telaAdicionais;
     DialogSalvar *telaSalvar;
 };
 
-#endif // PORTADEABRIR_H
+#endif // PORTADE2FOLHAS_H

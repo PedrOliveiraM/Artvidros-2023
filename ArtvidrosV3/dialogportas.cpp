@@ -20,3 +20,10 @@ void DialogPortas::on_pushButtonPortaDeAbrir_clicked()
     portaAbrir->exec();
 }
 
+
+void DialogPortas::on_pushButtonPortaDe2Folhas_clicked()
+{
+    porta2Folhas = new PortaDe2Folhas;
+    porta2Folhas->exec();
+}
+

@@ -1,12 +1,9 @@
-#include "portadeabrir.h"
-#include "qsqlquery.h"
-#include "ui_portadeabrir.h"
-#include <classportadeabrir.h>
-#include "qsqldatabase.h"
-#include <adicionaisdef.h>
-PortaDeAbrir::PortaDeAbrir(QWidget *parent) :
+#include "portade2folhas.h"
+#include "ui_portade2folhas.h"
+
+PortaDe2Folhas::PortaDe2Folhas(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::PortaDeAbrir)
+    ui(new Ui::PortaDe2Folhas)
 {
     ui->setupUi(this);
     ui->lineEditLargura->setInputMask("X.XX");
@@ -14,7 +11,7 @@ PortaDeAbrir::PortaDeAbrir(QWidget *parent) :
     ui->lineEditLucro->setEnabled(false);
     ui->lineEditValor->setEnabled(false);
 
-    QString array[] = {"temperado", "puxador", "kitabrir" , "pelicula" , "trinco"};
+    QString array[] = {"temperado", "puxador","fechadura", "aluminio" , "pelicula" , "trinco" , "rodana" , "tubo"};
     QSqlQuery query;
 
     for (const QString &tipo : array) {
@@ -25,12 +22,18 @@ PortaDeAbrir::PortaDeAbrir(QWidget *parent) :
                     ui->comboBoxVidros->addItem(value);
                 } else if (tipo == "puxador") {
                     ui->comboBoxPuxador->addItem(value);
-                } else if (tipo == "kitabrir") {
-                    ui->comboBoxKit->addItem(value);
+                }else if (tipo == "fechadura") {
+                    ui->comboBoxFechadura->addItem(value);
+                } else if (tipo == "aluminio") {
+                    ui->comboBoxKitAluminio->addItem(value);
                 } else if (tipo == "pelicula") {
                     ui->comboBoxPelicula->addItem(value);
                 } else if (tipo == "trinco") {
                     ui->comboBoxTrinco->addItem(value);
+                } else if (tipo == "rodana") {
+                    ui->comboBoxRodana->addItem(value);
+                }else if (tipo == "tubo") {
+                    ui->comboBoxTubo->addItem(value);
                 }
             }
         } else {
@@ -39,34 +42,38 @@ PortaDeAbrir::PortaDeAbrir(QWidget *parent) :
     }
 }
 
-PortaDeAbrir::~PortaDeAbrir()
+PortaDe2Folhas::~PortaDe2Folhas()
 {
     delete ui;
 }
 
-std::list<AdicionaisOBJ> PortaDeAbrir::getListaDeAdicionais() const
+
+
+std::list<AdicionaisOBJ> PortaDe2Folhas::getListaDeAdicionais() const
 {
     return listaDeAdicionais;
 }
 
-void PortaDeAbrir::setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais)
+void PortaDe2Folhas::setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais)
 {
     listaDeAdicionais = newListaDeAdicionais;
 }
 
 
-void PortaDeAbrir::on_pushButtonCalcular_clicked()
+void PortaDe2Folhas::on_pushButtonCalcular_clicked()
 {
     //calcular orçamento
     float width = ui->lineEditLargura->text().toFloat();
     float height = ui->lineEditAltura->text().toFloat();
     QString glass = ui->comboBoxVidros->currentText();
     QString puller = ui->comboBoxPuxador->currentText();
-    QString kit = ui->comboBoxKit->currentText();
+    QString kitAluminio = ui->comboBoxKitAluminio->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
+    QString tubo = ui->comboBoxTubo->currentText();
+    QString rodana = ui->comboBoxRodana->currentText();
 
-    ClassPortaDeAbrir door(width,height,glass,puller,kit,film,latch);
+    ClassPortaDe2Folhas door(width,height,glass,puller,kitAluminio,film,latch,rodana,tubo);
 
     QString price = QString::number(door.calculatePrice());
     QString profit = QString::number(door.calculateProfit());
@@ -77,7 +84,7 @@ void PortaDeAbrir::on_pushButtonCalcular_clicked()
 
 
 
-void PortaDeAbrir::atualizarValoresImportados(const QString &valor, const QString &lucro)
+void PortaDe2Folhas::atualizarValoresImportados(const QString &valor, const QString &lucro)
 {
 
     on_pushButtonCalcular_clicked();
@@ -93,35 +100,35 @@ void PortaDeAbrir::atualizarValoresImportados(const QString &valor, const QStrin
 }
 
 
-void PortaDeAbrir::on_pushButtonLimpar_clicked()
+void PortaDe2Folhas::on_pushButtonLimpar_clicked()
 {
     ui->lineEditLucro->clear();
     ui->lineEditValor->clear();
 }
 
 
-void PortaDeAbrir::on_pushButtonSalvar_clicked()
+void PortaDe2Folhas::on_pushButtonSalvar_clicked()
 {
     QString width = ui->lineEditLargura->text();
     QString height = ui->lineEditAltura->text();
     QString glass = ui->comboBoxVidros->currentText();
     QString puller = ui->comboBoxPuxador->currentText();
-    QString kit = ui->comboBoxKit->currentText();
+    QString kitAluminio = ui->comboBoxKitAluminio->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
 
     QString price = ui->lineEditValor->text();
     QString profit = ui->lineEditLucro->text();
 
-    QString produto = width + " x " + height +" "+ glass +" "+ puller +" "+ kit +" "+ film +" "+ latch;
+    QString produto = width + " x " + height +" "+ glass +" "+ puller +" "+ kitAluminio +" "+ film +" "+ latch;
     telaSalvar = new DialogSalvar(this,produto,price,profit);
     telaSalvar->exec();
 }
 
 
-void PortaDeAbrir::on_pushButtonRefatorando_clicked()
+void PortaDe2Folhas::on_pushButtonRefatorando_clicked()
 {
-    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"PortaDeAbrir");
+    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"PortaDe2Folhas");
     telaAdicionais.exec();
 
     QString valorRetornado = telaAdicionais.getPrice();
@@ -130,4 +137,3 @@ void PortaDeAbrir::on_pushButtonRefatorando_clicked()
     listaDeAdicionais = telaAdicionais.getListaDeAdicionais();
     atualizarValoresImportados(valorRetornado,lucroRetornado);
 }
-

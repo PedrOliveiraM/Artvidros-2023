@@ -27,6 +27,8 @@ private slots:
 
     void on_pushButtonVoltar_clicked();
 
+    void on_pushButtonExcecao_clicked();
+
 private:
     Ui::SQLarea *ui;
 };

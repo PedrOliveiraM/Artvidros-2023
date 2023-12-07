@@ -1,6 +1,6 @@
 #ifndef DIALOGPORTAS_H
 #define DIALOGPORTAS_H
-
+#include <portade2folhas.h>
 #include "portadeabrir.h"
 #include <QDialog>
 
@@ -19,9 +19,12 @@ public:
 private slots:
     void on_pushButtonPortaDeAbrir_clicked();
 
+    void on_pushButtonPortaDe2Folhas_clicked();
+
 private:
     Ui::DialogPortas *ui;
     PortaDeAbrir *portaAbrir;
+    PortaDe2Folhas *porta2Folhas;
 };
 
 #endif // DIALOGPORTAS_H

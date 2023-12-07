@@ -3,7 +3,6 @@
 #include <sqldatabasecontrol.h>
 #include <herdavidros.h>
 #include <QSqlQuery>
-#include <orcamento.h>
 #include <qdebug.h>
 class ClassPortaDeAbrir : public herdaVidros
 {

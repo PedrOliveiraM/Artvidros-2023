@@ -188,7 +188,7 @@ void AdicionaisRef::mostrarAdicoes()
     }
 
     QStringList rotulo = {"Código", "Produto", "Quant", "Valor", "Lucro", ""};
-                         ui->tableWidget->setColumnWidth(0, 70);  // Coluna 0
+    ui->tableWidget->setColumnWidth(0, 70);  // Coluna 0
     ui->tableWidget->setColumnWidth(1, 170);  // Coluna 1
     ui->tableWidget->setColumnWidth(2, 95);   // Coluna 2
     ui->tableWidget->setColumnWidth(3, 100);  // Coluna 3
