@@ -80,7 +80,7 @@ void DialogAreaPrecos::mostrarDadosOrdeandos(QString typeOrder , QString order)
        }
    }
    QStringList rotulo = {"Código","Produto","Valor","Tipo","Lucro"};
-                        ui->tableWidget->verticalHeader()->setVisible(false);
+   ui->tableWidget->verticalHeader()->setVisible(false);
    ui->tableWidget->setHorizontalHeaderLabels(rotulo);
    ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
    ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);

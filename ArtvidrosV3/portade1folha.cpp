@@ -1,9 +1,9 @@
-#include "portade2folhas.h"
-#include "ui_portade2folhas.h"
+#include "portade1folha.h"
+#include "ui_portade1folha.h"
 
-PortaDe2Folhas::PortaDe2Folhas(QWidget *parent) :
+PortaDe1Folha::PortaDe1Folha(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::PortaDe2Folhas)
+    ui(new Ui::PortaDe1Folha)
 {
     ui->setupUi(this);
     ui->lineEditLargura->setInputMask("X.XX");
@@ -40,25 +40,22 @@ PortaDe2Folhas::PortaDe2Folhas(QWidget *parent) :
     }
 }
 
-PortaDe2Folhas::~PortaDe2Folhas()
+PortaDe1Folha::~PortaDe1Folha()
 {
     delete ui;
 }
 
-
-
-std::list<AdicionaisOBJ> PortaDe2Folhas::getListaDeAdicionais() const
+std::list<AdicionaisOBJ> PortaDe1Folha::getListaDeAdicionais() const
 {
     return listaDeAdicionais;
 }
 
-void PortaDe2Folhas::setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais)
+void PortaDe1Folha::setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais)
 {
     listaDeAdicionais = newListaDeAdicionais;
 }
 
-
-void PortaDe2Folhas::on_pushButtonCalcular_clicked()
+void PortaDe1Folha::on_pushButtonCalcular_clicked()
 {
     //calcular orçamento
     float width = ui->lineEditLargura->text().toFloat();
@@ -71,7 +68,7 @@ void PortaDe2Folhas::on_pushButtonCalcular_clicked()
     QString latch = ui->comboBoxTrinco->currentText();
     QString rodana = ui->comboBoxRodana->currentText();
 
-    ClassPortaDe2Folhas door(width,height,glass,puller,fechadura,kitAluminio,film,latch,rodana);
+    ClassPortaDe1Folha door(width,height,glass,puller,fechadura,kitAluminio,film,latch,rodana);
     sqlDataBaseControl aux;
 
     QString price = QString::number(door.calculatePrice());
@@ -81,11 +78,8 @@ void PortaDe2Folhas::on_pushButtonCalcular_clicked()
     ui->lineEditLucro->setText(profit);
 }
 
-
-
-void PortaDe2Folhas::atualizarValoresImportados(const QString &valor, const QString &lucro)
+void PortaDe1Folha::atualizarValoresImportados(const QString &valor, const QString &lucro)
 {
-
     on_pushButtonCalcular_clicked();
 
     float price = ui->lineEditValor->text().toFloat();
@@ -98,15 +92,13 @@ void PortaDe2Folhas::atualizarValoresImportados(const QString &valor, const QStr
     ui->lineEditLucro->setText(QString::number(profit));
 }
 
-
-void PortaDe2Folhas::on_pushButtonLimpar_clicked()
+void PortaDe1Folha::on_pushButtonLimpar_clicked()
 {
     ui->lineEditLucro->clear();
     ui->lineEditValor->clear();
 }
 
-
-void PortaDe2Folhas::on_pushButtonSalvar_clicked()
+void PortaDe1Folha::on_pushButtonSalvar_clicked()
 {
     QString width = ui->lineEditLargura->text();
     QString height = ui->lineEditAltura->text();
@@ -124,8 +116,7 @@ void PortaDe2Folhas::on_pushButtonSalvar_clicked()
     telaSalvar->exec();
 }
 
-
-void PortaDe2Folhas::on_pushButtonRefatorando_clicked()
+void PortaDe1Folha::on_pushButtonRefatorando_clicked()
 {
     AdicionaisRef telaAdicionais(this,listaDeAdicionais,"PortaDe2Folhas");
     telaAdicionais.exec();

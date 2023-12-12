@@ -1,10 +1,11 @@
-#ifndef CLASSPORTADE2FOLHAS_H
-#define CLASSPORTADE2FOLHAS_H
+#ifndef CLASSPORTADE1FOLHA_H
+#define CLASSPORTADE1FOLHA_H
 #include <sqldatabasecontrol.h>
 #include <herdavidros.h>
 #include <QSqlQuery>
 #include <qdebug.h>
-class ClassPortaDe2Folhas : public herdaVidros
+
+class ClassPortaDe1Folha : public herdaVidros
 {
 private:
     QString fechadura;
@@ -13,8 +14,8 @@ private:
     QString latch;
     QString rodanas;
 public:
-    ClassPortaDe2Folhas();
-    ClassPortaDe2Folhas(float width, float height, const QString &glass, const QString &puller,const QString &fechadura,
+    ClassPortaDe1Folha();
+    ClassPortaDe1Folha(float width, float height, const QString &glass, const QString &puller,const QString &fechadura,
                         const QString &kitAluminio, const QString &film, const QString &latch, const QString &rodanas);
 
     float metragem();
@@ -23,4 +24,4 @@ public:
 
 };
 
-#endif // CLASSPORTADE2FOLHAS_H
+#endif // CLASSPORTADE1FOLHA_H

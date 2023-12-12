@@ -8,6 +8,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->setWindowTitle("ArtVidros");
     ui->statusbar->showMessage("Versão 4.0 10/2023");
+
+
+
 }
 
 MainWindow::~MainWindow()

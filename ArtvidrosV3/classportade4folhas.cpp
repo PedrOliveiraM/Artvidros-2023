@@ -1,51 +1,59 @@
-#include "classportade2folhas.h"
+#include "classportade4folhas.h"
 
-ClassPortaDe2Folhas::ClassPortaDe2Folhas()
+ClassPortaDe4Folhas::ClassPortaDe4Folhas()
 {
 
 }
-ClassPortaDe2Folhas::ClassPortaDe2Folhas(float width, float height, const QString &glass, const QString &puller,const QString &fechadura,
-    const QString &kitAluminio, const QString &film, const QString &latch, const QString &rodanas)
+ClassPortaDe4Folhas::ClassPortaDe4Folhas(float width, float height, const QString &glass, const QString &puller,const QString &fechadura,
+                                         const QString &kitAluminio, const QString &film, const QString &latch, const QString &rodanas)
     : herdaVidros(width, height, glass, puller),fechadura(fechadura), kitAluminio(kitAluminio), film(film), latch(latch), rodanas(rodanas)
 {
 
 }
-
-
-float ClassPortaDe2Folhas::metragem()
+float ClassPortaDe4Folhas::metragem()
 {
     float largura = getWidth();
     float altura = getHeight();
 
     // Calcula as larguras e a altura em centímetros
-    int larg = static_cast<int>(largura * 100 / 2);
-    int larg2 = static_cast<int>(largura * 100 / 2 + 5);
+    int larg1 = static_cast<int>(largura * 100 / 4);
+    int larg2 = static_cast<int>(largura * 100 / 4);
+    int larg3 = static_cast<int>(largura * 100 / 4 + 5);  // Adiciona 5 a uma das partes
+    int larg4 = static_cast<int>(largura * 100 / 4 + 5);  // Adiciona 5 a outra parte
     int altu = static_cast<int>(altura * 100);
 
     // Ajusta para múltiplo de 5
-    while (larg % 5 != 0) {
-        larg += 1;
+    while (larg1 % 5 != 0) {
+        larg1 += 1;
     }
     while (larg2 % 5 != 0) {
         larg2 += 1;
+    }
+    while (larg3 % 5 != 0) {
+        larg3 += 1;
+    }
+    while (larg4 % 5 != 0) {
+        larg4 += 1;
     }
     while (altu % 5 != 0) {
         altu += 1;
     }
 
     // Converte para metros
-    float x = larg / 100.0;
+    float x1 = larg1 / 100.0;
     float x2 = larg2 / 100.0;
+    float x3 = larg3 / 100.0;
+    float x4 = larg4 / 100.0;
     float y = altu / 100.0;
 
-
-    double metrageVidro = x * y + x2 * y;
+    double metrageVidro = x1 * y + x2 * y + x3 * y + x4 * y;
 
     return metrageVidro;
 
+
 }
 
-float ClassPortaDe2Folhas::calculatePrice()
+float ClassPortaDe4Folhas::calculatePrice()
 {
 
     sqlDataBaseControl aux;
@@ -72,7 +80,7 @@ float ClassPortaDe2Folhas::calculatePrice()
     return value;
 }
 
-float ClassPortaDe2Folhas::calculateProfit()
+float ClassPortaDe4Folhas::calculateProfit()
 {
     sqlDataBaseControl aux;
     float Vglass = aux.buscarNoBDprofit(glass , "temperado");

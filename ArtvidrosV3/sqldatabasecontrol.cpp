@@ -7,9 +7,12 @@ sqlDataBaseControl::sqlDataBaseControl()
 bool sqlDataBaseControl::insertBD(QString codID, QString product, QString price, QString type, QString profit)
 {
     QSqlQuery query;
-    if (query.exec("INSERT INTO product (cod_product, name_product, value, type, profit)VALUES ('"+codID+"', '"+product+"', '"+price+"', '"+type+"', '"+profit+"')")) {
+
+    if (query.exec("INSERT INTO product (cod_product, name_product, value, type, profit) VALUES ('" + codID + "', '" + product + "', '" + price + "', '" + type + "', '" + profit + "')")) {
+        qDebug() << "Query executada com sucesso!";
         return true;
-    }else {
+    } else {
+        qDebug() << "Erro ao executar a query:" << query.lastQuery();
         return false;
     }
     return 0;
@@ -84,6 +87,7 @@ float sqlDataBaseControl::buscarNoBDprice(QString name, QString type)
         }
     }else {
         qDebug()<<"erro ao consultar valor de '"+name+ "'";
+        return 0;
     }
     return 0;
 }
@@ -96,6 +100,7 @@ float sqlDataBaseControl::buscarNoBDprofit(QString name, QString type)
         }
     }else {
         qDebug()<<"erro ao consultar lucro de '"+name+ "'";
+        return 0;
     }
     return 0;
 }

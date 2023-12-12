@@ -80,7 +80,6 @@ void AdicionaisRef::setTipoTela(const QString &newTipoTela)
 }
 
 
-
 std::list<AdicionaisOBJ> AdicionaisRef::getListaDeAdicionais() const
 {
     return listaDeAdicionais;

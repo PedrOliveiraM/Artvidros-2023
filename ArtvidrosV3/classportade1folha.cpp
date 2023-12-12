@@ -1,33 +1,28 @@
-#include "classportade2folhas.h"
+#include "classportade1folha.h"
 
-ClassPortaDe2Folhas::ClassPortaDe2Folhas()
+ClassPortaDe1Folha::ClassPortaDe1Folha()
 {
 
 }
-ClassPortaDe2Folhas::ClassPortaDe2Folhas(float width, float height, const QString &glass, const QString &puller,const QString &fechadura,
-    const QString &kitAluminio, const QString &film, const QString &latch, const QString &rodanas)
+ClassPortaDe1Folha::ClassPortaDe1Folha(float width, float height, const QString &glass, const QString &puller,const QString &fechadura,
+                                         const QString &kitAluminio, const QString &film, const QString &latch, const QString &rodanas)
     : herdaVidros(width, height, glass, puller),fechadura(fechadura), kitAluminio(kitAluminio), film(film), latch(latch), rodanas(rodanas)
 {
 
 }
 
-
-float ClassPortaDe2Folhas::metragem()
+float ClassPortaDe1Folha::metragem()
 {
     float largura = getWidth();
     float altura = getHeight();
 
     // Calcula as larguras e a altura em centímetros
-    int larg = static_cast<int>(largura * 100 / 2);
-    int larg2 = static_cast<int>(largura * 100 / 2 + 5);
+    int larg = static_cast<int>(largura * 100);
     int altu = static_cast<int>(altura * 100);
 
     // Ajusta para múltiplo de 5
     while (larg % 5 != 0) {
         larg += 1;
-    }
-    while (larg2 % 5 != 0) {
-        larg2 += 1;
     }
     while (altu % 5 != 0) {
         altu += 1;
@@ -35,19 +30,16 @@ float ClassPortaDe2Folhas::metragem()
 
     // Converte para metros
     float x = larg / 100.0;
-    float x2 = larg2 / 100.0;
     float y = altu / 100.0;
 
-
-    double metrageVidro = x * y + x2 * y;
+    double metrageVidro = x * y;
 
     return metrageVidro;
 
 }
 
-float ClassPortaDe2Folhas::calculatePrice()
+float ClassPortaDe1Folha::calculatePrice()
 {
-
     sqlDataBaseControl aux;
     float Vglass = aux.buscarNoBDprice(glass , "temperado");
     float Vfechadura = aux.buscarNoBDprice(fechadura , "fechadura");
@@ -72,7 +64,7 @@ float ClassPortaDe2Folhas::calculatePrice()
     return value;
 }
 
-float ClassPortaDe2Folhas::calculateProfit()
+float ClassPortaDe1Folha::calculateProfit()
 {
     sqlDataBaseControl aux;
     float Vglass = aux.buscarNoBDprofit(glass , "temperado");
@@ -96,6 +88,3 @@ float ClassPortaDe2Folhas::calculateProfit()
     return value;
 
 }
-
-
-

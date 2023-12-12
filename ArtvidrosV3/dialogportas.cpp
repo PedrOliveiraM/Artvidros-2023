@@ -27,3 +27,17 @@ void DialogPortas::on_pushButtonPortaDe2Folhas_clicked()
     porta2Folhas->exec();
 }
 
+
+void DialogPortas::on_pushButtonPortaDeCorrer_clicked()
+{
+    porta1Folha = new PortaDe1Folha;
+    porta1Folha->exec();
+}
+
+
+void DialogPortas::on_pushButtonPortaDe4Folhas_clicked()
+{
+    //porta4Folhas = new PortaDe4Folhas;
+    //porta4Folhas->exec();
+}
+
