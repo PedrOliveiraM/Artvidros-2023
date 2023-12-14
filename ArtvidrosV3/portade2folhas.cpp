@@ -136,3 +136,23 @@ void PortaDe2Folhas::on_pushButtonRefatorando_clicked()
     listaDeAdicionais = telaAdicionais.getListaDeAdicionais();
     atualizarValoresImportados(valorRetornado,lucroRetornado);
 }
+
+void PortaDe2Folhas::on_pushButtonDesconto_clicked()
+{
+    bool ok;
+    double percentualDesconto = QInputDialog::getDouble(this, tr("Desconto"), tr("Digite a porcentagem de desconto:"), 0, 0, 100, 2, &ok);
+
+    if (ok) {
+        float valorAtual = ui->lineEditValor->text().toFloat();
+        float lucroAtual = ui->lineEditLucro->text().toFloat();
+
+        // Calcule os novos valores após o desconto
+        float novoValor = valorAtual * (1.0 - percentualDesconto / 100.0);
+        float novoLucro = lucroAtual * (1.0 - percentualDesconto / 100.0);
+
+        // Atualize as caixas de texto
+        ui->lineEditValor->setText(QString::number(novoValor));
+        ui->lineEditLucro->setText(QString::number(novoLucro));
+    }
+}
+

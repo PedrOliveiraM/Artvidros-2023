@@ -4,11 +4,10 @@
 #include <adicionais.h>
 #include <adicionaisref.h>
 #include <dialogsalvar.h>
-#include "qsqlquery.h"
-#include "qsqldatabase.h"
 #include <adicionaisdef.h>
 #include <classportade4folhas.h>
-
+#include <QMessageBox>
+#include <QInputDialog>
 namespace Ui {
 class PortaDe4Folhas;
 }
@@ -22,6 +21,8 @@ public:
     ~PortaDe4Folhas();
 
     std::list<AdicionaisOBJ> listaDeAdicionais;
+
+
     std::list<AdicionaisOBJ> getListaDeAdicionais() const;
     void setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais);
 
@@ -30,9 +31,11 @@ private slots:
 
     void atualizarValoresImportados(const QString& valor, const QString& lucro);
 
-    void on_pushButtonLimpar_clicked();
+    void on_pushButtonDesconto_clicked();
 
     void on_pushButtonSalvar_clicked();
+
+    void on_pushButtonLimpar_clicked();
 
     void on_pushButtonRefatorando_clicked();
 

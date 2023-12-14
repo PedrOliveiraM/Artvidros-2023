@@ -4,10 +4,10 @@
 #include <adicionais.h>
 #include <adicionaisref.h>
 #include <dialogsalvar.h>
-#include "qsqlquery.h"
-#include "qsqldatabase.h"
 #include <adicionaisdef.h>
 #include <classportade2folhas.h>
+#include <QMessageBox>
+#include <QInputDialog>
 
 namespace Ui {
 class PortaDe2Folhas;
@@ -35,6 +35,8 @@ private slots:
     void on_pushButtonSalvar_clicked();
 
     void on_pushButtonRefatorando_clicked();
+
+    void on_pushButtonDesconto_clicked();
 
 private:
     Ui::PortaDe2Folhas *ui;

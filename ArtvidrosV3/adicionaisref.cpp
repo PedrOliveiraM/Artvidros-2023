@@ -259,8 +259,15 @@ void AdicionaisRef::on_pushButtonADDaluminios_clicked()
     // buscar no bd
     float price = BD.buscarNoBDprice(nome,tipo); // vai buscar
     float profit = BD.buscarNoBDprofit(nome,tipo);// vai buscar
+    qDebug() << "Preco: "<<price;
+    qDebug() << "Profit: "<<price;
+    qDebug() << "Comprimento: "<<aux.comprimento(comprimento);
+
     price = (quant * (aux.comprimento(comprimento) * price));
     profit = (quant * (aux.comprimento(comprimento) * profit));
+
+    qDebug() << "Preco + comp: "<<price;
+    qDebug() << "Profit + comp: "<<price;
 
     QString QSprice = QString::number(price);
     QString QSprofit = QString::number(profit);

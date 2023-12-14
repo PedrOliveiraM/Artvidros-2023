@@ -13,57 +13,11 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="layoutWidget_5">
-   <property name="geometry">
-    <rect>
-     <x>680</x>
-     <y>320</y>
-     <width>181</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_4">
-    <item>
-     <widget class="QLabel" name="label_2">
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Puxador&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBoxPuxador">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-      </item>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QWidget" name="layoutWidget_4">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>320</y>
+     <x>60</x>
+     <y>260</y>
      <width>131</width>
      <height>71</height>
     </rect>
@@ -100,11 +54,91 @@
     </item>
    </layout>
   </widget>
+  <widget class="QWidget" name="layoutWidget_8">
+   <property name="geometry">
+    <rect>
+     <x>850</x>
+     <y>260</y>
+     <width>211</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;Fechadura&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBoxFechadura">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_9">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>350</y>
+     <width>211</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_7">
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;Trinco&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBoxTrinco">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QWidget" name="layoutWidget_6">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>320</y>
+     <x>200</x>
+     <y>260</y>
      <width>131</width>
      <height>71</height>
     </rect>
@@ -144,8 +178,8 @@
   <widget class="QPushButton" name="pushButtonRefatorando">
    <property name="geometry">
     <rect>
-     <x>930</x>
-     <y>440</y>
+     <x>910</x>
+     <y>380</y>
      <width>211</width>
      <height>41</height>
     </rect>
@@ -170,48 +204,45 @@
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButtonDesconto">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>780</x>
-     <y>520</y>
-     <width>51</width>
-     <height>41</height>
+     <x>270</x>
+     <y>10</y>
+     <width>821</width>
+     <height>161</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Matura MT Script Capitals</family>
+     <pointsize>72</pointsize>
+     <bold>false</bold>
+    </font>
+   </property>
    <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset resource="files.qrc">
-     <normaloff>:/imagens/desconto.png</normaloff>:/imagens/desconto.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>24</width>
-     <height>24</height>
-    </size>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Porta de 4 Folhas&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget_8">
+  <widget class="QWidget" name="layoutWidget_11">
    <property name="geometry">
     <rect>
-     <x>870</x>
-     <y>320</y>
+     <x>1070</x>
+     <y>260</y>
      <width>211</width>
      <height>71</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_5">
+   <layout class="QVBoxLayout" name="verticalLayout_10">
     <item>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="label_9">
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;Fechadura&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;Kit Alumínio&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QComboBox" name="comboBoxFechadura">
+     <widget class="QComboBox" name="comboBoxKitAluminio">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -233,11 +264,78 @@
     </item>
    </layout>
   </widget>
+  <widget class="QWidget" name="layoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>560</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_6">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;LUCRO&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEditLucro">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButtonCalcular">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>460</y>
+     <width>281</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>CALCULAR</string>
+   </property>
+  </widget>
   <widget class="QWidget" name="layoutWidget_12">
    <property name="geometry">
     <rect>
-     <x>710</x>
-     <y>410</y>
+     <x>690</x>
+     <y>350</y>
      <width>211</width>
      <height>71</height>
     </rect>
@@ -276,8 +374,8 @@
   <widget class="QPushButton" name="pushButtonLimpar">
    <property name="geometry">
     <rect>
-     <x>780</x>
-     <y>620</y>
+     <x>760</x>
+     <y>560</y>
      <width>51</width>
      <height>41</height>
     </rect>
@@ -299,8 +397,8 @@
   <widget class="QWidget" name="layoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>570</y>
+     <x>510</x>
+     <y>510</y>
      <width>221</width>
      <height>41</height>
     </rect>
@@ -331,153 +429,11 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget_11">
-   <property name="geometry">
-    <rect>
-     <x>1090</x>
-     <y>320</y>
-     <width>211</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_10">
-    <item>
-     <widget class="QLabel" name="label_9">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;Kit Alumínio&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBoxKitAluminio">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-      </item>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_9">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>410</y>
-     <width>211</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_7">
-    <item>
-     <widget class="QLabel" name="label_5">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;Trinco&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBoxTrinco">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-      </item>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>290</x>
-     <y>70</y>
-     <width>821</width>
-     <height>161</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Matura MT Script Capitals</family>
-     <pointsize>72</pointsize>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Porta de 4 Folhas&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>620</y>
-     <width>221</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_6">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;LUCRO&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEditLucro">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="whatsThis">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>320</y>
+     <x>340</x>
+     <y>260</y>
      <width>311</width>
      <height>71</height>
     </rect>
@@ -519,59 +475,57 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButtonSalvar">
+  <widget class="QWidget" name="layoutWidget_5">
    <property name="geometry">
     <rect>
-     <x>780</x>
-     <y>570</y>
-     <width>51</width>
-     <height>41</height>
+     <x>660</x>
+     <y>260</y>
+     <width>181</width>
+     <height>71</height>
     </rect>
    </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset resource="files.qrc">
-     <normaloff>:/imagens/salvar.png</normaloff>:/imagens/salvar.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>24</width>
-     <height>24</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonCalcular">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>520</y>
-     <width>281</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>CALCULAR</string>
-   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Puxador&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBoxPuxador">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QWidget" name="layoutWidget_7">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>410</y>
+     <x>250</x>
+     <y>350</y>
      <width>211</width>
      <height>71</height>
     </rect>
@@ -607,7 +561,71 @@
     </item>
    </layout>
   </widget>
+  <widget class="QPushButton" name="pushButtonDesconto">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>460</y>
+     <width>51</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="files.qrc">
+     <normaloff>:/imagens/desconto.png</normaloff>:/imagens/desconto.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonSalvar">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>510</y>
+     <width>51</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="files.qrc">
+     <normaloff>:/imagens/salvar.png</normaloff>:/imagens/salvar.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+  </widget>
  </widget>
+ <tabstops>
+  <tabstop>lineEditLargura</tabstop>
+  <tabstop>lineEditAltura</tabstop>
+  <tabstop>comboBoxVidros</tabstop>
+  <tabstop>comboBoxPuxador</tabstop>
+  <tabstop>comboBoxFechadura</tabstop>
+  <tabstop>comboBoxKitAluminio</tabstop>
+  <tabstop>comboBoxPelicula</tabstop>
+  <tabstop>comboBoxTrinco</tabstop>
+  <tabstop>comboBoxRodana</tabstop>
+  <tabstop>pushButtonRefatorando</tabstop>
+  <tabstop>pushButtonCalcular</tabstop>
+  <tabstop>pushButtonDesconto</tabstop>
+  <tabstop>pushButtonSalvar</tabstop>
+  <tabstop>pushButtonLimpar</tabstop>
+  <tabstop>lineEditValor</tabstop>
+  <tabstop>lineEditLucro</tabstop>
+ </tabstops>
  <resources>
   <include location="files.qrc"/>
  </resources>

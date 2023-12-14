@@ -59,13 +59,13 @@ float ClassPortaDe4Folhas::calculatePrice()
     sqlDataBaseControl aux;
     float Vglass = aux.buscarNoBDprice(glass , "temperado");
     float Vfechadura = aux.buscarNoBDprice(fechadura , "fechadura");
-    float Vpuller = aux.buscarNoBDprice(puller , "puxador");
-    float VkitAluminio = aux.buscarNoBDprice(kitAluminio , "aluminio");
+    float Vpuller = aux.buscarNoBDprice(puller , "puxador") * 2 ;
+    float VkitAluminio = aux.buscarNoBDprice(kitAluminio , "aluminio") * (width + 0.10);
     float Vfilm = aux.buscarNoBDprice(film , "pelicula") * metragem();
-    float Vlatch = aux.buscarNoBDprice(latch , "trinco");
-    float Vrodanas = aux.buscarNoBDprice(rodanas , "rodana") * 2;
+    float Vlatch = aux.buscarNoBDprice(latch , "trinco") * 2;
+    float Vrodanas = aux.buscarNoBDprice(rodanas , "rodana") * 4;
 
-    qDebug()<<"calcular PRICE";
+    qDebug()<<"**** calcular PRICE ****";
     qDebug()<<"metragem"<<metragem();
     qDebug()<<"vidro"<<(metragem() * Vglass);
     qDebug()<<"fechadura"<<Vfechadura;
@@ -84,13 +84,14 @@ float ClassPortaDe4Folhas::calculateProfit()
 {
     sqlDataBaseControl aux;
     float Vglass = aux.buscarNoBDprofit(glass , "temperado");
-    float Vpuller = aux.buscarNoBDprofit(puller , "puxador");
+    float Vpuller = aux.buscarNoBDprofit(puller , "puxador") * 2;
     float Vfechadura = aux.buscarNoBDprofit(fechadura , "fechadura");
-    float VkitAluminio = aux.buscarNoBDprofit(kitAluminio , "aluminio");
+    float VkitAluminio = aux.buscarNoBDprofit(kitAluminio , "aluminio") * (width + 0.10);
     float Vfilm = aux.buscarNoBDprofit(film , "pelicula") * metragem();
-    float Vlatch = aux.buscarNoBDprofit(latch , "trinco");
-    float Vrodanas = aux.buscarNoBDprofit(rodanas , "rodana") * 2;
+    float Vlatch = aux.buscarNoBDprofit(latch , "trinco") *2;
+    float Vrodanas = aux.buscarNoBDprofit(rodanas , "rodana") * 4;
 
+    qDebug()<<"**** calcular PROFIT ****";
     qDebug()<<"metragem"<<metragem();
     qDebug()<<"vidro"<<(metragem() * Vglass);
     qDebug()<<"fechadura"<<Vfechadura;

@@ -89,12 +89,17 @@ void SQLarea::on_pushButtonAdicionar_clicked()
         qDebug() << "O checkbox está marcado!";
     }
     sqlDataBaseControl aux;
+    qDebug()<<"cod: "<<codID;
+    qDebug()<<"product: " <<product;
+    qDebug()<<"price: " <<price;
+    qDebug()<<"type: " <<type;
+    qDebug()<<"profit: " <<profit;
+
     if (tipo == "add"){
         if(aux.insertBD(codID,product,price,type,profit))
             QMessageBox::about(this,"","O Item foi Inserido");
         else
             QMessageBox::warning(this,"ERRO","O Item Não foi Inserido");
-
     }else{
         if(aux.toAlterBD(codID,product,price,type,profit))
             QMessageBox::about(this,"","O Item selecionado foi Alterado");

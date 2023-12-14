@@ -4,7 +4,8 @@
 #include <QDialog>
 #include <adicionaisref.h>
 #include <dialogsalvar.h>
-
+#include <QMessageBox>
+#include <QInputDialog>
 namespace Ui {
 class PortaDeAbrir;
 }
@@ -32,6 +33,8 @@ private slots:
     void on_pushButtonSalvar_clicked();
 
     void on_pushButtonRefatorando_clicked();
+
+    void on_pushButtonDesconto_clicked();
 
 private:
     Ui::PortaDeAbrir *ui;

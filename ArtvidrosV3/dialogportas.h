@@ -1,8 +1,9 @@
 #ifndef DIALOGPORTAS_H
 #define DIALOGPORTAS_H
 #include <portade2folhas.h>
-#include "portade1folha.h"
-#include "portadeabrir.h"
+#include <portade4folhas.h>
+#include <portade1folha.h>
+#include <portadeabrir.h>
 #include <QDialog>
 
 namespace Ui {
@@ -31,7 +32,7 @@ private:
     PortaDeAbrir *portaAbrir;
     PortaDe1Folha *porta1Folha;
     PortaDe2Folhas *porta2Folhas;
-    //PortaDe4Folhas *porta4Folhas;
+    PortaDe4Folhas *porta4Folhas;
 
 
 };

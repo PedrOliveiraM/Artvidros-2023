@@ -4,11 +4,10 @@
 #include <adicionais.h>
 #include <adicionaisref.h>
 #include <dialogsalvar.h>
-#include "qsqlquery.h"
-#include "qsqldatabase.h"
 #include <adicionaisdef.h>
 #include <classportade1folha.h>
-
+#include <QMessageBox>
+#include <QInputDialog>
 #include <QDialog>
 
 namespace Ui {
@@ -37,6 +36,8 @@ private slots:
     void on_pushButtonSalvar_clicked();
 
     void on_pushButtonRefatorando_clicked();
+
+    void on_pushButtonDesconto_clicked();
 
 private:
     Ui::PortaDe1Folha *ui;

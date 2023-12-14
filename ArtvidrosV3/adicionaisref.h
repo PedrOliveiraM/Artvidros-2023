@@ -1,8 +1,5 @@
 #ifndef ADICIONAISREF_H
 #define ADICIONAISREF_H
-#include "adicionais.h"
-#include "ui_adicionais.h"
-#include "qsqldatabase.h"
 #include <QSqlQuery>
 #include <QString>
 #include <adicionaisobj.h>

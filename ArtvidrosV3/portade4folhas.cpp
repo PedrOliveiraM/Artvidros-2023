@@ -6,7 +6,6 @@ PortaDe4Folhas::PortaDe4Folhas(QWidget *parent) :
     ui(new Ui::PortaDe4Folhas)
 {
     ui->setupUi(this);
-    ui->setupUi(this);
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);
@@ -45,6 +44,7 @@ PortaDe4Folhas::~PortaDe4Folhas()
 {
     delete ui;
 }
+
 std::list<AdicionaisOBJ> PortaDe4Folhas::getListaDeAdicionais() const
 {
     return listaDeAdicionais;
@@ -54,7 +54,6 @@ void PortaDe4Folhas::setListaDeAdicionais(const std::list<AdicionaisOBJ> &newLis
 {
     listaDeAdicionais = newListaDeAdicionais;
 }
-
 
 void PortaDe4Folhas::on_pushButtonCalcular_clicked()
 {
@@ -79,11 +78,8 @@ void PortaDe4Folhas::on_pushButtonCalcular_clicked()
     ui->lineEditLucro->setText(profit);
 }
 
-
-
 void PortaDe4Folhas::atualizarValoresImportados(const QString &valor, const QString &lucro)
 {
-
     on_pushButtonCalcular_clicked();
 
     float price = ui->lineEditValor->text().toFloat();
@@ -94,13 +90,27 @@ void PortaDe4Folhas::atualizarValoresImportados(const QString &valor, const QStr
 
     ui->lineEditValor->setText(QString::number(price));
     ui->lineEditLucro->setText(QString::number(profit));
+
 }
 
 
-void PortaDe4Folhas::on_pushButtonLimpar_clicked()
+void PortaDe4Folhas::on_pushButtonDesconto_clicked()
 {
-    ui->lineEditLucro->clear();
-    ui->lineEditValor->clear();
+    bool ok;
+    double percentualDesconto = QInputDialog::getDouble(this, tr("Desconto"), tr("Digite a porcentagem de desconto:"), 0, 0, 100, 2, &ok);
+
+    if (ok) {
+        float valorAtual = ui->lineEditValor->text().toFloat();
+        float lucroAtual = ui->lineEditLucro->text().toFloat();
+
+        // Calcule os novos valores após o desconto
+        float novoValor = valorAtual * (1.0 - percentualDesconto / 100.0);
+        float novoLucro = lucroAtual * (1.0 - percentualDesconto / 100.0);
+
+        // Atualize as caixas de texto
+        ui->lineEditValor->setText(QString::number(novoValor));
+        ui->lineEditLucro->setText(QString::number(novoLucro));
+    }
 }
 
 
@@ -120,6 +130,22 @@ void PortaDe4Folhas::on_pushButtonSalvar_clicked()
     QString produto = width + " x " + height +" "+ glass +" "+ puller +" "+ kitAluminio +" "+ film +" "+ latch;
     telaSalvar = new DialogSalvar(this,produto,price,profit);
     telaSalvar->exec();
+
+}
+
+
+void PortaDe4Folhas::on_pushButtonLimpar_clicked()
+{
+    ui->lineEditLargura->clear();
+    ui->lineEditAltura->clear();
+    ui->comboBoxVidros->setCurrentIndex(-1);
+    ui->comboBoxFechadura->setCurrentIndex(-1);
+    ui->comboBoxKitAluminio->setCurrentIndex(-1);
+    ui->comboBoxPuxador->setCurrentIndex(-1);
+    ui->comboBoxPelicula->setCurrentIndex(-1);
+    ui->comboBoxTrinco->setCurrentIndex(-1);
+    ui->lineEditLucro->clear();
+    ui->lineEditValor->clear();
 }
 
 
