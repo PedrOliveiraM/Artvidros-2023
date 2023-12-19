@@ -139,7 +139,6 @@ void PortaDe2Folhas::on_pushButtonRefatorando_clicked()
 
 void PortaDe2Folhas::on_pushButtonDesconto_clicked()
 {
-<<<<<<< HEAD
     bool ok;
     double percentualDesconto = QInputDialog::getDouble(this, tr("Desconto"), tr("Digite a porcentagem de desconto:"), 0, 0, 100, 2, &ok);
 
@@ -155,8 +154,5 @@ void PortaDe2Folhas::on_pushButtonDesconto_clicked()
         ui->lineEditValor->setText(QString::number(novoValor));
         ui->lineEditLucro->setText(QString::number(novoLucro));
     }
-=======
-
->>>>>>> origin/RefactV2
 }
 
