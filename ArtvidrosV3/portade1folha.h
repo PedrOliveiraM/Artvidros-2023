@@ -38,6 +38,8 @@ private slots:
 
     void on_pushButtonRefatorando_clicked();
 
+    void on_pushButtonDesconto_clicked();
+
 private:
     Ui::PortaDe1Folha *ui;
     AdicionaisRef *telaAdicionais;

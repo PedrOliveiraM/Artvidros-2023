@@ -15,7 +15,7 @@ PortaDe2Folhas::PortaDe2Folhas(QWidget *parent) :
     QSqlQuery query;
 
     for (const QString &tipo : array) {
-        if (query.exec("SELECT * FROM product WHERE type = '" + tipo + "'")) {
+        if (query.exec("SELECT * FROM product WHERE type = '" + tipo + "' ORDER BY name_product ASC")) {
             while (query.next()) {
                 QString value = query.value(1).toString();  // Suponho que o valor desejado esteja na primeira coluna
                 if (tipo == "temperado") {
@@ -136,3 +136,9 @@ void PortaDe2Folhas::on_pushButtonRefatorando_clicked()
     listaDeAdicionais = telaAdicionais.getListaDeAdicionais();
     atualizarValoresImportados(valorRetornado,lucroRetornado);
 }
+
+void PortaDe2Folhas::on_pushButtonDesconto_clicked()
+{
+
+}
+

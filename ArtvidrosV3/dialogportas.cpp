@@ -37,7 +37,7 @@ void DialogPortas::on_pushButtonPortaDeCorrer_clicked()
 
 void DialogPortas::on_pushButtonPortaDe4Folhas_clicked()
 {
-    //porta4Folhas = new PortaDe4Folhas;
-    //porta4Folhas->exec();
+    porta4Folhas = new PortaDe4Folhas;
+    porta4Folhas->exec();
 }
 

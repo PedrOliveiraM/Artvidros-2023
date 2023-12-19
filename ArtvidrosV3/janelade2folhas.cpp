@@ -1,18 +1,17 @@
-#include "portade4folhas.h"
-#include "ui_portade4folhas.h"
+#include "janelade2folhas.h"
+#include "ui_janelade2folhas.h"
 
-PortaDe4Folhas::PortaDe4Folhas(QWidget *parent) :
+JanelaDe2Folhas::JanelaDe2Folhas(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::PortaDe4Folhas)
+    ui(new Ui::JanelaDe2Folhas)
 {
-    ui->setupUi(this);
     ui->setupUi(this);
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);
     ui->lineEditValor->setEnabled(false);
 
-    QString array[] = {"temperado", "puxador","fechadura", "aluminio" , "pelicula" , "trinco" , "rodana" , "tubo"};
+    QString array[] = {"temperado", "batefecha" , "pelicula" , "trinco","rodana"};
     QSqlQuery query;
 
     for (const QString &tipo : array) {
@@ -21,17 +20,13 @@ PortaDe4Folhas::PortaDe4Folhas(QWidget *parent) :
                 QString value = query.value(1).toString();  // Suponho que o valor desejado esteja na primeira coluna
                 if (tipo == "temperado") {
                     ui->comboBoxVidros->addItem(value);
-                } else if (tipo == "puxador") {
-                    ui->comboBoxPuxador->addItem(value);
-                }else if (tipo == "fechadura") {
-                    ui->comboBoxFechadura->addItem(value);
-                } else if (tipo == "aluminio") {
-                    ui->comboBoxKitAluminio->addItem(value);
+                } else if (tipo == "batefecha") {
+                    ui->comboBoxKit->addItem(value);
                 } else if (tipo == "pelicula") {
                     ui->comboBoxPelicula->addItem(value);
                 } else if (tipo == "trinco") {
                     ui->comboBoxTrinco->addItem(value);
-                } else if (tipo == "rodana") {
+                }else if (tipo == "rodana") {
                     ui->comboBoxRodana->addItem(value);
                 }
             }
@@ -39,51 +34,59 @@ PortaDe4Folhas::PortaDe4Folhas(QWidget *parent) :
             qDebug() << "Erro ao executar a consulta para tipo ";
         }
     }
+
+
 }
 
-PortaDe4Folhas::~PortaDe4Folhas()
+JanelaDe2Folhas::~JanelaDe2Folhas()
 {
     delete ui;
 }
-std::list<AdicionaisOBJ> PortaDe4Folhas::getListaDeAdicionais() const
+
+std::list<AdicionaisOBJ> JanelaDe2Folhas::getListaDeAdicionais() const
 {
     return listaDeAdicionais;
 }
 
-void PortaDe4Folhas::setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais)
+void JanelaDe2Folhas::setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais)
 {
     listaDeAdicionais = newListaDeAdicionais;
 }
 
+void JanelaDe2Folhas::on_pushButtonRefatorando_clicked()
+{
+    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"PortaDe2Folhas");
+    telaAdicionais.exec();
 
-void PortaDe4Folhas::on_pushButtonCalcular_clicked()
+    QString valorRetornado = telaAdicionais.getPrice();
+    QString lucroRetornado = telaAdicionais.getLucro();
+
+    listaDeAdicionais = telaAdicionais.getListaDeAdicionais();
+    atualizarValoresImportados(valorRetornado,lucroRetornado);
+}
+
+
+void JanelaDe2Folhas::on_pushButtonCalcular_clicked()
 {
     //calcular orçamento
     float width = ui->lineEditLargura->text().toFloat();
     float height = ui->lineEditAltura->text().toFloat();
     QString glass = ui->comboBoxVidros->currentText();
-    QString puller = ui->comboBoxPuxador->currentText();
-    QString fechadura = ui->comboBoxFechadura->currentText();
-    QString kitAluminio = ui->comboBoxKitAluminio->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
     QString rodana = ui->comboBoxRodana->currentText();
 
-    ClassPortaDe4Folhas door(width,height,glass,puller,fechadura,kitAluminio,film,latch,rodana);
+   // ClassJanelaDe2Folhas door(width,height,glass,film,latch,rodana);
     sqlDataBaseControl aux;
 
-    QString price = QString::number(door.calculatePrice());
-    QString profit = QString::number(door.calculateProfit());
+    //QString price = QString::number(door.calculatePrice());
+    //QString profit = QString::number(door.calculateProfit());
 
-    ui->lineEditValor->setText(price);
-    ui->lineEditLucro->setText(profit);
+    //ui->lineEditValor->setText(price);
+    //ui->lineEditLucro->setText(profit);
 }
-
-
-
-void PortaDe4Folhas::atualizarValoresImportados(const QString &valor, const QString &lucro)
+void JanelaDe2Folhas::atualizarValoresImportados(const QString &valor, const QString &lucro)
 {
-
     on_pushButtonCalcular_clicked();
 
     float price = ui->lineEditValor->text().toFloat();
@@ -97,41 +100,33 @@ void PortaDe4Folhas::atualizarValoresImportados(const QString &valor, const QStr
 }
 
 
-void PortaDe4Folhas::on_pushButtonLimpar_clicked()
+void JanelaDe2Folhas::on_pushButtonDesconto_clicked()
+{
+
+}
+
+
+void JanelaDe2Folhas::on_pushButtonLimpar_clicked()
 {
     ui->lineEditLucro->clear();
     ui->lineEditValor->clear();
 }
 
 
-void PortaDe4Folhas::on_pushButtonSalvar_clicked()
+void JanelaDe2Folhas::on_pushButtonSalvar_clicked()
 {
     QString width = ui->lineEditLargura->text();
     QString height = ui->lineEditAltura->text();
     QString glass = ui->comboBoxVidros->currentText();
-    QString puller = ui->comboBoxPuxador->currentText();
-    QString kitAluminio = ui->comboBoxKitAluminio->currentText();
+
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
 
     QString price = ui->lineEditValor->text();
     QString profit = ui->lineEditLucro->text();
 
-    QString produto = width + " x " + height +" "+ glass +" "+ puller +" "+ kitAluminio +" "+ film +" "+ latch;
+    QString produto = width + " x " + height +" "+ glass +" " + film +" "+ latch;
     telaSalvar = new DialogSalvar(this,produto,price,profit);
     telaSalvar->exec();
-}
-
-
-void PortaDe4Folhas::on_pushButtonRefatorando_clicked()
-{
-    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"PortaDe4Folhas");
-    telaAdicionais.exec();
-
-    QString valorRetornado = telaAdicionais.getPrice();
-    QString lucroRetornado = telaAdicionais.getLucro();
-
-    listaDeAdicionais = telaAdicionais.getListaDeAdicionais();
-    atualizarValoresImportados(valorRetornado,lucroRetornado);
 }
 

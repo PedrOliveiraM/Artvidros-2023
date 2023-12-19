@@ -18,9 +18,11 @@ SOURCES += \
     classportadeabrir.cpp \
     dialogareaorcamentos.cpp \
     dialogareaprecos.cpp \
+    dialogjanelas.cpp \
     dialogportas.cpp \
     dialogsalvar.cpp \
     herdavidros.cpp \
+    janelade2folhas.cpp \
     main.cpp \
     mainwindow.cpp \
     portade1folha.cpp \
@@ -39,9 +41,11 @@ HEADERS += \
     classportadeabrir.h \
     dialogareaorcamentos.h \
     dialogareaprecos.h \
+    dialogjanelas.h \
     dialogportas.h \
     dialogsalvar.h \
     herdavidros.h \
+    janelade2folhas.h \
     mainwindow.h \
     portade1folha.h \
     portade2folhas.h \
@@ -54,8 +58,10 @@ FORMS += \
     adicionaisref.ui \
     dialogareaorcamentos.ui \
     dialogareaprecos.ui \
+    dialogjanelas.ui \
     dialogportas.ui \
     dialogsalvar.ui \
+    janelade2folhas.ui \
     mainwindow.ui \
     portade1folha.ui \
     portade2folhas.ui \

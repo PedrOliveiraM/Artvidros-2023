@@ -71,7 +71,9 @@ AdicionaisOBJ::AdicionaisOBJ(const QString &id, const QString &name, const QStri
     quant(quant),
     price(price),
     profit(profit)
-{}
+{
+
+}
 
 float AdicionaisOBJ::metrage(float width , float height)
 {
