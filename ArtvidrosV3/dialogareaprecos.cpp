@@ -130,7 +130,18 @@ void DialogAreaPrecos::showBD()
 
 void DialogAreaPrecos::on_pushButtonADD_clicked()
 {
-    QString numberRow = QString::number(ui->tableWidget->rowCount() + 1);
+    QSqlQuery query;
+    QString numberRow;
+
+    if (query.exec("SELECT MAX(cod_product) FROM product")) {
+        if (query.next()) {
+            QVariant value = query.value(0);
+            numberRow = QString::number(value.toInt() + 1);
+        }
+    } else {
+        QMessageBox::about(this,"ERRO","Erro ao abrir a tela");
+        qDebug() << "Erro na consulta:" << query.lastError().text();
+    }
 
     telaSQL = new SQLarea(this,"add",numberRow);
     telaSQL->exec();

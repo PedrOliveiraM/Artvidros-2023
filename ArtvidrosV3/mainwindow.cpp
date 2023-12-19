@@ -30,6 +30,8 @@ void MainWindow::on_pushButtonPortas_clicked()
 void MainWindow::on_pushButtonJanelas_clicked()
 {
     //botao janela
+    telaJanelas = new DialogJanelas;
+    telaJanelas->exec();
 }
 
 

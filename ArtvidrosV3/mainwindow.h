@@ -1,6 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include <dialogjanelas.h>
 #include "dialogareaorcamentos.h"
 #include "dialogareaprecos.h"
 #include "dialogportas.h"
@@ -47,12 +47,11 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    AdicionaisRef *telaAdicionais;
     DialogAreaPrecos *telaAreaPreco;
     Dialogareaorcamentos *telaAreaOrcamento;
-    DialogPortas *telaPortas;
-    AdicionaisRef *telaAdicionais;
-
-
+    DialogPortas *telaPortas; 
+    DialogJanelas *telaJanelas;
 
 
 };

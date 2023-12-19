@@ -15,7 +15,7 @@ PortaDe2Folhas::PortaDe2Folhas(QWidget *parent) :
     QSqlQuery query;
 
     for (const QString &tipo : array) {
-        if (query.exec("SELECT * FROM product WHERE type = '" + tipo + "'")) {
+        if (query.exec("SELECT * FROM product WHERE type = '" + tipo + "' ORDER BY name_product ASC")) {
             while (query.next()) {
                 QString value = query.value(1).toString();  // Suponho que o valor desejado esteja na primeira coluna
                 if (tipo == "temperado") {
@@ -139,6 +139,7 @@ void PortaDe2Folhas::on_pushButtonRefatorando_clicked()
 
 void PortaDe2Folhas::on_pushButtonDesconto_clicked()
 {
+<<<<<<< HEAD
     bool ok;
     double percentualDesconto = QInputDialog::getDouble(this, tr("Desconto"), tr("Digite a porcentagem de desconto:"), 0, 0, 100, 2, &ok);
 
@@ -154,5 +155,8 @@ void PortaDe2Folhas::on_pushButtonDesconto_clicked()
         ui->lineEditValor->setText(QString::number(novoValor));
         ui->lineEditLucro->setText(QString::number(novoLucro));
     }
+=======
+
+>>>>>>> origin/RefactV2
 }
 

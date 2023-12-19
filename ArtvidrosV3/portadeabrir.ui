@@ -514,7 +514,7 @@
     </font>
    </property>
    <property name="text">
-    <string>REFATORANDO</string>
+    <string>Adicionais</string>
    </property>
    <property name="icon">
     <iconset resource="files.qrc">

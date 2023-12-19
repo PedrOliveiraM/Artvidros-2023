@@ -24,11 +24,11 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
         spinBox->setValue(1);
     }
 
-    QString array[] = {"temperado","aluminio", "kit", "kitabrir" ,"fechadura", "puxador", "trinco"};
+    QString array[] = {"temperado","aluminio","kitboxcanto","kitboxfrontal","kitpia", "kitabrir" ,"fechadura", "puxador", "trinco"};
     QSqlQuery query;
 
     for (const QString &tipo : array) {
-        if (query.exec("SELECT * FROM product WHERE type = '" + tipo + "'")) {
+        if (query.exec("SELECT * FROM product WHERE type = '" + tipo + "' ORDER BY name_product ASC")) {
             while (query.next()) {
                 QString value = query.value(1).toString();  // Suponho que o valor desejado esteja na primeira coluna
                 if (tipo == "temperado") {
@@ -37,7 +37,7 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
                 } else if (tipo == "aluminio") {
                     ui->comboBoxAluminio->addItem(value);
 
-                } else if (tipo == "kitabrir" || tipo == "kit") {
+                } else if (tipo == "kitabrir" || tipo == "kitboxfrontal"|| tipo == "kitpia"|| tipo == "kitboxcanto" ) {
                     ui->comboBoxKit->addItem(value);
 
                 } else if (tipo == "fechadura") {

@@ -14,8 +14,6 @@ SQLarea::SQLarea(QWidget *parent,QString type, QString id) :
     ui->lineEditTipo->setVisible(false);
     ui->checkBox->setVisible(false);
     setTipo(type);
-    qDebug()<<"O type é "<<getTipo();
-    qDebug()<<"O tipo de tela é "<<tipo;
 
     QString name = "";
     QSqlQuery query;
