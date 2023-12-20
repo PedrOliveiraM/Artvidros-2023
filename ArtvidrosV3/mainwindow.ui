@@ -48,8 +48,8 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="0">
-      <widget class="QPushButton" name="pushButtonFechamentoPia">
+     <item row="2" column="1">
+      <widget class="QPushButton" name="pushButtonVidrosComuns">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -63,40 +63,11 @@
         </font>
        </property>
        <property name="text">
-        <string>   Fehamento de Pia     </string>
+        <string>    Vidros Comuns  </string>
        </property>
        <property name="icon">
         <iconset resource="files.qrc">
-         <normaloff>:/imagens/pia-da-cozinha.png</normaloff>:/imagens/pia-da-cozinha.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QPushButton" name="pushButtonMoldura">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>         Molduras            </string>
-       </property>
-       <property name="icon">
-        <iconset resource="files.qrc">
-         <normaloff>:/imagens/moldura.png</normaloff>:/imagens/moldura.png</iconset>
+         <normaloff>:/imagens/vidro comum.png</normaloff>:/imagens/vidro comum.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -126,6 +97,35 @@
        <property name="icon">
         <iconset resource="files.qrc">
          <normaloff>:/imagens/janela.png</normaloff>:/imagens/janela.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QPushButton" name="pushButtonAreaPrecos">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>  Área de Preços    </string>
+       </property>
+       <property name="icon">
+        <iconset resource="files.qrc">
+         <normaloff>:/imagens/Preco.png</normaloff>:/imagens/Preco.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -193,8 +193,8 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QPushButton" name="pushButtonAreaPrecos">
+     <item row="2" column="0">
+      <widget class="QPushButton" name="pushButtonMoldura">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -208,11 +208,11 @@
         </font>
        </property>
        <property name="text">
-        <string>  Área de Preços    </string>
+        <string>         Molduras            </string>
        </property>
        <property name="icon">
         <iconset resource="files.qrc">
-         <normaloff>:/imagens/Preco.png</normaloff>:/imagens/Preco.png</iconset>
+         <normaloff>:/imagens/moldura.png</normaloff>:/imagens/moldura.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -222,8 +222,8 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QPushButton" name="pushButtonVidrosComuns">
+     <item row="1" column="0">
+      <widget class="QPushButton" name="pushButtonFechamentoPia">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -237,11 +237,11 @@
         </font>
        </property>
        <property name="text">
-        <string>    Vidros Comuns  </string>
+        <string>   Fehamento de Pia     </string>
        </property>
        <property name="icon">
         <iconset resource="files.qrc">
-         <normaloff>:/imagens/vidro comum.png</normaloff>:/imagens/vidro comum.png</iconset>
+         <normaloff>:/imagens/pia-da-cozinha.png</normaloff>:/imagens/pia-da-cozinha.png</iconset>
        </property>
        <property name="iconSize">
         <size>

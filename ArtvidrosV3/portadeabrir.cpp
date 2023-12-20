@@ -95,6 +95,13 @@ void PortaDeAbrir::atualizarValoresImportados(const QString &valor, const QStrin
 
 void PortaDeAbrir::on_pushButtonLimpar_clicked()
 {
+    ui->lineEditLargura->clear();
+    ui->lineEditAltura->clear();
+    ui->comboBoxVidros->setCurrentIndex(-1);
+    ui->comboBoxKit->setCurrentIndex(-1);
+    ui->comboBoxPuxador->setCurrentIndex(-1);
+    ui->comboBoxPelicula->setCurrentIndex(-1);
+    ui->comboBoxTrinco->setCurrentIndex(-1);
     ui->lineEditLucro->clear();
     ui->lineEditValor->clear();
 }

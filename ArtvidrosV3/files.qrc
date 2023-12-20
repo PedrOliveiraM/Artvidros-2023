@@ -26,5 +26,6 @@
         <file>imagens/voltar.png</file>
         <file>imagens/botao-adicionar.png</file>
         <file>imagens/adicionar.png</file>
+        <file>imagens/olho.png</file>
     </qresource>
 </RCC>

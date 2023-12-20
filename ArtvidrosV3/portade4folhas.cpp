@@ -144,6 +144,7 @@ void PortaDe4Folhas::on_pushButtonLimpar_clicked()
     ui->comboBoxPuxador->setCurrentIndex(-1);
     ui->comboBoxPelicula->setCurrentIndex(-1);
     ui->comboBoxTrinco->setCurrentIndex(-1);
+    ui->comboBoxRodana->setCurrentIndex(-1);
     ui->lineEditLucro->clear();
     ui->lineEditValor->clear();
 }

@@ -438,6 +438,10 @@
    <property name="text">
     <string/>
    </property>
+   <property name="icon">
+    <iconset resource="files.qrc">
+     <normaloff>:/imagens/olho.png</normaloff>:/imagens/olho.png</iconset>
+   </property>
   </widget>
  </widget>
  <tabstops>

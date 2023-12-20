@@ -93,6 +93,15 @@ void PortaDe1Folha::atualizarValoresImportados(const QString &valor, const QStri
 
 void PortaDe1Folha::on_pushButtonLimpar_clicked()
 {
+    ui->lineEditLargura->clear();
+    ui->lineEditAltura->clear();
+    ui->comboBoxVidros->setCurrentIndex(-1);
+    ui->comboBoxPuxador->setCurrentIndex(-1);
+    ui->comboBoxFechadura->setCurrentIndex(-1);
+    ui->comboBoxKitAluminio->setCurrentIndex(-1);
+    ui->comboBoxPelicula->setCurrentIndex(-1);
+    ui->comboBoxTrinco->setCurrentIndex(-1);
+    ui->comboBoxRodana->setCurrentIndex(-1);
     ui->lineEditLucro->clear();
     ui->lineEditValor->clear();
 }

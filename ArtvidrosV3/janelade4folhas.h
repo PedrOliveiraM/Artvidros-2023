@@ -1,26 +1,25 @@
-#ifndef JANELADE2FOLHAS_H
-#define JANELADE2FOLHAS_H
+#ifndef JANELADE4FOLHAS_H
+#define JANELADE4FOLHAS_H
 #include <QDialog>
 #include <adicionaisref.h>
 #include <dialogsalvar.h>
 #include <classjanelade2folhas.h>
+
 namespace Ui {
-class JanelaDe2Folhas;
+class JanelaDe4Folhas;
 }
 
-class JanelaDe2Folhas : public QDialog
+class JanelaDe4Folhas : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit JanelaDe2Folhas(QWidget *parent = nullptr);
-    ~JanelaDe2Folhas();
+    explicit JanelaDe4Folhas(QWidget *parent = nullptr);
+    ~JanelaDe4Folhas();
 
     std::list<AdicionaisOBJ> listaDeAdicionais;
-
     std::list<AdicionaisOBJ> getListaDeAdicionais() const;
     void setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais);
-
 private slots:
     void on_pushButtonRefatorando_clicked();
 
@@ -33,11 +32,10 @@ private slots:
     void on_pushButtonLimpar_clicked();
 
     void on_pushButtonSalvar_clicked();
-
 private:
-    Ui::JanelaDe2Folhas *ui;
+    Ui::JanelaDe4Folhas *ui;
     AdicionaisRef *telaAdicionais;
     DialogSalvar *telaSalvar;
 };
 
-#endif // JANELADE2FOLHAS_H
+#endif // JANELADE4FOLHAS_H

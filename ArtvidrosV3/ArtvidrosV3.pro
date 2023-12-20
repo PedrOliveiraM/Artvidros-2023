@@ -12,6 +12,8 @@ CONFIG += c++17
 SOURCES += \
     adicionaisobj.cpp \
     adicionaisref.cpp \
+    classjanelade2folhas.cpp \
+    classjanelade4folhas.cpp \
     classportade1folha.cpp \
     classportade2folhas.cpp \
     classportade4folhas.cpp \
@@ -21,8 +23,10 @@ SOURCES += \
     dialogjanelas.cpp \
     dialogportas.cpp \
     dialogsalvar.cpp \
+    herdajanelas.cpp \
     herdavidros.cpp \
     janelade2folhas.cpp \
+    janelade4folhas.cpp \
     main.cpp \
     mainwindow.cpp \
     portade1folha.cpp \
@@ -35,6 +39,8 @@ SOURCES += \
 HEADERS += \
     adicionaisobj.h \
     adicionaisref.h \
+    classjanelade2folhas.h \
+    classjanelade4folhas.h \
     classportade1folha.h \
     classportade2folhas.h \
     classportade4folhas.h \
@@ -44,8 +50,10 @@ HEADERS += \
     dialogjanelas.h \
     dialogportas.h \
     dialogsalvar.h \
+    herdajanelas.h \
     herdavidros.h \
     janelade2folhas.h \
+    janelade4folhas.h \
     mainwindow.h \
     portade1folha.h \
     portade2folhas.h \
@@ -62,6 +70,7 @@ FORMS += \
     dialogportas.ui \
     dialogsalvar.ui \
     janelade2folhas.ui \
+    janelade4folhas.ui \
     mainwindow.ui \
     portade1folha.ui \
     portade2folhas.ui \

@@ -1,63 +1,31 @@
-#include "janelade2folhas.h"
-#include "ui_janelade2folhas.h"
+#include "janelade4folhas.h"
+#include "ui_janelade4folhas.h"
 #include <QInputDialog>
-JanelaDe2Folhas::JanelaDe2Folhas(QWidget *parent) :
+JanelaDe4Folhas::JanelaDe4Folhas(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::JanelaDe2Folhas)
+    ui(new Ui::JanelaDe4Folhas)
 {
     ui->setupUi(this);
-    ui->lineEditLargura->setInputMask("X.XX");
-    ui->lineEditAltura->setInputMask("X.XX");
-    ui->lineEditLucro->setEnabled(false);
-    ui->lineEditValor->setEnabled(false);
-
-    QString array[] = {"temperado", "batefecha" , "pelicula" , "trinco","rodana","aluminio"};
-    QSqlQuery query;
-
-    for (const QString &tipo : array) {
-        if (query.exec("SELECT * FROM product WHERE type = '" + tipo + "' ORDER BY name_product ASC")) {
-            while (query.next()) {
-                QString value = query.value(1).toString();  // Suponho que o valor desejado esteja na primeira coluna
-                if (tipo == "temperado") {
-                    ui->comboBoxVidros->addItem(value);
-                } else if (tipo == "batefecha") {
-                    ui->comboBoxBateFecha->addItem(value);
-                } else if (tipo == "pelicula") {
-                    ui->comboBoxPelicula->addItem(value);
-                } else if (tipo == "trinco") {
-                    ui->comboBoxTrinco->addItem(value);
-                }else if (tipo == "rodana") {
-                    ui->comboBoxRodana->addItem(value);
-                }else if (tipo == "aluminio") {
-                ui->comboBoxKit->addItem(value);
-            }
-            }
-        } else {
-            qDebug() << "Erro ao executar a consulta para tipo ";
-        }
-    }
-
-
 }
 
-JanelaDe2Folhas::~JanelaDe2Folhas()
+JanelaDe4Folhas::~JanelaDe4Folhas()
 {
     delete ui;
 }
 
-std::list<AdicionaisOBJ> JanelaDe2Folhas::getListaDeAdicionais() const
+std::list<AdicionaisOBJ> JanelaDe4Folhas::getListaDeAdicionais() const
 {
     return listaDeAdicionais;
 }
 
-void JanelaDe2Folhas::setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais)
+void JanelaDe4Folhas::setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais)
 {
     listaDeAdicionais = newListaDeAdicionais;
 }
 
-void JanelaDe2Folhas::on_pushButtonRefatorando_clicked()
+void JanelaDe4Folhas::on_pushButtonRefatorando_clicked()
 {
-    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"JanelaDe2Folhas");
+    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"JanelaDe4Folhas");
     telaAdicionais.exec();
 
     QString valorRetornado = telaAdicionais.getPrice();
@@ -67,8 +35,7 @@ void JanelaDe2Folhas::on_pushButtonRefatorando_clicked()
     atualizarValoresImportados(valorRetornado,lucroRetornado);
 }
 
-
-void JanelaDe2Folhas::on_pushButtonCalcular_clicked()
+void JanelaDe4Folhas::on_pushButtonCalcular_clicked()
 {
     //calcular orçamento
     float width = ui->lineEditLargura->text().toFloat();
@@ -89,7 +56,8 @@ void JanelaDe2Folhas::on_pushButtonCalcular_clicked()
     ui->lineEditValor->setText(price);
     ui->lineEditLucro->setText(profit);
 }
-void JanelaDe2Folhas::atualizarValoresImportados(const QString &valor, const QString &lucro)
+
+void JanelaDe4Folhas::atualizarValoresImportados(const QString &valor, const QString &lucro)
 {
     on_pushButtonCalcular_clicked();
 
@@ -103,8 +71,7 @@ void JanelaDe2Folhas::atualizarValoresImportados(const QString &valor, const QSt
     ui->lineEditLucro->setText(QString::number(profit));
 }
 
-
-void JanelaDe2Folhas::on_pushButtonDesconto_clicked()
+void JanelaDe4Folhas::on_pushButtonDesconto_clicked()
 {
     bool ok;
     double percentualDesconto = QInputDialog::getDouble(this, tr("Desconto"), tr("Digite a porcentagem de desconto:"), 0, 0, 100, 2, &ok);
@@ -121,11 +88,9 @@ void JanelaDe2Folhas::on_pushButtonDesconto_clicked()
         ui->lineEditValor->setText(QString::number(novoValor));
         ui->lineEditLucro->setText(QString::number(novoLucro));
     }
-
 }
 
-
-void JanelaDe2Folhas::on_pushButtonLimpar_clicked()
+void JanelaDe4Folhas::on_pushButtonLimpar_clicked()
 {
     ui->lineEditLargura->clear();
     ui->lineEditAltura->clear();
@@ -140,8 +105,7 @@ void JanelaDe2Folhas::on_pushButtonLimpar_clicked()
     ui->lineEditValor->clear();
 }
 
-
-void JanelaDe2Folhas::on_pushButtonSalvar_clicked()
+void JanelaDe4Folhas::on_pushButtonSalvar_clicked()
 {
     QString width = ui->lineEditLargura->text();
     QString height = ui->lineEditAltura->text();
@@ -157,4 +121,3 @@ void JanelaDe2Folhas::on_pushButtonSalvar_clicked()
     telaSalvar = new DialogSalvar(this,produto,price,profit);
     telaSalvar->exec();
 }
-

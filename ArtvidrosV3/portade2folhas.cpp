@@ -11,7 +11,7 @@ PortaDe2Folhas::PortaDe2Folhas(QWidget *parent) :
     ui->lineEditLucro->setEnabled(false);
     ui->lineEditValor->setEnabled(false);
 
-    QString array[] = {"temperado", "puxador","fechadura", "aluminio" , "pelicula" , "trinco" , "rodana" , "tubo"};
+    QString array[] = {"temperado", "puxador","batefecha", "aluminio" , "pelicula" , "trinco" , "rodana"};
     QSqlQuery query;
 
     for (const QString &tipo : array) {
@@ -20,10 +20,10 @@ PortaDe2Folhas::PortaDe2Folhas(QWidget *parent) :
                 QString value = query.value(1).toString();  // Suponho que o valor desejado esteja na primeira coluna
                 if (tipo == "temperado") {
                     ui->comboBoxVidros->addItem(value);
-                } else if (tipo == "puxador") {
-                    ui->comboBoxPuxador->addItem(value);
-                }else if (tipo == "fechadura") {
+                }else if (tipo == "batefecha") {
                     ui->comboBoxFechadura->addItem(value);
+                }else if (tipo == "puxador") {
+                    ui->comboBoxPuxador->addItem(value);
                 } else if (tipo == "aluminio") {
                     ui->comboBoxKitAluminio->addItem(value);
                 } else if (tipo == "pelicula") {
@@ -101,6 +101,15 @@ void PortaDe2Folhas::atualizarValoresImportados(const QString &valor, const QStr
 
 void PortaDe2Folhas::on_pushButtonLimpar_clicked()
 {
+    ui->lineEditLargura->clear();
+    ui->lineEditAltura->clear();
+    ui->comboBoxVidros->setCurrentIndex(-1);
+    ui->comboBoxPuxador->setCurrentIndex(-1);
+    ui->comboBoxFechadura->setCurrentIndex(-1);
+    ui->comboBoxKitAluminio->setCurrentIndex(-1);
+    ui->comboBoxPelicula->setCurrentIndex(-1);
+    ui->comboBoxTrinco->setCurrentIndex(-1);
+    ui->comboBoxRodana->setCurrentIndex(-1);
     ui->lineEditLucro->clear();
     ui->lineEditValor->clear();
 }
