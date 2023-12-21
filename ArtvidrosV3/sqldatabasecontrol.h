@@ -18,6 +18,9 @@ public:
 
     float buscarNoBDprice(QString name , QString type);
     float buscarNoBDprofit(QString name , QString type);
+
+    float buscarNoBDprice(QString name);
+    float buscarNoBDprofit(QString name);
 };
 
 #endif // SQLDATABASECONTROL_H

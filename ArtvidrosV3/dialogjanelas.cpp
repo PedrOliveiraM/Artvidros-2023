@@ -22,21 +22,21 @@ void DialogJanelas::on_pushButtonJanela2Folhas_clicked()
 
 void DialogJanelas::on_pushButtonJanelaDe4Folhas_clicked()
 {
-//    janela4Folhas = new JanelaDe4Folhas(this);
-//    janela4Folhas->exec();
+    janela4Folhas = new JanelaDe4Folhas(this);
+    janela4Folhas->exec();
 }
 
 
 void DialogJanelas::on_pushButtonPivotante_clicked()
 {
-//    pivotante = new Pivotante(this);
-//    pivotante->exec();
+    pivotante = new Pivotante(this);
+    pivotante->exec();
 }
 
 
 void DialogJanelas::on_pushButtonBascola_clicked()
 {
-//    bascola = new Bascola(this);
-//    bascola->exec();
+    bascula = new Bascola(this);
+    bascula->exec();
 }
 

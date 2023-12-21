@@ -1,17 +1,18 @@
-#include "janelade2folhas.h"
-#include "ui_janelade2folhas.h"
-#include <QInputDialog>
-JanelaDe2Folhas::JanelaDe2Folhas(QWidget *parent) :
+#include "bascula.h"
+#include "ui_bascula.h"
+#include <classpivobascula.h>
+Bascola::Bascola(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::JanelaDe2Folhas)
+    ui(new Ui::Bascola)
 {
     ui->setupUi(this);
+
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);
     ui->lineEditValor->setEnabled(false);
 
-    QString array[] = {"temperado", "batefecha" , "pelicula" , "trinco","rodana","kitaluminio"};
+    QString array[] = {"temperado", "pelicula" , "trinco","bascula"};
     QSqlQuery query;
 
     for (const QString &tipo : array) {
@@ -20,17 +21,13 @@ JanelaDe2Folhas::JanelaDe2Folhas(QWidget *parent) :
                 QString value = query.value(1).toString();  // Suponho que o valor desejado esteja na primeira coluna
                 if (tipo == "temperado") {
                     ui->comboBoxVidros->addItem(value);
-                } else if (tipo == "batefecha") {
-                    ui->comboBoxBateFecha->addItem(value);
                 } else if (tipo == "pelicula") {
                     ui->comboBoxPelicula->addItem(value);
                 } else if (tipo == "trinco") {
                     ui->comboBoxTrinco->addItem(value);
-                }else if (tipo == "rodana") {
-                    ui->comboBoxRodana->addItem(value);
-                }else if (tipo == "kitaluminio") {
-                ui->comboBoxKit->addItem(value);
-            }
+                }else if (tipo == "bascula") {
+                    ui->comboBoxKit->addItem(value);
+                }
             }
         } else {
             qDebug() << "Erro ao executar a consulta para tipo ";
@@ -38,56 +35,42 @@ JanelaDe2Folhas::JanelaDe2Folhas(QWidget *parent) :
     }
 }
 
-JanelaDe2Folhas::~JanelaDe2Folhas()
+Bascola::~Bascola()
 {
     delete ui;
 }
 
-std::list<AdicionaisOBJ> JanelaDe2Folhas::getListaDeAdicionais() const
+std::list<AdicionaisOBJ> Bascola::getListaDeAdicionais() const
 {
     return listaDeAdicionais;
 }
 
-void JanelaDe2Folhas::setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais)
+void Bascola::setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais)
 {
     listaDeAdicionais = newListaDeAdicionais;
 }
 
-void JanelaDe2Folhas::on_pushButtonRefatorando_clicked()
-{
-    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"JanelaDe2Folhas");
-    telaAdicionais.exec();
-
-    QString valorRetornado = telaAdicionais.getPrice();
-    QString lucroRetornado = telaAdicionais.getLucro();
-
-    listaDeAdicionais = telaAdicionais.getListaDeAdicionais();
-    atualizarValoresImportados(valorRetornado,lucroRetornado);
-}
-
-
-void JanelaDe2Folhas::on_pushButtonCalcular_clicked()
+void Bascola::on_pushButtonCalcular_clicked()
 {
     //calcular orçamento
     float width = ui->lineEditLargura->text().toFloat();
     float height = ui->lineEditAltura->text().toFloat();
     QString glass = ui->comboBoxVidros->currentText();
     QString kit = ui->comboBoxKit->currentText();
-    QString bateFecha = ui->comboBoxBateFecha->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
-    QString rodana = ui->comboBoxRodana->currentText();
 
-    ClassJanelaDe2Folhas windows(width,height,glass,bateFecha,kit,rodana,latch,film);
+    ClassPivoBascula bascu(width,height,glass,kit,film,latch);
     sqlDataBaseControl aux;
 
-    QString price = QString::number(windows.calculatePrice());
-    QString profit = QString::number(windows.calculateProfit());
+    QString price = QString::number(bascu.calculatePrice());
+    QString profit = QString::number(bascu.calculateProfit());
 
     ui->lineEditValor->setText(price);
     ui->lineEditLucro->setText(profit);
 }
-void JanelaDe2Folhas::atualizarValoresImportados(const QString &valor, const QString &lucro)
+
+void Bascola::atualizarValoresImportados(const QString &valor, const QString &lucro)
 {
     on_pushButtonCalcular_clicked();
 
@@ -99,10 +82,11 @@ void JanelaDe2Folhas::atualizarValoresImportados(const QString &valor, const QSt
 
     ui->lineEditValor->setText(QString::number(price));
     ui->lineEditLucro->setText(QString::number(profit));
+
 }
 
 
-void JanelaDe2Folhas::on_pushButtonDesconto_clicked()
+void Bascola::on_pushButtonDesconto_clicked()
 {
     bool ok;
     double percentualDesconto = QInputDialog::getDouble(this, tr("Desconto"), tr("Digite a porcentagem de desconto:"), 0, 0, 100, 2, &ok);
@@ -119,40 +103,50 @@ void JanelaDe2Folhas::on_pushButtonDesconto_clicked()
         ui->lineEditValor->setText(QString::number(novoValor));
         ui->lineEditLucro->setText(QString::number(novoLucro));
     }
-
 }
 
 
-void JanelaDe2Folhas::on_pushButtonLimpar_clicked()
-{
-    ui->lineEditLargura->clear();
-    ui->lineEditAltura->clear();
-    ui->comboBoxVidros->setCurrentIndex(-1);
-    ui->comboBoxKit->setCurrentIndex(-1);
-    ui->comboBoxBateFecha->setCurrentIndex(-1);
-    ui->comboBoxPelicula->setCurrentIndex(-1);
-    ui->comboBoxTrinco->setCurrentIndex(-1);
-    ui->comboBoxRodana->setCurrentIndex(-1);
-
-    ui->lineEditLucro->clear();
-    ui->lineEditValor->clear();
-}
-
-
-void JanelaDe2Folhas::on_pushButtonSalvar_clicked()
+void Bascola::on_pushButtonSalvar_clicked()
 {
     QString width = ui->lineEditLargura->text();
     QString height = ui->lineEditAltura->text();
     QString glass = ui->comboBoxVidros->currentText();
-
+    QString kit = ui->comboBoxKit->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
 
     QString price = ui->lineEditValor->text();
     QString profit = ui->lineEditLucro->text();
 
-    QString produto = width + " x " + height +" "+ glass +" " + film +" "+ latch;
+    QString produto = width + " x " + height +" "+ glass +" "+ kit +" " + film +" "+ latch;
     telaSalvar = new DialogSalvar(this,produto,price,profit);
     telaSalvar->exec();
+}
+
+
+void Bascola::on_pushButtonLimpar_clicked()
+{
+    ui->lineEditLargura->clear();
+    ui->lineEditAltura->clear();
+    ui->comboBoxVidros->setCurrentIndex(-1);
+    ui->comboBoxKit->setCurrentIndex(-1);
+    ui->comboBoxPelicula->setCurrentIndex(-1);
+    ui->comboBoxTrinco->setCurrentIndex(-1);
+
+    ui->lineEditLucro->clear();
+    ui->lineEditValor->clear();
+}
+
+
+void Bascola::on_pushButtonRefatorando_clicked()
+{
+    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"Bascula");
+    telaAdicionais.exec();
+
+    QString valorRetornado = telaAdicionais.getPrice();
+    QString lucroRetornado = telaAdicionais.getLucro();
+
+    listaDeAdicionais = telaAdicionais.getListaDeAdicionais();
+    atualizarValoresImportados(valorRetornado,lucroRetornado);
 }
 

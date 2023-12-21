@@ -1,6 +1,9 @@
 #ifndef DIALOGJANELAS_H
 #define DIALOGJANELAS_H
 #include <janelade2folhas.h>
+#include <janelade4folhas.h>
+#include <bascula.h>
+#include <pivotante.h>
 #include <QDialog>
 
 namespace Ui {
@@ -27,9 +30,9 @@ private slots:
 private:
     Ui::DialogJanelas *ui;
     JanelaDe2Folhas *janela2Folhas;
-    //JanelaDe4Folhas *janela4Folha;
-    //Bascola *bascola;
-    //Pivotante *pivotante;
+    JanelaDe4Folhas *janela4Folhas;
+    Bascola *bascula;
+    Pivotante *pivotante;
 
 };
 

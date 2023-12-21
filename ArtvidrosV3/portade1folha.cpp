@@ -11,7 +11,7 @@ PortaDe1Folha::PortaDe1Folha(QWidget *parent) :
     ui->lineEditLucro->setEnabled(false);
     ui->lineEditValor->setEnabled(false);
 
-    QString array[] = {"temperado", "puxador","fechadura", "aluminio" , "pelicula" , "trinco" , "rodana" , "tubo"};
+    QString array[] = {"temperado", "puxador","fechadura", "kitaluminio" , "pelicula" , "trinco" , "rodana" , "tubo"};
     QSqlQuery query;
     for (const QString &tipo : array) {
         if (query.exec("SELECT * FROM product WHERE type = '" + tipo + "' ORDER BY name_product ASC")) {
@@ -23,7 +23,7 @@ PortaDe1Folha::PortaDe1Folha(QWidget *parent) :
                     ui->comboBoxPuxador->addItem(value);
                 }else if (tipo == "fechadura") {
                     ui->comboBoxFechadura->addItem(value);
-                } else if (tipo == "aluminio") {
+                } else if (tipo == "kitaluminio") {
                     ui->comboBoxKitAluminio->addItem(value);
                 } else if (tipo == "pelicula") {
                     ui->comboBoxPelicula->addItem(value);

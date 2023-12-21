@@ -10,26 +10,23 @@ SQLarea::SQLarea(QWidget *parent,QString type, QString id) :
 {
 
     ui->setupUi(this);
+
+    ui->pushButtonExcecao->setStyleSheet("background-color: rgba(0, 0, 0, 0); border: none;");
     this->setWindowTitle("ArtVidros");
     ui->lineEditTipo->setVisible(false);
     ui->checkBox->setVisible(false);
     setTipo(type);
 
-    QString name = "";
     QSqlQuery query;
-
-    std::vector<std::string> tipos = {
-        "acabamento", "aluminio", "batefecha", "box", "cantoneira",
-        "comum", "fechadura", "kitabrir", "kitboxcanto", "kitboxfrontal",
-        "kitpia", "pelicula", "puxador", "temperado", "trinco"
-    };
-
-    // Loop para adicionar os itens à QComboBox
-    for (const auto& tipo : tipos) {
-        ui->comboBoxType->addItem(QString::fromStdString(tipo));
+    if (query.exec("SELECT DISTINCT type FROM product ORDER BY type ASC")) {
+        while (query.next()) {
+            ui->comboBoxType->addItem(query.value(0).toString());
+        }
+    } else {
+        qDebug() << "Erro ao executar ao preencher comboBox";
     }
 
-
+    QString name = "";
     // separação das telas
     if (type == "add"){
         name = "Área de Inclusão";

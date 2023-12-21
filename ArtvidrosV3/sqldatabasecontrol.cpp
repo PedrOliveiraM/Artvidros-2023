@@ -104,3 +104,31 @@ float sqlDataBaseControl::buscarNoBDprofit(QString name, QString type)
     }
     return 0;
 }
+
+float sqlDataBaseControl::buscarNoBDprice(QString name)
+{
+    QSqlQuery query;
+    if (query.exec("SELECT * FROM product WHERE name_product = '" + name + "'")) {
+        while (query.next()) {
+            return query.value(2).toFloat();  // Suponho que o valor desejado esteja na primeira coluna
+        }
+    }else {
+        qDebug()<<"erro ao consultar lucro de '"+name+ "'";
+        return 0;
+    }
+    return 0;
+}
+
+float sqlDataBaseControl::buscarNoBDprofit(QString name)
+{
+    QSqlQuery query;
+    if (query.exec("SELECT * FROM product WHERE name_product = '" + name + "'")) {
+        while (query.next()) {
+            return query.value(4).toFloat();  // Suponho que o valor desejado esteja na primeira coluna
+        }
+    }else {
+        qDebug()<<"erro ao consultar lucro de '"+name+ "'";
+        return 0;
+    }
+    return 0;
+}

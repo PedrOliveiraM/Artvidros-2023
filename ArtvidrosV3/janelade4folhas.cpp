@@ -6,6 +6,36 @@ JanelaDe4Folhas::JanelaDe4Folhas(QWidget *parent) :
     ui(new Ui::JanelaDe4Folhas)
 {
     ui->setupUi(this);
+    ui->lineEditLargura->setInputMask("X.XX");
+    ui->lineEditAltura->setInputMask("X.XX");
+    ui->lineEditLucro->setEnabled(false);
+    ui->lineEditValor->setEnabled(false);
+
+    QString array[] = {"temperado", "batefecha" , "pelicula" , "trinco", "rodana", "kitaluminio"};
+    QSqlQuery query;
+
+    for (const QString &tipo : array) {
+        if (query.exec("SELECT * FROM product WHERE type = '" + tipo + "' ORDER BY name_product ASC")) {
+            while (query.next()) {
+                QString value = query.value(1).toString();  // Suponho que o valor desejado esteja na primeira coluna
+                if (tipo == "temperado") {
+                    ui->comboBoxVidros->addItem(value);
+                } else if (tipo == "batefecha") {
+                    ui->comboBoxBateFecha->addItem(value);
+                } else if (tipo == "pelicula") {
+                    ui->comboBoxPelicula->addItem(value);
+                } else if (tipo == "trinco") {
+                    ui->comboBoxTrinco->addItem(value);
+                }else if (tipo == "rodana") {
+                    ui->comboBoxRodana->addItem(value);
+                }else if (tipo == "kitaluminio") {
+                    ui->comboBoxKit->addItem(value);
+                }
+            }
+        } else {
+            qDebug() << "Erro ao executar a consulta para tipo ";
+        }
+    }
 }
 
 JanelaDe4Folhas::~JanelaDe4Folhas()

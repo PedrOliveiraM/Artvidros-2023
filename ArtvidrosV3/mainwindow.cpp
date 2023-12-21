@@ -38,6 +38,8 @@ void MainWindow::on_pushButtonJanelas_clicked()
 void MainWindow::on_pushButtonFechamentoPia_clicked()
 {
     //botao fechamento de pia
+    telaFechamento = new FechamentoDePia;
+    telaFechamento->exec();
 
 }
 

@@ -24,7 +24,8 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
         spinBox->setValue(1);
     }
 
-    QString array[] = {"temperado","aluminio","kitboxcanto","kitboxfrontal","kitpia", "kitabrir" ,"fechadura", "puxador", "trinco"};
+    QString array[] = {"temperado","aluminio","kitboxcanto","kitboxfrontal","kitpia", "kitabrir","bascula" ,"pivotante","fechadura", "puxador", "trinco"
+    ,"rodana" ,"pelicula"};
     QSqlQuery query;
 
     for (const QString &tipo : array) {
@@ -37,7 +38,7 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
                 } else if (tipo == "aluminio") {
                     ui->comboBoxAluminio->addItem(value);
 
-                } else if (tipo == "kitabrir" || tipo == "kitboxfrontal"|| tipo == "kitpia"|| tipo == "kitboxcanto" ) {
+                } else if (tipo == "kitabrir" || tipo == "kitboxfrontal"|| tipo == "kitpia" || tipo == "kitboxcanto"|| tipo == "bascula"|| tipo == "pivotante" ) {
                     ui->comboBoxKit->addItem(value);
 
                 } else if (tipo == "fechadura") {
@@ -48,6 +49,12 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
 
                 } else if (tipo == "trinco") {
                     ui->comboBoxTrinco->addItem(value);
+
+                } else if (tipo == "pelicula") {
+                    ui->comboBoxPelicula->addItem(value);
+
+                } else if (tipo == "rodana") {
+                    ui->comboBoxRodana->addItem(value);
                 }
             }
         } else {
@@ -218,20 +225,61 @@ void AdicionaisRef::on_pushButtonADDvidro_clicked()
     QString id = aux.geraID();
     float largura = ui->lineEditLargura->text().toFloat();
     float altura = ui->lineEditAltura->text().toFloat();
-    QString vidro = ui->comboBoxVidros->currentText();
-    QString metro = QString::number(largura)+ "x" + QString::number(altura) + "m " + vidro;
-    QString tipo = "temperado";
-
     QString quant = ui->spinBoxVidro->text();
+    QString metro = "";
     int quantInt = quant.toInt();
     float price; // vai buscar
     float profit;// vai buscar
+    float priceAux; // vai buscar
+    float profitAux;// vai buscar
+        // vidro - sem peliucla
 
-    price = BD.buscarNoBDprice(vidro,tipo);
-    price = aux.calcularPreco(price,aux.metrage(largura,altura),quantInt);
 
-    profit = BD.buscarNoBDprofit(vidro,tipo);
-    profit = aux.calcularPreco(profit,aux.metrage(largura,altura),quantInt);
+    if (ui->comboBoxVidros->currentIndex() != 0 && ui->comboBoxPelicula->currentIndex() == 0){
+
+        QString vidro = ui->comboBoxVidros->currentText();
+        QString tipo = "temperado";
+
+        price = BD.buscarNoBDprice(vidro,tipo);
+        price = aux.calcularPreco(price,aux.metrage(largura,altura),quantInt);
+        profit = BD.buscarNoBDprofit(vidro,tipo);
+        profit = aux.calcularPreco(profit,aux.metrage(largura,altura),quantInt);
+
+        metro = QString::number(largura)+ "x" + QString::number(altura) + "m " + vidro;
+
+        // pelicula - sem vidro
+    }else if (ui->comboBoxPelicula->currentIndex() != 0 && ui->comboBoxVidros->currentIndex() == 0){
+
+        QString pelicula = ui->comboBoxPelicula->currentText();
+        QString tipo = "pelicula";
+
+        price = BD.buscarNoBDprice(pelicula,tipo);
+        price = aux.calcularPreco(price,aux.metrage(largura,altura),quantInt);
+        profit = BD.buscarNoBDprofit(pelicula,tipo);
+        profit = aux.calcularPreco(profit,aux.metrage(largura,altura),quantInt);
+
+        metro = QString::number(largura)+ "x" + QString::number(altura) + "m " + pelicula;
+
+    } else {
+        QString vidro = ui->comboBoxVidros->currentText();
+        QString tipoV = "temperado";
+        priceAux = BD.buscarNoBDprice(vidro,tipoV);
+        price = aux.calcularPreco(priceAux,aux.metrage(largura,altura),quantInt);
+
+        profitAux = BD.buscarNoBDprofit(vidro,tipoV);
+        profit = aux.calcularPreco(profitAux,aux.metrage(largura,altura),quantInt);
+
+        //pelicula
+        QString pelicula = ui->comboBoxPelicula->currentText();
+        QString tipoP = "pelicula";
+        priceAux = BD.buscarNoBDprice(pelicula,tipoP);
+        price += aux.calcularPreco(priceAux,aux.metrage(largura,altura),quantInt);
+
+        profitAux = BD.buscarNoBDprofit(pelicula,tipoP);
+        profit += aux.calcularPreco(profitAux,aux.metrage(largura,altura),quantInt);
+
+        metro = QString::number(largura)+ "x" + QString::number(altura) + "m " + vidro + " com " + pelicula;
+    }
 
     QString QSprice = QString::number(price); // vai buscar
     QString QSprofit = QString::number(profit);// vai buscar
@@ -285,13 +333,13 @@ void AdicionaisRef::on_pushButtonADDkit_clicked()
     // pegar atributos
     QString id = aux.geraID();
     QString nome = ui->comboBoxKit->currentText();
-    QString tipo = "kitabrir";
+
     int quant = ui->spinBox_kit->text().toInt();
     QString QSquant = QString::number(quant);
 
     // buscar no bd
-    float price = BD.buscarNoBDprice(nome,tipo); // vai buscar
-    float profit = BD.buscarNoBDprofit(nome,tipo);// vai buscar
+    float price = BD.buscarNoBDprice(nome); // vai buscar
+    float profit = BD.buscarNoBDprofit(nome);// vai buscar
     price = (quant * price);
     profit = (quant * profit);
 

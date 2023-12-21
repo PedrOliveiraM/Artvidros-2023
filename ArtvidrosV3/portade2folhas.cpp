@@ -11,7 +11,7 @@ PortaDe2Folhas::PortaDe2Folhas(QWidget *parent) :
     ui->lineEditLucro->setEnabled(false);
     ui->lineEditValor->setEnabled(false);
 
-    QString array[] = {"temperado", "puxador","batefecha", "aluminio" , "pelicula" , "trinco" , "rodana"};
+    QString array[] = {"temperado", "puxador","batefecha", "kitaluminio" , "pelicula" , "trinco" , "rodana"};
     QSqlQuery query;
 
     for (const QString &tipo : array) {
@@ -24,7 +24,7 @@ PortaDe2Folhas::PortaDe2Folhas(QWidget *parent) :
                     ui->comboBoxFechadura->addItem(value);
                 }else if (tipo == "puxador") {
                     ui->comboBoxPuxador->addItem(value);
-                } else if (tipo == "aluminio") {
+                } else if (tipo == "kitaluminio") {
                     ui->comboBoxKitAluminio->addItem(value);
                 } else if (tipo == "pelicula") {
                     ui->comboBoxPelicula->addItem(value);
