@@ -7,6 +7,9 @@
 #include "portadeabrir.h"
 #include "adicionaisref.h"
 #include "fechamentodepia.h"
+#include "dialogboxs.h"
+
+#include <vidroscomuns.h>
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -53,7 +56,9 @@ private:
     Dialogareaorcamentos *telaAreaOrcamento;
     DialogPortas *telaPortas; 
     DialogJanelas *telaJanelas;
+    DialogBoxs *telaBox;
 
+    VidrosComuns *telaVidrosComuns;
     FechamentoDePia *telaFechamento;
 
 

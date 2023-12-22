@@ -3,6 +3,8 @@
 #include <QSqlQuery>
 #include <sqldatabasecontrol.h>
 #include <QMessageBox>
+#include <pdfgenerator.h>
+#include <QFileDialog>
 Dialogareaorcamentos::Dialogareaorcamentos(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialogareaorcamentos)
@@ -91,5 +93,39 @@ void Dialogareaorcamentos::on_pushButton_Excluir_clicked()
         QMessageBox::warning(this,"ERRO","O Item selecionado Não foi Deletado");
 
     showBD();
+}
+
+
+void Dialogareaorcamentos::on_pushButtonGerarPDF_clicked()
+{
+    // Criar uma instância do QFileDialog para seleção de arquivo
+    QString filePath = QFileDialog::getSaveFileName(this, tr("Salvar PDF"), QDir::homePath(), tr("Arquivos PDF (*.pdf)"));
+
+    if (filePath.isEmpty()) {
+        // O usuário cancelou a escolha do arquivo ou ocorreu um erro
+        return;
+    }
+
+    // Criar uma instância do PDFGenerator com o caminho escolhido
+    PDFGenerator pdfGenerator(filePath);
+
+    // Adicionar produtos e valores
+    pdfGenerator.addProduct("Porta de abrir", 859.50);
+    pdfGenerator.addProduct("Cantoneira", 30);
+
+    // Calcular e adicionar o valor total
+    double total = 859.50 + 30;
+    pdfGenerator.setTotal(total);
+
+    // Adicionar a imagem de fundo (template) ao PDF
+    QImage backgroundImage(":/caminho/para/imagem/template.jpg");  // Substitua pelo caminho real da sua imagem
+    pdfGenerator.addBackgroundImage(backgroundImage);
+
+    // Adicionar os produtos nos locais desejados na imagem
+    pdfGenerator.addProductToImage("Porta de abrir", 100, 200);  // Substitua pelas coordenadas desejadas
+    pdfGenerator.addProductToImage("Cantoneira", 150, 250);  // Substitua pelas coordenadas desejadas
+
+    // Salvar o PDF
+    pdfGenerator.savePDF();
 }
 

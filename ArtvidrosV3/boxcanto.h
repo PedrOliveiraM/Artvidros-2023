@@ -1,27 +1,31 @@
-#ifndef BASCULA_H
-#define BASCULA_H
-#include <QDialog>
+#ifndef BOXCANTO_H
+#define BOXCANTO_H
 #include <adicionaisref.h>
 #include <dialogsalvar.h>
-#include <classpivobascula.h>
 #include <QInputDialog>
+#include <classbox.h>
+#include <QDialog>
+
 namespace Ui {
-class Bascola;
+class BoxCanto;
 }
 
-class Bascola : public QDialog
+class BoxCanto : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Bascola(QWidget *parent = nullptr);
-    ~Bascola();
+    explicit BoxCanto(QWidget *parent = nullptr);
+    ~BoxCanto();
 
     std::list<AdicionaisOBJ> listaDeAdicionais;
+
     std::list<AdicionaisOBJ> getListaDeAdicionais() const;
     void setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais);
 
 private slots:
+    void on_pushButtonRefatorando_clicked();
+
     void on_pushButtonCalcular_clicked();
 
     void atualizarValoresImportados(const QString& valor, const QString& lucro);
@@ -32,12 +36,11 @@ private slots:
 
     void on_pushButtonLimpar_clicked();
 
-    void on_pushButtonRefatorando_clicked();
 
 private:
-    Ui::Bascola *ui;
+    Ui::BoxCanto *ui;
     AdicionaisRef *telaAdicionais;
     DialogSalvar *telaSalvar;
 };
 
-#endif // BASCULA_H
+#endif // BOXCANTO_H

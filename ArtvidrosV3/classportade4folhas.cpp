@@ -49,8 +49,6 @@ float ClassPortaDe4Folhas::metragem()
     double metrageVidro = x1 * y + x2 * y + x3 * y + x4 * y;
 
     return metrageVidro;
-
-
 }
 
 float ClassPortaDe4Folhas::calculatePrice()

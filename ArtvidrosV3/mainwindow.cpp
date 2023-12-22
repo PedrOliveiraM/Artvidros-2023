@@ -47,18 +47,24 @@ void MainWindow::on_pushButtonFechamentoPia_clicked()
 void MainWindow::on_pushButtonBox_clicked()
 {
     //botao box
+    telaBox = new DialogBoxs;
+    telaBox->exec();
 }
 
 
 void MainWindow::on_pushButtonMoldura_clicked()
 {
     // botao moldura
+    //telaMoldura = new Molduras;
+    //telaMoldura->exec();
 }
 
 
 void MainWindow::on_pushButtonVidrosComuns_clicked()
 {
     // botao vidros comuns
+    telaVidrosComuns = new VidrosComuns;
+    telaVidrosComuns->exec();
 }
 
 

@@ -19,6 +19,8 @@ public:
 private slots:
     void on_pushButton_Excluir_clicked();
 
+    void on_pushButtonGerarPDF_clicked();
+
 private:
     Ui::Dialogareaorcamentos *ui;
 
