@@ -20,14 +20,15 @@ class AdicionaisRef : public QDialog
     Q_OBJECT
 
 public:
-    explicit AdicionaisRef(QWidget *parent = nullptr ,const std::list<AdicionaisOBJ> &lista = std::list<AdicionaisOBJ>() , QString tipo = " ");
+    explicit AdicionaisRef(QWidget *parent = nullptr , const std::list<AdicionaisOBJ> &lista = std::list<AdicionaisOBJ>() , QString tipo = " " , QString kitAluminio = "", float altura = 0.0);
     ~AdicionaisRef();
 
     QString price;
     QString lucro;
     QString tipoTela;
+    QString kitalum;
+    float altura;
     std::list<AdicionaisOBJ> listaDeAdicionais;
-
 
     float getSumPrice();
     float getSumProfit();
@@ -46,9 +47,17 @@ public:
     QString getTipoTela() const;
     void setTipoTela(const QString &newTipoTela);
 
+    float getAltura() const;
+    void setAltura(float newAltura);
+
+    QString getKitalum() const;
+    void setKitalum(const QString &newKitalum);
+
 private slots:
     void removerLinha();
+
     void on_pushButtonIncluirNoOrcamentoRef_clicked();
+
     void on_pushButtonADDvidro_clicked();
 
     void on_pushButtonADDkit_clicked();
@@ -64,6 +73,8 @@ private slots:
     void on_pushButtonADDrodana_clicked();
 
     void on_pushButtonAreaDePrecos_clicked();
+
+    void on_pushButtonTodosOsAluminios_clicked();
 
 private:
     Ui::AdicionaisRef *ui;

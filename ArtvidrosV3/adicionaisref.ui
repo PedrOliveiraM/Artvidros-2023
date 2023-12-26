@@ -381,9 +381,9 @@
   <widget class="QWidget" name="layoutWidget_4">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>560</y>
-     <width>139</width>
+     <width>151</width>
      <height>71</height>
     </rect>
    </property>
@@ -670,7 +670,7 @@
   <widget class="QSpinBox" name="spinBox_Aluminio">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>20</x>
      <y>640</y>
      <width>41</width>
      <height>41</height>
@@ -758,7 +758,7 @@
   <widget class="QPushButton" name="pushButtonADDaluminios">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>70</x>
      <y>640</y>
      <width>151</width>
      <height>41</height>
@@ -1174,6 +1174,25 @@
      <width>32</width>
      <height>32</height>
     </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonTodosOsAluminios">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>640</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Todos os Alumínios</string>
    </property>
   </widget>
  </widget>

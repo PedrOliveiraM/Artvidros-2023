@@ -67,6 +67,8 @@ float ClassPortaDe2Folhas::calculatePrice()
     qDebug()<<"trinco"<<Vlatch;
     qDebug()<<"rodana"<<Vrodanas;
 
+
+
     float value = (metragem() * Vglass) + Vpuller + Vfechadura + VkitAluminio + Vfilm + Vlatch + Vrodanas;
 
     return value;

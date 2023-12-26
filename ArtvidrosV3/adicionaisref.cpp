@@ -1,7 +1,7 @@
 #include "adicionaisref.h"
 #include "ui_adicionaisref.h"
 
-AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &lista , QString tipo) :
+AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &lista , QString tipo ,QString kitAluminio , float altura ) :
     QDialog(parent),
     ui(new Ui::AdicionaisRef)
 {
@@ -10,6 +10,8 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditComprimento->setInputMask("X.XX");
+    setAltura(altura);
+    setKitalum(kitAluminio);
 
     QSpinBox* spinBoxes[] = {
         ui->spinBoxVidro,
@@ -78,6 +80,26 @@ AdicionaisRef::~AdicionaisRef()
     delete ui;
 }
 
+QString AdicionaisRef::getKitalum() const
+{
+    return kitalum;
+}
+
+void AdicionaisRef::setKitalum(const QString &newKitalum)
+{
+    kitalum = newKitalum;
+}
+
+float AdicionaisRef::getAltura() const
+{
+    return altura;
+}
+
+void AdicionaisRef::setAltura(float newAltura)
+{
+    altura = newAltura;
+}
+
 QString AdicionaisRef::getTipoTela() const
 {
     return tipoTela;
@@ -99,30 +121,7 @@ void AdicionaisRef::setListaDeAdicionais(const std::list<AdicionaisOBJ> &newList
     listaDeAdicionais = newListaDeAdicionais;
 }
 
-void AdicionaisRef::removerLinha()
-{
-    // Obtém a linha selecionada
-    int linhaSelecionada = ui->tableWidget->currentRow();
 
-    // Verifica se uma linha está selecionada
-    if (linhaSelecionada >= 0)
-    {
-        // Obtém o código na primeira coluna da linha selecionada
-        QString codigoParaRemover = ui->tableWidget->item(linhaSelecionada, 0)->text();
-
-        // Remove o item da listaDeAdicionais com base no código
-        auto it = std::remove_if(listaDeAdicionais.begin(), listaDeAdicionais.end(), [&](const AdicionaisOBJ& objeto) {
-            return objeto.getId() == codigoParaRemover;
-        });
-
-        // Remove o item da listaDeAdicionais
-        listaDeAdicionais.erase(it, listaDeAdicionais.end());
-
-        // Remove a linha da tableWidget
-        ui->tableWidget->removeRow(linhaSelecionada);
-    }
-    mostrarAdicoes();
-}
 
 QString AdicionaisRef::getLucro() const
 {
@@ -495,5 +494,120 @@ void AdicionaisRef::on_pushButtonAreaDePrecos_clicked()
 {
     telaDePrecos = new DialogAreaPrecos;
     telaDePrecos->exec();
+}
+
+void AdicionaisRef::removerLinha()
+{
+    // Obtém a linha selecionada
+    int linhaSelecionada = ui->tableWidget->currentRow();
+
+    // Verifica se uma linha está selecionada
+    if (linhaSelecionada >= 0)
+    {
+        // Obtém o código na primeira coluna da linha selecionada
+        QString codigoParaRemover = ui->tableWidget->item(linhaSelecionada, 0)->text();
+
+        // Remove o item da listaDeAdicionais com base no código
+        auto it = std::remove_if(listaDeAdicionais.begin(), listaDeAdicionais.end(), [&](const AdicionaisOBJ& objeto) {
+            return objeto.getId() == codigoParaRemover;
+        });
+
+        // Remove o item da listaDeAdicionais
+        listaDeAdicionais.erase(it, listaDeAdicionais.end());
+
+        // Remove a linha da tableWidget
+        ui->tableWidget->removeRow(linhaSelecionada);
+    }
+    mostrarAdicoes();
+}
+
+void AdicionaisRef::on_pushButtonTodosOsAluminios_clicked()
+{
+    float altura = getAltura();
+    int altu = static_cast<int>(altura * 100);
+
+    while (altu % 5 != 0) {
+        altu += 1;
+    }
+
+    float alturaCorrigida = altu / 100.0;
+
+    //buscar no BD
+    QString kitAluminio = getKitalum();
+
+    QString pu = "PU 8";
+    QString pu2 = "PU 10";
+    QString vp = "VP 8";
+    QString cad = "CAD 8";
+
+
+    if (kitAluminio.contains("10")) {
+        pu = "PU 10";
+        pu2 = "PU 12";
+        vp = "VP 10";
+        cad = "CAD 10";
+    }
+    qDebug()<<"tipoTela :" << tipoTela;
+    if (tipoTela.contains("2")){
+        sqlDataBaseControl aux;
+        float V_PU = aux.buscarNoBDprice(pu, "aluminio") * alturaCorrigida;
+        float V_PU2 = aux.buscarNoBDprice(pu2, "aluminio") * alturaCorrigida;
+        float V_VP = aux.buscarNoBDprice(vp, "aluminio") * alturaCorrigida;
+
+        qDebug()<<"*** PRICE ***";
+        qDebug()<<"V_PU"<<V_PU;
+        qDebug()<<"V_PU2"<<V_PU2;
+        qDebug()<<"V_VP"<<V_VP;
+
+        qDebug()<<"\n";
+
+        float L_PU = aux.buscarNoBDprofit(pu, "aluminio") * alturaCorrigida;
+        float L_PU2 = aux.buscarNoBDprofit(pu2, "aluminio")* alturaCorrigida;
+        float L_VP = aux.buscarNoBDprofit(vp, "aluminio")* alturaCorrigida;
+
+        qDebug()<<"*** PROFIT ***";
+        qDebug()<<"L_PU"<<L_PU;
+        qDebug()<<"L_PU2"<<L_PU2;
+        qDebug()<<"L_VP"<<L_VP;
+
+        AdicionaisOBJ aux2;
+        AdicionaisOBJ adicionalPU(aux2.geraID(), QString::number(alturaCorrigida)+ " m de "+ pu, "1", QString::number(V_PU), QString::number(L_PU));
+        AdicionaisOBJ adicionalPU2(aux2.geraID(), QString::number(alturaCorrigida)+ " m de " + pu2, "1", QString::number(V_PU2), QString::number(L_PU2));
+        AdicionaisOBJ adicionalVP(aux2.geraID(), QString::number(alturaCorrigida) + " m de " + vp, "1", QString::number(V_VP), QString::number(L_VP));
+
+        listaDeAdicionais.push_back(adicionalPU);
+        listaDeAdicionais.push_back(adicionalPU2);
+        listaDeAdicionais.push_back(adicionalVP);
+
+    } else {
+        sqlDataBaseControl aux;
+        float V_PU = aux.buscarNoBDprice(pu, "aluminio") * alturaCorrigida;
+        float V_VP = aux.buscarNoBDprice(vp, "aluminio") * alturaCorrigida;
+        float V_CAD = aux.buscarNoBDprice(cad, "aluminio") * alturaCorrigida;
+
+        qDebug()<<"*** PRICE ***";
+        qDebug()<<"V_PU"<<V_PU;
+        qDebug()<<"V_VP"<<V_VP;
+        qDebug()<<"V_CAD"<<V_CAD;
+
+        float L_PU = aux.buscarNoBDprofit(pu, "aluminio") * alturaCorrigida;
+
+        float L_VP = aux.buscarNoBDprofit(vp, "aluminio")* alturaCorrigida;
+        float L_CAD = aux.buscarNoBDprice(cad, "aluminio") * alturaCorrigida;
+        qDebug()<<"*** PROFIT ***";
+        qDebug()<<"L_PU"<<L_PU;
+        qDebug()<<"L_VP"<<L_VP;
+        qDebug()<<"L_CAD"<<L_CAD;
+
+        AdicionaisOBJ aux2;
+        AdicionaisOBJ adicionalPU(aux2.geraID(), QString::number(alturaCorrigida)+ " m de " + pu, "2", QString::number(2*V_PU), QString::number(2*L_PU));
+        AdicionaisOBJ adicionalVP(aux2.geraID(), QString::number(alturaCorrigida)+ " m de "+ vp, "2", QString::number(2*V_VP), QString::number(2*L_VP));
+        AdicionaisOBJ adicionalCAD(aux2.geraID(), QString::number(alturaCorrigida)+ " m de " + cad, "1", QString::number(V_CAD), QString::number(L_CAD));
+
+        listaDeAdicionais.push_back(adicionalPU);
+        listaDeAdicionais.push_back(adicionalVP);
+        listaDeAdicionais.push_back(adicionalCAD);
+    }
+    mostrarAdicoes();
 }
 

@@ -39,7 +39,7 @@
   <widget class="QPushButton" name="pushButtonLimpar">
    <property name="geometry">
     <rect>
-     <x>850</x>
+     <x>840</x>
      <y>630</y>
      <width>51</width>
      <height>41</height>
@@ -82,7 +82,7 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>600</x>
+     <x>590</x>
      <y>630</y>
      <width>221</width>
      <height>41</height>

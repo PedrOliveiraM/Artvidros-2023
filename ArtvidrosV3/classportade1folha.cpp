@@ -1,5 +1,5 @@
 #include "classportade1folha.h"
-
+#include <adicionaisobj.h>
 ClassPortaDe1Folha::ClassPortaDe1Folha()
 {
 
@@ -38,6 +38,8 @@ float ClassPortaDe1Folha::metragem()
 
 }
 
+
+
 float ClassPortaDe1Folha::calculatePrice()
 {
     sqlDataBaseControl aux;
@@ -58,6 +60,7 @@ float ClassPortaDe1Folha::calculatePrice()
     qDebug()<<"pelicula"<<Vfilm;
     qDebug()<<"trinco"<<Vlatch;
     qDebug()<<"rodana"<<Vrodanas;
+
 
     float value = (metragem() * Vglass) + Vpuller + Vfechadura + VkitAluminio + Vfilm + Vlatch + Vrodanas;
 

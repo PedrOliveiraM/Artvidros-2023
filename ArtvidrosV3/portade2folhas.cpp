@@ -44,8 +44,6 @@ PortaDe2Folhas::~PortaDe2Folhas()
     delete ui;
 }
 
-
-
 std::list<AdicionaisOBJ> PortaDe2Folhas::getListaDeAdicionais() const
 {
     return listaDeAdicionais;
@@ -78,23 +76,42 @@ void PortaDe2Folhas::on_pushButtonCalcular_clicked()
 
     ui->lineEditValor->setText(price);
     ui->lineEditLucro->setText(profit);
+
+    on_pushButtonRefatorando_clicked();
 }
 
 
 
 void PortaDe2Folhas::atualizarValoresImportados(const QString &valor, const QString &lucro)
 {
+    //calcular orçamento
+    float width = ui->lineEditLargura->text().toFloat();
+    float height = ui->lineEditAltura->text().toFloat();
+    QString glass = ui->comboBoxVidros->currentText();
+    QString puller = ui->comboBoxPuxador->currentText();
+    QString fechadura = ui->comboBoxFechadura->currentText();
+    QString kitAluminio = ui->comboBoxKitAluminio->currentText();
+    QString film = ui->comboBoxPelicula->currentText();
+    QString latch = ui->comboBoxTrinco->currentText();
+    QString rodana = "Rodana";
 
-    on_pushButtonCalcular_clicked();
+    ClassPortaDe2Folhas door(width,height,glass,puller,fechadura,kitAluminio,film,latch,rodana);
+    sqlDataBaseControl aux;
 
-    float price = ui->lineEditValor->text().toFloat();
-    float profit = ui->lineEditLucro->text().toFloat();
+    QString price = QString::number(door.calculatePrice());
+    QString profit = QString::number(door.calculateProfit());
 
-    price = price + valor.toFloat();
-    profit = profit + lucro.toFloat();
+    ui->lineEditValor->setText(price);
+    ui->lineEditLucro->setText(profit);
 
-    ui->lineEditValor->setText(QString::number(price));
-    ui->lineEditLucro->setText(QString::number(profit));
+    float price2 = ui->lineEditValor->text().toFloat();
+    float profit2 = ui->lineEditLucro->text().toFloat();
+
+    price2 = price2 + valor.toFloat();
+    profit2 = profit2 + lucro.toFloat();
+
+    ui->lineEditValor->setText(QString::number(price2));
+    ui->lineEditLucro->setText(QString::number(profit2));
 }
 
 
@@ -134,7 +151,11 @@ void PortaDe2Folhas::on_pushButtonSalvar_clicked()
 
 void PortaDe2Folhas::on_pushButtonRefatorando_clicked()
 {
-    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"PortaDe2Folhas");
+    QString kitAluminio = ui->comboBoxKitAluminio->currentText();
+    float  height = ui->lineEditAltura->text().toFloat();
+
+
+    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"PortaDe2Folhas",kitAluminio,height);
     telaAdicionais.exec();
 
     QString valorRetornado = telaAdicionais.getPrice();
@@ -147,15 +168,26 @@ void PortaDe2Folhas::on_pushButtonRefatorando_clicked()
 void PortaDe2Folhas::on_pushButtonDesconto_clicked()
 {
     bool ok;
-    double percentualDesconto = QInputDialog::getDouble(this, tr("Desconto"), tr("Digite a porcentagem de desconto:"), 0, 0, 100, 2, &ok);
+
+    // Solicitar ao usuário que escolha entre desconto ou acréscimo
+    QStringList items;
+    items << tr("Desconto") << tr("Acréscimo");
+    QString itemSelecionado = QInputDialog::getItem(this, tr("Escolha"), tr("Escolha o tipo de alteração:"), items, 0, false, &ok);
+
+    if (!ok || itemSelecionado.isEmpty()) {
+        return;  // O usuário cancelou a operação ou não escolheu um item
+    }
+
+    double percentualAlteracao = QInputDialog::getDouble(this, tr("Desconto/Acréscimo"), tr("Digite a porcentagem de %1:").arg(itemSelecionado), 0, -100, 100, 2, &ok);
 
     if (ok) {
         float valorAtual = ui->lineEditValor->text().toFloat();
         float lucroAtual = ui->lineEditLucro->text().toFloat();
 
-        // Calcule os novos valores após o desconto
-        float novoValor = valorAtual * (1.0 - percentualDesconto / 100.0);
-        float novoLucro = lucroAtual * (1.0 - percentualDesconto / 100.0);
+        // Calcule os novos valores após o desconto ou acréscimo
+        float fator = 1.0 + (itemSelecionado == "Acréscimo" ? percentualAlteracao / 100.0 : -percentualAlteracao / 100.0);
+        float novoValor = valorAtual * fator;
+        float novoLucro = lucroAtual * fator;
 
         // Atualize as caixas de texto
         ui->lineEditValor->setText(QString::number(novoValor));
