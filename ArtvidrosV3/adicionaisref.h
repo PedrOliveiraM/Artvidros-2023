@@ -10,6 +10,7 @@
 #include <QDialog>
 #include <adicionaisobj.h>
 #include <dialogsalvar.h>
+#include <dialogareaprecos.h>
 namespace Ui {
 class AdicionaisRef;
 }
@@ -60,9 +61,14 @@ private slots:
 
     void on_pushButtonADDtrinco_clicked();
 
+    void on_pushButtonADDrodana_clicked();
+
+    void on_pushButtonAreaDePrecos_clicked();
+
 private:
     Ui::AdicionaisRef *ui;
     DialogSalvar *telaSalvar;
+    DialogAreaPrecos *telaDePrecos;
 };
 
 #endif // ADICIONAISREF_H

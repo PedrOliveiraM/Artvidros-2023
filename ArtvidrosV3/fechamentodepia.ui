@@ -74,8 +74,8 @@
   <widget class="QWidget" name="layoutWidget_9">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>380</y>
+     <x>500</x>
+     <y>390</y>
      <width>211</width>
      <height>71</height>
     </rect>
@@ -324,46 +324,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget_3">
-   <property name="geometry">
-    <rect>
-     <x>600</x>
-     <y>380</y>
-     <width>211</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_7">
-    <item>
-     <widget class="QLabel" name="label_5">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;Rodana&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBoxRodana">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-      </item>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QPushButton" name="pushButtonSalvar">
    <property name="geometry">
     <rect>
@@ -413,8 +373,8 @@
   <widget class="QPushButton" name="pushButtonRefatorando">
    <property name="geometry">
     <rect>
-     <x>830</x>
-     <y>410</y>
+     <x>730</x>
+     <y>420</y>
      <width>211</width>
      <height>41</height>
     </rect>

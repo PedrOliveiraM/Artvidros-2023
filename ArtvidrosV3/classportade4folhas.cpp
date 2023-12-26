@@ -58,7 +58,7 @@ float ClassPortaDe4Folhas::calculatePrice()
     float Vglass = aux.buscarNoBDprice(glass , "temperado");
     float Vfechadura = aux.buscarNoBDprice(fechadura , "fechadura");
     float Vpuller = aux.buscarNoBDprice(puller , "puxador") * 2 ;
-    float VkitAluminio = aux.buscarNoBDprice(kitAluminio , "aluminio") * (width + 0.10);
+    float VkitAluminio = aux.buscarNoBDprice(kitAluminio , "kitaluminio") * (width + 0.10);
     float Vfilm = aux.buscarNoBDprice(film , "pelicula") * metragem();
     float Vlatch = aux.buscarNoBDprice(latch , "trinco") * 2;
     float Vrodanas = aux.buscarNoBDprice(rodanas , "rodana") * 4;

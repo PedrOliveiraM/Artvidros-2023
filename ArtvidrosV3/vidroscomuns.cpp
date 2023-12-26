@@ -6,6 +6,7 @@ VidrosComuns::VidrosComuns(QWidget *parent) :
     ui(new Ui::VidrosComuns)
 {
     ui->setupUi(this);
+    this->setWindowTitle("ArtVidros");
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);

@@ -58,7 +58,7 @@ float ClassJanelaDe4Folhas::calculatePrice()
     sqlDataBaseControl aux;
     float Vglass = aux.buscarNoBDprice(glass , "temperado");
     float VbateFecha = aux.buscarNoBDprice(bateFecha , "batefecha");
-    float VkitAluminio = aux.buscarNoBDprice(kit , "aluminio");
+    float VkitAluminio = aux.buscarNoBDprice(kit , "kitaluminio") * (width + 0.10);
     float Vrodanas = aux.buscarNoBDprice(rodana, "rodana") * 2;
     float Vlatch = aux.buscarNoBDprice(trinco, "trinco");
     float Vfilm = aux.buscarNoBDprice(film , "pelicula") * metragem();

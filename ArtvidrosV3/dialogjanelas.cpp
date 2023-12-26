@@ -6,6 +6,7 @@ DialogJanelas::DialogJanelas(QWidget *parent) :
     ui(new Ui::DialogJanelas)
 {
     ui->setupUi(this);
+    this->setWindowTitle("ArtVidros");
 }
 
 DialogJanelas::~DialogJanelas()

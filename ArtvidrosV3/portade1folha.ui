@@ -120,7 +120,7 @@
   <widget class="QPushButton" name="pushButtonRefatorando">
    <property name="geometry">
     <rect>
-     <x>920</x>
+     <x>760</x>
      <y>440</y>
      <width>211</width>
      <height>41</height>
@@ -195,7 +195,7 @@
   <widget class="QWidget" name="layoutWidget_7">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>320</x>
      <y>410</y>
      <width>211</width>
      <height>71</height>
@@ -281,7 +281,7 @@
   <widget class="QWidget" name="layoutWidget_9">
    <property name="geometry">
     <rect>
-     <x>480</x>
+     <x>540</x>
      <y>410</y>
      <width>211</width>
      <height>71</height>
@@ -413,46 +413,6 @@
     </item>
     <item>
      <widget class="QComboBox" name="comboBoxKitAluminio">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-      </item>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_12">
-   <property name="geometry">
-    <rect>
-     <x>700</x>
-     <y>410</y>
-     <width>211</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_11">
-    <item>
-     <widget class="QLabel" name="label_10">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;Rodana&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="comboBoxRodana">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -617,7 +577,6 @@
   <tabstop>comboBoxKitAluminio</tabstop>
   <tabstop>comboBoxPelicula</tabstop>
   <tabstop>comboBoxTrinco</tabstop>
-  <tabstop>comboBoxRodana</tabstop>
   <tabstop>pushButtonRefatorando</tabstop>
   <tabstop>pushButtonCalcular</tabstop>
   <tabstop>pushButtonDesconto</tabstop>

@@ -74,7 +74,9 @@ float ClassPortaDeAbrir::calculatePrice()
     float Vpuller = aux.buscarNoBDprice(puller , "puxador");
     float Vkit = aux.buscarNoBDprice(kit , "kitabrir");
     float Vfilm = aux.buscarNoBDprice(film , "pelicula") * metragem();
-    float Vlatch = aux.buscarNoBDprofit(latch , "trinco");
+    float Vlatch = aux.buscarNoBDprice(latch , "trinco");
+
+
 
     qDebug()<<"calcular Price";
     qDebug()<<"metragem"<<metragem();
@@ -85,6 +87,7 @@ float ClassPortaDeAbrir::calculatePrice()
     qDebug()<<"pelicula"<<Vfilm;
 
     float value = (metragem() * Vglass) + Vpuller + Vkit + Vfilm + Vlatch;
+    qDebug()<<"TOTAL : "<<value;
     return value;
 }
 
@@ -97,7 +100,9 @@ float ClassPortaDeAbrir::calculateProfit()
     float Vfilm = aux.buscarNoBDprofit(film , "pelicula") * metragem();
     float Vlatch = aux.buscarNoBDprofit(latch , "trinco");
 
+
     float value = (metragem() * Vglass) + Vpuller + Vkit + Vfilm + Vlatch;
+    qDebug()<<"LUCRO : "<<value;
     return value;
 }
 

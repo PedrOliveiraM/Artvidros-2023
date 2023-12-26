@@ -6,12 +6,13 @@ JanelaDe4Folhas::JanelaDe4Folhas(QWidget *parent) :
     ui(new Ui::JanelaDe4Folhas)
 {
     ui->setupUi(this);
+    this->setWindowTitle("ArtVidros");
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);
     ui->lineEditValor->setEnabled(false);
 
-    QString array[] = {"temperado", "batefecha" , "pelicula" , "trinco", "rodana", "kitaluminio"};
+    QString array[] = {"temperado", "batefecha" , "pelicula" , "trinco", "kitaluminio"};
     QSqlQuery query;
 
     for (const QString &tipo : array) {
@@ -26,8 +27,6 @@ JanelaDe4Folhas::JanelaDe4Folhas(QWidget *parent) :
                     ui->comboBoxPelicula->addItem(value);
                 } else if (tipo == "trinco") {
                     ui->comboBoxTrinco->addItem(value);
-                }else if (tipo == "rodana") {
-                    ui->comboBoxRodana->addItem(value);
                 }else if (tipo == "kitaluminio") {
                     ui->comboBoxKit->addItem(value);
                 }
@@ -75,7 +74,7 @@ void JanelaDe4Folhas::on_pushButtonCalcular_clicked()
     QString bateFecha = ui->comboBoxBateFecha->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
-    QString rodana = ui->comboBoxRodana->currentText();
+    QString rodana = "Rodana";
 
     ClassJanelaDe2Folhas windows(width,height,glass,bateFecha,kit,rodana,latch,film);
     sqlDataBaseControl aux;
@@ -129,7 +128,6 @@ void JanelaDe4Folhas::on_pushButtonLimpar_clicked()
     ui->comboBoxBateFecha->setCurrentIndex(-1);
     ui->comboBoxPelicula->setCurrentIndex(-1);
     ui->comboBoxTrinco->setCurrentIndex(-1);
-    ui->comboBoxRodana->setCurrentIndex(-1);
 
     ui->lineEditLucro->clear();
     ui->lineEditValor->clear();

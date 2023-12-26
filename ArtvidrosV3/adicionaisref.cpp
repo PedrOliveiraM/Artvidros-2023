@@ -6,6 +6,7 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
     ui(new Ui::AdicionaisRef)
 {
     ui->setupUi(this);
+    this->setWindowTitle("ArtVidros");
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditComprimento->setInputMask("X.XX");
@@ -16,7 +17,8 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
         ui->spinBox_fechadura,
         ui->spinBox_kit,
         ui->spinBox_puxador,
-        ui->spinBox_trinco
+        ui->spinBox_trinco,
+        ui->spinBox_Rodana
     };
 
     for (QSpinBox* spinBox : spinBoxes) {
@@ -24,7 +26,7 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
         spinBox->setValue(1);
     }
 
-    QString array[] = {"temperado","aluminio","kitboxcanto","kitboxfrontal","kitpia", "kitabrir","bascula" ,"pivotante","fechadura", "puxador", "trinco"
+    QString array[] = {"temperado","aluminio","kitboxcanto","kitboxfrontal","kitaluminio","kitpia", "kitabrir","bascula" ,"pivotante","fechadura", "puxador", "trinco"
     ,"rodana" ,"pelicula"};
     QSqlQuery query;
 
@@ -35,7 +37,7 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
                 if (tipo == "temperado") {
                     ui->comboBoxVidros->addItem(value);
 
-                } else if (tipo == "aluminio") {
+                } else if (tipo == "aluminio" || tipo == "kitaluminio") {
                     ui->comboBoxAluminio->addItem(value);
 
                 } else if (tipo == "kitabrir" || tipo == "kitboxfrontal"|| tipo == "kitpia" || tipo == "kitboxcanto"|| tipo == "bascula"|| tipo == "pivotante" ) {
@@ -300,13 +302,13 @@ void AdicionaisRef::on_pushButtonADDaluminios_clicked()
     QString id = aux.geraID();
     QString nome = ui->comboBoxAluminio->currentText();
     QString prod = comp + "m "+ nome;
-    QString tipo = "aluminio";
+    QString tipo = "";
     int quant = ui->spinBox_Aluminio->text().toInt();
     QString QSquant = QString::number(quant);
     float comprimento = ui->lineEditComprimento->text().toFloat();
     // buscar no bd
-    float price = BD.buscarNoBDprice(nome,tipo); // vai buscar
-    float profit = BD.buscarNoBDprofit(nome,tipo);// vai buscar
+    float price = BD.buscarNoBDprice(nome); // vai buscar
+    float profit = BD.buscarNoBDprofit(nome);// vai buscar
     qDebug() << "Preco: "<<price;
     qDebug() << "Profit: "<<price;
     qDebug() << "Comprimento: "<<aux.comprimento(comprimento);
@@ -459,5 +461,39 @@ void AdicionaisRef::on_pushButtonIncluirNoOrcamentoRef_clicked()
         telaSalvar = new DialogSalvar(this,produtos,QSprice,QSprofit);
         telaSalvar->exec();
     }
+}
+
+
+void AdicionaisRef::on_pushButtonADDrodana_clicked()
+{
+    sqlDataBaseControl BD;
+    AdicionaisOBJ aux;
+    // pegar atributos
+    QString id = aux.geraID();
+    QString nome =ui->comboBoxRodana->currentText();
+    QString tipo = "rodana";
+    int quant = ui->spinBox_Rodana->text().toInt();
+    QString QSquant = QString::number(quant);
+
+    // buscar no bd
+    float price = BD.buscarNoBDprice(nome,tipo); // vai buscar
+    float profit = BD.buscarNoBDprofit(nome,tipo);// vai buscar
+    price = (quant * price);
+    profit = (quant * profit);
+
+    QString QSprice = QString::number(price);
+    QString QSprofit = QString::number(profit);
+    // adicionar na list
+    AdicionaisOBJ adicional(id,nome,QSquant,QSprice,QSprofit);
+    listaDeAdicionais.push_back(adicional);
+    // mostrar
+    mostrarAdicoes();
+}
+
+
+void AdicionaisRef::on_pushButtonAreaDePrecos_clicked()
+{
+    telaDePrecos = new DialogAreaPrecos;
+    telaDePrecos->exec();
 }
 

@@ -8,6 +8,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
     /*
     // Seu código para abrir o banco de dados permanece o mesmo
 

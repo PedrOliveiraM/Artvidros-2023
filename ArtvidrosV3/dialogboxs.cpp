@@ -6,6 +6,7 @@ DialogBoxs::DialogBoxs(QWidget *parent) :
     ui(new Ui::DialogBoxs)
 {
     ui->setupUi(this);
+    this->setWindowTitle("ArtVidros");
 }
 
 DialogBoxs::~DialogBoxs()

@@ -6,6 +6,7 @@ Pivotante::Pivotante(QWidget *parent) :
     ui(new Ui::Pivotante)
 {
     ui->setupUi(this);
+    this->setWindowTitle("ArtVidros");
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);

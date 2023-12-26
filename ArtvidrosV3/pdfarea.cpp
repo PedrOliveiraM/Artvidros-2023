@@ -7,6 +7,7 @@ PDFarea::PDFarea(QWidget *parent) :
     ui(new Ui::PDFarea)
 {
     ui->setupUi(this);
+    this->setWindowTitle("ArtVidros");
 }
 
 PDFarea::~PDFarea()

@@ -6,12 +6,13 @@ PortaDe2Folhas::PortaDe2Folhas(QWidget *parent) :
     ui(new Ui::PortaDe2Folhas)
 {
     ui->setupUi(this);
+    this->setWindowTitle("ArtVidros");
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);
     ui->lineEditValor->setEnabled(false);
 
-    QString array[] = {"temperado", "puxador","batefecha", "kitaluminio" , "pelicula" , "trinco" , "rodana"};
+    QString array[] = {"temperado", "puxador","batefecha", "kitaluminio" , "pelicula" , "trinco"};
     QSqlQuery query;
 
     for (const QString &tipo : array) {
@@ -30,8 +31,6 @@ PortaDe2Folhas::PortaDe2Folhas(QWidget *parent) :
                     ui->comboBoxPelicula->addItem(value);
                 } else if (tipo == "trinco") {
                     ui->comboBoxTrinco->addItem(value);
-                } else if (tipo == "rodana") {
-                    ui->comboBoxRodana->addItem(value);
                 }
             }
         } else {
@@ -69,7 +68,7 @@ void PortaDe2Folhas::on_pushButtonCalcular_clicked()
     QString kitAluminio = ui->comboBoxKitAluminio->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
-    QString rodana = ui->comboBoxRodana->currentText();
+    QString rodana = "Rodana";
 
     ClassPortaDe2Folhas door(width,height,glass,puller,fechadura,kitAluminio,film,latch,rodana);
     sqlDataBaseControl aux;
@@ -109,7 +108,6 @@ void PortaDe2Folhas::on_pushButtonLimpar_clicked()
     ui->comboBoxKitAluminio->setCurrentIndex(-1);
     ui->comboBoxPelicula->setCurrentIndex(-1);
     ui->comboBoxTrinco->setCurrentIndex(-1);
-    ui->comboBoxRodana->setCurrentIndex(-1);
     ui->lineEditLucro->clear();
     ui->lineEditValor->clear();
 }

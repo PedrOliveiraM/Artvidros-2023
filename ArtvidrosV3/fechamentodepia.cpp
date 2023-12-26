@@ -6,12 +6,12 @@ FechamentoDePia::FechamentoDePia(QWidget *parent) :
     ui(new Ui::FechamentoDePia)
 {
     ui->setupUi(this);
-
+    this->setWindowTitle("ArtVidros");
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);
     ui->lineEditValor->setEnabled(false);
-    QString array[] = {"temperadopia", "pelicula" , "trinco","kitpia","rodana"};
+    QString array[] = {"temperadopia", "pelicula" , "trinco","kitpia"};
     QSqlQuery query;
 
     for (const QString &tipo : array) {
@@ -21,9 +21,7 @@ FechamentoDePia::FechamentoDePia(QWidget *parent) :
                 if (tipo == "temperadopia") {
                     ui->comboBoxVidros->addItem(value);
                 } else if (tipo == "pelicula") {
-                    ui->comboBoxPelicula->addItem(value);
-                } else if (tipo == "rodana") {
-                    ui->comboBoxRodana->addItem(value);
+                    ui->comboBoxPelicula->addItem(value); 
                 }else if (tipo == "kitpia") {
                     ui->comboBoxKit->addItem(value);
                 }
@@ -57,7 +55,7 @@ void FechamentoDePia::on_pushButtonCalcular_clicked()
     QString glass = ui->comboBoxVidros->currentText();
     QString kit = ui->comboBoxKit->currentText();
     QString film = ui->comboBoxPelicula->currentText();
-    QString rodana = ui->comboBoxRodana->currentText();
+    QString rodana = "Rodana";
 
     ClassFechamentoDePia pia(width,height,glass,kit,film,rodana);
     sqlDataBaseControl aux;
@@ -126,8 +124,6 @@ void FechamentoDePia::on_pushButtonLimpar_clicked()
     ui->comboBoxVidros->setCurrentIndex(-1);
     ui->comboBoxKit->setCurrentIndex(-1);
     ui->comboBoxPelicula->setCurrentIndex(-1);
-    ui->comboBoxRodana->setCurrentIndex(-1);
-
     ui->lineEditLucro->clear();
     ui->lineEditValor->clear();
 }

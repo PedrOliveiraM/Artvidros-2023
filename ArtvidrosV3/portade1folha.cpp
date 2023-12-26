@@ -6,6 +6,7 @@ PortaDe1Folha::PortaDe1Folha(QWidget *parent) :
     ui(new Ui::PortaDe1Folha)
 {
     ui->setupUi(this);
+    this->setWindowTitle("ArtVidros");
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);
@@ -29,8 +30,6 @@ PortaDe1Folha::PortaDe1Folha(QWidget *parent) :
                     ui->comboBoxPelicula->addItem(value);
                 } else if (tipo == "trinco") {
                     ui->comboBoxTrinco->addItem(value);
-                } else if (tipo == "rodana") {
-                    ui->comboBoxRodana->addItem(value);
                 }
             }
         } else {
@@ -65,7 +64,7 @@ void PortaDe1Folha::on_pushButtonCalcular_clicked()
     QString kitAluminio = ui->comboBoxKitAluminio->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
-    QString rodana = ui->comboBoxRodana->currentText();
+    QString rodana = "Rodana";
 
     ClassPortaDe1Folha door(width,height,glass,puller,fechadura,kitAluminio,film,latch,rodana);
     sqlDataBaseControl aux;
@@ -101,7 +100,6 @@ void PortaDe1Folha::on_pushButtonLimpar_clicked()
     ui->comboBoxKitAluminio->setCurrentIndex(-1);
     ui->comboBoxPelicula->setCurrentIndex(-1);
     ui->comboBoxTrinco->setCurrentIndex(-1);
-    ui->comboBoxRodana->setCurrentIndex(-1);
     ui->lineEditLucro->clear();
     ui->lineEditValor->clear();
 }

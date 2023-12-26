@@ -11,6 +11,7 @@ DialogSalvar::DialogSalvar(QWidget *parent , QString produto , QString price , Q
     ui(new Ui::DialogSalvar)
 {
     ui->setupUi(this);
+    this->setWindowTitle("ArtVidros");
     ui->lineEditPrice->setText(price);
     ui->lineEditProfit->setText(profit);
 
