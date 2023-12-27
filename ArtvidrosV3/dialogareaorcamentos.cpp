@@ -5,6 +5,11 @@
 #include <QMessageBox>
 #include <pdfgenerator.h>
 #include <QFileDialog>
+#include <pdfobjeto.h>
+#include <QDesktopServices>
+#include <QUrl>
+
+
 Dialogareaorcamentos::Dialogareaorcamentos(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialogareaorcamentos)
@@ -98,7 +103,82 @@ void Dialogareaorcamentos::on_pushButton_Excluir_clicked()
 
 void Dialogareaorcamentos::on_pushButtonGerarPDF_clicked()
 {
+
+    QString row;
+    QTableWidgetItem *ID;
+    QTableWidgetItem *client;
+    QTableWidgetItem *date;
+    QString cliente;
+    QString data;
+
+    if (ui->tableWidget->selectionModel()->hasSelection()) {
+        // Obtém a linha selecionada
+        int selectedRow = ui->tableWidget->selectedItems().at(0)->row();
+
+        // Obtém os itens da célula na linha selecionada
+        ID = ui->tableWidget->item(selectedRow, 0);
+        client = ui->tableWidget->item(selectedRow, 1);
+        date = ui->tableWidget->item(selectedRow, 5);
+
+        // Atribui o número da linha à variável row
+        row = QString::number(selectedRow + 1);  // +1 porque os índices de linha começam em 0
+
+        // Converte a data para um formato legível
+        QDateTime dateTime = QDateTime::fromString(date->text(), "dd/MM/yyyy");
+        data = dateTime.toString("dd/MM/yyyy");
+
+        cliente = client->text();
+
+        // Verifica se alguma linha foi selecionada antes de acessar os valores
+        if (!row.isEmpty()) {
+            qDebug() << "Linha selecionada: " << row;
+            qDebug() << "ID: " << ID->text();
+            qDebug() << "Cliente: " << cliente;
+            qDebug() << "Data: " << data.toStdString();
+        }
+    } else {
+        QMessageBox::about(this, "Erro", "Nenhuma linha foi selecionada!");
+    }
+
+    qDebug() << "Texto da célula de data:" << date->text();
+    QDateTime dateTime = QDateTime::fromString(date->text(), "dd/MM/yyyy");
+    if (dateTime.isValid()) {
+        data = dateTime.toString("dd/MM/yyyy");
+        qDebug() << "Data convertida com sucesso:" << data.toStdString();
+    } else {
+        qDebug() << "Falha na conversão da data.";
+    }
+
+
+    PDFarea telaPDF(this,cliente,data);
+    telaPDF.exec();
+
+    cliente = telaPDF.getCliente();
+    QString cpf = telaPDF.getCpf();
+    QString telefone = telaPDF.getTelefone();
+    QString endereco = telaPDF.getEndereco();
+    QString data2 = telaPDF.getData();
+
+    // consultar todos os orçamentos com mesmo id
+    QString id = ID->text();
+    std::list<PDFobjeto> lista;
+    QSqlQuery query;
+    query.prepare("SELECT * FROM sale WHERE cod_sale = '" + id + "' ");
+    if (query.exec()) {
+        while (query.next()) {
+            QString produto = query.value(2).toString();
+            QString valor = query.value(3).toString();
+            QString lucro = query.value(4).toString();
+            PDFobjeto obj(produto,valor,lucro);
+            lista.push_back(obj);
+        }
+    } else {
+        qDebug() << "Erro na consulta:";
+    }
+
     // Criar uma instância do QFileDialog para seleção de arquivo
+
+    QString defaultFileName = "nome_predefinido.pdf";
     QString filePath = QFileDialog::getSaveFileName(this, tr("Salvar PDF"), QDir::homePath(), tr("Arquivos PDF (*.pdf)"));
 
     if (filePath.isEmpty()) {
@@ -109,23 +189,47 @@ void Dialogareaorcamentos::on_pushButtonGerarPDF_clicked()
     // Criar uma instância do PDFGenerator com o caminho escolhido
     PDFGenerator pdfGenerator(filePath);
 
-    // Adicionar produtos e valores
-    pdfGenerator.addProduct("Porta de abrir", 859.50);
-    pdfGenerator.addProduct("Cantoneira", 30);
-
-    // Calcular e adicionar o valor total
-    double total = 859.50 + 30;
-    pdfGenerator.setTotal(total);
 
     // Adicionar a imagem de fundo (template) ao PDF
-    QImage backgroundImage(":/caminho/para/imagem/template.jpg");  // Substitua pelo caminho real da sua imagem
+    QImage backgroundImage(":/imagens/Template_QT_pdf.jpg");  // Substitua pelo caminho real da sua imagem
     pdfGenerator.addBackgroundImage(backgroundImage);
 
-    // Adicionar os produtos nos locais desejados na imagem
-    pdfGenerator.addProductToImage("Porta de abrir", 100, 200);  // Substitua pelas coordenadas desejadas
-    pdfGenerator.addProductToImage("Cantoneira", 150, 250);  // Substitua pelas coordenadas desejadas
+//pdfGenerator.addProductToImage(cpf,150,400);
+
+    pdfGenerator.addProductToImage(cliente,152,352);
+    pdfGenerator.addProductToImage(telefone,152,377);
+    pdfGenerator.addProductToImage(endereco,152,402);
+    pdfGenerator.addProductToImage(data,480,348);
+
+
+
+    // Adicionar produtos e valores
+    float valorTotal = 0.0;
+
+    int posX = 135;
+    int posXValor = 580;
+    int posY = 500;
+    int cont = 0;
+    while (!lista.empty()){
+        if (cont < 8){
+            //pdfGenerator.addProduct(lista.front().getProduto(),lista.front().getPreco().toDouble());
+            pdfGenerator.addProductToImage(lista.front().getProduto(), posX,posY);
+            pdfGenerator.addProductToImage(lista.front().getPreco(), posXValor,posY);
+
+            valorTotal += lista.front().getPreco().toFloat();
+
+            lista.pop_front();
+            posY += 30;
+            cont++;
+        }
+    }
+
+   // valor total
+    pdfGenerator.addProductToImage(QString::number(valorTotal),580,780);
 
     // Salvar o PDF
     pdfGenerator.savePDF();
+
+    QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
 }
 

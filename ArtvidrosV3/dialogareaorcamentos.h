@@ -1,6 +1,6 @@
 #ifndef DIALOGAREAORCAMENTOS_H
 #define DIALOGAREAORCAMENTOS_H
-
+#include <pdfarea.h>
 #include <QDialog>
 
 namespace Ui {
@@ -23,7 +23,7 @@ private slots:
 
 private:
     Ui::Dialogareaorcamentos *ui;
-
+    PDFarea *telaPDF;
 
 };
 

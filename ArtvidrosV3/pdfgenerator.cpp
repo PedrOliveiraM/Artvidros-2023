@@ -36,6 +36,10 @@ void PDFGenerator::addBackgroundImage(const QImage& backgroundImage)
 
 void PDFGenerator::addProductToImage(const QString& productName, int x, int y)
 {
+    QFont font;
+    font.setPointSize(14);
+    font.setBold(true);
+    painter.setFont(font);
     // Desenhar o produto na imagem nas coordenadas especificadas
     painter.drawText(x, y, productName);
 }

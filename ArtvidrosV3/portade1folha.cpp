@@ -124,7 +124,7 @@ void PortaDe1Folha::on_pushButtonSalvar_clicked()
 
 void PortaDe1Folha::on_pushButtonRefatorando_clicked()
 {
-    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"PortaDe2Folhas");
+    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"PortaDe1Folha");
     telaAdicionais.exec();
 
     QString valorRetornado = telaAdicionais.getPrice();

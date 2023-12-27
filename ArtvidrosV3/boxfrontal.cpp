@@ -50,7 +50,7 @@ void BoxFrontal::setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDe
 
 void BoxFrontal::on_pushButtonRefatorando_clicked()
 {
-    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"Bascula");
+    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"BoxFrontal");
     telaAdicionais.exec();
 
     QString valorRetornado = telaAdicionais.getPrice();

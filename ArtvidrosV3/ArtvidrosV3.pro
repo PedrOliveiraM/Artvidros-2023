@@ -22,6 +22,7 @@ SOURCES += \
     classfechamentodepia.cpp \
     classjanelade2folhas.cpp \
     classjanelade4folhas.cpp \
+    classmoldura.cpp \
     classpivobascula.cpp \
     classpivotantebasc.cpp \
     classportade1folha.cpp \
@@ -44,8 +45,10 @@ SOURCES += \
     janelade4folhas.cpp \
     main.cpp \
     mainwindow.cpp \
+    moldura.cpp \
     pdfarea.cpp \
     pdfgenerator.cpp \
+    pdfobjeto.cpp \
     pivotante.cpp \
     portade1folha.cpp \
     portade2folhas.cpp \
@@ -65,6 +68,7 @@ HEADERS += \
     classfechamentodepia.h \
     classjanelade2folhas.h \
     classjanelade4folhas.h \
+    classmoldura.h \
     classpivobascula.h \
     classpivotantebasc.h \
     classportade1folha.h \
@@ -86,8 +90,10 @@ HEADERS += \
     janelade2folhas.h \
     janelade4folhas.h \
     mainwindow.h \
+    moldura.h \
     pdfarea.h \
     pdfgenerator.h \
+    pdfobjeto.h \
     pivotante.h \
     portade1folha.h \
     portade2folhas.h \
@@ -112,6 +118,7 @@ FORMS += \
     janelade2folhas.ui \
     janelade4folhas.ui \
     mainwindow.ui \
+    moldura.ui \
     pdfarea.ui \
     pivotante.ui \
     portade1folha.ui \

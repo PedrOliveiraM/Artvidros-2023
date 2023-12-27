@@ -55,8 +55,8 @@ void MainWindow::on_pushButtonBox_clicked()
 void MainWindow::on_pushButtonMoldura_clicked()
 {
     // botao moldura
-    //telaMoldura = new Molduras;
-    //telaMoldura->exec();
+    telaMoldura = new Moldura;
+    telaMoldura->exec();
 }
 
 

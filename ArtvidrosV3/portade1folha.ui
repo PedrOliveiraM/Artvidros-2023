@@ -16,7 +16,7 @@
   <widget class="QPushButton" name="pushButtonSalvar">
    <property name="geometry">
     <rect>
-     <x>770</x>
+     <x>830</x>
      <y>570</y>
      <width>51</width>
      <height>41</height>
@@ -120,7 +120,7 @@
   <widget class="QPushButton" name="pushButtonRefatorando">
    <property name="geometry">
     <rect>
-     <x>760</x>
+     <x>820</x>
      <y>440</y>
      <width>211</width>
      <height>41</height>
@@ -195,7 +195,7 @@
   <widget class="QWidget" name="layoutWidget_7">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>380</x>
      <y>410</y>
      <width>211</width>
      <height>71</height>
@@ -281,7 +281,7 @@
   <widget class="QWidget" name="layoutWidget_9">
    <property name="geometry">
     <rect>
-     <x>540</x>
+     <x>600</x>
      <y>410</y>
      <width>211</width>
      <height>71</height>
@@ -362,7 +362,7 @@
   <widget class="QWidget" name="layoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>520</x>
+     <x>580</x>
      <y>570</y>
      <width>221</width>
      <height>41</height>
@@ -437,7 +437,7 @@
   <widget class="QPushButton" name="pushButtonLimpar">
    <property name="geometry">
     <rect>
-     <x>770</x>
+     <x>830</x>
      <y>620</y>
      <width>51</width>
      <height>41</height>
@@ -460,7 +460,7 @@
   <widget class="QWidget" name="layoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>520</x>
+     <x>580</x>
      <y>620</y>
      <width>221</width>
      <height>41</height>
@@ -522,7 +522,7 @@
   <widget class="QPushButton" name="pushButtonCalcular">
    <property name="geometry">
     <rect>
-     <x>480</x>
+     <x>540</x>
      <y>520</y>
      <width>281</width>
      <height>41</height>
@@ -547,7 +547,7 @@
   <widget class="QPushButton" name="pushButtonDesconto">
    <property name="geometry">
     <rect>
-     <x>770</x>
+     <x>830</x>
      <y>520</y>
      <width>51</width>
      <height>41</height>

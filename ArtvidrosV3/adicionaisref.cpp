@@ -13,6 +13,13 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
     setAltura(altura);
     setKitalum(kitAluminio);
 
+    ui->pushButtonTodosOsAluminios->setEnabled(false);
+    if(tipo.contains("2") || tipo.contains("4")){
+        ui->pushButtonTodosOsAluminios->setEnabled(true);
+
+        QMessageBox::information(this,"Tela de Adicionais","Inclua todos os alumínios clicando no botão 'Todos Os Aluminios' ! ","Ok");
+    }
+
     QSpinBox* spinBoxes[] = {
         ui->spinBoxVidro,
         ui->spinBox_Aluminio,

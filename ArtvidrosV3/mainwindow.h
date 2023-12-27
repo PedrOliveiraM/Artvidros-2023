@@ -8,7 +8,7 @@
 #include "adicionaisref.h"
 #include "fechamentodepia.h"
 #include "dialogboxs.h"
-
+#include <moldura.h>
 #include <vidroscomuns.h>
 #include <QMainWindow>
 
@@ -58,6 +58,7 @@ private:
     DialogJanelas *telaJanelas;
     DialogBoxs *telaBox;
 
+    Moldura *telaMoldura;
     VidrosComuns *telaVidrosComuns;
     FechamentoDePia *telaFechamento;
 
