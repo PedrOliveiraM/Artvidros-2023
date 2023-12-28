@@ -47,6 +47,6 @@ void PDFGenerator::addProductToImage(const QString& productName, int x, int y)
 void PDFGenerator::savePDF()
 {
     // Finalizar o documento e salvar o PDF
-    pdfPrinter.newPage();
+    //pdfPrinter.newPage();
     painter.end();
 }

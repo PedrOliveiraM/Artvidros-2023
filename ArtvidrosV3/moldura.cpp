@@ -13,14 +13,14 @@ Moldura::Moldura(QWidget *parent) :
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);
     ui->lineEditValor->setEnabled(false);
-    QString array[] = {"acessorios","acabamento"};
+    QString array[] = {"pendurador","acabamento"};
     QSqlQuery query;
 
     for (const QString &tipo : array) {
         if (query.exec("SELECT * FROM product WHERE type = '" + tipo + "' ORDER BY name_product ASC")) {
             while (query.next()) {
                 QString value = query.value(1).toString();  // Suponho que o valor desejado esteja na primeira coluna
-                if (tipo == "acessorios") {
+                if (tipo == "pendurador") {
                     ui->comboBoxAcessorios->addItem(value);
                 }else if (tipo == "acabamento") {
                     ui->comboBoxAcabamento->addItem(value);
@@ -72,6 +72,12 @@ void Moldura::on_pushButtonSalvar_clicked()
 
 
 void Moldura::on_pushButtonLimpar_clicked()
+{
+
+}
+
+
+void Moldura::on_pushButtonRefatorando_clicked()
 {
 
 }

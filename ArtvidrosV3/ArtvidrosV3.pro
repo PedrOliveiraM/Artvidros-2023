@@ -31,6 +31,7 @@ SOURCES += \
     classportadeabrir.cpp \
     classvidroscomuns.cpp \
     dialogareaorcamentos.cpp \
+    dialogareaorcamentosql.cpp \
     dialogareaprecos.cpp \
     dialogboxs.cpp \
     dialogjanelas.cpp \
@@ -77,6 +78,7 @@ HEADERS += \
     classportadeabrir.h \
     classvidroscomuns.h \
     dialogareaorcamentos.h \
+    dialogareaorcamentosql.h \
     dialogareaprecos.h \
     dialogboxs.h \
     dialogjanelas.h \
@@ -109,6 +111,7 @@ FORMS += \
     boxcanto.ui \
     boxfrontal.ui \
     dialogareaorcamentos.ui \
+    dialogareaorcamentosql.ui \
     dialogareaprecos.ui \
     dialogboxs.ui \
     dialogjanelas.ui \

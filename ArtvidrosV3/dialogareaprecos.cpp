@@ -171,21 +171,30 @@ void DialogAreaPrecos::on_pushButtonALTER_clicked()
 
 void DialogAreaPrecos::on_pushButtonDELETE_clicked()
 {
-    QString id;
+
     if (!ui->tableWidget->selectedItems().isEmpty()) {
-        // Obtém o item da célula selecionada
-        QTableWidgetItem *item = ui->tableWidget->selectedItems().at(0);
-        // Obtém o valor do texto da célula
-        id = item->text();
+        QString id;
+        if (!ui->tableWidget->selectedItems().isEmpty()) {
+            // Obtém o item da célula selecionada
+            QTableWidgetItem *item = ui->tableWidget->selectedItems().at(0);
+            // Obtém o valor do texto da célula
+            id = item->text();
+        }
+        sqlDataBaseControl aux;
+
+        if(aux.deleteBD(id))
+            QMessageBox::about(this,"","O Item selecionado foi Deletado");
+        else
+            QMessageBox::warning(this,"ERRO","O Item selecionado Não foi Deletado");
+
+                on_pushButtonOrdem_clicked();
+
+    } else {
+        // Nenhum item está selecionado
+        // Trate o caso quando nenhum item está selecionado
+        QMessageBox::about(this,"ERRO","Nenhum item foi selecionado");
     }
-    sqlDataBaseControl aux;
 
-    if(aux.deleteBD(id))
-        QMessageBox::about(this,"","O Item selecionado foi Deletado");
-    else
-        QMessageBox::warning(this,"ERRO","O Item selecionado Não foi Deletado");
-
-    on_pushButtonOrdem_clicked();
 }
 
 

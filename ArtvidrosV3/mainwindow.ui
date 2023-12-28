@@ -330,7 +330,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
@@ -372,6 +372,17 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>pushButtonPortas</tabstop>
+  <tabstop>pushButtonJanelas</tabstop>
+  <tabstop>pushButtonFechamentoPia</tabstop>
+  <tabstop>pushButtonBox</tabstop>
+  <tabstop>pushButtonMoldura</tabstop>
+  <tabstop>pushButtonVidrosComuns</tabstop>
+  <tabstop>pushButtonOrcamentos</tabstop>
+  <tabstop>pushButtonAreaPrecos</tabstop>
+  <tabstop>pushButtonAdicionais</tabstop>
+ </tabstops>
  <resources>
   <include location="files.qrc"/>
  </resources>

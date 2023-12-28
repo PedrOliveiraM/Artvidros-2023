@@ -19,7 +19,7 @@
      <x>410</x>
      <y>350</y>
      <width>121</width>
-     <height>61</height>
+     <height>64</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -359,7 +359,7 @@
       </property>
       <property name="font">
        <font>
-        <pointsize>12</pointsize>
+        <pointsize>14</pointsize>
         <bold>false</bold>
        </font>
       </property>
@@ -445,10 +445,13 @@
   </widget>
  </widget>
  <tabstops>
+  <tabstop>comboBoxID</tabstop>
+  <tabstop>pushButtonMostrar</tabstop>
   <tabstop>lineEditCliente</tabstop>
+  <tabstop>lineEditProduct</tabstop>
   <tabstop>lineEditPrice</tabstop>
-  <tabstop>lineEditData</tabstop>
   <tabstop>lineEditProfit</tabstop>
+  <tabstop>lineEditData</tabstop>
   <tabstop>lineEditVendedor</tabstop>
   <tabstop>pushButtonAdicionar</tabstop>
   <tabstop>pushButtonLimpar</tabstop>

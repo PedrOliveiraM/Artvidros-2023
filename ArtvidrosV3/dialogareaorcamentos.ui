@@ -127,7 +127,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_Excluir">
+     <widget class="QPushButton" name="pushButton_Adicionar">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -140,11 +140,11 @@
        </font>
       </property>
       <property name="text">
-       <string>Excluir</string>
+       <string>Adicionar</string>
       </property>
       <property name="icon">
        <iconset resource="files.qrc">
-        <normaloff>:/imagens/excluir Normal.png</normaloff>:/imagens/excluir Normal.png</iconset>
+        <normaloff>:/imagens/botao-adicionar.png</normaloff>:/imagens/botao-adicionar.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -173,6 +173,34 @@
       <property name="icon">
        <iconset resource="files.qrc">
         <normaloff>:/imagens/alterar.png</normaloff>:/imagens/alterar.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_Excluir">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Excluir</string>
+      </property>
+      <property name="icon">
+       <iconset resource="files.qrc">
+        <normaloff>:/imagens/excluir Normal.png</normaloff>:/imagens/excluir Normal.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -233,28 +261,6 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButtonPesquisar">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Pesquisar</string>
-      </property>
-      <property name="icon">
-       <iconset resource="files.qrc">
-        <normaloff>:/imagens/lupa.png</normaloff>:/imagens/lupa.png</iconset>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="QPushButton" name="pushButtonLimpar">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -299,6 +305,16 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lineEditPesquisa</tabstop>
+  <tabstop>pushButtonLimpar</tabstop>
+  <tabstop>pushButtonGerarPDF</tabstop>
+  <tabstop>pushButton_Adicionar</tabstop>
+  <tabstop>pushButton_Alterar</tabstop>
+  <tabstop>pushButton_Excluir</tabstop>
+  <tabstop>pushButtonApagarTODOS</tabstop>
+  <tabstop>tableWidget</tabstop>
+ </tabstops>
  <resources>
   <include location="files.qrc"/>
  </resources>

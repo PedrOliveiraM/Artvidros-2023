@@ -64,6 +64,26 @@ bool sqlDataBaseControl::insertBDSalvar(QString codID, QString client, QString p
 
 }
 
+bool sqlDataBaseControl::toAlterBDSalvar(QString codID, QString client, QString product, QString price, QString profit, QString data, QString seller)
+{
+    QSqlQuery query;
+    QString updateQuery = "UPDATE product SET "
+                          "customer = '" + client + "', "
+                                     "product = '" + product + "', "
+                                      "price = '" + price + "', "
+                                    "profit = '" + profit + "', "
+                                     "data = '" + data + "', "
+                                   "seller = '" + seller + "' "
+                                     "WHERE cod_sale = '" + codID + "'";
+
+    if (query.exec(updateQuery)) {
+        return true;
+    } else {
+        qDebug() << "Erro alterar";
+        return false;
+    }
+}
+
 bool sqlDataBaseControl::deleteBDSalvar(QString codID,QString name)
 {
 

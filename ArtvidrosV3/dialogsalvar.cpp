@@ -82,8 +82,6 @@ void DialogSalvar::on_pushButtonVoltar_clicked()
 void DialogSalvar::on_pushButtonMostrar_clicked()
 {
     QSqlQuery query;
-
-
     QString id = ui->comboBoxID->currentText();
     if (id == ""){
         ui->labelNomeOrcamento->setText(" ");

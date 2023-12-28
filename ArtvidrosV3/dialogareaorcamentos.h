@@ -1,5 +1,6 @@
 #ifndef DIALOGAREAORCAMENTOS_H
 #define DIALOGAREAORCAMENTOS_H
+#include <dialogareaorcamentosql.h>
 #include <pdfarea.h>
 #include <QDialog>
 
@@ -21,9 +22,18 @@ private slots:
 
     void on_pushButtonGerarPDF_clicked();
 
+    void onLineEditTextChanged(const QString &text);
+
+    void on_pushButton_Adicionar_clicked();
+
+    void on_pushButtonLimpar_clicked();
+
+    void on_pushButton_Alterar_clicked();
+
 private:
     Ui::Dialogareaorcamentos *ui;
     PDFarea *telaPDF;
+    DialogAreaOrcamentoSQL *telaOrcamentos;
 
 };
 

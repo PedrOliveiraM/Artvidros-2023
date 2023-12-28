@@ -12,10 +12,6 @@ PDFarea::PDFarea(QWidget *parent,QString cliente, QString data) :
     ui->lineEditData->setText(data);
     ui->lineEditCNPJ_CPF->setInputMask("XXX.XXX.XXX-XX");
     ui->lineEditTelefone->setInputMask("(XX) X XXXX-XXXX");
-
-    ui->lineEditCNPJ_CPF->setText("05275485966");
-    ui->lineEditTelefone->setText("77988445101");
-    ui->lineEditEndereco->setText("RUA DAS COVES ");
 }
 
 PDFarea::~PDFarea()
@@ -84,5 +80,21 @@ void PDFarea::on_pushButtonAdicionar_clicked()
     setData(ui->lineEditData->text());
 
     close();
+}
+
+
+void PDFarea::on_pushButtonVoltar_clicked()
+{
+    close();
+}
+
+
+void PDFarea::on_pushButtonLimpar_clicked()
+{
+    ui->lineEditCNPJ_CPF->clear();
+    ui->lineEditCliente->clear();
+    ui->lineEditData->clear();
+    ui->lineEditEndereco->clear();
+    ui->lineEditTelefone->clear();
 }
 

@@ -520,6 +520,22 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lineEditLargura</tabstop>
+  <tabstop>lineEditAltura</tabstop>
+  <tabstop>lineEditValorMoldura</tabstop>
+  <tabstop>comboBoxEspessura</tabstop>
+  <tabstop>comboBoxAcessorios</tabstop>
+  <tabstop>spinBox_Acessorios</tabstop>
+  <tabstop>comboBoxAcabamento</tabstop>
+  <tabstop>pushButtonRefatorando</tabstop>
+  <tabstop>pushButtonCalcular</tabstop>
+  <tabstop>pushButtonDesconto</tabstop>
+  <tabstop>pushButtonSalvar</tabstop>
+  <tabstop>pushButtonLimpar</tabstop>
+  <tabstop>lineEditValor</tabstop>
+  <tabstop>lineEditLucro</tabstop>
+ </tabstops>
  <resources>
   <include location="files.qrc"/>
  </resources>

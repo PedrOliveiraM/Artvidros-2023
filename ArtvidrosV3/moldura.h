@@ -27,6 +27,8 @@ private slots:
 
     void on_pushButtonLimpar_clicked();
 
+    void on_pushButtonRefatorando_clicked();
+
 private:
     Ui::Moldura *ui;
 };

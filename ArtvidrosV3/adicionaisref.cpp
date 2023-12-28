@@ -16,7 +16,6 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
     ui->pushButtonTodosOsAluminios->setEnabled(false);
     if(tipo.contains("2") || tipo.contains("4")){
         ui->pushButtonTodosOsAluminios->setEnabled(true);
-
         QMessageBox::information(this,"Tela de Adicionais","Inclua todos os alumínios clicando no botão 'Todos Os Aluminios' ! ","Ok");
     }
 

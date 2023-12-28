@@ -136,5 +136,11 @@ void VidrosComuns::on_pushButtonSalvar_clicked()
 
 void VidrosComuns::on_pushButtonLimpar_clicked()
 {
-
+    ui->lineEditAltura->clear();
+    ui->lineEditLargura->clear();
+    ui->lineEditLucro->clear();
+    ui->lineEditValor->clear();
+    ui->comboBoxAcessorios->setCurrentIndex(-1);
+    ui->comboBoxPolido->setCurrentIndex(-1);
+    ui->comboBoxVidros->setCurrentIndex(-1);
 }

@@ -95,6 +95,9 @@ float ClassMoldura::metragem()
     larg += largura*100;
     int altu = 0;
     altu += altura*100;
+    qDebug()<<"INICIO ";
+    qDebug()<<"Larg "<<larg;
+    qDebug()<<"altu "<<altu;
 
     while(larg%5 != 0){
         larg += 1;
@@ -105,45 +108,96 @@ float ClassMoldura::metragem()
 
     float x = larg;
     float y = altu;
-    double metrageVidro = (x/100)*(y/100);
 
+    x = x/100;
+    y = y/100;
+
+    qDebug()<<"MEIO ";
+    qDebug()<<"x "<<x;
+    qDebug()<<"y "<<y;
+
+    float Vespessura;
+    if (espessura == "Fina")
+        Vespessura = 0.30;
+    else if (espessura == "Média") {
+        Vespessura = 0.40;
+    }else{
+        Vespessura = 0.50;
+    }
+
+
+
+    double metrageVidro =  x + x + y + y + Vespessura;
+
+    qDebug()<<"FIM "<<metrageVidro;
     return metrageVidro;
 }
 
 float ClassMoldura::calculatePrice()
 {
-    sqlDataBaseControl aux;
-    float Vacabamento = aux.buscarNoBDprice(acabamento , "acabamento");
-    float Vacessorios = aux.buscarNoBDprice(acessorios , "acessorios") * quant;
-    float Vespessura;
-    if (espessura == "Fina")
-        Vespessura = 10;
-    else if (espessura == "Média") {
-        Vespessura = 30;
-    }else{
-        Vespessura = 45;
+    float largura = getWidth();
+    float altura = getHeight();
+
+    int larg = 0;
+    larg += largura*100;
+    int altu = 0;
+    altu += altura*100;
+
+    while(larg%5 != 0){
+        larg += 1;
+    }
+    while(altu%5 != 0 ){
+        altu += 1;
     }
 
-    float value = ((metragem() + Vespessura) * valueMold) + Vacabamento + (quant * Vacessorios);
+    float x = larg;
+    float y = altu;
+
+    x = x/100;
+    y = y/100;
+
+    float metrage = x*y;
+
+    sqlDataBaseControl aux;
+    float Vacabamento = aux.buscarNoBDprice(acabamento , "acabamento");
+    float Vacessorios = aux.buscarNoBDprice(acessorios , "pendurador") * quant;
+
+
+    float value = ((metragem() * valueMold) + (metrage * Vacabamento) + (quant * Vacessorios));
 
     return value;
 }
 
 float ClassMoldura::calculateProfit()
 {
-    sqlDataBaseControl aux;
-    float Vacabamento = aux.buscarNoBDprofit(acabamento , "acabamento");
-    float Vacessorios = aux.buscarNoBDprofit(acessorios , "acessorios") * quant;
-    float Vespessura;
-    if (espessura == "Fina")
-        Vespessura = 10;
-    else if (espessura == "Média") {
-        Vespessura = 30;
-    }else{
-        Vespessura = 45;
+    float largura = getWidth();
+    float altura = getHeight();
+
+    int larg = 0;
+    larg += largura*100;
+    int altu = 0;
+    altu += altura*100;
+
+    while(larg%5 != 0){
+        larg += 1;
+    }
+    while(altu%5 != 0 ){
+        altu += 1;
     }
 
-    float value = ((metragem() + Vespessura) * valueMold) + Vacabamento + (quant * Vacessorios);
+    float x = larg;
+    float y = altu;
+
+    x = x/100;
+    y = y/100;
+
+    float metrage = x*y;
+
+    sqlDataBaseControl aux;
+    float Vacabamento = aux.buscarNoBDprofit(acabamento , "acabamento");
+    float Vacessorios = aux.buscarNoBDprofit(acessorios , "pendurador") * quant;
+
+    float value = ((metragem() * valueMold) + (metrage * Vacabamento) + (quant * Vacessorios));
 
     return value;
 }

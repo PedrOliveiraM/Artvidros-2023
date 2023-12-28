@@ -1196,6 +1196,37 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lineEditLargura</tabstop>
+  <tabstop>lineEditAltura</tabstop>
+  <tabstop>comboBoxVidros</tabstop>
+  <tabstop>comboBoxPelicula</tabstop>
+  <tabstop>spinBoxVidro</tabstop>
+  <tabstop>pushButtonADDvidro</tabstop>
+  <tabstop>lineEditComprimento</tabstop>
+  <tabstop>comboBoxAluminio</tabstop>
+  <tabstop>spinBox_Aluminio</tabstop>
+  <tabstop>pushButtonADDaluminios</tabstop>
+  <tabstop>pushButtonTodosOsAluminios</tabstop>
+  <tabstop>comboBoxKit</tabstop>
+  <tabstop>spinBox_kit</tabstop>
+  <tabstop>pushButtonADDkit</tabstop>
+  <tabstop>comboBoxFechadura</tabstop>
+  <tabstop>spinBox_fechadura</tabstop>
+  <tabstop>pushButtonADDfechadura</tabstop>
+  <tabstop>comboBoxPuxador</tabstop>
+  <tabstop>spinBox_puxador</tabstop>
+  <tabstop>pushButtonADDpuxador</tabstop>
+  <tabstop>comboBoxTrinco</tabstop>
+  <tabstop>spinBox_trinco</tabstop>
+  <tabstop>pushButtonADDtrinco</tabstop>
+  <tabstop>comboBoxRodana</tabstop>
+  <tabstop>spinBox_Rodana</tabstop>
+  <tabstop>pushButtonADDrodana</tabstop>
+  <tabstop>pushButtonIncluirNoOrcamentoRef</tabstop>
+  <tabstop>pushButtonAreaDePrecos</tabstop>
+  <tabstop>tableWidget</tabstop>
+ </tabstops>
  <resources>
   <include location="files.qrc"/>
  </resources>

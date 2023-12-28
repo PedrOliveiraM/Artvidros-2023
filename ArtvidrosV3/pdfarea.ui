@@ -125,7 +125,7 @@
      <x>510</x>
      <y>240</y>
      <width>151</width>
-     <height>61</height>
+     <height>64</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -289,7 +289,7 @@
      <x>110</x>
      <y>290</y>
      <width>324</width>
-     <height>34</height>
+     <height>36</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -319,6 +319,16 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lineEditCliente</tabstop>
+  <tabstop>lineEditCNPJ_CPF</tabstop>
+  <tabstop>lineEditTelefone</tabstop>
+  <tabstop>lineEditEndereco</tabstop>
+  <tabstop>lineEditData</tabstop>
+  <tabstop>pushButtonAdicionar</tabstop>
+  <tabstop>pushButtonLimpar</tabstop>
+  <tabstop>pushButtonVoltar</tabstop>
+ </tabstops>
  <resources>
   <include location="files.qrc"/>
  </resources>

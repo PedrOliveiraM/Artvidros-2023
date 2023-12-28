@@ -38,6 +38,10 @@ public:
 private slots:
     void on_pushButtonAdicionar_clicked();
 
+    void on_pushButtonVoltar_clicked();
+
+    void on_pushButtonLimpar_clicked();
+
 private:
     Ui::PDFarea *ui;
 };

@@ -522,6 +522,22 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lineEditLargura</tabstop>
+  <tabstop>lineEditAltura</tabstop>
+  <tabstop>comboBoxVidros</tabstop>
+  <tabstop>comboBoxKit</tabstop>
+  <tabstop>comboBoxBateFecha</tabstop>
+  <tabstop>comboBoxTrinco</tabstop>
+  <tabstop>comboBoxPelicula</tabstop>
+  <tabstop>pushButtonRefatorando</tabstop>
+  <tabstop>pushButtonCalcular</tabstop>
+  <tabstop>pushButtonDesconto</tabstop>
+  <tabstop>pushButtonSalvar</tabstop>
+  <tabstop>pushButtonLimpar</tabstop>
+  <tabstop>lineEditValor</tabstop>
+  <tabstop>lineEditLucro</tabstop>
+ </tabstops>
  <resources>
   <include location="files.qrc"/>
  </resources>

@@ -40,6 +40,11 @@ float ClassJanelaDe4Folhas::metragem()
         altu += 1;
     }
 
+    qDebug()<<"LARG1"<<larg1;
+    qDebug()<<"LARG2"<<larg2;
+    qDebug()<<"LARG3"<<larg3;
+    qDebug()<<"LARG4"<<larg4;
+
     // Converte para metros
     float x1 = larg1 / 100.0;
     float x2 = larg2 / 100.0;
@@ -47,7 +52,8 @@ float ClassJanelaDe4Folhas::metragem()
     float x4 = larg4 / 100.0;
     float y = altu / 100.0;
 
-    double metrageVidro = x1 * y + x2 * y + x3 * y + x4 * y;
+    double metrageVidro = (x1 * y)+ (x2 * y) + (x3 * y) + (x4 * y);
+    qDebug()<<"**METRAGE JAN"<<metrageVidro;
 
     return metrageVidro;
 
@@ -59,7 +65,7 @@ float ClassJanelaDe4Folhas::calculatePrice()
     float Vglass = aux.buscarNoBDprice(glass , "temperado");
     float VbateFecha = aux.buscarNoBDprice(bateFecha , "batefecha");
     float VkitAluminio = aux.buscarNoBDprice(kit , "kitaluminio") * (width + 0.10);
-    float Vrodanas = aux.buscarNoBDprice(rodana, "rodana") * 2;
+    float Vrodanas = aux.buscarNoBDprice(rodana, "rodana") * 4;
     float Vlatch = aux.buscarNoBDprice(trinco, "trinco");
     float Vfilm = aux.buscarNoBDprice(film , "pelicula") * metragem();
 

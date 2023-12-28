@@ -1,5 +1,6 @@
 #include "janelade4folhas.h"
 #include "ui_janelade4folhas.h"
+#include <classjanelade4folhas.h>
 #include <QInputDialog>
 JanelaDe4Folhas::JanelaDe4Folhas(QWidget *parent) :
     QDialog(parent),
@@ -80,7 +81,7 @@ void JanelaDe4Folhas::on_pushButtonCalcular_clicked()
     QString latch = ui->comboBoxTrinco->currentText();
     QString rodana = "Rodana";
 
-    ClassJanelaDe2Folhas windows(width,height,glass,bateFecha,kit,rodana,latch,film);
+    ClassJanelaDe4Folhas windows(width,height,glass,bateFecha,kit,rodana,latch,film);
     sqlDataBaseControl aux;
 
     QString price = QString::number(windows.calculatePrice());
@@ -104,7 +105,7 @@ void JanelaDe4Folhas::atualizarValoresImportados(const QString &valor, const QSt
     QString latch = ui->comboBoxTrinco->currentText();
     QString rodana = "Rodana";
 
-    ClassJanelaDe2Folhas windows(width,height,glass,bateFecha,kit,rodana,latch,film);
+    ClassJanelaDe4Folhas windows(width,height,glass,bateFecha,kit,rodana,latch,film);
     sqlDataBaseControl aux;
 
     QString price = QString::number(windows.calculatePrice());

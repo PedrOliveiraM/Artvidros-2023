@@ -70,11 +70,12 @@ void BoxFrontal::on_pushButtonCalcular_clicked()
     QString film = ui->comboBoxPelicula->currentText();
     QString rodana = "rodana";
     QString tipo = "kitboxfrontal";
-    ClassBox bascu(width,height,glass,kit,rodana,film);
+
+    ClassBox box(width,height,glass,kit,rodana,film);
     sqlDataBaseControl aux;
 
-    QString price = QString::number(bascu.calculatePrice(tipo));
-    QString profit = QString::number(bascu.calculateProfit(tipo));
+    QString price = QString::number(box.calculatePrice(tipo));
+    QString profit = QString::number(box.calculateProfit(tipo));
 
     ui->lineEditValor->setText(price);
     ui->lineEditLucro->setText(profit);

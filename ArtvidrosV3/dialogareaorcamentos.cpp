@@ -17,6 +17,7 @@ Dialogareaorcamentos::Dialogareaorcamentos(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowTitle("ArtVidros");
     showBD();
+    connect(ui->lineEditPesquisa, &QLineEdit::textChanged, this, &Dialogareaorcamentos::onLineEditTextChanged);
 }
 
 Dialogareaorcamentos::~Dialogareaorcamentos()
@@ -105,14 +106,13 @@ void Dialogareaorcamentos::on_pushButtonGerarPDF_clicked()
 {
 
     QString row;
-    QTableWidgetItem *ID;
+    QTableWidgetItem *ID = nullptr;
     QTableWidgetItem *client;
-    QTableWidgetItem *date;
+    QTableWidgetItem *date = nullptr;
     QString cliente;
     QString data;
 
-    if (ui->tableWidget->selectionModel()->hasSelection()) {
-        // Obtém a linha selecionada
+    if (!ui->tableWidget->selectedItems().isEmpty()) {
         int selectedRow = ui->tableWidget->selectedItems().at(0)->row();
 
         // Obtém os itens da célula na linha selecionada
@@ -120,116 +120,180 @@ void Dialogareaorcamentos::on_pushButtonGerarPDF_clicked()
         client = ui->tableWidget->item(selectedRow, 1);
         date = ui->tableWidget->item(selectedRow, 5);
 
-        // Atribui o número da linha à variável row
-        row = QString::number(selectedRow + 1);  // +1 porque os índices de linha começam em 0
-
-        // Converte a data para um formato legível
-        QDateTime dateTime = QDateTime::fromString(date->text(), "dd/MM/yyyy");
-        data = dateTime.toString("dd/MM/yyyy");
-
         cliente = client->text();
+        data = date->text(); // armazenar a data
 
-        // Verifica se alguma linha foi selecionada antes de acessar os valores
-        if (!row.isEmpty()) {
-            qDebug() << "Linha selecionada: " << row;
-            qDebug() << "ID: " << ID->text();
-            qDebug() << "Cliente: " << cliente;
-            qDebug() << "Data: " << data.toStdString();
+        PDFarea telaPDF(this,cliente,data);
+        telaPDF.exec();
+
+        cliente = telaPDF.getCliente();
+        QString cpf = telaPDF.getCpf();
+        QString telefone = telaPDF.getTelefone();
+        QString endereco = telaPDF.getEndereco();
+        QString data = telaPDF.getData();
+
+        // consultar todos os orçamentos com mesmo id
+        QString id = ID->text();
+        std::list<PDFobjeto> lista;
+
+        QSqlQuery query;
+        query.prepare("SELECT * FROM sale WHERE cod_sale = '" + id + "' ");
+        if (query.exec()) {
+            while (query.next()) {
+                QString produto = query.value(2).toString();
+                QString valor = query.value(3).toString();
+                QString lucro = query.value(4).toString();
+
+                PDFobjeto obj(produto,valor,lucro);
+                lista.push_back(obj);
+            }
+        } else {
+            qDebug() << "Erro na consulta:";
         }
+
+        // Criar uma instância do QFileDialog para seleção de arquivo
+
+        QString defaultFileName = "nome_predefinido.pdf";
+        QString filePath = QFileDialog::getSaveFileName(this, tr("Salvar PDF"), QDir::homePath(), tr("Arquivos PDF (*.pdf)"));
+
+        if (filePath.isEmpty()) {
+            // O usuário cancelou a escolha do arquivo ou ocorreu um erro
+            return;
+        }
+
+        // Criar uma instância do PDFGenerator com o caminho escolhido
+        PDFGenerator pdfGenerator(filePath);
+
+        // Adicionar a imagem de fundo (template) ao PDF
+        QImage backgroundImage(":/imagens/Template_QT_pdf.jpg");  // Substitua pelo caminho real da sua imagem
+        pdfGenerator.addBackgroundImage(backgroundImage);
+
+        //pdfGenerator.addProductToImage(cpf,150,400);
+
+        pdfGenerator.addProductToImage(cliente,152,352);
+        pdfGenerator.addProductToImage(telefone,152,377);
+        pdfGenerator.addProductToImage(endereco,152,402);
+        pdfGenerator.addProductToImage(data,480,348);
+
+
+
+        // Adicionar produtos e valores
+        float valorTotal = 0.0;
+
+        int posX = 135;
+        int posXValor = 580;
+        int posY = 500;
+        int cont = 0;
+        while (!lista.empty()){
+            if (cont < 8){
+                //pdfGenerator.addProduct(lista.front().getProduto(),lista.front().getPreco().toDouble());
+                pdfGenerator.addProductToImage(lista.front().getProduto(), posX,posY);
+                pdfGenerator.addProductToImage(lista.front().getPreco(), posXValor,posY);
+
+                valorTotal += lista.front().getPreco().toFloat();
+
+                lista.pop_front();
+                posY += 30;
+                cont++;
+            }
+        }
+
+        // valor total
+        pdfGenerator.addProductToImage(QString::number(valorTotal),580,780);
+
+        // Salvar o PDF
+        pdfGenerator.savePDF();
+
+        //abrir para visualizar o pdf
+        QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
     } else {
-        QMessageBox::about(this, "Erro", "Nenhuma linha foi selecionada!");
+        QMessageBox::about(this,"Erro","Nenhum item foi selecionado !");
     }
-
-    qDebug() << "Texto da célula de data:" << date->text();
-    QDateTime dateTime = QDateTime::fromString(date->text(), "dd/MM/yyyy");
-    if (dateTime.isValid()) {
-        data = dateTime.toString("dd/MM/yyyy");
-        qDebug() << "Data convertida com sucesso:" << data.toStdString();
-    } else {
-        qDebug() << "Falha na conversão da data.";
-    }
+}
 
 
-    PDFarea telaPDF(this,cliente,data);
-    telaPDF.exec();
+void Dialogareaorcamentos::onLineEditTextChanged(const QString &text)
+{
+    // Limpar a tabela
+    ui->tableWidget->setRowCount(0);
 
-    cliente = telaPDF.getCliente();
-    QString cpf = telaPDF.getCpf();
-    QString telefone = telaPDF.getTelefone();
-    QString endereco = telaPDF.getEndereco();
-    QString data2 = telaPDF.getData();
-
-    // consultar todos os orçamentos com mesmo id
-    QString id = ID->text();
-    std::list<PDFobjeto> lista;
+    // Consultar o banco de dados com base no texto inserido
     QSqlQuery query;
-    query.prepare("SELECT * FROM sale WHERE cod_sale = '" + id + "' ");
+    query.prepare("SELECT * FROM sale WHERE customer LIKE :text");
+    query.bindValue(":text", "%" + text + "%");
+
     if (query.exec()) {
+        int linha = 0;
+        ui->tableWidget->setColumnCount(7);
+
         while (query.next()) {
-            QString produto = query.value(2).toString();
-            QString valor = query.value(3).toString();
-            QString lucro = query.value(4).toString();
-            PDFobjeto obj(produto,valor,lucro);
-            lista.push_back(obj);
-        }
-    } else {
-        qDebug() << "Erro na consulta:";
-    }
+            QTableWidgetItem *itemCodSale = new QTableWidgetItem(query.value(0).toString());
+            QTableWidgetItem *itemCustomer = new QTableWidgetItem(query.value(1).toString());
+            QTableWidgetItem *itemProduct = new QTableWidgetItem(query.value(2).toString());
+            QTableWidgetItem *itemPrice = new QTableWidgetItem(query.value(3).toString());
+            QTableWidgetItem *itemProfit = new QTableWidgetItem(query.value(4).toString());
+            QTableWidgetItem *itemDate = new QTableWidgetItem(query.value(5).toString());
+            QTableWidgetItem *itemSeller = new QTableWidgetItem(query.value(6).toString());
 
-    // Criar uma instância do QFileDialog para seleção de arquivo
-
-    QString defaultFileName = "nome_predefinido.pdf";
-    QString filePath = QFileDialog::getSaveFileName(this, tr("Salvar PDF"), QDir::homePath(), tr("Arquivos PDF (*.pdf)"));
-
-    if (filePath.isEmpty()) {
-        // O usuário cancelou a escolha do arquivo ou ocorreu um erro
-        return;
-    }
-
-    // Criar uma instância do PDFGenerator com o caminho escolhido
-    PDFGenerator pdfGenerator(filePath);
-
-
-    // Adicionar a imagem de fundo (template) ao PDF
-    QImage backgroundImage(":/imagens/Template_QT_pdf.jpg");  // Substitua pelo caminho real da sua imagem
-    pdfGenerator.addBackgroundImage(backgroundImage);
-
-//pdfGenerator.addProductToImage(cpf,150,400);
-
-    pdfGenerator.addProductToImage(cliente,152,352);
-    pdfGenerator.addProductToImage(telefone,152,377);
-    pdfGenerator.addProductToImage(endereco,152,402);
-    pdfGenerator.addProductToImage(data,480,348);
-
-
-
-    // Adicionar produtos e valores
-    float valorTotal = 0.0;
-
-    int posX = 135;
-    int posXValor = 580;
-    int posY = 500;
-    int cont = 0;
-    while (!lista.empty()){
-        if (cont < 8){
-            //pdfGenerator.addProduct(lista.front().getProduto(),lista.front().getPreco().toDouble());
-            pdfGenerator.addProductToImage(lista.front().getProduto(), posX,posY);
-            pdfGenerator.addProductToImage(lista.front().getPreco(), posXValor,posY);
-
-            valorTotal += lista.front().getPreco().toFloat();
-
-            lista.pop_front();
-            posY += 30;
-            cont++;
+            int linha = ui->tableWidget->rowCount();
+            ui->tableWidget->insertRow(linha);
+            ui->tableWidget->setItem(linha, 0, itemCodSale);
+            ui->tableWidget->setItem(linha, 1, itemCustomer);
+            ui->tableWidget->setItem(linha, 2, itemProduct);
+            ui->tableWidget->setItem(linha, 3, itemPrice);
+            ui->tableWidget->setItem(linha, 4, itemProfit);
+            ui->tableWidget->setItem(linha, 5, itemDate);
+            ui->tableWidget->setItem(linha, 6, itemSeller);
+            ui->tableWidget->setRowHeight(linha, 20);
+            linha++;
         }
     }
+    QStringList rotulo = {"Código Venda", "Cliente", "Produto", "Valor", "Lucro", "Data", "Vendedor"};
 
-   // valor total
-    pdfGenerator.addProductToImage(QString::number(valorTotal),580,780);
+    ui->tableWidget->setColumnWidth(0, 117);
+    ui->tableWidget->setColumnWidth(1, 157);
+    ui->tableWidget->setColumnWidth(2, 455);
+    ui->tableWidget->setColumnWidth(3, 115);
+    ui->tableWidget->setColumnWidth(4, 115);
+    ui->tableWidget->setColumnWidth(5, 115);
+    ui->tableWidget->setColumnWidth(6, 125);
 
-    // Salvar o PDF
-    pdfGenerator.savePDF();
+    ui->tableWidget->verticalHeader()->setVisible(false);
+    ui->tableWidget->setHorizontalHeaderLabels(rotulo);
+    ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableWidget->setStyleSheet("QTableView QHeaderView::section { font-weight: bold; }");
+    ui->tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
+    // Restante do código para definir larguras de colunas, estilos, etc.
+}
+
+
+void Dialogareaorcamentos::on_pushButton_Adicionar_clicked()
+{
+    telaOrcamentos = new DialogAreaOrcamentoSQL(this,"ADD","");
+    telaOrcamentos->exec();
+}
+
+
+void Dialogareaorcamentos::on_pushButtonLimpar_clicked()
+{
+    ui->lineEditPesquisa->clear();
+}
+
+
+void Dialogareaorcamentos::on_pushButton_Alterar_clicked()
+{
+
+    QString id;
+    QString name;
+    if (!ui->tableWidget->selectedItems().isEmpty()) {
+        // Obtém o item da célula selecionada
+        QTableWidgetItem *item = ui->tableWidget->selectedItems().at(0);
+        id = item->text();
+    }
+
+    telaOrcamentos = new DialogAreaOrcamentoSQL(this,"ALT",id);
+    telaOrcamentos->exec();
 }
 

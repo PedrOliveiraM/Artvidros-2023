@@ -74,7 +74,7 @@ float ClassVidrosComuns::metragem()
 float ClassVidrosComuns::calculatePrice(int quant)
 {
     sqlDataBaseControl aux;
-    float Vglass = aux.buscarNoBDprice(glass , "temperado");
+    float Vglass = aux.buscarNoBDprice(glass , "comum");
     float Vpolido = aux.buscarNoBDprice(polido , "polido");
     float Vacessorios = aux.buscarNoBDprice(acessorios , "acessorios");
 
