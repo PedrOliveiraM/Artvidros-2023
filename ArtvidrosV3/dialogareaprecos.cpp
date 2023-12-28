@@ -145,7 +145,8 @@ void DialogAreaPrecos::on_pushButtonADD_clicked()
 
     telaSQL = new SQLarea(this,"add",numberRow);
     telaSQL->exec();
-    on_pushButtonOrdem_clicked();
+
+    showBD();
 }
 
 
@@ -165,7 +166,7 @@ void DialogAreaPrecos::on_pushButtonALTER_clicked()
         telaSQL = new SQLarea(this,"alter",row);
         telaSQL->exec();
     }
-    on_pushButtonOrdem_clicked();
+   showBD();
 }
 
 
@@ -194,7 +195,7 @@ void DialogAreaPrecos::on_pushButtonDELETE_clicked()
         // Trate o caso quando nenhum item está selecionado
         QMessageBox::about(this,"ERRO","Nenhum item foi selecionado");
     }
-
+    showBD();
 }
 
 

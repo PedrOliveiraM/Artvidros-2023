@@ -16,7 +16,7 @@
   <widget class="QWidget" name="layoutWidget_5">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>270</x>
      <y>320</y>
      <width>131</width>
      <height>71</height>
@@ -57,7 +57,7 @@
   <widget class="QWidget" name="layoutWidget_9">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>470</x>
      <y>410</y>
      <width>211</width>
      <height>71</height>
@@ -97,7 +97,7 @@
   <widget class="QWidget" name="layoutWidget_7">
    <property name="geometry">
     <rect>
-     <x>860</x>
+     <x>870</x>
      <y>320</y>
      <width>211</width>
      <height>71</height>
@@ -137,7 +137,7 @@
   <widget class="QPushButton" name="pushButtonSalvar">
    <property name="geometry">
     <rect>
-     <x>800</x>
+     <x>810</x>
      <y>570</y>
      <width>51</width>
      <height>41</height>
@@ -160,7 +160,7 @@
   <widget class="QPushButton" name="pushButtonRefatorando">
    <property name="geometry">
     <rect>
-     <x>690</x>
+     <x>700</x>
      <y>440</y>
      <width>211</width>
      <height>41</height>
@@ -189,7 +189,7 @@
   <widget class="QPushButton" name="pushButtonDesconto">
    <property name="geometry">
     <rect>
-     <x>800</x>
+     <x>810</x>
      <y>520</y>
      <width>51</width>
      <height>41</height>
@@ -212,7 +212,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>380</x>
+     <x>390</x>
      <y>80</y>
      <width>641</width>
      <height>141</height>
@@ -232,7 +232,7 @@
   <widget class="QWidget" name="layoutWidget_6">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>560</x>
      <y>570</y>
      <width>221</width>
      <height>41</height>
@@ -267,7 +267,7 @@
   <widget class="QPushButton" name="pushButtonLimpar">
    <property name="geometry">
     <rect>
-     <x>800</x>
+     <x>810</x>
      <y>620</y>
      <width>51</width>
      <height>41</height>
@@ -290,7 +290,7 @@
   <widget class="QPushButton" name="pushButtonCalcular">
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>520</x>
      <y>520</y>
      <width>281</width>
      <height>41</height>
@@ -315,7 +315,7 @@
   <widget class="QWidget" name="layoutWidget_8">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>410</x>
      <y>320</y>
      <width>131</width>
      <height>71</height>
@@ -356,7 +356,7 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>560</x>
      <y>620</y>
      <width>221</width>
      <height>41</height>
@@ -398,7 +398,7 @@
   <widget class="QWidget" name="layoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>540</x>
+     <x>550</x>
      <y>320</y>
      <width>311</width>
      <height>71</height>

@@ -67,7 +67,7 @@ bool sqlDataBaseControl::insertBDSalvar(QString codID, QString client, QString p
 bool sqlDataBaseControl::toAlterBDSalvar(QString codID, QString client, QString product, QString price, QString profit, QString data, QString seller)
 {
     QSqlQuery query;
-    QString updateQuery = "UPDATE product SET "
+    QString updateQuery = "UPDATE sale SET "
                           "customer = '" + client + "', "
                                      "product = '" + product + "', "
                                       "price = '" + price + "', "
@@ -89,6 +89,50 @@ bool sqlDataBaseControl::deleteBDSalvar(QString codID,QString name)
 
     QSqlQuery query;
     QString deleteQuery = ("DELETE FROM sale "
+                           "WHERE cod_sale = '"+codID+"' and customer = '"+name+"'");
+    if (query.exec(deleteQuery)) {
+        return true;
+    } else {
+        qDebug() << "Erro ao deletar ";
+        return false;
+    }
+}
+
+bool sqlDataBaseControl::insertBDVendido(QString codID, QString client, QString product, QString price, QString profit, QString data, QString seller)
+{
+    QSqlQuery query;
+    if (query.exec("INSERT INTO vendas (cod_sale,customer,product,price,profit,data,seller) VALUES ('"+codID+"','"+client+"','"+product+"', '"+price+"', '"+profit+"' ,'"+data+"','"+seller+"')")) {
+        return true;
+    }else {
+        return false;
+    }
+    return 0;
+}
+
+bool sqlDataBaseControl::toAlterBDVendido(QString codID, QString client, QString product, QString price, QString profit, QString data, QString seller)
+{
+    QSqlQuery query;
+    QString updateQuery = "UPDATE vendas SET "
+                          "customer = '" + client + "', "
+                                     "product = '" + product + "', "
+                                      "price = '" + price + "', "
+                                    "profit = '" + profit + "', "
+                                     "data = '" + data + "', "
+                                   "seller = '" + seller + "' "
+                                     "WHERE cod_sale = '" + codID + "'";
+
+    if (query.exec(updateQuery)) {
+        return true;
+    } else {
+        qDebug() << "Erro alterar";
+        return false;
+    }
+}
+
+bool sqlDataBaseControl::deleteBDVendido(QString codID, QString name)
+{
+    QSqlQuery query;
+    QString deleteQuery = ("DELETE FROM vendas "
                            "WHERE cod_sale = '"+codID+"' and customer = '"+name+"'");
     if (query.exec(deleteQuery)) {
         return true;

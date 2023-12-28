@@ -11,6 +11,7 @@
 #include <moldura.h>
 #include <vidroscomuns.h>
 #include <QMainWindow>
+#include <dialogareadevendas.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -54,6 +55,7 @@ private:
     AdicionaisRef *telaAdicionais;
     DialogAreaPrecos *telaAreaPreco;
     Dialogareaorcamentos *telaAreaOrcamento;
+    DialogAreaDeVendas *telaAreaVendas;
     DialogPortas *telaPortas; 
     DialogJanelas *telaJanelas;
     DialogBoxs *telaBox;

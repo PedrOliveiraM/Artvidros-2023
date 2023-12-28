@@ -8,7 +8,7 @@
 #include <pdfobjeto.h>
 #include <QDesktopServices>
 #include <QUrl>
-
+#include <qsqlerror.h>
 
 Dialogareaorcamentos::Dialogareaorcamentos(QWidget *parent) :
     QDialog(parent),
@@ -25,15 +25,19 @@ Dialogareaorcamentos::~Dialogareaorcamentos()
     delete ui;
 }
 
+#include <QPushButton>
+
+// ... (outras inclusões necessárias)
+
 void Dialogareaorcamentos::showBD()
 {
     ui->tableWidget->setRowCount(0);
     QSqlQuery query;
 
     query.prepare("SELECT * FROM sale");
-    if (query.exec()){
+    if (query.exec()) {
         int linha = 0;
-        ui->tableWidget->setColumnCount(7); // Definindo o número correto de colunas
+        ui->tableWidget->setColumnCount(8); // Agora são 8 colunas
         while (query.next()) {
             QTableWidgetItem *itemCodSale = new QTableWidgetItem(query.value(0).toString());
             QTableWidgetItem *itemCustomer = new QTableWidgetItem(query.value(1).toString());
@@ -42,6 +46,14 @@ void Dialogareaorcamentos::showBD()
             QTableWidgetItem *itemProfit = new QTableWidgetItem(query.value(4).toString());
             QTableWidgetItem *itemDate = new QTableWidgetItem(query.value(5).toString());
             QTableWidgetItem *itemSeller = new QTableWidgetItem(query.value(6).toString());
+
+            // Adicionando widgets de botões à célula da coluna "Ações"
+            QPushButton *btnRemover = new QPushButton;
+            btnRemover->setIcon(QIcon(":/imagens/vendas.png"));
+
+            // Conectar o slot antes de adicioná-lo à célula
+            connect(btnRemover, &QPushButton::clicked, this, &Dialogareaorcamentos::vendido);
+
 
             // Obtendo a quantidade de linhas tem na grid
             int linha = ui->tableWidget->rowCount();
@@ -54,12 +66,13 @@ void Dialogareaorcamentos::showBD()
             ui->tableWidget->setItem(linha, 4, itemProfit);
             ui->tableWidget->setItem(linha, 5, itemDate);
             ui->tableWidget->setItem(linha, 6, itemSeller);
+            ui->tableWidget->setCellWidget(linha, 7, btnRemover); // Agora é a coluna 7
             ui->tableWidget->setRowHeight(linha, 20);
             linha++;
         }
     }
 
-    QStringList rotulo = {"Código Venda", "Cliente", "Produto", "Valor", "Lucro", "Data", "Vendedor"};
+    QStringList rotulo = {"Código Venda", "Cliente", "Produto", "Valor", "Lucro", "Data", "Vendedor", ""};
     ui->tableWidget->setColumnWidth(0, 117);
     ui->tableWidget->setColumnWidth(1, 157);
     ui->tableWidget->setColumnWidth(2, 455);
@@ -67,6 +80,7 @@ void Dialogareaorcamentos::showBD()
     ui->tableWidget->setColumnWidth(4, 115);
     ui->tableWidget->setColumnWidth(5, 115);
     ui->tableWidget->setColumnWidth(6, 125);
+    ui->tableWidget->setColumnWidth(7, 45);
 
     ui->tableWidget->verticalHeader()->setVisible(false);
     ui->tableWidget->setHorizontalHeaderLabels(rotulo);
@@ -74,8 +88,27 @@ void Dialogareaorcamentos::showBD()
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableWidget->setStyleSheet("QTableView QHeaderView::section { font-weight: bold; }");
     ui->tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+}
 
+void Dialogareaorcamentos::vendido()
+{
 
+    if (!ui->tableWidget->selectedItems().isEmpty()) {
+        // Obtém o item da célula selecionada
+        QTableWidgetItem *itemCodSale = ui->tableWidget->selectedItems().at(0);
+        QTableWidgetItem *itemCustomer = ui->tableWidget->selectedItems().at(1);
+        QTableWidgetItem *itemProduct = ui->tableWidget->selectedItems().at(2);
+        QTableWidgetItem *itemPrice = ui->tableWidget->selectedItems().at(3);
+        QTableWidgetItem *itemProfit = ui->tableWidget->selectedItems().at(4);
+        QTableWidgetItem *itemDate = ui->tableWidget->selectedItems().at(5);
+        QTableWidgetItem *itemSeller = ui->tableWidget->selectedItems().at(6);
+        sqlDataBaseControl aux;
+
+        if (aux.insertBDVendido(itemCodSale->text(),itemCustomer->text(),itemProduct->text(),itemPrice->text(),itemProfit->text(),itemDate->text(),itemSeller->text()))
+            QMessageBox::about(this,"","Adicionado como Vendido");
+        else
+            QMessageBox::warning(this,"ERRO","Não foi possível Adicionar como Vendido");
+    }
 }
 
 
@@ -295,5 +328,34 @@ void Dialogareaorcamentos::on_pushButton_Alterar_clicked()
 
     telaOrcamentos = new DialogAreaOrcamentoSQL(this,"ALT",id);
     telaOrcamentos->exec();
+}
+
+
+void Dialogareaorcamentos::on_pushButtonApagarTODOS_clicked()
+{
+    QMessageBox::StandardButton resposta;
+    QMessageBox msgBox(QMessageBox::Question,
+                       "Confirmação",
+                       "Tem certeza que deseja remover todos os orçamentos? Não será possível desfazer essa ação !",
+                       QMessageBox::Yes | QMessageBox::No,
+                       this);
+
+    msgBox.setButtonText(QMessageBox::Yes, "Sim , Deletar"); // Alterando o texto do botão "Yes" para "Ok"
+    msgBox.setButtonText(QMessageBox::No, "Não Deletar"); // Alterando o texto do botão "No" para "Não Deletar"
+
+    resposta = static_cast<QMessageBox::StandardButton>(msgBox.exec());
+
+    // Se o usuário confirmar
+    if (resposta == QMessageBox::Yes) {
+        // Executar o comando SQL para excluir todos os registros
+        QSqlQuery query;
+        query.prepare("DELETE FROM sales");
+
+        if (query.exec()) {
+            QMessageBox::information(this, "Sucesso", "Todos os orçamentos foram removidos com sucesso.");
+        } else {
+            QMessageBox::critical(this, "Erro", "Erro ao remover orçamentos: " + query.lastError().text());
+        }
+    }
 }
 

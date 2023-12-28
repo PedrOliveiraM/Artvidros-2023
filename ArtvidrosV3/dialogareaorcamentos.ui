@@ -34,9 +34,9 @@
   <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>50</x>
      <y>280</y>
-     <width>1201</width>
+     <width>1251</width>
      <height>381</height>
     </rect>
    </property>
@@ -85,6 +85,11 @@
    <column>
     <property name="text">
      <string>Vendedor</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
     </property>
    </column>
   </widget>

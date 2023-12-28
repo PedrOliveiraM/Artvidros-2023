@@ -17,6 +17,8 @@ public:
     ~Dialogareaorcamentos();
 
     void showBD();
+
+    void vendido();
 private slots:
     void on_pushButton_Excluir_clicked();
 
@@ -29,6 +31,8 @@ private slots:
     void on_pushButtonLimpar_clicked();
 
     void on_pushButton_Alterar_clicked();
+
+    void on_pushButtonApagarTODOS_clicked();
 
 private:
     Ui::Dialogareaorcamentos *ui;

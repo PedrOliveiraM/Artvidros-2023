@@ -16,6 +16,9 @@ public:
     bool toAlterBDSalvar(QString codID,QString client,QString product,QString price,QString profit,QString data , QString seller);
     bool deleteBDSalvar(QString codID,QString name);
 
+    bool insertBDVendido(QString codID,QString client,QString product,QString price,QString profit,QString data , QString seller);
+    bool toAlterBDVendido(QString codID,QString client,QString product,QString price,QString profit,QString data , QString seller);
+    bool deleteBDVendido(QString codID,QString name);
 
     float buscarNoBDprice(QString name , QString type);
     float buscarNoBDprofit(QString name , QString type);

@@ -3,13 +3,13 @@
 #include "ui_dialogareaorcamentosql.h"
 #include <QMessageBox>
 #include <adicionaisobj.h>
-DialogAreaOrcamentoSQL::DialogAreaOrcamentoSQL(QWidget *parent ,QString tipo,QString id) :
+DialogAreaOrcamentoSQL::DialogAreaOrcamentoSQL(QWidget *parent ,QString tipo,QString id,QString tela) :
     QDialog(parent),
     ui(new Ui::DialogAreaOrcamentoSQL)
 {
     ui->setupUi(this);
     setType(tipo);
-
+    setTela(tela);
     QSqlQuery query;
     //combo box id
     if (query.exec("SELECT * FROM sale")) {
@@ -47,6 +47,16 @@ DialogAreaOrcamentoSQL::~DialogAreaOrcamentoSQL()
     delete ui;
 }
 
+QString DialogAreaOrcamentoSQL::getTela() const
+{
+    return tela;
+}
+
+void DialogAreaOrcamentoSQL::setTela(const QString &newTela)
+{
+    tela = newTela;
+}
+
 QString DialogAreaOrcamentoSQL::getType() const
 {
     return type;
@@ -75,10 +85,17 @@ void DialogAreaOrcamentoSQL::on_pushButtonAdicionar_clicked()
         QString data =ui->lineEditData->text();
         QString vendedor= ui->lineEditVendedor->text().toUpper();
 
-        if (aux.insertBDSalvar(cod,cliente,produto,preco,lucro,data,vendedor))
-            QMessageBox::about(this,"Mensagem","Salvo com Sucesso");
-        else
-            QMessageBox::warning(this,"Mensagem","Falha ao Salvar");
+        if(tela == "vendas"){
+            if (aux.insertBDVendido(cod,cliente,produto,preco,lucro,data,vendedor))
+                QMessageBox::about(this,"Mensagem","Salvo com Sucesso");
+            else
+                QMessageBox::warning(this,"Mensagem","Falha ao Salvar");
+        }else{
+            if (aux.insertBDSalvar(cod,cliente,produto,preco,lucro,data,vendedor))
+                QMessageBox::about(this,"Mensagem","Salvo com Sucesso");
+            else
+                QMessageBox::warning(this,"Mensagem","Falha ao Salvar");
+        }
 
         close();
     }else{
@@ -97,10 +114,18 @@ void DialogAreaOrcamentoSQL::on_pushButtonAdicionar_clicked()
         QString data =ui->lineEditData->text();
         QString vendedor= ui->lineEditVendedor->text().toUpper();
 
-        if (aux.toAlterBDSalvar(cod,cliente,produto,preco,lucro,data,vendedor))
-            QMessageBox::about(this,"Mensagem","Alterado com Sucesso");
-        else
-            QMessageBox::warning(this,"Mensagem","Falha ao Alterar");
+        if (tela == "vendas"){
+            if (aux.toAlterBDVendido(cod,cliente,produto,preco,lucro,data,vendedor))
+                QMessageBox::about(this,"Mensagem","Alterado com Sucesso");
+            else
+                QMessageBox::warning(this,"Mensagem","Falha ao Alterar");
+        }else{
+            if (aux.toAlterBDSalvar(cod,cliente,produto,preco,lucro,data,vendedor))
+                QMessageBox::about(this,"Mensagem","Alterado com Sucesso");
+            else
+                QMessageBox::warning(this,"Mensagem","Falha ao Alterar");
+        }
+
 
         close();
     }

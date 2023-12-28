@@ -307,35 +307,6 @@
     </size>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButtonRefatorando">
-   <property name="geometry">
-    <rect>
-     <x>820</x>
-     <y>400</y>
-     <width>211</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Adicionais</string>
-   </property>
-   <property name="icon">
-    <iconset resource="files.qrc">
-     <normaloff>:/imagens/adicionar-a-cesta.png</normaloff>:/imagens/adicionar-a-cesta.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>24</width>
-     <height>24</height>
-    </size>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -359,7 +330,7 @@
   <widget class="QWidget" name="layoutWidget_12">
    <property name="geometry">
     <rect>
-     <x>600</x>
+     <x>710</x>
      <y>370</y>
      <width>211</width>
      <height>71</height>
@@ -399,7 +370,7 @@
   <widget class="QWidget" name="layoutWidget_7">
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>620</x>
      <y>410</y>
      <width>81</width>
      <height>31</height>
@@ -427,7 +398,7 @@
   <widget class="QWidget" name="layoutWidget_9">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>400</x>
      <y>370</y>
      <width>211</width>
      <height>71</height>
@@ -528,7 +499,6 @@
   <tabstop>comboBoxAcessorios</tabstop>
   <tabstop>spinBox_Acessorios</tabstop>
   <tabstop>comboBoxAcabamento</tabstop>
-  <tabstop>pushButtonRefatorando</tabstop>
   <tabstop>pushButtonCalcular</tabstop>
   <tabstop>pushButtonDesconto</tabstop>
   <tabstop>pushButtonSalvar</tabstop>

@@ -102,6 +102,8 @@ void MainWindow::on_actionPre_os_triggered()
 void MainWindow::on_actionVendas_triggered()
 {
     //vendas
+    telaAreaVendas = new DialogAreaDeVendas;
+    telaAreaVendas->exec();
 }
 
 

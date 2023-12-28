@@ -3,7 +3,7 @@
 #include <adicionaisref.h>
 #include <adicionaisobj.h>
 #include <QDialog>
-
+#include <dialogsalvar.h>
 namespace Ui {
 class Moldura;
 }
@@ -16,8 +16,6 @@ public:
     explicit Moldura(QWidget *parent = nullptr);
     ~Moldura();
 
-    std::list<AdicionaisOBJ> listaDeAdicionais;
-
 private slots:
     void on_pushButtonCalcular_clicked();
 
@@ -27,10 +25,9 @@ private slots:
 
     void on_pushButtonLimpar_clicked();
 
-    void on_pushButtonRefatorando_clicked();
-
 private:
     Ui::Moldura *ui;
+    DialogSalvar *telaSalvar;
 };
 
 #endif // MOLDURA_H
