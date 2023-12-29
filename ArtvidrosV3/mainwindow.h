@@ -50,6 +50,8 @@ private slots:
 
     void on_pushButtonAdicionais_clicked();
 
+    void on_pushButtonVendas_clicked();
+
 private:
     Ui::MainWindow *ui;
     AdicionaisRef *telaAdicionais;

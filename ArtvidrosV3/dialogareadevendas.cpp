@@ -4,6 +4,7 @@
 #include <QSqlQuery>
 #include <sqldatabasecontrol.h>
 #include <qsqlerror.h>
+#include <QSqlError>
 DialogAreaDeVendas::DialogAreaDeVendas(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DialogAreaDeVendas)
@@ -11,31 +12,6 @@ DialogAreaDeVendas::DialogAreaDeVendas(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowTitle("ArtVidros");
     showBD();
-
-
-    // colocar na combo box
-
-    QSqlQuery query;
-    query.prepare("SELECT DISTINCT substr(data, 1, 2) AS dia, "
-                  "                substr(data, 4, 2) AS mes, "
-                  "                substr(data, 7, 4) AS ano "
-                  "FROM vendas");
-
-    if (query.exec()) {
-        while (query.next()) {
-            QString dia = query.value("dia").toString();
-            QString mes = query.value("mes").toString();
-            QString ano = query.value("ano").toString();
-
-            // Adicione esses valores às ComboBoxes correspondentes
-            ui->comboBox_Dia->addItem(dia);
-            ui->comboBox_Mes->addItem(mes);
-            ui->comboBox_Ano->addItem(ano);
-        }
-    } else {
-        qDebug() << "Erro na consulta: " << query.lastError().text();
-    }
-
 }
 
 DialogAreaDeVendas::~DialogAreaDeVendas()
@@ -93,31 +69,73 @@ void DialogAreaDeVendas::showBD()
     ui->tableWidget->setStyleSheet("QTableView QHeaderView::section { font-weight: bold; }");
     ui->tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
+    atualizaCombo();
+    on_pushButtonVerResultados_clicked();
+}
+
+void DialogAreaDeVendas::atualizaCombo()
+{
+    // Limpa os itens existentes nas ComboBoxes
+    ui->comboBox_Dia->clear();
+    ui->comboBox_Mes->clear();
+    ui->comboBox_Ano->clear();
+    ui->comboBox_Vendedor->clear();
+
+    // Adiciona um item padrão
+    ui->comboBox_Dia->addItem("Dia");
+    ui->comboBox_Mes->addItem("Mês");
+    ui->comboBox_Ano->addItem("Ano");
+    ui->comboBox_Vendedor->addItem("Vendedor");
+
+    // Consulta SQL para obter valores distintos
+    QSqlQuery query;
+    query.prepare("SELECT DISTINCT substr(data, 1, 2) AS dia, "
+                  "                substr(data, 4, 2) AS mes, "
+                  "                substr(data, 7, 4) AS ano "
+                  "FROM vendas");
+
+    if (query.exec()) {
+        while (query.next()) {
+            QString dia = query.value("dia").toString();
+            QString mes = query.value("mes").toString();
+            QString ano = query.value("ano").toString();
+
+            // Adicione esses valores às ComboBoxes correspondentes
+            if (ui->comboBox_Dia->findText(dia) == -1)
+                ui->comboBox_Dia->addItem(dia);
+
+            if (ui->comboBox_Mes->findText(mes) == -1)
+                ui->comboBox_Mes->addItem(mes);
+
+            if (ui->comboBox_Ano->findText(ano) == -1)
+                ui->comboBox_Ano->addItem(ano);
+        }
+
+        QSqlQuery query;
+        query.prepare("SELECT DISTINCT seller FROM vendas");
+
+        if (query.exec()) {
+            while (query.next()) {
+                QString vendedor = query.value("seller").toString();
+
+                if (ui->comboBox_Vendedor->findText(vendedor) == -1)
+                    ui->comboBox_Vendedor->addItem(vendedor);
+            }
+        }
+
+    } else {
+        // Lide com erros durante a execução da consulta
+        qDebug() << "Erro na consulta: " << query.lastError().text();
+    }
 
 }
-/*
-SELECT *
-FROM sale
-WHERE substr(data, 4, 2) = '12'  -- Substitua '05' pelo número do mês desejado
-    AND substr(data, 7, 4) = '2023'
-
-
-
-SELECT
-    SUM(CAST(price AS REAL)) AS total_price,
-    SUM(CAST(profit AS REAL)) AS total_profit
-FROM sale
-WHERE substr(data, 4, 2) = '12'  -- Substitua '05' pelo número do mês desejado
-    AND substr(data, 7, 4) = '2023';  -- Substitua '2023' pelo ano desejado
-
-
-*/
 
 void DialogAreaDeVendas::on_pushButton_Buscar_clicked()
 {
     QString dia = ui->comboBox_Dia->currentText();
     QString mes = ui->comboBox_Mes->currentText();
     QString ano = ui->comboBox_Ano->currentText();
+    QString vendedor = ui->comboBox_Vendedor->currentText();
 
     if (dia == "Dia")
         dia = "";
@@ -125,18 +143,23 @@ void DialogAreaDeVendas::on_pushButton_Buscar_clicked()
         mes = "";
     if (ano == "Ano")
         ano = "";
+    if (vendedor == "Vendedor")
+        vendedor = "";
 
     ui->tableWidget->setRowCount(0);
     QSqlQuery query;
     query.prepare("SELECT * FROM vendas "
                   "WHERE (substr(data, 1, 2) = :dia OR :dia IS NULL OR :dia = '') "
                   "AND (substr(data, 4, 2) = :mes OR :mes IS NULL OR :mes = '') "
-                  "AND (substr(data, 7, 4) = :ano OR :ano IS NULL OR :ano = '')");
-
+                  "AND (substr(data, 7, 4) = :ano OR :ano IS NULL OR :ano = '') "
+                  "AND (seller = :vendedor OR :vendedor IS NULL OR :vendedor = '')");
 
     query.bindValue(":dia", dia);
     query.bindValue(":mes", mes);
     query.bindValue(":ano", ano);
+    query.bindValue(":vendedor", vendedor);
+
+    // Restante do código permanece inalterado *********************************************************************************
 
     if (query.exec()) {
         int linha = 0;
@@ -164,7 +187,7 @@ void DialogAreaDeVendas::on_pushButton_Buscar_clicked()
             linha++;
         }
     } else {
-        qDebug() << "Erro na consulta: ";
+        qDebug() << "Erro na consulta: "<<query.lastError().text();
     }
 
     QStringList rotulo = {"Código Venda", "Cliente", "Produto", "Valor", "Lucro", "Data", "Vendedor", };
@@ -182,52 +205,80 @@ void DialogAreaDeVendas::on_pushButton_Buscar_clicked()
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableWidget->setStyleSheet("QTableView QHeaderView::section { font-weight: bold; }");
     ui->tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    on_pushButtonVerResultados_clicked();
 }
 
 void DialogAreaDeVendas::on_pushButtonVerResultados_clicked()
 {
+
     QString dia = ui->comboBox_Dia->currentText();
     QString mes = ui->comboBox_Mes->currentText();
     QString ano = ui->comboBox_Ano->currentText();
+    QString vendedor = ui->comboBox_Vendedor->currentText();
 
-    if (dia == "Dia")
-        dia = "";
-    if (mes == "Mês")
-        mes = "";
-    if (ano == "Ano")
-        ano = "";
+    // Verifica se os valores são os padrões e os transforma em strings vazias
+    dia = (dia == "Dia") ? "" : dia;
+    mes = (mes == "Mês") ? "" : mes;
+    ano = (ano == "Ano") ? "" : ano;
+    vendedor = (vendedor == "Vendedor") ? "" : vendedor;
 
     QSqlQuery query;
-    if (dia != "Dia" && mes != "Mes" && ano != "Ano") {
+
+    if (!dia.isEmpty() || !mes.isEmpty() || !ano.isEmpty() || !vendedor.isEmpty()) {
         query.prepare("SELECT "
                       "SUM(CAST(price AS REAL)) AS total_price, "
                       "SUM(CAST(profit AS REAL)) AS total_profit "
                       "FROM vendas "
                       "WHERE (substr(data, 1, 2) = :dia OR :dia IS NULL OR :dia = '') "
                       "AND (substr(data, 4, 2) = :mes OR :mes IS NULL OR :mes = '') "
-                      "AND (substr(data, 7, 4) = :ano OR :ano IS NULL OR :ano = '')");
+                      "AND (substr(data, 7, 4) = :ano OR :ano IS NULL OR :ano = '') "
+                      "AND (seller = :vendedor OR :vendedor IS NULL OR :vendedor = '')");
 
         query.bindValue(":dia", dia);
         query.bindValue(":mes", mes);
         query.bindValue(":ano", ano);
+        query.bindValue(":vendedor", vendedor);
+
+        qDebug() << "Entrou na primeira consulta.";
+
+        // Pegar os valores
+        if (query.exec()) {
+            if (query.next()) {
+                QString totalSum = query.value("total_price").toString();
+                QString lucroSum = query.value("total_profit").toString();
+
+                ui->label_ValorTotal->setText(totalSum);
+                ui->label_LucroTotal->setText(lucroSum);
+            } else {
+                qDebug() << "Nenhum resultado retornado.";
+            }
+        } else {
+            qDebug() << "Erro na consulta: " << query.lastError().text();
+        }
     } else {
+        qDebug() << "Nenhum critério de consulta fornecido.";
+
         query.prepare("SELECT "
                       "SUM(CAST(price AS REAL)) AS total_price, "
                       "SUM(CAST(profit AS REAL)) AS total_profit "
                       "FROM vendas ");
+            // Pegar os valores
+            if (query.exec()) {
+                if (query.next()) {
+                    QString totalSum = query.value("total_price").toString();
+                    QString lucroSum = query.value("total_profit").toString();
+
+                    ui->label_ValorTotal->setText(totalSum);
+                    ui->label_LucroTotal->setText(lucroSum);
+                } else {
+                    qDebug() << "Nenhum resultado retornado.";
+                }
+            } else {
+                qDebug() << "Erro na consulta: " << query.lastError().text();
+            }
     }
 
-    if (query.exec()) {
-        while (query.next()) {
-            QString totalSum = query.value("total_price").toString();
-            QString lucroSum = query.value("total_profit").toString();
-
-            ui->label_ValorTotal->setText(totalSum);
-            ui->label_LucroTotal->setText(lucroSum);
-        }
-    } else {
-        qDebug() << "Erro na consulta: " << query.lastError().text();
-    }
 
 }
 
@@ -235,13 +286,27 @@ void DialogAreaDeVendas::on_pushButton_Adicionar_clicked()
 {
     telaOrcamentos = new DialogAreaOrcamentoSQL(this,"ADD","","vendas");
     telaOrcamentos->exec();
+    showBD();
 }
 
 
 void DialogAreaDeVendas::on_pushButtonAlterar_clicked()
 {
-    telaOrcamentos = new DialogAreaOrcamentoSQL(this,"ALT","","vendas");
-    telaOrcamentos->exec();
+    QString id;
+    QString name;
+    if (!ui->tableWidget->selectedItems().isEmpty()) {
+        // Obtém o item da célula selecionada
+        QTableWidgetItem *item = ui->tableWidget->selectedItems().at(0);
+        QTableWidgetItem *item2 = ui->tableWidget->selectedItems().at(1);
+        // Obtém o valor do texto da célula
+        id = item->text();
+        name = item2->text();
+        telaOrcamentos = new DialogAreaOrcamentoSQL(this,"ALT",id,"vendas");
+        telaOrcamentos->exec();
+    }else{
+        QMessageBox::about(this,"Erro","Selecione a venda que deseja alterar.");
+    }
+showBD();
 }
 
 
@@ -264,6 +329,6 @@ void DialogAreaDeVendas::on_pushButton_Excluir_clicked()
     else
         QMessageBox::warning(this,"ERRO","O Item selecionado Não foi Deletado");
 
-    showBD();
+showBD();
 }
 

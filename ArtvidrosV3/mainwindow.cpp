@@ -117,3 +117,11 @@ void MainWindow::on_pushButtonAdicionais_clicked()
 }
 
 
+
+void MainWindow::on_pushButtonVendas_clicked()
+{
+    //vendas
+    telaAreaVendas = new DialogAreaDeVendas;
+    telaAreaVendas->exec();
+}
+

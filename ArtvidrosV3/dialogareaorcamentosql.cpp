@@ -96,7 +96,6 @@ void DialogAreaOrcamentoSQL::on_pushButtonAdicionar_clicked()
             else
                 QMessageBox::warning(this,"Mensagem","Falha ao Salvar");
         }
-
         close();
     }else{
         sqlDataBaseControl aux;

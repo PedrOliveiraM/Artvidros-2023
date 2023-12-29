@@ -16,6 +16,7 @@ public:
     ~DialogAreaDeVendas();
 
     void showBD();
+    void atualizaCombo();
 private slots:
     void on_pushButton_Buscar_clicked();
 
