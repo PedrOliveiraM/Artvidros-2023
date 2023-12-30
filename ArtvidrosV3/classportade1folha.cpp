@@ -17,8 +17,8 @@ float ClassPortaDe1Folha::metragem()
     float altura = getHeight();
 
     // Calcula as larguras e a altura em centímetros
-    int larg = static_cast<int>(largura * 100);
-    int altu = static_cast<int>(altura * 100);
+    int larg = static_cast<int>(largura * 100) + 5;
+    int altu = static_cast<int>(altura * 100) + 5;
 
     // Ajusta para múltiplo de 5
     while (larg % 5 != 0) {

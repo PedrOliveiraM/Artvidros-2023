@@ -40,9 +40,22 @@ void PDFGenerator::addProductToImage(const QString& productName, int x, int y)
     font.setPointSize(14);
     font.setBold(true);
     painter.setFont(font);
+
+    int maxCharacter = 40;
+
+    // Limitar o número de caracteres
+    QString displayText = productName.left(maxCharacter);
+
+    // Adicionar "..." se o texto for cortado
+    if (productName.length() > maxCharacter)
+    {
+        displayText += "...";
+    }
+
     // Desenhar o produto na imagem nas coordenadas especificadas
-    painter.drawText(x, y, productName);
+    painter.drawText(x, y, displayText);
 }
+
 
 void PDFGenerator::savePDF()
 {

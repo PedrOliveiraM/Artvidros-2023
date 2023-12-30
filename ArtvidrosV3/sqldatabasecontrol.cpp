@@ -84,16 +84,31 @@ bool sqlDataBaseControl::toAlterBDSalvar(QString codID, QString client, QString 
     }
 }
 
-bool sqlDataBaseControl::deleteBDSalvar(QString codID,QString name)
+bool sqlDataBaseControl::deleteBDSalvar(QString codID, QString client, QString product, QString price, QString profit, QString data, QString seller)
 {
 
     QSqlQuery query;
-    QString deleteQuery = ("DELETE FROM sale "
-                           "WHERE cod_sale = '"+codID+"' and customer = '"+name+"'");
-    if (query.exec(deleteQuery)) {
+    QString deleteQuery = "DELETE FROM sale "
+                          "WHERE cod_sale = :codID AND "
+                          "customer = :client AND "
+                          "product = :product AND "
+                          "price = :price AND "
+                          "profit = :profit AND "
+                          "data = :data AND "
+                          "seller = :seller";
+    query.prepare(deleteQuery);
+    query.bindValue(":codID", codID);
+    query.bindValue(":client", client);
+    query.bindValue(":product", product);
+    query.bindValue(":price", price);
+    query.bindValue(":profit", profit);
+    query.bindValue(":data", data);
+    query.bindValue(":seller", seller);
+
+    if (query.exec()) {
         return true;
     } else {
-        qDebug() << "Erro ao deletar ";
+        qDebug() << "Erro ao deletar: ";;
         return false;
     }
 }
@@ -129,15 +144,30 @@ bool sqlDataBaseControl::toAlterBDVendido(QString codID, QString client, QString
     }
 }
 
-bool sqlDataBaseControl::deleteBDVendido(QString codID, QString name)
+bool sqlDataBaseControl::deleteBDVendido(QString codID, QString client, QString product, QString price, QString profit, QString data, QString seller)
 {
     QSqlQuery query;
-    QString deleteQuery = ("DELETE FROM vendas "
-                           "WHERE cod_sale = '"+codID+"' and customer = '"+name+"'");
-    if (query.exec(deleteQuery)) {
+    QString deleteQuery = "DELETE FROM vendas "
+                          "WHERE cod_sale = :codID AND "
+                          "customer = :client AND "
+                          "product = :product AND "
+                          "price = :price AND "
+                          "profit = :profit AND "
+                          "data = :data AND "
+                          "seller = :seller";
+    query.prepare(deleteQuery);
+    query.bindValue(":codID", codID);
+    query.bindValue(":client", client);
+    query.bindValue(":product", product);
+    query.bindValue(":price", price);
+    query.bindValue(":profit", profit);
+    query.bindValue(":data", data);
+    query.bindValue(":seller", seller);
+
+    if (query.exec()) {
         return true;
     } else {
-        qDebug() << "Erro ao deletar ";
+        qDebug() << "Erro ao deletar: ";;
         return false;
     }
 }

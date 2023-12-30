@@ -36,7 +36,7 @@ void Dialogareaorcamentos::showBD()
 
     query.prepare("SELECT * FROM sale");
     if (query.exec()) {
-        int linha = 0;
+        //int linha = 0;
         ui->tableWidget->setColumnCount(8); // Agora são 8 colunas
         while (query.next()) {
             QTableWidgetItem *itemCodSale = new QTableWidgetItem(query.value(0).toString());
@@ -115,18 +115,35 @@ void Dialogareaorcamentos::vendido()
 void Dialogareaorcamentos::on_pushButton_Excluir_clicked()
 {
     QString id;
-    QString name;
+    QString cliente;
+    QString produto;
+    QString valor;
+    QString lucro;
+    QString data;
+    QString vendedor;
+
     if (!ui->tableWidget->selectedItems().isEmpty()) {
         // Obtém o item da célula selecionada
-        QTableWidgetItem *item = ui->tableWidget->selectedItems().at(0);
-        QTableWidgetItem *item2 = ui->tableWidget->selectedItems().at(1);
+        QTableWidgetItem *ID = ui->tableWidget->selectedItems().at(0);
+        QTableWidgetItem *Cliente = ui->tableWidget->selectedItems().at(1);
+        QTableWidgetItem *Produto = ui->tableWidget->selectedItems().at(2);
+        QTableWidgetItem *Valor = ui->tableWidget->selectedItems().at(3);
+        QTableWidgetItem *Lucro = ui->tableWidget->selectedItems().at(4);
+        QTableWidgetItem *Data= ui->tableWidget->selectedItems().at(5);
+        QTableWidgetItem *Vendedor = ui->tableWidget->selectedItems().at(6);
         // Obtém o valor do texto da célula
-        id = item->text();
-        name = item2->text();
+        id = ID->text();
+        cliente = Cliente->text();
+        produto = Produto->text();
+        valor = Valor->text();
+        lucro= Lucro->text();
+        data= Data->text();
+        vendedor = Vendedor->text();
+
     }
     sqlDataBaseControl aux;
 
-    if(aux.deleteBDSalvar(id , name))
+    if(aux.deleteBDSalvar(id , cliente,produto,valor,lucro,data,vendedor))
         QMessageBox::about(this,"","O Item selecionado foi Deletado");
     else
         QMessageBox::warning(this,"ERRO","O Item selecionado Não foi Deletado");
@@ -186,8 +203,8 @@ void Dialogareaorcamentos::on_pushButtonGerarPDF_clicked()
 
         // Criar uma instância do QFileDialog para seleção de arquivo
 
-        QString defaultFileName = "nome_predefinido.pdf";
-        QString filePath = QFileDialog::getSaveFileName(this, tr("Salvar PDF"), QDir::homePath(), tr("Arquivos PDF (*.pdf)"));
+        QString defaultFileName = cliente + "_orcamento.pdf";
+        QString filePath = QFileDialog::getSaveFileName(this, tr("Salvar PDF"), QDir::homePath() + "/" + defaultFileName, tr("Arquivos PDF (*.pdf)"));
 
         if (filePath.isEmpty()) {
             // O usuário cancelou a escolha do arquivo ou ocorreu um erro
@@ -213,7 +230,7 @@ void Dialogareaorcamentos::on_pushButtonGerarPDF_clicked()
         // Adicionar produtos e valores
         float valorTotal = 0.0;
 
-        int posX = 135;
+        int posX = 50;
         int posXValor = 580;
         int posY = 500;
         int cont = 0;
@@ -256,7 +273,7 @@ void Dialogareaorcamentos::onLineEditTextChanged(const QString &text)
     query.bindValue(":text", "%" + text + "%");
 
     if (query.exec()) {
-        int linha = 0;
+        //int linha = 0;
         ui->tableWidget->setColumnCount(7);
 
         while (query.next()) {
@@ -319,7 +336,6 @@ void Dialogareaorcamentos::on_pushButton_Alterar_clicked()
 {
 
     QString id;
-    QString name;
     if (!ui->tableWidget->selectedItems().isEmpty()) {
         // Obtém o item da célula selecionada
         QTableWidgetItem *item = ui->tableWidget->selectedItems().at(0);
@@ -354,7 +370,7 @@ void Dialogareaorcamentos::on_pushButtonApagarTODOS_clicked()
         if (query.exec()) {
             QMessageBox::information(this, "Sucesso", "Todos os orçamentos foram removidos com sucesso.");
         } else {
-            QMessageBox::critical(this, "Erro", "Erro ao remover orçamentos: " + query.lastError().text());
+            QMessageBox::critical(this, "Erro", "Erro ao remover orçamentos pode não ter orçamentos");
         }
     }
 }
