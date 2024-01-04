@@ -5,16 +5,6 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
     QDialog(parent),
     ui(new Ui::AdicionaisRef)
 {
-    // inicializar minha janela
-
-
-
-
-
-
-
-
-
     ui->setupUi(this);
     this->setWindowTitle("ArtVidros");
     ui->lineEditAltura->setInputMask("X.XX");

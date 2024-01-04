@@ -26,7 +26,7 @@ DialogSalvar::DialogSalvar(QWidget *parent , QString produto , QString price , Q
 
     QDate dataAtual = QDate::currentDate();
     QString dataFormatada = dataAtual.toString("dd/MM/yyyy");
-    ui->lineEditData->setInputMask("XX/XX/XXXX");
+    ui->lineEditData->setInputMask("xx/xx/xxxx");
     ui->lineEditProduct->setText(produto);
     // Inicializa o QLineEdit com a data atual formatada
     ui->lineEditData->setText(dataFormatada);

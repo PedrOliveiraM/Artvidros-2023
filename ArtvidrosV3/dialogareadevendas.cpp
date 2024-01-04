@@ -266,15 +266,11 @@ void DialogAreaDeVendas::on_pushButtonVerResultados_clicked()
             // Pegar os valores
             if (query.exec()) {
                 if (query.next()) {
-                double total_price = query.value("total_price").toDouble();
-                double total_profit = query.value("total_profit").toDouble();
+                    QString totalSum = query.value("total_price").toString();
+                    QString lucroSum = query.value("total_profit").toString();
 
-                // Limita a exibição a 2 casas decimais
-                QString totalSum = QString::number(total_price, 'f', 2);
-                QString lucroSum = QString::number(total_profit, 'f', 2);
-
-                ui->label_ValorTotal->setText(totalSum);
-                ui->label_LucroTotal->setText(lucroSum);
+                    ui->label_ValorTotal->setText(totalSum);
+                    ui->label_LucroTotal->setText(lucroSum);
                 } else {
                     qDebug() << "Nenhum resultado retornado.";
                 }
@@ -317,35 +313,18 @@ showBD();
 void DialogAreaDeVendas::on_pushButton_Excluir_clicked()
 {
     QString id;
-    QString cliente;
-    QString produto;
-    QString valor;
-    QString lucro;
-    QString data;
-    QString vendedor;
-
+    QString name;
     if (!ui->tableWidget->selectedItems().isEmpty()) {
         // Obtém o item da célula selecionada
-        QTableWidgetItem *ID = ui->tableWidget->selectedItems().at(0);
-        QTableWidgetItem *Cliente = ui->tableWidget->selectedItems().at(1);
-        QTableWidgetItem *Produto = ui->tableWidget->selectedItems().at(2);
-        QTableWidgetItem *Valor = ui->tableWidget->selectedItems().at(3);
-        QTableWidgetItem *Lucro = ui->tableWidget->selectedItems().at(4);
-        QTableWidgetItem *Data= ui->tableWidget->selectedItems().at(5);
-        QTableWidgetItem *Vendedor = ui->tableWidget->selectedItems().at(6);
+        QTableWidgetItem *item = ui->tableWidget->selectedItems().at(0);
+        QTableWidgetItem *item2 = ui->tableWidget->selectedItems().at(1);
         // Obtém o valor do texto da célula
-        id = ID->text();
-        cliente = Cliente->text();
-        produto = Produto->text();
-        valor = Valor->text();
-        lucro= Lucro->text();
-        data= Data->text();
-        vendedor = Vendedor->text();
-
+        id = item->text();
+        name = item2->text();
     }
     sqlDataBaseControl aux;
 
-    if(aux.deleteBDVendido(id ,cliente,produto,valor,lucro,data,vendedor))
+    if(aux.deleteBDVendido(id , name))
         QMessageBox::about(this,"","O Item selecionado foi Deletado");
     else
         QMessageBox::warning(this,"ERRO","O Item selecionado Não foi Deletado");

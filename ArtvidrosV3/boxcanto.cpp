@@ -70,7 +70,7 @@ void BoxCanto::on_pushButtonCalcular_clicked()
     QString kit = ui->comboBoxKit->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString rodana = "rodana";
-    QString tipo = "kitboxCanto";
+    QString tipo = "kitboxfrontal";
     ClassBox bascu(width,height,glass,kit,rodana,film);
     sqlDataBaseControl aux;
 

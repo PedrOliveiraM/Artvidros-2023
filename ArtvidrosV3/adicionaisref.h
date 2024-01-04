@@ -25,16 +25,14 @@ public:
 
     QString price;
     QString lucro;
-
-
     QString tipoTela;
     QString kitalum;
     float altura;
-
     std::list<AdicionaisOBJ> listaDeAdicionais;
 
     float getSumPrice();
     float getSumProfit();
+
     void mostrarAdicoes();
 
     QString getPrice() const;

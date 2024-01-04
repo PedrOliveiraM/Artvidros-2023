@@ -21,8 +21,6 @@ public:
     explicit PortaDe2Folhas(QWidget *parent = nullptr);
     ~PortaDe2Folhas();
 
-    AdicionaisRef AdicionalTestes;
-
     std::list<AdicionaisOBJ> listaDeAdicionais;
     std::list<AdicionaisOBJ> getListaDeAdicionais() const;
     void setListaDeAdicionais(const std::list<AdicionaisOBJ> &newListaDeAdicionais);

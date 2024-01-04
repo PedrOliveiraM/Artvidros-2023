@@ -10,7 +10,6 @@ public:
     ClassBox(float largura, float altura, const QString &vidro, const QString &kit,  const QString &rodana,const QString &pelicula);
 
     float metragem();
-    float metragemBoxCanto();
     float calculatePrice(QString tipo);
     float calculateProfit(QString tipo);
 };

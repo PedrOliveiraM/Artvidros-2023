@@ -5,7 +5,6 @@ PortaDe2Folhas::PortaDe2Folhas(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::PortaDe2Folhas)
 {
-
     ui->setupUi(this);
     this->setWindowTitle("ArtVidros");
     ui->lineEditLargura->setInputMask("X.XX");
@@ -74,9 +73,6 @@ void PortaDe2Folhas::on_pushButtonCalcular_clicked()
 
     QString price = QString::number(door.calculatePrice());
     QString profit = QString::number(door.calculateProfit());
-
-
-
 
     ui->lineEditValor->setText(price);
     ui->lineEditLucro->setText(profit);

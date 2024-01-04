@@ -12,7 +12,6 @@ PDFarea::PDFarea(QWidget *parent,QString cliente, QString data) :
     ui->lineEditData->setText(data);
     ui->lineEditCNPJ_CPF->setInputMask("XXX.XXX.XXX-XX");
     ui->lineEditTelefone->setInputMask("(XX) X XXXX-XXXX");
-    ui->lineEditData->setInputMask("XX/XX/XXXX");
 }
 
 PDFarea::~PDFarea()
