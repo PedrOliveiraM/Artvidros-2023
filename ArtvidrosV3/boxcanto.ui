@@ -16,7 +16,7 @@
   <widget class="QWidget" name="layoutWidget_5">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>320</x>
      <y>320</y>
      <width>131</width>
      <height>71</height>
@@ -57,8 +57,8 @@
   <widget class="QWidget" name="layoutWidget_9">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>410</y>
+     <x>570</x>
+     <y>420</y>
      <width>211</width>
      <height>71</height>
     </rect>
@@ -97,8 +97,8 @@
   <widget class="QWidget" name="layoutWidget_7">
    <property name="geometry">
     <rect>
-     <x>870</x>
-     <y>320</y>
+     <x>350</x>
+     <y>420</y>
      <width>211</width>
      <height>71</height>
     </rect>
@@ -160,8 +160,8 @@
   <widget class="QPushButton" name="pushButtonRefatorando">
    <property name="geometry">
     <rect>
-     <x>700</x>
-     <y>440</y>
+     <x>800</x>
+     <y>450</y>
      <width>211</width>
      <height>41</height>
     </rect>
@@ -315,7 +315,7 @@
   <widget class="QWidget" name="layoutWidget_8">
    <property name="geometry">
     <rect>
-     <x>410</x>
+     <x>600</x>
      <y>320</y>
      <width>131</width>
      <height>71</height>
@@ -398,7 +398,7 @@
   <widget class="QWidget" name="layoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>740</x>
      <y>320</y>
      <width>311</width>
      <height>71</height>
@@ -437,6 +437,47 @@
         <string/>
        </property>
       </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_10">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>320</y>
+     <width>131</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <widget class="QLabel" name="labelLargura_2">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Largura 2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEditLargura_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
      </widget>
     </item>
    </layout>

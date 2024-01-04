@@ -95,6 +95,7 @@ float ClassMoldura::metragem()
     larg += largura*100;
     int altu = 0;
     altu += altura*100;
+
     qDebug()<<"INICIO ";
     qDebug()<<"Larg "<<larg;
     qDebug()<<"altu "<<altu;
@@ -124,7 +125,6 @@ float ClassMoldura::metragem()
     }else{
         Vespessura = 0.50;
     }
-
 
 
     double metrageVidro =  x + x + y + y + Vespessura;

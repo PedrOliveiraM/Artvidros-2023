@@ -6,6 +6,7 @@ class herdaBox
 {
 protected:
     float largura;
+    float largura2;
     float altura;
     QString vidro;
     QString kit;
@@ -13,7 +14,7 @@ protected:
     QString pelicula;
 public:
     herdaBox();
-    herdaBox(float largura, float altura, const QString &vidro, const QString &kit, const QString &rodana, const QString &pelicula);
+    herdaBox(float largura,float largura2, float altura, const QString &vidro, const QString &kit, const QString &rodana, const QString &pelicula);
 
     virtual float metragem() = 0;
     virtual float calculatePrice (QString tipo) = 0;
@@ -31,6 +32,8 @@ public:
     void setRodana(const QString &newRodana);
     QString getPelicula() const;
     void setPelicula(const QString &newPelicula);
+    float getLargura2() const;
+    void setLargura2(float newLargura2);
 };
 
 #endif // HERDABOX_H

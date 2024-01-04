@@ -65,17 +65,18 @@ void BoxCanto::on_pushButtonCalcular_clicked()
 {
     //calcular orçamento
     float width = ui->lineEditLargura->text().toFloat();
+    float width2 = ui->lineEditLargura_2->text().toFloat();
     float height = ui->lineEditAltura->text().toFloat();
     QString glass = ui->comboBoxVidros->currentText();
     QString kit = ui->comboBoxKit->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString rodana = "rodana";
-    QString tipo = "kitboxfrontal";
-    ClassBox bascu(width,height,glass,kit,rodana,film);
+    QString tipo = "kitboxcanto";
+    ClassBox boxDeCanto(width,width2,height,glass,kit,rodana,film);
     sqlDataBaseControl aux;
 
-    QString price = QString::number(bascu.calculatePrice(tipo));
-    QString profit = QString::number(bascu.calculateProfit(tipo));
+    QString price = QString::number(boxDeCanto.calculatePrice(tipo));
+    QString profit = QString::number(boxDeCanto.calculateProfit(tipo));
 
     ui->lineEditValor->setText(price);
     ui->lineEditLucro->setText(profit);
@@ -144,6 +145,7 @@ void BoxCanto::on_pushButtonSalvar_clicked()
 void BoxCanto::on_pushButtonLimpar_clicked()
 {
     ui->lineEditLargura->clear();
+    ui->lineEditLargura_2->clear();
     ui->lineEditAltura->clear();
     ui->comboBoxVidros->setCurrentIndex(-1);
     ui->comboBoxKit->setCurrentIndex(-1);

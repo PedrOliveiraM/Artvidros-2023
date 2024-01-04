@@ -71,7 +71,7 @@ void BoxFrontal::on_pushButtonCalcular_clicked()
     QString rodana = "rodana";
     QString tipo = "kitboxfrontal";
 
-    ClassBox box(width,height,glass,kit,rodana,film);
+    ClassBox box(width,0,height,glass,kit,rodana,film);
     sqlDataBaseControl aux;
 
     QString price = QString::number(box.calculatePrice(tipo));

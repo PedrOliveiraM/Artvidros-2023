@@ -248,6 +248,14 @@ void DialogAreaDeVendas::on_pushButtonVerResultados_clicked()
                 QString totalSum = query.value("total_price").toString();
                 QString lucroSum = query.value("total_profit").toString();
 
+                // Convertendo para double
+                double totalValue = totalSum.toDouble();
+                double lucroValue = lucroSum.toDouble();
+
+                // Limitando a 2 casas decimais
+                totalSum = QString::number(totalValue, 'f', 2);
+                lucroSum = QString::number(lucroValue, 'f', 2);
+
                 ui->label_ValorTotal->setText(totalSum);
                 ui->label_LucroTotal->setText(lucroSum);
             } else {

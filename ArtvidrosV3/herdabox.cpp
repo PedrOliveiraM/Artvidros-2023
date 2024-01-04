@@ -60,12 +60,23 @@ void herdaBox::setPelicula(const QString &newPelicula)
     pelicula = newPelicula;
 }
 
+float herdaBox::getLargura2() const
+{
+    return largura2;
+}
+
+void herdaBox::setLargura2(float newLargura2)
+{
+    largura2 = newLargura2;
+}
+
 herdaBox::herdaBox()
 {
 
 }
 
-herdaBox::herdaBox(float largura, float altura, const QString &vidro, const QString &kit, const QString &rodana,const QString &pelicula) : largura(largura),
+herdaBox::herdaBox(float largura,float largura2, float altura, const QString &vidro, const QString &kit, const QString &rodana,const QString &pelicula) : largura(largura),
+    largura2(largura2),
     altura(altura),
     vidro(vidro),
     kit(kit),
