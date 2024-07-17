@@ -16,12 +16,48 @@ float ClassBox::metragem()
     float largura = getLargura();
     float altura = getAltura();
 
+    int largValida = largura * 100;
+
+    qDebug() << "VALIDAR LARGURA"<<largValida;
+
+    if (largValida % 2 == 0 ){
+         qDebug() << "ENTROU"<<largValida;
+        int larg = static_cast<int>(((largura * 100)/2) + 5);
+        int larg2 = static_cast<int>((largura * 100)/2);
+        int altu = static_cast<int>(altura * 100);
+
+        // Ajusta para múltiplo de 5
+        while (larg % 5 != 0) {
+            larg += 1;
+        }
+        while (larg2 % 5 != 0) {
+            larg2 += 1;
+        }
+        while (altu % 5 != 0) {
+            altu += 1;
+        }
+
+
+
+        // Converte para metros
+        float x = larg / 100.0;  // Ajuste para garantir uma divisão de ponto flutuante
+        float x2 = larg2 / 100.0;  // Ajuste para garantir uma divisão de ponto flutuante
+        float y = altu / 100.0;
+
+
+        qDebug() << "*********************";
+        qDebug() << "LARG 1" << larg;
+        qDebug() << "LARG 2" << larg2;
+        qDebug() << "*********************";
+        qDebug() << "teste metragem vidro frontal: " << (x * y + x2 * y);
+        return (x * y + x2 * y);
+    }
+
+
     // Calcula as larguras e a altura em centímetros
     int larg = static_cast<int>(largura * 100 + 5);
     int altu = static_cast<int>(altura * 100);
 
-    qDebug() << "INICIO";
-    qDebug() << "LARG " << larg;
 
     // Ajusta para múltiplo de 5
     while (larg % 5 != 0) {
@@ -54,12 +90,48 @@ float ClassBox::metragemCanto(float larguraX)
     float largura = larguraX;
     float altura = getAltura();
 
+    int largValida = largura * 100;
+
+    qDebug() << "VALIDAR LARGURA"<<largValida;
+
+    if (largValida % 2 == 0 ){
+        qDebug() << "ENTROU"<<largValida;
+        int larg = static_cast<int>(((largura * 100)/2) + 5);
+        int larg2 = static_cast<int>((largura * 100)/2);
+        int altu = static_cast<int>(altura * 100);
+
+        // Ajusta para múltiplo de 5
+        while (larg % 5 != 0) {
+            larg += 1;
+        }
+        while (larg2 % 5 != 0) {
+            larg2 += 1;
+        }
+        while (altu % 5 != 0) {
+            altu += 1;
+        }
+
+
+
+        // Converte para metros
+        float x = larg / 100.0;  // Ajuste para garantir uma divisão de ponto flutuante
+        float x2 = larg2 / 100.0;  // Ajuste para garantir uma divisão de ponto flutuante
+        float y = altu / 100.0;
+
+
+        qDebug() << "*********************";
+        qDebug() << "LARG 1" << larg;
+        qDebug() << "LARG 2" << larg2;
+        qDebug() << "*********************";
+        qDebug() << "teste metragem vidro frontal: " << (x * y + x2 * y);
+        return (x * y + x2 * y);
+    }
+
+
     // Calcula as larguras e a altura em centímetros
     int larg = static_cast<int>(largura * 100 + 5);
     int altu = static_cast<int>(altura * 100);
 
-    qDebug() << "INICIO";
-    qDebug() << "LARG " << larg;
 
     // Ajusta para múltiplo de 5
     while (larg % 5 != 0) {
@@ -104,6 +176,7 @@ float ClassBox::calculatePrice(QString tipo)
     qDebug()<<"calcular PRICE BOX";
     qDebug()<<"tipo"<<tipo;
     qDebug()<<"metragem"<<metro;
+    qDebug()<<"vidro & ACRILICO"<<Vglass;
     qDebug()<<"vidro"<<(metro * Vglass);
     qDebug()<<"kit"<<VkitAluminio;
     qDebug()<<"pelicula"<<Vfilm;

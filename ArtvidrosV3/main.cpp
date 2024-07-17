@@ -9,40 +9,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    /*
-    // Seu código para abrir o banco de dados permanece o mesmo
-
-    QSqlDatabase bancoDeDados = QSqlDatabase::addDatabase("QSQLITE");
-
-    bancoDeDados.setConnectOptions();
-
-    QString dir = qApp->applicationDirPath();
-    QString banco = dir + "/DataBase/OrcamentoDB";
-
-    bancoDeDados.setDatabaseName(banco);
-    if (!bancoDeDados.open()) {
-        qDebug() << "O BANCO DE DADOS NÃO FOI ABERTO!";
-    } else {
-        qDebug() << "O BANCO DE DADOS FOI ABERTO!";
-
-        // Consulta para obter os nomes das tabelas
-        QSqlQuery query("SELECT name FROM sqlite_master WHERE type='table'", bancoDeDados);
-
-        // Executa a consulta
-        if (query.exec()) {
-            qDebug() << "Tabelas no banco de dados:";
-
-            // Itera sobre os resultados e imprime os nomes das tabelas
-            while (query.next()) {
-                QString tableName = query.value(0).toString();
-                qDebug() << tableName;
-            }
-        } else {
-            qDebug() << "Erro ao executar a consulta:";
-        }
-    }
-*/
-
     QSqlDatabase bancoDeDados = QSqlDatabase::addDatabase("QSQLITE");
 
     bancoDeDados.setConnectOptions();
@@ -50,7 +16,7 @@ int main(int argc, char *argv[])
     QString dir = qApp->applicationDirPath();
     QString banco = dir+"/DataBase/OrcamentoDB";
 
-
+    qDebug()<<dir;
     bancoDeDados.setDatabaseName(banco);
     if (!bancoDeDados.open()){
         qDebug()<<"O BANCO DE DADOS NÃO FOI ABERTO!";

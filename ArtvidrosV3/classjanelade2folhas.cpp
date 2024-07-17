@@ -39,7 +39,16 @@ float ClassJanelaDe2Folhas::metragem()
     float y = altu / 100.0;
 
 
-    double metrageVidro = x * y + x2 * y;
+    float xy = x * y;
+    float xy2 = x2 * y;
+
+    if(xy < 0.25)
+        xy = 0.25;
+
+    if (xy2 < 0.25)
+        xy2 = 0.25;
+
+    double metrageVidro = xy + xy2;
 
     return metrageVidro;
 }

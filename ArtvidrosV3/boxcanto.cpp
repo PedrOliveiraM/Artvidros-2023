@@ -8,6 +8,7 @@ BoxCanto::BoxCanto(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowTitle("ArtVidros");
     ui->lineEditLargura->setInputMask("X.XX");
+    ui->lineEditLargura_2->setInputMask("X.XX");
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);
     ui->lineEditValor->setEnabled(false);

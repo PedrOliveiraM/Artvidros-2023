@@ -52,7 +52,24 @@ float ClassJanelaDe4Folhas::metragem()
     float x4 = larg4 / 100.0;
     float y = altu / 100.0;
 
-    double metrageVidro = (x1 * y)+ (x2 * y) + (x3 * y) + (x4 * y);
+    float x1y = (x1 * y);
+    float x2y = (x2 * y);
+    float x3y = (x3 * y);
+    float x4y = (x4 * y);
+
+    if (x1y < 0.25)
+        x1y = 0.25;
+
+    if (x2y < 0.25)
+        x2y = 0.25;
+
+    if (x3y < 0.25)
+        x3y = 0.25;
+
+    if (x4y < 0.25)
+        x4y = 0.25;
+
+    double metrageVidro = x1y + x2y + x3y + x4y;
     qDebug()<<"**METRAGE JAN"<<metrageVidro;
 
     return metrageVidro;
