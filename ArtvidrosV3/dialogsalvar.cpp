@@ -14,7 +14,8 @@ DialogSalvar::DialogSalvar(QWidget *parent , QString produto , QString price , Q
     this->setWindowTitle("ArtVidros");
     ui->lineEditPrice->setText(price);
     ui->lineEditProfit->setText(profit);
-
+    ui->lineEditProfit->setVisible(false);
+    ui->label_profit->setVisible(false);
     QSqlQuery query;
     //combo box id
     if (query.exec("SELECT * FROM sale")) {

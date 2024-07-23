@@ -88,6 +88,7 @@ void Dialogareaorcamentos::showBD()
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableWidget->setStyleSheet("QTableView QHeaderView::section { font-weight: bold; }");
     ui->tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    void showBD();
 }
 
 void Dialogareaorcamentos::vendido()
@@ -109,6 +110,7 @@ void Dialogareaorcamentos::vendido()
         else
             QMessageBox::warning(this,"ERRO","Não foi possível Adicionar como Vendido");
     }
+    void showBD();
 }
 
 
@@ -242,6 +244,7 @@ void Dialogareaorcamentos::on_pushButtonGerarPDF_clicked()
     } else {
         QMessageBox::about(this,"Erro","Nenhum item foi selecionado !");
     }
+    void showBD();
 }
 
 
@@ -299,6 +302,7 @@ void Dialogareaorcamentos::onLineEditTextChanged(const QString &text)
     ui->tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     // Restante do código para definir larguras de colunas, estilos, etc.
+    void showBD();
 }
 
 
@@ -306,12 +310,14 @@ void Dialogareaorcamentos::on_pushButton_Adicionar_clicked()
 {
     telaOrcamentos = new DialogAreaOrcamentoSQL(this,"ADD","");
     telaOrcamentos->exec();
+    void showBD();
 }
 
 
 void Dialogareaorcamentos::on_pushButtonLimpar_clicked()
 {
     ui->lineEditPesquisa->clear();
+    void showBD();
 }
 
 
@@ -328,6 +334,7 @@ void Dialogareaorcamentos::on_pushButton_Alterar_clicked()
 
     telaOrcamentos = new DialogAreaOrcamentoSQL(this,"ALT",id);
     telaOrcamentos->exec();
+    void showBD();
 }
 
 
@@ -349,7 +356,7 @@ void Dialogareaorcamentos::on_pushButtonApagarTODOS_clicked()
     if (resposta == QMessageBox::Yes) {
         // Executar o comando SQL para excluir todos os registros
         QSqlQuery query;
-        query.prepare("DELETE FROM sales");
+        query.prepare("DELETE FROM sale");
 
         if (query.exec()) {
             QMessageBox::information(this, "Sucesso", "Todos os orçamentos foram removidos com sucesso.");
@@ -357,5 +364,7 @@ void Dialogareaorcamentos::on_pushButtonApagarTODOS_clicked()
             QMessageBox::critical(this, "Erro", "Erro ao remover orçamentos: " + query.lastError().text());
         }
     }
+
+    void showBD();
 }
 

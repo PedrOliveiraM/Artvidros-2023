@@ -10,6 +10,8 @@ VidrosComuns::VidrosComuns(QWidget *parent) :
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);
+    ui->lineEditLucro->setVisible(false);
+    ui->label_6->setVisible(false);
     ui->lineEditValor->setEnabled(false);
     QString array[] = {"comum","acessorios","polido"};
     QSqlQuery query;

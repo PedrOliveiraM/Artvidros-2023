@@ -1,3 +1,4 @@
+#include "dialoglogin.h"
 #include "mainwindow.h"
 #include <QApplication>
 #include <QSplashScreen>
@@ -38,8 +39,13 @@ int main(int argc, char *argv[])
     telaSplash->show();
 
     MainWindow w;
+
     QTimer::singleShot(4000, telaSplash, SLOT(close()));
     QTimer::singleShot(4000, &w, SLOT(show()));
 
+    sqlDataBaseControl aux;
+    //aux.upperTableProducts();
+    //aux.lowerTableProducts();
+    //aux.upperTableSale();
     return a.exec();
 }

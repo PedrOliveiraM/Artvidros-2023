@@ -30,12 +30,15 @@ SOURCES += \
     classportade4folhas.cpp \
     classportadeabrir.cpp \
     classvidroscomuns.cpp \
+    dialogareadeprodutos.cpp \
     dialogareadevendas.cpp \
     dialogareaorcamentos.cpp \
     dialogareaorcamentosql.cpp \
     dialogareaprecos.cpp \
     dialogboxs.cpp \
+    dialoghelp.cpp \
     dialogjanelas.cpp \
+    dialoglogin.cpp \
     dialogportas.cpp \
     dialogsalvar.cpp \
     fechamentodepia.cpp \
@@ -78,12 +81,15 @@ HEADERS += \
     classportade4folhas.h \
     classportadeabrir.h \
     classvidroscomuns.h \
+    dialogareadeprodutos.h \
     dialogareadevendas.h \
     dialogareaorcamentos.h \
     dialogareaorcamentosql.h \
     dialogareaprecos.h \
     dialogboxs.h \
+    dialoghelp.h \
     dialogjanelas.h \
+    dialoglogin.h \
     dialogportas.h \
     dialogsalvar.h \
     fechamentodepia.h \
@@ -112,15 +118,19 @@ FORMS += \
     bascula.ui \
     boxcanto.ui \
     boxfrontal.ui \
+    dialogareadeprodutos.ui \
     dialogareadevendas.ui \
     dialogareaorcamentos.ui \
     dialogareaorcamentosql.ui \
     dialogareaprecos.ui \
     dialogboxs.ui \
+    dialoghelp.ui \
     dialogjanelas.ui \
+    dialoglogin.ui \
     dialogportas.ui \
     dialogsalvar.ui \
     fechamentodepia.ui \
+    help.ui \
     janelade2folhas.ui \
     janelade4folhas.ui \
     mainwindow.ui \

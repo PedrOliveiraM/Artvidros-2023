@@ -75,15 +75,6 @@ void MainWindow::on_pushButtonOrcamentos_clicked()
 }
 
 
-void MainWindow::on_pushButtonAreaPrecos_clicked()
-{
-    // botao area de preços
-
-    telaAreaPreco = new DialogAreaPrecos;
-    telaAreaPreco->exec();
-
-}
-
 
 void MainWindow::on_actionOr_amentos_triggered()
 {
@@ -117,11 +108,72 @@ void MainWindow::on_pushButtonAdicionais_clicked()
 }
 
 
-
-void MainWindow::on_pushButtonVendas_clicked()
+void MainWindow::on_pushButtonProdutos_clicked()
 {
-    //vendas
-    telaAreaVendas = new DialogAreaDeVendas;
-    telaAreaVendas->exec();
+    telaAreaProdutos = new DialogAreaDeProdutos;
+    telaAreaProdutos->exec();
+}
+
+
+void MainWindow::on_pushButtonAreaPrecos_2_clicked()
+{
+    bool ok;
+    QString password = QInputDialog::getText(this, tr("Verificação de Senha"),
+                                             tr("Digite a senha:"), QLineEdit::Password,
+                                             "", &ok);
+    if (ok && !password.isEmpty()) {
+        if (checkPassword(password)) {
+            telaAreaPreco = new DialogAreaPrecos;
+            telaAreaPreco->exec();
+            delete telaAreaPreco;
+        } else {
+            QMessageBox::warning(this, tr("Senha Incorreta"),
+                                 tr("A senha que você digitou está incorreta. Tente novamente."));
+        }
+    } else if (ok && password.isEmpty()) {
+        QMessageBox::warning(this, tr("Campo de senha vazio"),
+                             tr("O campo de senha não pode estar vazio. Tente novamente."));
+    }
+}
+bool MainWindow::checkPassword(const QString& password) {
+    const QString correctPassword = "2710"; // Substitua "sua_senha" pela senha correta
+    const QString correctPassword2 = "859889"; // Substitua "sua_senha" pela senha correta
+    return password == correctPassword || password == correctPassword2 ;
+}
+
+bool MainWindow::checkPasswordVendas(const QString &password)
+{
+    const QString correctPassword = "859889"; // Substitua "sua_senha" pela senha correta
+    return password == correctPassword ;
+}
+
+
+void MainWindow::on_pushButtonAreaVendas_clicked()
+{
+    bool ok;
+    QString password = QInputDialog::getText(this, tr("Verificação de Senha"),
+                                             tr("Digite a senha:"), QLineEdit::Password,
+                                             "", &ok);
+    if (ok && !password.isEmpty()) {
+        if (checkPasswordVendas(password)) {
+            telaAreaVendas = new DialogAreaDeVendas;
+            telaAreaVendas->exec();
+            delete telaAreaVendas;
+        } else {
+            QMessageBox::warning(this, tr("Senha Incorreta"),
+                                 tr("A senha que você digitou está incorreta. Tente novamente."));
+        }
+    } else if (ok && password.isEmpty()) {
+        QMessageBox::warning(this, tr("Campo de senha vazio"),
+                             tr("O campo de senha não pode estar vazio. Tente novamente."));
+    }
+}
+
+
+void MainWindow::on_pushButtonAdmin_clicked()
+{
+    telaHelp = new DialogHelp;
+    telaHelp->exec();
+    delete telaHelp;
 }
 

@@ -11,8 +11,10 @@ Bascola::Bascola(QWidget *parent) :
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);
     ui->lineEditValor->setEnabled(false);
+    ui->lineEditLucro->setVisible(false);
+    ui->label_6->setVisible(false);
 
-    QString array[] = {"temperado", "pelicula" , "trinco","bascula"};
+    QString array[] = {"temperado", "pelicula" , "trinco", "bascola"};
     QSqlQuery query;
 
     for (const QString &tipo : array) {
@@ -25,7 +27,7 @@ Bascola::Bascola(QWidget *parent) :
                     ui->comboBoxPelicula->addItem(value);
                 } else if (tipo == "trinco") {
                     ui->comboBoxTrinco->addItem(value);
-                }else if (tipo == "bascula") {
+                }else if (tipo == "bascola") {
                     ui->comboBoxKit->addItem(value);
                 }
             }

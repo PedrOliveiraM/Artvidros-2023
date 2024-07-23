@@ -11,6 +11,8 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
     ui->lineEditLargura->setInputMask("X.XX");
     ui->lineEditComprimento->setInputMask("X.XX");
     setAltura(altura);
+    ui->label_8->setVisible(false);
+    ui->label_profit->setVisible(false);
     setKitalum(kitAluminio);
 
     ui->pushButtonTodosOsAluminios->setEnabled(false);
@@ -597,7 +599,6 @@ void AdicionaisRef::on_pushButtonTodosOsAluminios_clicked()
         qDebug()<<"V_CAD"<<V_CAD;
 
         float L_PU = aux.buscarNoBDprofit(pu, "aluminio") * alturaCorrigida;
-
         float L_VP = aux.buscarNoBDprofit(vp, "aluminio")* alturaCorrigida;
         float L_CAD = aux.buscarNoBDprice(cad, "aluminio") * alturaCorrigida;
         qDebug()<<"*** PROFIT ***";

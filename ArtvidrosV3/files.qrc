@@ -27,5 +27,9 @@
         <file>imagens/botao-adicionar.png</file>
         <file>imagens/adicionar.png</file>
         <file>imagens/olho.png</file>
+        <file>imagens/caixa.png</file>
+        <file>imagens/admin.png</file>
+        <file>imagens/1.png</file>
+        <file>imagens/2.png</file>
     </qresource>
 </RCC>

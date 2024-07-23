@@ -11,6 +11,8 @@ FechamentoDePia::FechamentoDePia(QWidget *parent) :
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);
     ui->lineEditValor->setEnabled(false);
+    ui->lineEditLucro->setVisible(false);
+    ui->label_6->setVisible(false);
     QString array[] = {"temperadopia", "pelicula" , "trinco","kitpia"};
     QSqlQuery query;
 

@@ -1,10 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include <dialogjanelas.h>
+#include "dialogareadeprodutos.h"
 #include "dialogareaorcamentos.h"
 #include "dialogareaprecos.h"
+#include "dialoghelp.h"
 #include "dialogportas.h"
-#include "portadeabrir.h"
 #include "adicionaisref.h"
 #include "fechamentodepia.h"
 #include "dialogboxs.h"
@@ -25,6 +26,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    bool checkPassword(const QString& password);
+
+    bool checkPasswordVendas(const QString& password);
+
 private slots:
     void on_pushButtonPortas_clicked();
 
@@ -40,8 +45,6 @@ private slots:
 
     void on_pushButtonOrcamentos_clicked();
 
-    void on_pushButtonAreaPrecos_clicked();
-
     void on_actionOr_amentos_triggered();
 
     void on_actionPre_os_triggered();
@@ -50,7 +53,13 @@ private slots:
 
     void on_pushButtonAdicionais_clicked();
 
-    void on_pushButtonVendas_clicked();
+    void on_pushButtonProdutos_clicked();
+
+    void on_pushButtonAreaPrecos_2_clicked();
+
+    void on_pushButtonAreaVendas_clicked();
+
+    void on_pushButtonAdmin_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -61,6 +70,8 @@ private:
     DialogPortas *telaPortas; 
     DialogJanelas *telaJanelas;
     DialogBoxs *telaBox;
+    DialogAreaDeProdutos *telaAreaProdutos;
+    DialogHelp *telaHelp;
 
     Moldura *telaMoldura;
     VidrosComuns *telaVidrosComuns;

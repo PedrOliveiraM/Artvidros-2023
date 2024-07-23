@@ -42,14 +42,14 @@
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>220</y>
+      <y>180</y>
       <width>581</width>
-      <height>271</height>
+      <height>351</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="2" column="0">
-      <widget class="QPushButton" name="pushButtonMoldura">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="pushButtonPortas">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -63,17 +63,81 @@
         </font>
        </property>
        <property name="text">
-        <string>         Molduras            </string>
+        <string>             Portas               </string>
        </property>
        <property name="icon">
         <iconset resource="files.qrc">
-         <normaloff>:/imagens/moldura.png</normaloff>:/imagens/moldura.png</iconset>
+         <normaloff>:/imagens/porta.png</normaloff>:/imagens/porta.png</iconset>
        </property>
        <property name="iconSize">
         <size>
          <width>32</width>
          <height>32</height>
         </size>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="pushButtonOrcamentos">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string> Área de Orçamentos  </string>
+       </property>
+       <property name="icon">
+        <iconset resource="files.qrc">
+         <normaloff>:/imagens/orcamento.png</normaloff>:/imagens/orcamento.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QPushButton" name="pushButtonProdutos">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>      Produtos          </string>
+       </property>
+       <property name="icon">
+        <iconset resource="files.qrc">
+         <normaloff>:/imagens/caixa.png</normaloff>:/imagens/caixa.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -97,6 +161,96 @@
        <property name="icon">
         <iconset resource="files.qrc">
          <normaloff>:/imagens/vidro comum.png</normaloff>:/imagens/vidro comum.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="pushButtonBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>          Box               </string>
+       </property>
+       <property name="icon">
+        <iconset resource="files.qrc">
+         <normaloff>:/imagens/banho.png</normaloff>:/imagens/banho.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QPushButton" name="pushButtonAdicionais">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>           Adicionais           </string>
+       </property>
+       <property name="icon">
+        <iconset resource="files.qrc">
+         <normaloff>:/imagens/adicionar-a-cesta.png</normaloff>:/imagens/adicionar-a-cesta.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="pushButtonMoldura">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>         Molduras            </string>
+       </property>
+       <property name="icon">
+        <iconset resource="files.qrc">
+         <normaloff>:/imagens/moldura.png</normaloff>:/imagens/moldura.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -164,8 +318,8 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
-      <widget class="QPushButton" name="pushButtonOrcamentos">
+     <item row="5" column="0">
+      <widget class="QPushButton" name="pushButtonAreaPrecos_2">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -179,36 +333,7 @@
         </font>
        </property>
        <property name="text">
-        <string> Área de Orçamentos  </string>
-       </property>
-       <property name="icon">
-        <iconset resource="files.qrc">
-         <normaloff>:/imagens/orcamento.png</normaloff>:/imagens/orcamento.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QPushButton" name="pushButtonAreaPrecos">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>  Área de Preços    </string>
+        <string>             Preços               </string>
        </property>
        <property name="icon">
         <iconset resource="files.qrc">
@@ -222,8 +347,8 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QPushButton" name="pushButtonBox">
+     <item row="5" column="1">
+      <widget class="QPushButton" name="pushButtonAreaVendas">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -237,100 +362,7 @@
         </font>
        </property>
        <property name="text">
-        <string>          Box               </string>
-       </property>
-       <property name="icon">
-        <iconset resource="files.qrc">
-         <normaloff>:/imagens/banho.png</normaloff>:/imagens/banho.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QPushButton" name="pushButtonPortas">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>             Portas               </string>
-       </property>
-       <property name="icon">
-        <iconset resource="files.qrc">
-         <normaloff>:/imagens/porta.png</normaloff>:/imagens/porta.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="checkable">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QPushButton" name="pushButtonAdicionais">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>             Adicionais               </string>
-       </property>
-       <property name="icon">
-        <iconset resource="files.qrc">
-         <normaloff>:/imagens/adicionar-a-cesta.png</normaloff>:/imagens/adicionar-a-cesta.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="checkable">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QPushButton" name="pushButtonVendas">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>         Vendas          </string>
+        <string>       Vendas           </string>
        </property>
        <property name="icon">
         <iconset resource="files.qrc">
@@ -342,8 +374,34 @@
          <height>32</height>
         </size>
        </property>
-       <property name="checkable">
-        <bool>false</bool>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QPushButton" name="pushButtonAdmin">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>        Ajuda             </string>
+       </property>
+       <property name="icon">
+        <iconset resource="files.qrc">
+         <normaloff>:/imagens/admin.png</normaloff>:/imagens/admin.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -356,7 +414,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
@@ -406,7 +464,6 @@
   <tabstop>pushButtonMoldura</tabstop>
   <tabstop>pushButtonVidrosComuns</tabstop>
   <tabstop>pushButtonOrcamentos</tabstop>
-  <tabstop>pushButtonAreaPrecos</tabstop>
   <tabstop>pushButtonAdicionais</tabstop>
  </tabstops>
  <resources>

@@ -25,6 +25,14 @@ public:
 
     float buscarNoBDprice(QString name);
     float buscarNoBDprofit(QString name);
+
+    float buscarNoBDpriceID(QString id);
+    float buscarNoBDprofitID(QString id);
+
+    void upperTableSale();
+    void lowerTableProducts();
+    void upperTableProducts();
+
 };
 
 #endif // SQLDATABASECONTROL_H

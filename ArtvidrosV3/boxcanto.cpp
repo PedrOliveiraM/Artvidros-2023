@@ -12,6 +12,8 @@ BoxCanto::BoxCanto(QWidget *parent) :
     ui->lineEditAltura->setInputMask("X.XX");
     ui->lineEditLucro->setEnabled(false);
     ui->lineEditValor->setEnabled(false);
+    ui->lineEditLucro->setVisible(false);
+    ui->label_6->setVisible(false);
 
     QString array[] = {"box","pelicula","kitboxcanto"};
     QSqlQuery query;

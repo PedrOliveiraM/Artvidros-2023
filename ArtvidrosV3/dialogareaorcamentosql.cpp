@@ -11,6 +11,9 @@ DialogAreaOrcamentoSQL::DialogAreaOrcamentoSQL(QWidget *parent ,QString tipo,QSt
     setType(tipo);
     setTela(tela);
     QSqlQuery query;
+    ui->lineEditProfit->setVisible(false);
+    ui->label_profit->setVisible(false);
+
     //combo box id
     if (query.exec("SELECT * FROM sale")) {
         while (query.next()) {
