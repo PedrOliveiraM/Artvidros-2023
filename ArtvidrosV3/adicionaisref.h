@@ -10,7 +10,7 @@
 #include <QDialog>
 #include <adicionaisobj.h>
 #include <dialogsalvar.h>
-#include <dialogareaprecos.h>
+#include "dialogareadeprodutos.h"
 namespace Ui {
 class AdicionaisRef;
 }
@@ -79,7 +79,7 @@ private slots:
 private:
     Ui::AdicionaisRef *ui;
     DialogSalvar *telaSalvar;
-    DialogAreaPrecos *telaDePrecos;
+    DialogAreaDeProdutos *telaAreaProdutos;
 };
 
 #endif // ADICIONAISREF_H

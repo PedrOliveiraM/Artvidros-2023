@@ -81,7 +81,7 @@ void JanelaDe2Folhas::on_pushButtonCalcular_clicked()
     QString bateFecha = ui->comboBoxBateFecha->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
-    QString rodana = "Rodana";
+    QString rodana = "RODANA";
     ClassJanelaDe2Folhas windows(width,height,glass,bateFecha,kit,rodana,latch,film);
     sqlDataBaseControl aux;
 
@@ -103,7 +103,7 @@ void JanelaDe2Folhas::atualizarValoresImportados(const QString &valor, const QSt
     QString bateFecha = ui->comboBoxBateFecha->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
-    QString rodana = "Rodana";
+    QString rodana = "RODANA";
     ClassJanelaDe2Folhas windows(width,height,glass,bateFecha,kit,rodana,latch,film);
     sqlDataBaseControl aux;
 

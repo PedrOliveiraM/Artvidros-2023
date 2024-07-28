@@ -39,12 +39,12 @@ float ClassJanelaDe4Folhas::metragem()
     while (altu % 5 != 0) {
         altu += 1;
     }
-
+/*
     qDebug()<<"LARG1"<<larg1;
     qDebug()<<"LARG2"<<larg2;
     qDebug()<<"LARG3"<<larg3;
     qDebug()<<"LARG4"<<larg4;
-
+*/
     // Converte para metros
     float x1 = larg1 / 100.0;
     float x2 = larg2 / 100.0;
@@ -70,7 +70,7 @@ float ClassJanelaDe4Folhas::metragem()
         x4y = 0.25;
 
     double metrageVidro = x1y + x2y + x3y + x4y;
-    qDebug()<<"**METRAGE JAN"<<metrageVidro;
+    //qDebug()<<"**METRAGE JAN"<<metrageVidro;
 
     return metrageVidro;
 
@@ -86,7 +86,7 @@ float ClassJanelaDe4Folhas::calculatePrice()
     float Vlatch = aux.buscarNoBDprice(trinco, "trinco");
     float Vfilm = aux.buscarNoBDprice(film , "pelicula") * metragem();
 
-    qDebug()<<"calcular PRICE";
+    qDebug()<<"************************************************* calcular PRICE *******";
     qDebug()<<"metragem"<<metragem();
     qDebug()<<"vidro"<<(metragem() * Vglass);
     qDebug()<<"bate fecha"<<VbateFecha;
@@ -95,8 +95,9 @@ float ClassJanelaDe4Folhas::calculatePrice()
     qDebug()<<"trinco"<<Vlatch;
     qDebug()<<"rodana"<<Vrodanas;
 
-    float value = (metragem() * Vglass) + VbateFecha + VkitAluminio + Vfilm + Vlatch + Vrodanas;
+    qDebug()<<"### METRAGEM"<<metragem();
 
+    float value = (metragem() * Vglass) + VbateFecha + VkitAluminio+ (metragem() * Vfilm) + Vlatch + Vrodanas;
     return value;
 }
 
@@ -119,7 +120,7 @@ float ClassJanelaDe4Folhas::calculateProfit()
     qDebug()<<"trinco"<<Vlatch;
     qDebug()<<"rodana"<<Vrodanas;
 
-    float value = (metragem() * Vglass) + VbateFecha + VkitAluminio + Vfilm + Vlatch + Vrodanas;
 
+    float value = (metragem() * Vglass) + VbateFecha + VkitAluminio + Vfilm + Vlatch + Vrodanas;
     return value;
 }

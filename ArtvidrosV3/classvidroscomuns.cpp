@@ -86,7 +86,7 @@ float ClassVidrosComuns::calculatePrice(int quant)
 
 
 
-    float value = (metragem() * Vglass) + Vpolido + (quant * Vacessorios);
+    float value = (metragem() * Vglass) +(metragem() * Vpolido) + (quant * Vacessorios);
     return value;
 }
 
@@ -103,6 +103,6 @@ float ClassVidrosComuns::calculateProfit(int quant)
     qDebug()<<"polido"<<Vpolido;
     qDebug()<<"acessorios"<<Vpolido;
 
-    float value = (metragem() * Vglass) + Vpolido + (quant * Vacessorios);
+    float value = (metragem() * Vglass) + (metragem() * Vpolido) + (quant * Vacessorios);
     return value;
 }

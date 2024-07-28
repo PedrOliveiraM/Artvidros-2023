@@ -110,7 +110,7 @@ float ClassFechamentoDePia::metragem()
 float ClassFechamentoDePia::calculatePrice()
 {
     sqlDataBaseControl aux;
-    float Vglass = aux.buscarNoBDprice(glass , "temperadopia");
+    float Vglass = aux.buscarNoBDprice(glass , "temperado pia");
     float Vkit = aux.buscarNoBDprice(kit , "kitpia");
     float Vfilm = aux.buscarNoBDprice(film , "pelicula") * metragem();
     float Vrodana = aux.buscarNoBDprice(rodanas , "rodana");
@@ -129,7 +129,7 @@ float ClassFechamentoDePia::calculatePrice()
 float ClassFechamentoDePia::calculateProfit()
 {
     sqlDataBaseControl aux;
-    float Vglass = aux.buscarNoBDprofit(glass , "temperadopia");
+    float Vglass = aux.buscarNoBDprofit(glass , "temperado pia");
     float Vkit = aux.buscarNoBDprofit(kit , "kitpia");
     float Vfilm = aux.buscarNoBDprofit(film , "pelicula") * metragem();
     float Vrodana = aux.buscarNoBDprofit(rodanas , "rodana");

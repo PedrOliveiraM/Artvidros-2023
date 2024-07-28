@@ -36,8 +36,8 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
         spinBox->setValue(1);
     }
 
-    QString array[] = {"temperado","aluminio","kitboxcanto","kitboxfrontal","kitaluminio","kitpia", "kitabrir","bascula" ,"pivotante","fechadura", "puxador", "trinco"
-    ,"rodana" ,"pelicula"};
+    QString array[] = {"temperado","aluminio","kitboxcanto","kitboxfrontal","kitaluminio","kitpia", "kitabrir","bascola" ,"pivotante","fechadura", "puxador", "trinco"
+    ,"rodana" ,"pelicula","tubo"};
     QSqlQuery query;
 
     for (const QString &tipo : array) {
@@ -47,10 +47,10 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
                 if (tipo == "temperado") {
                     ui->comboBoxVidros->addItem(value);
 
-                } else if (tipo == "aluminio" || tipo == "kitaluminio") {
+                } else if (tipo == "aluminio" || tipo == "kitaluminio" || tipo == "tubo") {
                     ui->comboBoxAluminio->addItem(value);
 
-                } else if (tipo == "kitabrir" || tipo == "kitboxfrontal"|| tipo == "kitpia" || tipo == "kitboxcanto"|| tipo == "bascula"|| tipo == "pivotante" ) {
+                } else if (tipo == "kitabrir" || tipo == "kitboxfrontal"|| tipo == "kitpia" || tipo == "kitboxcanto"|| tipo == "bascola"|| tipo == "pivotante" || tipo == "tubo" ) {
                     ui->comboBoxKit->addItem(value);
 
                 } else if (tipo == "fechadura") {
@@ -500,8 +500,8 @@ void AdicionaisRef::on_pushButtonADDrodana_clicked()
 
 void AdicionaisRef::on_pushButtonAreaDePrecos_clicked()
 {
-    telaDePrecos = new DialogAreaPrecos;
-    telaDePrecos->exec();
+    telaAreaProdutos = new DialogAreaDeProdutos;
+    telaAreaProdutos->exec();
 }
 
 void AdicionaisRef::removerLinha()

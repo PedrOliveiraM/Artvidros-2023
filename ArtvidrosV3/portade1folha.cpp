@@ -66,7 +66,7 @@ void PortaDe1Folha::on_pushButtonCalcular_clicked()
     QString kitAluminio = ui->comboBoxKitAluminio->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
-    QString rodana = "Rodana";
+    QString rodana = "RODANA";
 
     ClassPortaDe1Folha door(width,height,glass,puller,fechadura,kitAluminio,film,latch,rodana);
     sqlDataBaseControl aux;

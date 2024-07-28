@@ -67,7 +67,7 @@ void PortaDe4Folhas::on_pushButtonCalcular_clicked()
     QString kitAluminio = ui->comboBoxKitAluminio->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
-    QString rodana = "Rodana";
+    QString rodana = "RODANA";
 
     ClassPortaDe4Folhas door(width,height,glass,puller,fechadura,kitAluminio,film,latch,rodana);
     sqlDataBaseControl aux;
@@ -92,7 +92,7 @@ void PortaDe4Folhas::atualizarValoresImportados(const QString &valor, const QStr
     QString kitAluminio = ui->comboBoxKitAluminio->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
-    QString rodana = "Rodana";
+    QString rodana = "RODANA";
 
     ClassPortaDe4Folhas door(width,height,glass,puller,fechadura,kitAluminio,film,latch,rodana);
     sqlDataBaseControl aux;

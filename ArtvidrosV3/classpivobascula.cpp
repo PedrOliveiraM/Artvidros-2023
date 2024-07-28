@@ -15,7 +15,7 @@ float ClassPivoBascula::calculatePrice()
 {
     sqlDataBaseControl aux;
     float Vglass = aux.buscarNoBDprice(glass , "temperado");
-    float VkitAluminio = aux.buscarNoBDprice(kit , "bascula");
+    float VkitAluminio = aux.buscarNoBDprice(kit , "bascola");
     float Vfilm = aux.buscarNoBDprice(film , "pelicula") * metragem();
     float Vlatch = aux.buscarNoBDprice(lacth , "trinco");
 
@@ -34,7 +34,7 @@ float ClassPivoBascula::calculateProfit()
 {
     sqlDataBaseControl aux;
     float Vglass = aux.buscarNoBDprofit(glass , "temperado");
-    float VkitAluminio = aux.buscarNoBDprofit(kit , "bascula");
+    float VkitAluminio = aux.buscarNoBDprofit(kit , "bascola");
     float Vfilm = aux.buscarNoBDprofit(film , "pelicula") * metragem();
     float Vlatch = aux.buscarNoBDprofit(lacth , "trinco");
 

@@ -81,7 +81,7 @@ void JanelaDe4Folhas::on_pushButtonCalcular_clicked()
     QString bateFecha = ui->comboBoxBateFecha->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
-    QString rodana = "Rodana";
+    QString rodana = "RODANA";
 
     ClassJanelaDe4Folhas windows(width,height,glass,bateFecha,kit,rodana,latch,film);
     sqlDataBaseControl aux;
@@ -105,7 +105,7 @@ void JanelaDe4Folhas::atualizarValoresImportados(const QString &valor, const QSt
     QString bateFecha = ui->comboBoxBateFecha->currentText();
     QString film = ui->comboBoxPelicula->currentText();
     QString latch = ui->comboBoxTrinco->currentText();
-    QString rodana = "Rodana";
+    QString rodana = "RODANA";
 
     ClassJanelaDe4Folhas windows(width,height,glass,bateFecha,kit,rodana,latch,film);
     sqlDataBaseControl aux;

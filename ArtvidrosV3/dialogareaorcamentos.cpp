@@ -37,13 +37,13 @@ void Dialogareaorcamentos::showBD()
     query.prepare("SELECT * FROM sale");
     if (query.exec()) {
         int linha = 0;
-        ui->tableWidget->setColumnCount(8); // Agora são 8 colunas
+        ui->tableWidget->setColumnCount(7); // Agora são 7 colunas
         while (query.next()) {
             QTableWidgetItem *itemCodSale = new QTableWidgetItem(query.value(0).toString());
             QTableWidgetItem *itemCustomer = new QTableWidgetItem(query.value(1).toString());
             QTableWidgetItem *itemProduct = new QTableWidgetItem(query.value(2).toString());
             QTableWidgetItem *itemPrice = new QTableWidgetItem(query.value(3).toString());
-            QTableWidgetItem *itemProfit = new QTableWidgetItem(query.value(4).toString());
+            //QTableWidgetItem *itemProfit = new QTableWidgetItem(query.value(4).toString());
             QTableWidgetItem *itemDate = new QTableWidgetItem(query.value(5).toString());
             QTableWidgetItem *itemSeller = new QTableWidgetItem(query.value(6).toString());
 
@@ -63,24 +63,24 @@ void Dialogareaorcamentos::showBD()
             ui->tableWidget->setItem(linha, 1, itemCustomer);
             ui->tableWidget->setItem(linha, 2, itemProduct);
             ui->tableWidget->setItem(linha, 3, itemPrice);
-            ui->tableWidget->setItem(linha, 4, itemProfit);
-            ui->tableWidget->setItem(linha, 5, itemDate);
-            ui->tableWidget->setItem(linha, 6, itemSeller);
-            ui->tableWidget->setCellWidget(linha, 7, btnRemover); // Agora é a coluna 7
+            //ui->tableWidget->setItem(linha, 4, itemProfit);
+            ui->tableWidget->setItem(linha, 4, itemDate);
+            ui->tableWidget->setItem(linha, 5, itemSeller);
+            ui->tableWidget->setCellWidget(linha, 6, btnRemover); // Agora é a coluna 7
             ui->tableWidget->setRowHeight(linha, 20);
             linha++;
         }
     }
 
-    QStringList rotulo = {"Código Venda", "Cliente", "Produto", "Valor", "Lucro", "Data", "Vendedor", ""};
+    QStringList rotulo = {"Código Venda", "Cliente", "Produto", "Valor", "Data", "Vendedor", ""};
     ui->tableWidget->setColumnWidth(0, 117);
     ui->tableWidget->setColumnWidth(1, 157);
     ui->tableWidget->setColumnWidth(2, 455);
     ui->tableWidget->setColumnWidth(3, 115);
+    //ui->tableWidget->setColumnWidth(4, 115);
     ui->tableWidget->setColumnWidth(4, 115);
-    ui->tableWidget->setColumnWidth(5, 115);
+    ui->tableWidget->setColumnWidth(5, 125);
     ui->tableWidget->setColumnWidth(6, 125);
-    ui->tableWidget->setColumnWidth(7, 45);
 
     ui->tableWidget->verticalHeader()->setVisible(false);
     ui->tableWidget->setHorizontalHeaderLabels(rotulo);

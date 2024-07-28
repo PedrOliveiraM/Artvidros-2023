@@ -13,14 +13,14 @@ FechamentoDePia::FechamentoDePia(QWidget *parent) :
     ui->lineEditValor->setEnabled(false);
     ui->lineEditLucro->setVisible(false);
     ui->label_6->setVisible(false);
-    QString array[] = {"temperadopia", "pelicula" , "trinco","kitpia"};
+    QString array[] = {"temperado pia", "pelicula" , "trinco","kitpia"};
     QSqlQuery query;
 
     for (const QString &tipo : array) {
         if (query.exec("SELECT * FROM product WHERE type = '" + tipo + "' ORDER BY name_product ASC")) {
             while (query.next()) {
                 QString value = query.value(1).toString();  // Suponho que o valor desejado esteja na primeira coluna
-                if (tipo == "temperadopia") {
+                if (tipo == "temperado pia") {
                     ui->comboBoxVidros->addItem(value);
                 } else if (tipo == "pelicula") {
                     ui->comboBoxPelicula->addItem(value); 
