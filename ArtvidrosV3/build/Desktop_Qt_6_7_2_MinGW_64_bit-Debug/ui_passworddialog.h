@@ -51,6 +51,8 @@ public:
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
         label_3 = new QLabel(verticalLayoutWidget_3);
         label_3->setObjectName("label_3");
+        label_3->setFont(font);
+        label_3->setLayoutDirection(Qt::LeftToRight);
 
         verticalLayout_3->addWidget(label_3);
 
@@ -78,7 +80,7 @@ public:
     {
         PasswordDialog->setWindowTitle(QCoreApplication::translate("PasswordDialog", "Dialog", nullptr));
         label->setText(QString());
-        label_3->setText(QCoreApplication::translate("PasswordDialog", "Senha", nullptr));
+        label_3->setText(QCoreApplication::translate("PasswordDialog", "Informe a senha para entrar", nullptr));
         pushButtonEntrar->setText(QCoreApplication::translate("PasswordDialog", "Entrar", nullptr));
     } // retranslateUi
 

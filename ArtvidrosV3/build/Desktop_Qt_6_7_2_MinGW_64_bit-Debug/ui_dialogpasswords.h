@@ -57,7 +57,7 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->setObjectName("comboBox");
-        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Expanding);
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(comboBox->sizePolicy().hasHeightForWidth());
@@ -72,6 +72,11 @@ public:
 
         lineEdit_password = new QLineEdit(verticalLayoutWidget_3);
         lineEdit_password->setObjectName("lineEdit_password");
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(lineEdit_password->sizePolicy().hasHeightForWidth());
+        lineEdit_password->setSizePolicy(sizePolicy1);
         lineEdit_password->setCursor(QCursor(Qt::CursorShape::IBeamCursor));
         lineEdit_password->setContextMenuPolicy(Qt::ActionsContextMenu);
         lineEdit_password->setFrame(false);
@@ -86,6 +91,8 @@ public:
 
         lineEdit_new_password = new QLineEdit(verticalLayoutWidget_3);
         lineEdit_new_password->setObjectName("lineEdit_new_password");
+        sizePolicy1.setHeightForWidth(lineEdit_new_password->sizePolicy().hasHeightForWidth());
+        lineEdit_new_password->setSizePolicy(sizePolicy1);
         lineEdit_new_password->setCursor(QCursor(Qt::CursorShape::IBeamCursor));
         lineEdit_new_password->setContextMenuPolicy(Qt::ActionsContextMenu);
         lineEdit_new_password->setFrame(false);
@@ -95,6 +102,11 @@ public:
 
         pushButtonEntrar = new QPushButton(verticalLayoutWidget_3);
         pushButtonEntrar->setObjectName("pushButtonEntrar");
+        QSizePolicy sizePolicy2(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(pushButtonEntrar->sizePolicy().hasHeightForWidth());
+        pushButtonEntrar->setSizePolicy(sizePolicy2);
 
         verticalLayout_3->addWidget(pushButtonEntrar);
 
