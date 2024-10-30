@@ -73,7 +73,7 @@ float ClassPortaDe1Folha::calculateProfit()
     float Vglass = aux.buscarNoBDprofit(glass , "temperado");
     float Vpuller = aux.buscarNoBDprofit(puller , "puxador");
     float Vfechadura = aux.buscarNoBDprofit(fechadura , "fechadura");
-    float VkitAluminio = aux.buscarNoBDprofit(kitAluminio , "aluminio");
+    float VkitAluminio = aux.buscarNoBDprofit(kitAluminio , "kitaluminio") * ((2 * width) + 0.10);
     float Vfilm = aux.buscarNoBDprofit(film , "pelicula") * metragem();
     float Vlatch = aux.buscarNoBDprofit(latch , "trinco");
     float Vrodanas = aux.buscarNoBDprofit(rodanas , "rodana") * 2;

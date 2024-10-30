@@ -123,7 +123,7 @@ float ClassMoldura::metragem()
     else if (espessura == "Média") {
         Vespessura = 0.40;
     }else{
-        Vespessura = 0.50;
+        Vespessura = 0.60;
     }
 
 
@@ -160,8 +160,12 @@ float ClassMoldura::calculatePrice()
 
     sqlDataBaseControl aux;
     float Vacabamento = aux.buscarNoBDprice(acabamento , "acabamento");
-    float Vacessorios = aux.buscarNoBDprice(acessorios , "pendurador") * quant;
+    float Vacessorios = aux.buscarNoBDprice(acessorios , "pendurador");
 
+    qDebug()<<"TESTE MOLDURA "<< metragem();
+    qDebug()<<"# valueMold "<< (metragem() * valueMold);
+    qDebug()<<"# Vacabamento "<< metrage * Vacabamento;
+    qDebug()<<"# Vacessorios "<< quant * Vacessorios;
 
     float value = ((metragem() * valueMold) + (metrage * Vacabamento) + (quant * Vacessorios));
 

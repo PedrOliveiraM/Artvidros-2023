@@ -16,7 +16,7 @@ AdicionaisRef::AdicionaisRef(QWidget *parent, const std::list<AdicionaisOBJ> &li
     setKitalum(kitAluminio);
 
     ui->pushButtonTodosOsAluminios->setEnabled(false);
-    if(tipo.contains("2") || tipo.contains("4")){
+    if(tipo.contains("2") || tipo.contains("4") || tipo.contains("1")){
         ui->pushButtonTodosOsAluminios->setEnabled(true);
         QMessageBox::information(this,"Tela de Adicionais","Inclua todos os alumínios clicando no botão 'Todos Os Aluminios' ! ","Ok");
     }
@@ -547,7 +547,36 @@ void AdicionaisRef::on_pushButtonTodosOsAluminios_clicked()
     QString pu2 = "PU 10";
     QString vp = "VP 8";
     QString cad = "CAD 8";
+    QString cant = "CANTONEIRA";
 
+    if (getTipoTela() == "PortaDe1Folha"){
+        qDebug()<<"#### tipoTela :" << tipoTela;
+        if (kitAluminio.contains("10")) {
+            pu2 = "PU 12";
+            cant = "CANTONEIRA";
+        }else {
+            pu2 = "PU 10";
+            cant = "CANTONEIRA";
+        }
+
+        sqlDataBaseControl aux;
+        float V_PU2 = aux.buscarNoBDprice(pu2, "aluminio") * alturaCorrigida;
+        float V_CANT = aux.buscarNoBDprice(cant, "aluminio") * alturaCorrigida;
+
+        float L_PU2 = aux.buscarNoBDprofit(pu2, "aluminio") * alturaCorrigida;
+        float L_CANT = aux.buscarNoBDprofit(cant, "aluminio") * alturaCorrigida;
+
+
+
+        AdicionaisOBJ aux2;
+        AdicionaisOBJ adicionalPU2(aux2.geraID(), QString::number(alturaCorrigida)+ " m de "+ pu2, "1", QString::number(V_PU2), QString::number(L_PU2));
+        AdicionaisOBJ adicionalCAN(aux2.geraID(), QString::number(alturaCorrigida)+ " m de " + cant, "1", QString::number(V_CANT), QString::number(L_CANT));
+
+        listaDeAdicionais.push_back(adicionalPU2);
+        listaDeAdicionais.push_back(adicionalCAN);
+
+        return mostrarAdicoes();
+    }
 
     if (kitAluminio.contains("10")) {
         pu = "PU 10";

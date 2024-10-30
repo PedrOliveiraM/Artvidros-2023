@@ -33,6 +33,10 @@ public:
     void lowerTableProducts();
     void upperTableProducts();
 
+    bool login(QString tipo, QString password);
+    bool changePassword(QString tipo, QString password,QString newPassword);
+
+
 };
 
 #endif // SQLDATABASECONTROL_H

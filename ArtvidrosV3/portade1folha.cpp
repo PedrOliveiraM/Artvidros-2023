@@ -60,6 +60,8 @@ void PortaDe1Folha::on_pushButtonCalcular_clicked()
     //calcular orçamento
     float width = ui->lineEditLargura->text().toFloat();
     float height = ui->lineEditAltura->text().toFloat();
+    width = width + 0.05;
+    height = height + 0.10;
     QString glass = ui->comboBoxVidros->currentText();
     QString puller = ui->comboBoxPuxador->currentText();
     QString fechadura = ui->comboBoxFechadura->currentText();
@@ -126,7 +128,11 @@ void PortaDe1Folha::on_pushButtonSalvar_clicked()
 
 void PortaDe1Folha::on_pushButtonRefatorando_clicked()
 {
-    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"PortaDe1Folha");
+    float altura = ui->lineEditAltura->text().toFloat();
+    QString kitAlumio = ui->comboBoxVidros->currentText();
+
+    altura = altura + 0.10;
+    AdicionaisRef telaAdicionais(this,listaDeAdicionais,"PortaDe1Folha",kitAlumio,altura);
     telaAdicionais.exec();
 
     QString valorRetornado = telaAdicionais.getPrice();

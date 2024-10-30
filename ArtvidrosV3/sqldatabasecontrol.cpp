@@ -288,3 +288,49 @@ void sqlDataBaseControl::upperTableProducts()
         qDebug() << "Erro ao transformar colunas em maiúsculas: " << query.lastError().text();
     }
 }
+
+bool sqlDataBaseControl::login(QString tipo, QString password)
+{
+    QSqlQuery query;
+
+    // Preparando a consulta SQL para verificar se existe um usuário com o tipo e senha fornecidos
+    query.prepare("SELECT COUNT(*) FROM users WHERE tipo = :tipo AND senha = :password");
+    query.bindValue(":tipo", tipo);
+    query.bindValue(":password", password);
+
+    if (!query.exec()) {
+        qDebug() << "Erro ao executar login:" << query.lastError().text();
+        return false;
+    }
+
+    // Verifica se o usuário foi encontrado
+    if (query.next() && query.value(0).toInt() > 0) {
+        return true; // Login bem-sucedido
+    }
+
+    return false; // Credenciais incorretas
+}
+
+bool sqlDataBaseControl::changePassword(QString tipo, QString password, QString newPassword)
+{
+    QSqlQuery query;
+
+    // Preparando a consulta SQL para atualizar a senha para o tipo específico
+    query.prepare("UPDATE users SET senha = :newPassword WHERE tipo = :tipo AND senha = :password");
+    query.bindValue(":newPassword", newPassword);
+    query.bindValue(":tipo", tipo);
+    query.bindValue(":password", password);
+
+    if (!query.exec()) {
+        qDebug() << "Erro ao executar changePassword:" << query.lastError().text();
+        return false;
+    }
+
+    // Verifica se a atualização afetou alguma linha (se afetou, a senha foi alterada)
+    if (query.numRowsAffected() > 0) {
+        return true; // Senha alterada com sucesso
+    }
+
+    return false; // Nenhuma linha afetada (tipo ou senha incorretos)
+}
+

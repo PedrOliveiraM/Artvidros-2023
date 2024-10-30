@@ -252,9 +252,6 @@ public:
         QWidget::setTabOrder(pushButtonOrcamentos, pushButtonAdicionais);
 
         menubar->addAction(menuMenu->menuAction());
-        menuMenu->addAction(actionOr_amentos);
-        menuMenu->addAction(actionPre_os);
-        menuMenu->addAction(actionVendas);
 
         retranslateUi(MainWindow);
 

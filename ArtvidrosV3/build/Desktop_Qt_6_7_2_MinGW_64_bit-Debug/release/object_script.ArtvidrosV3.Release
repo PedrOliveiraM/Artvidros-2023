@@ -24,6 +24,7 @@ release/dialogboxs.o
 release/dialoghelp.o
 release/dialogjanelas.o
 release/dialoglogin.o
+release/dialogpasswords.o
 release/dialogportas.o
 release/dialogsalvar.o
 release/fechamentodepia.o
@@ -36,6 +37,7 @@ release/janelade4folhas.o
 release/main.o
 release/mainwindow.o
 release/moldura.o
+release/passworddialog.o
 release/pdfarea.o
 release/pdfgenerator.o
 release/pdfobjeto.o
@@ -61,6 +63,7 @@ release/moc_dialogboxs.o
 release/moc_dialoghelp.o
 release/moc_dialogjanelas.o
 release/moc_dialoglogin.o
+release/moc_dialogpasswords.o
 release/moc_dialogportas.o
 release/moc_dialogsalvar.o
 release/moc_fechamentodepia.o
@@ -68,6 +71,7 @@ release/moc_janelade2folhas.o
 release/moc_janelade4folhas.o
 release/moc_mainwindow.o
 release/moc_moldura.o
+release/moc_passworddialog.o
 release/moc_pdfarea.o
 release/moc_pivotante.o
 release/moc_portade1folha.o

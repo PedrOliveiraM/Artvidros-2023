@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QSplashScreen>
 #include "QTimer"
+#include "passworddialog.h"
 #include "qsqldatabase.h"
 #include <QSqlQuery>
 
@@ -40,12 +41,20 @@ int main(int argc, char *argv[])
 
     MainWindow w;
 
-    QTimer::singleShot(4000, telaSplash, SLOT(close()));
-    QTimer::singleShot(4000, &w, SLOT(show()));
 
-    sqlDataBaseControl aux;
+    PasswordDialog passwordDialog;
+
+    if (passwordDialog.exec() == QDialog::Accepted) {
+        MainWindow w;
+        w.show();
+        QTimer::singleShot(4000, telaSplash, SLOT(close()));
+        QTimer::singleShot(4000, &w, SLOT(show()));
+        return a.exec();
+    }
+
+    //sqlDataBaseControl aux;
     //aux.upperTableProducts();
     //aux.lowerTableProducts();
     //aux.upperTableSale();
-    return a.exec();
+    return 0;
 }

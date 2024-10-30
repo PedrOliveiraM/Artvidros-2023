@@ -30,6 +30,7 @@ public:
     QAction *actionOr_amentos;
     QAction *actionPre_os;
     QAction *actionVendas;
+    QAction *actionSenhas;
     QWidget *centralwidget;
     QLabel *label;
     QWidget *gridLayoutWidget;
@@ -70,6 +71,8 @@ public:
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/imagens/vendas.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         actionVendas->setIcon(icon2);
+        actionSenhas = new QAction(MainWindow);
+        actionSenhas->setObjectName("actionSenhas");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         label = new QLabel(centralwidget);
@@ -252,9 +255,8 @@ public:
         QWidget::setTabOrder(pushButtonOrcamentos, pushButtonAdicionais);
 
         menubar->addAction(menuMenu->menuAction());
-        menuMenu->addAction(actionOr_amentos);
-        menuMenu->addAction(actionPre_os);
-        menuMenu->addAction(actionVendas);
+        menuMenu->addSeparator();
+        menuMenu->addAction(actionSenhas);
 
         retranslateUi(MainWindow);
 
@@ -267,6 +269,7 @@ public:
         actionOr_amentos->setText(QCoreApplication::translate("MainWindow", "Or\303\247amentos", nullptr));
         actionPre_os->setText(QCoreApplication::translate("MainWindow", "Pre\303\247os", nullptr));
         actionVendas->setText(QCoreApplication::translate("MainWindow", "Vendas", nullptr));
+        actionSenhas->setText(QCoreApplication::translate("MainWindow", "Senhas", nullptr));
         label->setText(QString());
         pushButtonPortas->setText(QCoreApplication::translate("MainWindow", "             Portas               ", nullptr));
         pushButtonOrcamentos->setText(QCoreApplication::translate("MainWindow", " \303\201rea de Or\303\247amentos  ", nullptr));

@@ -9,8 +9,6 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowTitle("ArtVidros");
     ui->statusbar->showMessage("Versão 4.0 10/2023");
 
-
-
 }
 
 MainWindow::~MainWindow()
@@ -72,29 +70,6 @@ void MainWindow::on_pushButtonOrcamentos_clicked()
 {
     telaAreaOrcamento = new Dialogareaorcamentos;
     telaAreaOrcamento->exec();
-}
-
-
-
-void MainWindow::on_actionOr_amentos_triggered()
-{
-    telaAreaOrcamento = new Dialogareaorcamentos;
-    telaAreaOrcamento->exec();
-}
-
-
-void MainWindow::on_actionPre_os_triggered()
-{   //Preços
-    telaAreaPreco = new DialogAreaPrecos;
-    telaAreaPreco->exec();
-}
-
-
-void MainWindow::on_actionVendas_triggered()
-{
-    //vendas
-    telaAreaVendas = new DialogAreaDeVendas;
-    telaAreaVendas->exec();
 }
 
 
@@ -175,5 +150,14 @@ void MainWindow::on_pushButtonAdmin_clicked()
     telaHelp = new DialogHelp;
     telaHelp->exec();
     delete telaHelp;
+}
+
+
+
+void MainWindow::on_actionSenhas_triggered()
+{
+    telaSenhas = new DialogPasswords;
+    telaSenhas->exec();
+    delete telaSenhas;
 }
 

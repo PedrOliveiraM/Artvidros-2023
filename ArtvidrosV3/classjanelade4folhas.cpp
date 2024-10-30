@@ -86,7 +86,7 @@ float ClassJanelaDe4Folhas::calculatePrice()
     float Vlatch = aux.buscarNoBDprice(trinco, "trinco");
     float Vfilm = aux.buscarNoBDprice(film , "pelicula") * metragem();
 
-    qDebug()<<"************************************************* calcular PRICE *******";
+    qDebug()<<"************************************* calcular PRICE *******";
     qDebug()<<"metragem"<<metragem();
     qDebug()<<"vidro"<<(metragem() * Vglass);
     qDebug()<<"bate fecha"<<VbateFecha;
@@ -97,7 +97,7 @@ float ClassJanelaDe4Folhas::calculatePrice()
 
     qDebug()<<"### METRAGEM"<<metragem();
 
-    float value = (metragem() * Vglass) + VbateFecha + VkitAluminio+ (metragem() * Vfilm) + Vlatch + Vrodanas;
+    float value = (metragem() * Vglass) + VbateFecha + VkitAluminio + (metragem() * Vfilm) + Vlatch + Vrodanas;
     return value;
 }
 

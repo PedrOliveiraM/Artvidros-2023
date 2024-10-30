@@ -30,6 +30,7 @@ void DialogAreaDeProdutos::showBD()
             QTableWidgetItem *itemCod = new QTableWidgetItem(query.value(0).toString());
             QTableWidgetItem *itemProduto = new QTableWidgetItem(query.value(1).toString());
             QTableWidgetItem *itemValor = new QTableWidgetItem(query.value(2).toString());
+            QTableWidgetItem *itemCategoria = new QTableWidgetItem(query.value(3).toString());
             QPushButton *btnVender = new QPushButton;
             btnVender->setText("Vender");
             btnVender->setIcon(QIcon(":/imagens/vendas.png"));
@@ -45,13 +46,14 @@ void DialogAreaDeProdutos::showBD()
             ui->tableWidget->setItem(linha,0,itemCod);
             ui->tableWidget->setItem(linha,1,itemProduto);
             ui->tableWidget->setItem(linha,2,itemValor);
-            ui->tableWidget->setCellWidget(linha,3,btnVender);
-            ui->tableWidget->setColumnWidth(3, 120);
+            ui->tableWidget->setItem(linha,3,itemCategoria);
+            ui->tableWidget->setCellWidget(linha,4,btnVender);
+            ui->tableWidget->setColumnWidth(4, 120);
             ui->tableWidget->setRowHeight(linha,30);
             linha++;
         }
     }
-    QStringList rotulo = {"codigo","Produto","Valor",""};
+    QStringList rotulo = {"codigo","Produto","Valor","categoria",""};
     ui->tableWidget->verticalHeader()->setVisible(false);
     ui->tableWidget->setHorizontalHeaderLabels(rotulo);
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);

@@ -76,6 +76,7 @@ SOURCES       = ..\..\adicionaisobj.cpp \
 		..\..\dialoghelp.cpp \
 		..\..\dialogjanelas.cpp \
 		..\..\dialoglogin.cpp \
+		..\..\dialogpasswords.cpp \
 		..\..\dialogportas.cpp \
 		..\..\dialogsalvar.cpp \
 		..\..\fechamentodepia.cpp \
@@ -88,6 +89,7 @@ SOURCES       = ..\..\adicionaisobj.cpp \
 		..\..\main.cpp \
 		..\..\mainwindow.cpp \
 		..\..\moldura.cpp \
+		..\..\passworddialog.cpp \
 		..\..\pdfarea.cpp \
 		..\..\pdfgenerator.cpp \
 		..\..\pdfobjeto.cpp \
@@ -112,6 +114,7 @@ SOURCES       = ..\..\adicionaisobj.cpp \
 		debug\moc_dialoghelp.cpp \
 		debug\moc_dialogjanelas.cpp \
 		debug\moc_dialoglogin.cpp \
+		debug\moc_dialogpasswords.cpp \
 		debug\moc_dialogportas.cpp \
 		debug\moc_dialogsalvar.cpp \
 		debug\moc_fechamentodepia.cpp \
@@ -119,6 +122,7 @@ SOURCES       = ..\..\adicionaisobj.cpp \
 		debug\moc_janelade4folhas.cpp \
 		debug\moc_mainwindow.cpp \
 		debug\moc_moldura.cpp \
+		debug\moc_passworddialog.cpp \
 		debug\moc_pdfarea.cpp \
 		debug\moc_pivotante.cpp \
 		debug\moc_portade1folha.cpp \
@@ -153,6 +157,7 @@ OBJECTS       = debug/adicionaisobj.o \
 		debug/dialoghelp.o \
 		debug/dialogjanelas.o \
 		debug/dialoglogin.o \
+		debug/dialogpasswords.o \
 		debug/dialogportas.o \
 		debug/dialogsalvar.o \
 		debug/fechamentodepia.o \
@@ -165,6 +170,7 @@ OBJECTS       = debug/adicionaisobj.o \
 		debug/main.o \
 		debug/mainwindow.o \
 		debug/moldura.o \
+		debug/passworddialog.o \
 		debug/pdfarea.o \
 		debug/pdfgenerator.o \
 		debug/pdfobjeto.o \
@@ -190,6 +196,7 @@ OBJECTS       = debug/adicionaisobj.o \
 		debug/moc_dialoghelp.o \
 		debug/moc_dialogjanelas.o \
 		debug/moc_dialoglogin.o \
+		debug/moc_dialogpasswords.o \
 		debug/moc_dialogportas.o \
 		debug/moc_dialogsalvar.o \
 		debug/moc_fechamentodepia.o \
@@ -197,6 +204,7 @@ OBJECTS       = debug/adicionaisobj.o \
 		debug/moc_janelade4folhas.o \
 		debug/moc_mainwindow.o \
 		debug/moc_moldura.o \
+		debug/moc_passworddialog.o \
 		debug/moc_pdfarea.o \
 		debug/moc_pivotante.o \
 		debug/moc_portade1folha.o \
@@ -234,6 +242,7 @@ DIST          = Porta \
 		..\..\dialoghelp.h \
 		..\..\dialogjanelas.h \
 		..\..\dialoglogin.h \
+		..\..\dialogpasswords.h \
 		..\..\dialogportas.h \
 		..\..\dialogsalvar.h \
 		..\..\fechamentodepia.h \
@@ -245,6 +254,7 @@ DIST          = Porta \
 		..\..\janelade4folhas.h \
 		..\..\mainwindow.h \
 		..\..\moldura.h \
+		..\..\passworddialog.h \
 		..\..\pdfarea.h \
 		..\..\pdfgenerator.h \
 		..\..\pdfobjeto.h \
@@ -281,6 +291,7 @@ DIST          = Porta \
 		..\..\dialoghelp.cpp \
 		..\..\dialogjanelas.cpp \
 		..\..\dialoglogin.cpp \
+		..\..\dialogpasswords.cpp \
 		..\..\dialogportas.cpp \
 		..\..\dialogsalvar.cpp \
 		..\..\fechamentodepia.cpp \
@@ -293,6 +304,7 @@ DIST          = Porta \
 		..\..\main.cpp \
 		..\..\mainwindow.cpp \
 		..\..\moldura.cpp \
+		..\..\passworddialog.cpp \
 		..\..\pdfarea.cpp \
 		..\..\pdfgenerator.cpp \
 		..\..\pdfobjeto.cpp \
@@ -314,7 +326,7 @@ DESTDIR_TARGET = debug\ArtvidrosV3.exe
 first: all
 all: Makefile.Debug  debug/ArtvidrosV3.exe
 
-debug/ArtvidrosV3.exe: C:/Qt/6.7.2/mingw_64/lib/libQt6PrintSupport.a C:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a C:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a C:/Qt/6.7.2/mingw_64/lib/libQt6Sql.a C:/Qt/6.7.2/mingw_64/lib/libQt6Core.a C:/Qt/6.7.2/mingw_64/lib/libQt6EntryPoint.a ui_adicionaisref.h ui_bascula.h ui_boxcanto.h ui_boxfrontal.h ui_dialogareadeprodutos.h ui_dialogareadevendas.h ui_dialogareaorcamentos.h ui_dialogareaorcamentosql.h ui_dialogareaprecos.h ui_dialogboxs.h ui_dialoghelp.h ui_dialogjanelas.h ui_dialoglogin.h ui_dialogportas.h ui_dialogsalvar.h ui_fechamentodepia.h ui_help.h ui_janelade2folhas.h ui_janelade4folhas.h ui_mainwindow.h ui_moldura.h ui_pdfarea.h ui_pivotante.h ui_portade1folha.h ui_portade2folhas.h ui_portade4folhas.h ui_portadeabrir.h ui_sqlarea.h ui_vidroscomuns.h $(OBJECTS) debug/ArtvidrosV3_resource_res.o
+debug/ArtvidrosV3.exe: C:/Qt/6.7.2/mingw_64/lib/libQt6PrintSupport.a C:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a C:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a C:/Qt/6.7.2/mingw_64/lib/libQt6Sql.a C:/Qt/6.7.2/mingw_64/lib/libQt6Core.a C:/Qt/6.7.2/mingw_64/lib/libQt6EntryPoint.a ui_adicionaisref.h ui_bascula.h ui_boxcanto.h ui_boxfrontal.h ui_dialogareadeprodutos.h ui_dialogareadevendas.h ui_dialogareaorcamentos.h ui_dialogareaorcamentosql.h ui_dialogareaprecos.h ui_dialogboxs.h ui_dialoghelp.h ui_dialogjanelas.h ui_dialoglogin.h ui_dialogpasswords.h ui_dialogportas.h ui_dialogsalvar.h ui_fechamentodepia.h ui_help.h ui_janelade2folhas.h ui_janelade4folhas.h ui_mainwindow.h ui_moldura.h ui_passworddialog.h ui_pdfarea.h ui_pivotante.h ui_portade1folha.h ui_portade2folhas.h ui_portade4folhas.h ui_portadeabrir.h ui_sqlarea.h ui_vidroscomuns.h $(OBJECTS) debug/ArtvidrosV3_resource_res.o
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) @debug\object_script.ArtvidrosV3.Debug $(LIBS)
 
 debug/ArtvidrosV3_resource_res.o: ArtvidrosV3_resource.rc
@@ -326,10 +338,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) ArtvidrosV3.zip $(SOURCES) $(DIST) ..\..\..\..\ArtvidrosV3.pro C:\Qt\6.7.2\mingw_64\mkspecs\features\spec_pre.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\device_config.prf C:\Qt\6.7.2\mingw_64\mkspecs\common\sanitize.conf C:\Qt\6.7.2\mingw_64\mkspecs\common\gcc-base.conf C:\Qt\6.7.2\mingw_64\mkspecs\common\g++-base.conf C:\Qt\6.7.2\mingw_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\6.7.2\mingw_64\mkspecs\common\windows-vulkan.conf C:\Qt\6.7.2\mingw_64\mkspecs\common\g++-win32.conf C:\Qt\6.7.2\mingw_64\mkspecs\common\windows-desktop.conf C:\Qt\6.7.2\mingw_64\mkspecs\qconfig.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_ext_freetype.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_ext_libjpeg.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_ext_libpng.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_activeqt.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_activeqt_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_bodymovin_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_charts.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_charts_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_chartsqml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_chartsqml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_core.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_core5compat.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_core5compat_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_datavisualization.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_datavisualization_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_datavisualizationqml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_datavisualizationqml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_entrypoint_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_example_icons_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_freetype_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_graphs.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_graphs_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_grpc.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_grpc_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_grpcquick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_grpcquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_harfbuzz_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_help.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_httpserver.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_httpserver_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_insighttracker.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_insighttracker_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_insighttrackerqml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_insighttrackerqml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_jpeg_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_jsonrpc_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labsanimation.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labsanimation_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labssettings.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labssettings_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_languageserver_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_linguist.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_location.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_multimediaquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_network.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_networkauth.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_networkauth_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_pdf.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_pdf_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_pdfquick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_pdfquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_pdfwidgets.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_pdfwidgets_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_png_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobuf.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobuf_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobufqtcoretypes.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobufqtcoretypes_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobufqtguitypes.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobufqtguitypes_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobufwellknowntypes.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobufwellknowntypes_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qdoccatch_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qdoccatchconversions_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qdoccatchgenerators_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlbuiltins.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlbuiltins_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlcompiler.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlcore.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlcore_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmldom_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlls_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlnetwork.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlnetwork_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmltoolingsettings_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmltyperegistrar_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3d.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3d_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetimport.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetimport_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetutils.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetutils_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3deffects.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3deffects_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dglslparser_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpers.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpers_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpersimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpersimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3diblbaker.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3diblbaker_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticleeffects.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticleeffects_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticles.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticles_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dphysics.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dphysics_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dphysicshelpers.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dphysicshelpers_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3druntimerender.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3druntimerender_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dspatialaudio_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dutils.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dutils_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basic.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basic_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basicstyleimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basicstyleimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusion.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusion_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusionstyleimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusionstyleimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imagine.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imagine_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imaginestyleimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imaginestyleimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2material.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2material_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2materialstyleimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2materialstyleimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universal.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universal_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universalstyleimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universalstyleimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2windowsstyleimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2windowsstyleimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickeffects_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicktimeline.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicktimeline_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicktimelineblendtrees.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicktimelineblendtrees_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_remoteobjectsqml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_remoteobjectsqml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_scxmlqml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_scxmlqml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_sensorsquick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_sensorsquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_shadertools.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_shadertools_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_spatialaudio.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_spatialaudio_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_statemachine.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_statemachine_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_statemachineqml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_statemachineqml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_tools_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_virtualkeyboard.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_virtualkeyboard_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_virtualkeyboardsettings.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_virtualkeyboardsettings_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webchannelquick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webchannelquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webview.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webview_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webviewquick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webviewquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\features\qt_functions.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\qt_config.prf C:\Qt\6.7.2\mingw_64\mkspecs\win32-g++\qmake.conf C:\Qt\6.7.2\mingw_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\6.7.2\mingw_64\mkspecs\features\exclusive_builds.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\toolchain.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\default_pre.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\win32\default_pre.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\resolve_config.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\default_post.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\build_pass.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\qml_debug.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\precompile_header.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\warn_on.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\permissions.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\qt.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\resources_functions.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\resources.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\moc.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\win32\opengl.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\uic.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\qmake_use.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\file_copies.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\win32\windows.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\testcase_targets.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\exceptions.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\yacc.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\lex.prf ..\..\ArtvidrosV3.pro ..\..\files.qrc C:\Qt\6.7.2\mingw_64\lib\Qt6PrintSupport.prl C:\Qt\6.7.2\mingw_64\lib\Qt6Widgets.prl C:\Qt\6.7.2\mingw_64\lib\Qt6Gui.prl C:\Qt\6.7.2\mingw_64\lib\Qt6Sql.prl C:\Qt\6.7.2\mingw_64\lib\Qt6Core.prl C:\Qt\6.7.2\mingw_64\lib\Qt6EntryPoint.prl   ..\..\files.qrc C:\Qt\6.7.2\mingw_64\mkspecs\features\data\dummy.cpp ..\..\adicionaisobj.h ..\..\adicionaisref.h ..\..\bascula.h ..\..\boxcanto.h ..\..\boxfrontal.h ..\..\classbox.h ..\..\classfechamentodepia.h ..\..\classjanelade2folhas.h ..\..\classjanelade4folhas.h ..\..\classmoldura.h ..\..\classpivobascula.h ..\..\classpivotantebasc.h ..\..\classportade1folha.h ..\..\classportade2folhas.h ..\..\classportade4folhas.h ..\..\classportadeabrir.h ..\..\classvidroscomuns.h ..\..\dialogareadeprodutos.h ..\..\dialogareadevendas.h ..\..\dialogareaorcamentos.h ..\..\dialogareaorcamentosql.h ..\..\dialogareaprecos.h ..\..\dialogboxs.h ..\..\dialoghelp.h ..\..\dialogjanelas.h ..\..\dialoglogin.h ..\..\dialogportas.h ..\..\dialogsalvar.h ..\..\fechamentodepia.h ..\..\herdabox.h ..\..\herdajanelas.h ..\..\herdapivobasc.h ..\..\herdavidros.h ..\..\janelade2folhas.h ..\..\janelade4folhas.h ..\..\mainwindow.h ..\..\moldura.h ..\..\pdfarea.h ..\..\pdfgenerator.h ..\..\pdfobjeto.h ..\..\pivotante.h ..\..\portade1folha.h ..\..\portade2folhas.h ..\..\portade4folhas.h ..\..\portadeabrir.h ..\..\sqlarea.h ..\..\sqldatabasecontrol.h ..\..\vidroscomuns.h  ..\..\adicionaisobj.cpp ..\..\adicionaisref.cpp ..\..\bascula.cpp ..\..\boxcanto.cpp ..\..\boxfrontal.cpp ..\..\classbox.cpp ..\..\classfechamentodepia.cpp ..\..\classjanelade2folhas.cpp ..\..\classjanelade4folhas.cpp ..\..\classmoldura.cpp ..\..\classpivobascula.cpp ..\..\classpivotantebasc.cpp ..\..\classportade1folha.cpp ..\..\classportade2folhas.cpp ..\..\classportade4folhas.cpp ..\..\classportadeabrir.cpp ..\..\classvidroscomuns.cpp ..\..\dialogareadeprodutos.cpp ..\..\dialogareadevendas.cpp ..\..\dialogareaorcamentos.cpp ..\..\dialogareaorcamentosql.cpp ..\..\dialogareaprecos.cpp ..\..\dialogboxs.cpp ..\..\dialoghelp.cpp ..\..\dialogjanelas.cpp ..\..\dialoglogin.cpp ..\..\dialogportas.cpp ..\..\dialogsalvar.cpp ..\..\fechamentodepia.cpp ..\..\herdabox.cpp ..\..\herdajanelas.cpp ..\..\herdapivobasc.cpp ..\..\herdavidros.cpp ..\..\janelade2folhas.cpp ..\..\janelade4folhas.cpp ..\..\main.cpp ..\..\mainwindow.cpp ..\..\moldura.cpp ..\..\pdfarea.cpp ..\..\pdfgenerator.cpp ..\..\pdfobjeto.cpp ..\..\pivotante.cpp ..\..\portade1folha.cpp ..\..\portade2folhas.cpp ..\..\portade4folhas.cpp ..\..\portadeabrir.cpp ..\..\sqlarea.cpp ..\..\sqldatabasecontrol.cpp ..\..\vidroscomuns.cpp ..\..\adicionaisref.ui ..\..\bascula.ui ..\..\boxcanto.ui ..\..\boxfrontal.ui ..\..\dialogareadeprodutos.ui ..\..\dialogareadevendas.ui ..\..\dialogareaorcamentos.ui ..\..\dialogareaorcamentosql.ui ..\..\dialogareaprecos.ui ..\..\dialogboxs.ui ..\..\dialoghelp.ui ..\..\dialogjanelas.ui ..\..\dialoglogin.ui ..\..\dialogportas.ui ..\..\dialogsalvar.ui ..\..\fechamentodepia.ui ..\..\help.ui ..\..\janelade2folhas.ui ..\..\janelade4folhas.ui ..\..\mainwindow.ui ..\..\moldura.ui ..\..\pdfarea.ui ..\..\pivotante.ui ..\..\portade1folha.ui ..\..\portade2folhas.ui ..\..\portade4folhas.ui ..\..\portadeabrir.ui ..\..\sqlarea.ui ..\..\vidroscomuns.ui    
+	$(ZIP) ArtvidrosV3.zip $(SOURCES) $(DIST) ..\..\..\..\ArtvidrosV3.pro C:\Qt\6.7.2\mingw_64\mkspecs\features\spec_pre.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\device_config.prf C:\Qt\6.7.2\mingw_64\mkspecs\common\sanitize.conf C:\Qt\6.7.2\mingw_64\mkspecs\common\gcc-base.conf C:\Qt\6.7.2\mingw_64\mkspecs\common\g++-base.conf C:\Qt\6.7.2\mingw_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\6.7.2\mingw_64\mkspecs\common\windows-vulkan.conf C:\Qt\6.7.2\mingw_64\mkspecs\common\g++-win32.conf C:\Qt\6.7.2\mingw_64\mkspecs\common\windows-desktop.conf C:\Qt\6.7.2\mingw_64\mkspecs\qconfig.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_ext_freetype.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_ext_libjpeg.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_ext_libpng.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_activeqt.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_activeqt_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_bodymovin_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_charts.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_charts_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_chartsqml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_chartsqml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_core.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_core5compat.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_core5compat_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_datavisualization.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_datavisualization_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_datavisualizationqml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_datavisualizationqml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_entrypoint_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_example_icons_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_freetype_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_graphs.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_graphs_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_grpc.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_grpc_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_grpcquick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_grpcquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_harfbuzz_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_help.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_httpserver.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_httpserver_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_insighttracker.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_insighttracker_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_insighttrackerqml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_insighttrackerqml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_jpeg_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_jsonrpc_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labsanimation.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labsanimation_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labssettings.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labssettings_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_languageserver_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_linguist.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_location.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_multimediaquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_network.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_networkauth.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_networkauth_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_pdf.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_pdf_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_pdfquick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_pdfquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_pdfwidgets.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_pdfwidgets_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_png_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobuf.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobuf_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobufqtcoretypes.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobufqtcoretypes_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobufqtguitypes.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobufqtguitypes_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobufwellknowntypes.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_protobufwellknowntypes_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qdoccatch_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qdoccatchconversions_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qdoccatchgenerators_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlbuiltins.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlbuiltins_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlcompiler.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlcore.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlcore_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmldom_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlls_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlnetwork.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlnetwork_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmltoolingsettings_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmltyperegistrar_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3d.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3d_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetimport.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetimport_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetutils.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dassetutils_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3deffects.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3deffects_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dglslparser_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpers.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpers_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpersimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dhelpersimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3diblbaker.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3diblbaker_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticleeffects.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticleeffects_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticles.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dparticles_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dphysics.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dphysics_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dphysicshelpers.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dphysicshelpers_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3druntimerender.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3druntimerender_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dspatialaudio_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dutils.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick3dutils_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basic.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basic_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basicstyleimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2basicstyleimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusion.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusion_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusionstyleimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2fusionstyleimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imagine.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imagine_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imaginestyleimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2imaginestyleimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2material.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2material_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2materialstyleimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2materialstyleimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universal.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universal_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universalstyleimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2universalstyleimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2windowsstyleimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2windowsstyleimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickeffects_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicktimeline.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicktimeline_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicktimelineblendtrees.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quicktimelineblendtrees_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_remoteobjectsqml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_remoteobjectsqml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_scxmlqml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_scxmlqml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_sensorsquick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_sensorsquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_shadertools.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_shadertools_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_spatialaudio.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_spatialaudio_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_statemachine.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_statemachine_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_statemachineqml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_statemachineqml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_tools_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_virtualkeyboard.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_virtualkeyboard_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_virtualkeyboardsettings.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_virtualkeyboardsettings_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webchannelquick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webchannelquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webview.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webview_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webviewquick.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_webviewquick_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\6.7.2\mingw_64\mkspecs\features\qt_functions.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\qt_config.prf C:\Qt\6.7.2\mingw_64\mkspecs\win32-g++\qmake.conf C:\Qt\6.7.2\mingw_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\6.7.2\mingw_64\mkspecs\features\exclusive_builds.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\toolchain.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\default_pre.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\win32\default_pre.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\resolve_config.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\default_post.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\build_pass.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\qml_debug.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\precompile_header.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\warn_on.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\permissions.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\qt.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\resources_functions.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\resources.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\moc.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\win32\opengl.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\uic.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\qmake_use.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\file_copies.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\win32\windows.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\testcase_targets.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\exceptions.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\yacc.prf C:\Qt\6.7.2\mingw_64\mkspecs\features\lex.prf ..\..\ArtvidrosV3.pro ..\..\files.qrc C:\Qt\6.7.2\mingw_64\lib\Qt6PrintSupport.prl C:\Qt\6.7.2\mingw_64\lib\Qt6Widgets.prl C:\Qt\6.7.2\mingw_64\lib\Qt6Gui.prl C:\Qt\6.7.2\mingw_64\lib\Qt6Sql.prl C:\Qt\6.7.2\mingw_64\lib\Qt6Core.prl C:\Qt\6.7.2\mingw_64\lib\Qt6EntryPoint.prl   ..\..\files.qrc C:\Qt\6.7.2\mingw_64\mkspecs\features\data\dummy.cpp ..\..\adicionaisobj.h ..\..\adicionaisref.h ..\..\bascula.h ..\..\boxcanto.h ..\..\boxfrontal.h ..\..\classbox.h ..\..\classfechamentodepia.h ..\..\classjanelade2folhas.h ..\..\classjanelade4folhas.h ..\..\classmoldura.h ..\..\classpivobascula.h ..\..\classpivotantebasc.h ..\..\classportade1folha.h ..\..\classportade2folhas.h ..\..\classportade4folhas.h ..\..\classportadeabrir.h ..\..\classvidroscomuns.h ..\..\dialogareadeprodutos.h ..\..\dialogareadevendas.h ..\..\dialogareaorcamentos.h ..\..\dialogareaorcamentosql.h ..\..\dialogareaprecos.h ..\..\dialogboxs.h ..\..\dialoghelp.h ..\..\dialogjanelas.h ..\..\dialoglogin.h ..\..\dialogpasswords.h ..\..\dialogportas.h ..\..\dialogsalvar.h ..\..\fechamentodepia.h ..\..\herdabox.h ..\..\herdajanelas.h ..\..\herdapivobasc.h ..\..\herdavidros.h ..\..\janelade2folhas.h ..\..\janelade4folhas.h ..\..\mainwindow.h ..\..\moldura.h ..\..\passworddialog.h ..\..\pdfarea.h ..\..\pdfgenerator.h ..\..\pdfobjeto.h ..\..\pivotante.h ..\..\portade1folha.h ..\..\portade2folhas.h ..\..\portade4folhas.h ..\..\portadeabrir.h ..\..\sqlarea.h ..\..\sqldatabasecontrol.h ..\..\vidroscomuns.h  ..\..\adicionaisobj.cpp ..\..\adicionaisref.cpp ..\..\bascula.cpp ..\..\boxcanto.cpp ..\..\boxfrontal.cpp ..\..\classbox.cpp ..\..\classfechamentodepia.cpp ..\..\classjanelade2folhas.cpp ..\..\classjanelade4folhas.cpp ..\..\classmoldura.cpp ..\..\classpivobascula.cpp ..\..\classpivotantebasc.cpp ..\..\classportade1folha.cpp ..\..\classportade2folhas.cpp ..\..\classportade4folhas.cpp ..\..\classportadeabrir.cpp ..\..\classvidroscomuns.cpp ..\..\dialogareadeprodutos.cpp ..\..\dialogareadevendas.cpp ..\..\dialogareaorcamentos.cpp ..\..\dialogareaorcamentosql.cpp ..\..\dialogareaprecos.cpp ..\..\dialogboxs.cpp ..\..\dialoghelp.cpp ..\..\dialogjanelas.cpp ..\..\dialoglogin.cpp ..\..\dialogpasswords.cpp ..\..\dialogportas.cpp ..\..\dialogsalvar.cpp ..\..\fechamentodepia.cpp ..\..\herdabox.cpp ..\..\herdajanelas.cpp ..\..\herdapivobasc.cpp ..\..\herdavidros.cpp ..\..\janelade2folhas.cpp ..\..\janelade4folhas.cpp ..\..\main.cpp ..\..\mainwindow.cpp ..\..\moldura.cpp ..\..\passworddialog.cpp ..\..\pdfarea.cpp ..\..\pdfgenerator.cpp ..\..\pdfobjeto.cpp ..\..\pivotante.cpp ..\..\portade1folha.cpp ..\..\portade2folhas.cpp ..\..\portade4folhas.cpp ..\..\portadeabrir.cpp ..\..\sqlarea.cpp ..\..\sqldatabasecontrol.cpp ..\..\vidroscomuns.cpp ..\..\adicionaisref.ui ..\..\bascula.ui ..\..\boxcanto.ui ..\..\boxfrontal.ui ..\..\dialogareadeprodutos.ui ..\..\dialogareadevendas.ui ..\..\dialogareaorcamentos.ui ..\..\dialogareaorcamentosql.ui ..\..\dialogareaprecos.ui ..\..\dialogboxs.ui ..\..\dialoghelp.ui ..\..\dialogjanelas.ui ..\..\dialoglogin.ui ..\..\dialogpasswords.ui ..\..\dialogportas.ui ..\..\dialogsalvar.ui ..\..\fechamentodepia.ui ..\..\help.ui ..\..\janelade2folhas.ui ..\..\janelade4folhas.ui ..\..\mainwindow.ui ..\..\moldura.ui ..\..\passworddialog.ui ..\..\pdfarea.ui ..\..\pivotante.ui ..\..\portade1folha.ui ..\..\portade2folhas.ui ..\..\portade4folhas.ui ..\..\portadeabrir.ui ..\..\sqlarea.ui ..\..\vidroscomuns.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\adicionaisobj.o debug\adicionaisref.o debug\bascula.o debug\boxcanto.o debug\boxfrontal.o debug\classbox.o debug\classfechamentodepia.o debug\classjanelade2folhas.o debug\classjanelade4folhas.o debug\classmoldura.o debug\classpivobascula.o debug\classpivotantebasc.o debug\classportade1folha.o debug\classportade2folhas.o debug\classportade4folhas.o debug\classportadeabrir.o debug\classvidroscomuns.o debug\dialogareadeprodutos.o debug\dialogareadevendas.o debug\dialogareaorcamentos.o debug\dialogareaorcamentosql.o debug\dialogareaprecos.o debug\dialogboxs.o debug\dialoghelp.o debug\dialogjanelas.o debug\dialoglogin.o debug\dialogportas.o debug\dialogsalvar.o debug\fechamentodepia.o debug\herdabox.o debug\herdajanelas.o debug\herdapivobasc.o debug\herdavidros.o debug\janelade2folhas.o debug\janelade4folhas.o debug\main.o debug\mainwindow.o debug\moldura.o debug\pdfarea.o debug\pdfgenerator.o debug\pdfobjeto.o debug\pivotante.o debug\portade1folha.o debug\portade2folhas.o debug\portade4folhas.o debug\portadeabrir.o debug\sqlarea.o debug\sqldatabasecontrol.o debug\vidroscomuns.o debug\qrc_files.o debug\moc_adicionaisref.o debug\moc_bascula.o debug\moc_boxcanto.o debug\moc_boxfrontal.o debug\moc_dialogareadeprodutos.o debug\moc_dialogareadevendas.o debug\moc_dialogareaorcamentos.o debug\moc_dialogareaorcamentosql.o debug\moc_dialogareaprecos.o debug\moc_dialogboxs.o debug\moc_dialoghelp.o debug\moc_dialogjanelas.o debug\moc_dialoglogin.o debug\moc_dialogportas.o debug\moc_dialogsalvar.o debug\moc_fechamentodepia.o debug\moc_janelade2folhas.o debug\moc_janelade4folhas.o debug\moc_mainwindow.o debug\moc_moldura.o debug\moc_pdfarea.o debug\moc_pivotante.o debug\moc_portade1folha.o debug\moc_portade2folhas.o debug\moc_portade4folhas.o debug\moc_portadeabrir.o debug\moc_sqlarea.o debug\moc_vidroscomuns.o
+	-$(DEL_FILE) debug\adicionaisobj.o debug\adicionaisref.o debug\bascula.o debug\boxcanto.o debug\boxfrontal.o debug\classbox.o debug\classfechamentodepia.o debug\classjanelade2folhas.o debug\classjanelade4folhas.o debug\classmoldura.o debug\classpivobascula.o debug\classpivotantebasc.o debug\classportade1folha.o debug\classportade2folhas.o debug\classportade4folhas.o debug\classportadeabrir.o debug\classvidroscomuns.o debug\dialogareadeprodutos.o debug\dialogareadevendas.o debug\dialogareaorcamentos.o debug\dialogareaorcamentosql.o debug\dialogareaprecos.o debug\dialogboxs.o debug\dialoghelp.o debug\dialogjanelas.o debug\dialoglogin.o debug\dialogpasswords.o debug\dialogportas.o debug\dialogsalvar.o debug\fechamentodepia.o debug\herdabox.o debug\herdajanelas.o debug\herdapivobasc.o debug\herdavidros.o debug\janelade2folhas.o debug\janelade4folhas.o debug\main.o debug\mainwindow.o debug\moldura.o debug\passworddialog.o debug\pdfarea.o debug\pdfgenerator.o debug\pdfobjeto.o debug\pivotante.o debug\portade1folha.o debug\portade2folhas.o debug\portade4folhas.o debug\portadeabrir.o debug\sqlarea.o debug\sqldatabasecontrol.o debug\vidroscomuns.o debug\qrc_files.o debug\moc_adicionaisref.o debug\moc_bascula.o debug\moc_boxcanto.o debug\moc_boxfrontal.o debug\moc_dialogareadeprodutos.o debug\moc_dialogareadevendas.o debug\moc_dialogareaorcamentos.o debug\moc_dialogareaorcamentosql.o debug\moc_dialogareaprecos.o debug\moc_dialogboxs.o debug\moc_dialoghelp.o debug\moc_dialogjanelas.o debug\moc_dialoglogin.o debug\moc_dialogpasswords.o debug\moc_dialogportas.o debug\moc_dialogsalvar.o debug\moc_fechamentodepia.o debug\moc_janelade2folhas.o debug\moc_janelade4folhas.o debug\moc_mainwindow.o debug\moc_moldura.o debug\moc_passworddialog.o debug\moc_pdfarea.o debug\moc_pivotante.o debug\moc_portade1folha.o debug\moc_portade2folhas.o debug\moc_portade4folhas.o debug\moc_portadeabrir.o debug\moc_sqlarea.o debug\moc_vidroscomuns.o
 	-$(DEL_FILE) debug\ArtvidrosV3_resource_res.o
 
 distclean: clean 
@@ -391,9 +403,9 @@ compiler_moc_predefs_clean:
 debug/moc_predefs.h: C:/Qt/6.7.2/mingw_64/mkspecs/features/data/dummy.cpp
 	g++ -fno-keep-inline-dllexport -g -std=gnu++1z -Wall -Wextra -Wextra -dM -E -o debug\moc_predefs.h C:\Qt\6.7.2\mingw_64\mkspecs\features\data\dummy.cpp
 
-compiler_moc_header_make_all: debug/moc_adicionaisref.cpp debug/moc_bascula.cpp debug/moc_boxcanto.cpp debug/moc_boxfrontal.cpp debug/moc_dialogareadeprodutos.cpp debug/moc_dialogareadevendas.cpp debug/moc_dialogareaorcamentos.cpp debug/moc_dialogareaorcamentosql.cpp debug/moc_dialogareaprecos.cpp debug/moc_dialogboxs.cpp debug/moc_dialoghelp.cpp debug/moc_dialogjanelas.cpp debug/moc_dialoglogin.cpp debug/moc_dialogportas.cpp debug/moc_dialogsalvar.cpp debug/moc_fechamentodepia.cpp debug/moc_janelade2folhas.cpp debug/moc_janelade4folhas.cpp debug/moc_mainwindow.cpp debug/moc_moldura.cpp debug/moc_pdfarea.cpp debug/moc_pivotante.cpp debug/moc_portade1folha.cpp debug/moc_portade2folhas.cpp debug/moc_portade4folhas.cpp debug/moc_portadeabrir.cpp debug/moc_sqlarea.cpp debug/moc_vidroscomuns.cpp
+compiler_moc_header_make_all: debug/moc_adicionaisref.cpp debug/moc_bascula.cpp debug/moc_boxcanto.cpp debug/moc_boxfrontal.cpp debug/moc_dialogareadeprodutos.cpp debug/moc_dialogareadevendas.cpp debug/moc_dialogareaorcamentos.cpp debug/moc_dialogareaorcamentosql.cpp debug/moc_dialogareaprecos.cpp debug/moc_dialogboxs.cpp debug/moc_dialoghelp.cpp debug/moc_dialogjanelas.cpp debug/moc_dialoglogin.cpp debug/moc_dialogpasswords.cpp debug/moc_dialogportas.cpp debug/moc_dialogsalvar.cpp debug/moc_fechamentodepia.cpp debug/moc_janelade2folhas.cpp debug/moc_janelade4folhas.cpp debug/moc_mainwindow.cpp debug/moc_moldura.cpp debug/moc_passworddialog.cpp debug/moc_pdfarea.cpp debug/moc_pivotante.cpp debug/moc_portade1folha.cpp debug/moc_portade2folhas.cpp debug/moc_portade4folhas.cpp debug/moc_portadeabrir.cpp debug/moc_sqlarea.cpp debug/moc_vidroscomuns.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) debug\moc_adicionaisref.cpp debug\moc_bascula.cpp debug\moc_boxcanto.cpp debug\moc_boxfrontal.cpp debug\moc_dialogareadeprodutos.cpp debug\moc_dialogareadevendas.cpp debug\moc_dialogareaorcamentos.cpp debug\moc_dialogareaorcamentosql.cpp debug\moc_dialogareaprecos.cpp debug\moc_dialogboxs.cpp debug\moc_dialoghelp.cpp debug\moc_dialogjanelas.cpp debug\moc_dialoglogin.cpp debug\moc_dialogportas.cpp debug\moc_dialogsalvar.cpp debug\moc_fechamentodepia.cpp debug\moc_janelade2folhas.cpp debug\moc_janelade4folhas.cpp debug\moc_mainwindow.cpp debug\moc_moldura.cpp debug\moc_pdfarea.cpp debug\moc_pivotante.cpp debug\moc_portade1folha.cpp debug\moc_portade2folhas.cpp debug\moc_portade4folhas.cpp debug\moc_portadeabrir.cpp debug\moc_sqlarea.cpp debug\moc_vidroscomuns.cpp
+	-$(DEL_FILE) debug\moc_adicionaisref.cpp debug\moc_bascula.cpp debug\moc_boxcanto.cpp debug\moc_boxfrontal.cpp debug\moc_dialogareadeprodutos.cpp debug\moc_dialogareadevendas.cpp debug\moc_dialogareaorcamentos.cpp debug\moc_dialogareaorcamentosql.cpp debug\moc_dialogareaprecos.cpp debug\moc_dialogboxs.cpp debug\moc_dialoghelp.cpp debug\moc_dialogjanelas.cpp debug\moc_dialoglogin.cpp debug\moc_dialogpasswords.cpp debug\moc_dialogportas.cpp debug\moc_dialogsalvar.cpp debug\moc_fechamentodepia.cpp debug\moc_janelade2folhas.cpp debug\moc_janelade4folhas.cpp debug\moc_mainwindow.cpp debug\moc_moldura.cpp debug\moc_passworddialog.cpp debug\moc_pdfarea.cpp debug\moc_pivotante.cpp debug\moc_portade1folha.cpp debug\moc_portade2folhas.cpp debug\moc_portade4folhas.cpp debug\moc_portadeabrir.cpp debug\moc_sqlarea.cpp debug\moc_vidroscomuns.cpp
 debug/moc_adicionaisref.cpp: ../../adicionaisref.h \
 		C:/Qt/6.7.2/mingw_64/include/QtSql/QSqlQuery \
 		C:/Qt/6.7.2/mingw_64/include/QtSql/qsqlquery.h \
@@ -595,22 +607,7 @@ debug/moc_adicionaisref.cpp: ../../adicionaisref.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.7.2/mingw_64/bin/moc.exe
 	C:\Qt\6.7.2\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -I"C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3" -IC:/caminho/para/bibliotecas/poppler-qt5/include -IC:/Qt/6.7.2/mingw_64/include -IC:/Qt/6.7.2/mingw_64/include/QtPrintSupport -IC:/Qt/6.7.2/mingw_64/include/QtWidgets -IC:/Qt/6.7.2/mingw_64/include/QtGui -IC:/Qt/6.7.2/mingw_64/include/QtSql -IC:/Qt/6.7.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\adicionaisref.h -o debug\moc_adicionaisref.cpp
@@ -817,22 +814,7 @@ debug/moc_bascula.cpp: ../../bascula.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classpivobascula.h \
 		../../herdapivobasc.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
@@ -842,6 +824,8 @@ debug/moc_bascula.cpp: ../../bascula.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.7.2/mingw_64/bin/moc.exe
 	C:\Qt\6.7.2\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -I"C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3" -IC:/caminho/para/bibliotecas/poppler-qt5/include -IC:/Qt/6.7.2/mingw_64/include -IC:/Qt/6.7.2/mingw_64/include/QtPrintSupport -IC:/Qt/6.7.2/mingw_64/include/QtWidgets -IC:/Qt/6.7.2/mingw_64/include/QtGui -IC:/Qt/6.7.2/mingw_64/include/QtSql -IC:/Qt/6.7.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\bascula.h -o debug\moc_bascula.cpp
@@ -1048,22 +1032,7 @@ debug/moc_boxcanto.cpp: ../../boxcanto.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qinputdialog.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
@@ -1071,6 +1040,8 @@ debug/moc_boxcanto.cpp: ../../boxcanto.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../classbox.h \
 		../../herdabox.h \
 		debug/moc_predefs.h \
@@ -1279,22 +1250,7 @@ debug/moc_boxfrontal.cpp: ../../boxfrontal.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qinputdialog.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
@@ -1302,6 +1258,8 @@ debug/moc_boxfrontal.cpp: ../../boxfrontal.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../classbox.h \
 		../../herdabox.h \
 		debug/moc_predefs.h \
@@ -2491,22 +2449,7 @@ debug/moc_dialogboxs.cpp: ../../dialogboxs.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qinputdialog.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
@@ -2514,6 +2457,8 @@ debug/moc_dialogboxs.cpp: ../../dialogboxs.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../classbox.h \
 		../../herdabox.h \
 		../../boxfrontal.h \
@@ -2916,22 +2861,7 @@ debug/moc_dialogjanelas.cpp: ../../dialogjanelas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classjanelade2folhas.h \
 		../../herdajanelas.h \
 		../../janelade4folhas.h \
@@ -2945,6 +2875,8 @@ debug/moc_dialogjanelas.cpp: ../../dialogjanelas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../pivotante.h \
 		../../classpivotantebasc.h \
 		debug/moc_predefs.h \
@@ -3156,22 +3088,7 @@ debug/moc_dialoglogin.cpp: ../../dialoglogin.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classjanelade2folhas.h \
 		../../herdajanelas.h \
 		../../janelade4folhas.h \
@@ -3185,12 +3102,27 @@ debug/moc_dialoglogin.cpp: ../../dialoglogin.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../pivotante.h \
 		../../classpivotantebasc.h \
-		../../dialogareadeprodutos.h \
 		../../dialogareaorcamentos.h \
 		../../dialogareaorcamentosql.h \
 		../../pdfarea.h \
+		../../dialogareaprecos.h \
+		../../sqlarea.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
+		../../sqlScreen.h \
 		../../dialoghelp.h \
 		../../dialogportas.h \
 		../../portade2folhas.h \
@@ -3220,6 +3152,198 @@ debug/moc_dialoglogin.cpp: ../../dialoglogin.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.7.2/mingw_64/bin/moc.exe
 	C:\Qt\6.7.2\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -I"C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3" -IC:/caminho/para/bibliotecas/poppler-qt5/include -IC:/Qt/6.7.2/mingw_64/include -IC:/Qt/6.7.2/mingw_64/include/QtPrintSupport -IC:/Qt/6.7.2/mingw_64/include/QtWidgets -IC:/Qt/6.7.2/mingw_64/include/QtGui -IC:/Qt/6.7.2/mingw_64/include/QtSql -IC:/Qt/6.7.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\dialoglogin.h -o debug\moc_dialoglogin.cpp
+
+debug/moc_dialogpasswords.cpp: ../../dialogpasswords.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qglobal.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtversionchecks.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtconfiginclude.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qconfig.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtcore-config.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtconfigmacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtcoreexports.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtdeprecationmarkers.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtpreprocessorsupport.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qassert.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtnoop.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtypes.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtversion.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtclasshelpermacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsysinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlogging.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qflags.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcompare_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qatomic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qyieldcpu.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qconstructormacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdarwinhelpers.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qexceptionhandling.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qforeach.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qttypetraits.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfunctionpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmalloc.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qminmax.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qnumeric.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qoverload.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qswap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtenvironmentvariables.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtresource.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qttranslation.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtgui-config.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtguiexports.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qwidget.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qwindowdefs.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qnamespace.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfunctionaltools_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobject.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstring.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qchar.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearray.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qrefcount.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qarraydata.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qpair.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qarraydatapointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qarraydataops.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qxptype_traits.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q20functional.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q20memory.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearrayview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringfwd.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q20type_traits.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringliteral.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlatin1stringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qanystringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qutf8stringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringtokenizer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringconverter.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringconverter_base.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlist.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiterator.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringlist.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qalgorithms.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcoreevent.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmetatype.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcompare.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcomparehelpers.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatastream.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiodevicebase.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfloat16.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmath.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiterable.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmetacontainer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontainerinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtaggedpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qscopeguard.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobject_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbindingstorage.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmargins.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q23utility.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qaction.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qkeysequence.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qicon.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsize.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpixmap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpaintdevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qrect.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qpoint.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qcolor.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qrgb.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qrgba64.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qimage.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpixelformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtransform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpolygon.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qregion.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qline.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qvariant.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdebug.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qset.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qhash.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpalette.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qbrush.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qfont.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qendian.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qfontinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qcursor.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qbitmap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qevent.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiodevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qurl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qeventpoint.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qvector2d.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qvectornd.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpointingdevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qinputdevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qscreen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QList \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QObject \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QRect \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QSize \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QSizeF \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/QTransform \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qnativeinterface.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qscreen_platform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qguiapplication.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qeventloop.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfuture.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmutex.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtsan_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qthread.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qexception.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qpromise.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qinputmethod.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlocale.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		debug/moc_predefs.h \
+		C:/Qt/6.7.2/mingw_64/bin/moc.exe
+	C:\Qt\6.7.2\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -I"C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3" -IC:/caminho/para/bibliotecas/poppler-qt5/include -IC:/Qt/6.7.2/mingw_64/include -IC:/Qt/6.7.2/mingw_64/include/QtPrintSupport -IC:/Qt/6.7.2/mingw_64/include/QtWidgets -IC:/Qt/6.7.2/mingw_64/include/QtGui -IC:/Qt/6.7.2/mingw_64/include/QtSql -IC:/Qt/6.7.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\dialogpasswords.h -o debug\moc_dialogpasswords.cpp
 
 debug/moc_dialogportas.cpp: ../../dialogportas.h \
 		../../portade2folhas.h \
@@ -3425,22 +3549,7 @@ debug/moc_dialogportas.cpp: ../../dialogportas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../adicionaisdef.h \
 		../../classportade2folhas.h \
 		../../herdavidros.h \
@@ -3451,6 +3560,8 @@ debug/moc_dialogportas.cpp: ../../dialogportas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../portade4folhas.h \
 		../../classportade4folhas.h \
 		../../portade1folha.h \
@@ -3854,22 +3965,7 @@ debug/moc_fechamentodepia.cpp: ../../fechamentodepia.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classfechamentodepia.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qinputdialog.h \
@@ -3878,6 +3974,8 @@ debug/moc_fechamentodepia.cpp: ../../fechamentodepia.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.7.2/mingw_64/bin/moc.exe
 	C:\Qt\6.7.2\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -I"C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3" -IC:/caminho/para/bibliotecas/poppler-qt5/include -IC:/Qt/6.7.2/mingw_64/include -IC:/Qt/6.7.2/mingw_64/include/QtPrintSupport -IC:/Qt/6.7.2/mingw_64/include/QtWidgets -IC:/Qt/6.7.2/mingw_64/include/QtGui -IC:/Qt/6.7.2/mingw_64/include/QtSql -IC:/Qt/6.7.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\fechamentodepia.h -o debug\moc_fechamentodepia.cpp
@@ -4084,22 +4182,7 @@ debug/moc_janelade2folhas.cpp: ../../janelade2folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classjanelade2folhas.h \
 		../../herdajanelas.h \
 		debug/moc_predefs.h \
@@ -4308,22 +4391,7 @@ debug/moc_janelade4folhas.cpp: ../../janelade4folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classjanelade2folhas.h \
 		../../herdajanelas.h \
 		debug/moc_predefs.h \
@@ -4534,22 +4602,7 @@ debug/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classjanelade2folhas.h \
 		../../herdajanelas.h \
 		../../janelade4folhas.h \
@@ -4563,12 +4616,27 @@ debug/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../pivotante.h \
 		../../classpivotantebasc.h \
-		../../dialogareadeprodutos.h \
 		../../dialogareaorcamentos.h \
 		../../dialogareaorcamentosql.h \
 		../../pdfarea.h \
+		../../dialogareaprecos.h \
+		../../sqlarea.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
+		../../sqlScreen.h \
 		../../dialoghelp.h \
 		../../dialogportas.h \
 		../../portade2folhas.h \
@@ -4801,25 +4869,205 @@ debug/moc_moldura.cpp: ../../moldura.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.7.2/mingw_64/bin/moc.exe
 	C:\Qt\6.7.2\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -I"C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3" -IC:/caminho/para/bibliotecas/poppler-qt5/include -IC:/Qt/6.7.2/mingw_64/include -IC:/Qt/6.7.2/mingw_64/include/QtPrintSupport -IC:/Qt/6.7.2/mingw_64/include/QtWidgets -IC:/Qt/6.7.2/mingw_64/include/QtGui -IC:/Qt/6.7.2/mingw_64/include/QtSql -IC:/Qt/6.7.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\moldura.h -o debug\moc_moldura.cpp
+
+debug/moc_passworddialog.cpp: ../../passworddialog.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qglobal.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtversionchecks.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtconfiginclude.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qconfig.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtcore-config.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtconfigmacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtcoreexports.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtdeprecationmarkers.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtpreprocessorsupport.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qassert.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtnoop.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtypes.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtversion.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtclasshelpermacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsysinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlogging.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qflags.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcompare_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qatomic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qyieldcpu.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qconstructormacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdarwinhelpers.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qexceptionhandling.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qforeach.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qttypetraits.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfunctionpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmalloc.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qminmax.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qnumeric.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qoverload.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qswap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtenvironmentvariables.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtresource.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qttranslation.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtgui-config.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtguiexports.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qwidget.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qwindowdefs.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qnamespace.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfunctionaltools_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobject.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstring.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qchar.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearray.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qrefcount.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qarraydata.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qpair.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qarraydatapointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qarraydataops.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qxptype_traits.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q20functional.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q20memory.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearrayview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringfwd.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q20type_traits.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringliteral.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlatin1stringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qanystringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qutf8stringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringtokenizer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringconverter.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringconverter_base.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlist.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiterator.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringlist.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qalgorithms.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcoreevent.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmetatype.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcompare.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcomparehelpers.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatastream.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiodevicebase.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfloat16.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmath.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiterable.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmetacontainer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontainerinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtaggedpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qscopeguard.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobject_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbindingstorage.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmargins.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q23utility.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qaction.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qkeysequence.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qicon.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsize.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpixmap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpaintdevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qrect.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qpoint.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qcolor.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qrgb.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qrgba64.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qimage.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpixelformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtransform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpolygon.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qregion.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qline.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qvariant.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdebug.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qset.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qhash.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpalette.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qbrush.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qfont.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qendian.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qfontinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qcursor.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qbitmap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qevent.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiodevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qurl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qeventpoint.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qvector2d.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qvectornd.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpointingdevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qinputdevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qscreen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QList \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QObject \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QRect \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QSize \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QSizeF \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/QTransform \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qnativeinterface.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qscreen_platform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qguiapplication.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qeventloop.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfuture.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmutex.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtsan_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qthread.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qexception.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qpromise.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qinputmethod.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlocale.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+		debug/moc_predefs.h \
+		C:/Qt/6.7.2/mingw_64/bin/moc.exe
+	C:\Qt\6.7.2\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -I"C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3" -IC:/caminho/para/bibliotecas/poppler-qt5/include -IC:/Qt/6.7.2/mingw_64/include -IC:/Qt/6.7.2/mingw_64/include/QtPrintSupport -IC:/Qt/6.7.2/mingw_64/include/QtWidgets -IC:/Qt/6.7.2/mingw_64/include/QtGui -IC:/Qt/6.7.2/mingw_64/include/QtSql -IC:/Qt/6.7.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\passworddialog.h -o debug\moc_passworddialog.cpp
 
 debug/moc_pdfarea.cpp: ../../pdfarea.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
@@ -5215,22 +5463,7 @@ debug/moc_pivotante.cpp: ../../pivotante.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classpivotantebasc.h \
 		../../herdapivobasc.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
@@ -5240,6 +5473,8 @@ debug/moc_pivotante.cpp: ../../pivotante.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.7.2/mingw_64/bin/moc.exe
 	C:\Qt\6.7.2\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -I"C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3" -IC:/caminho/para/bibliotecas/poppler-qt5/include -IC:/Qt/6.7.2/mingw_64/include -IC:/Qt/6.7.2/mingw_64/include/QtPrintSupport -IC:/Qt/6.7.2/mingw_64/include/QtWidgets -IC:/Qt/6.7.2/mingw_64/include/QtGui -IC:/Qt/6.7.2/mingw_64/include/QtSql -IC:/Qt/6.7.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\pivotante.h -o debug\moc_pivotante.cpp
@@ -5447,22 +5682,7 @@ debug/moc_portade1folha.cpp: ../../portade1folha.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../adicionaisdef.h \
 		../../classportade1folha.h \
 		../../herdavidros.h \
@@ -5473,6 +5693,8 @@ debug/moc_portade1folha.cpp: ../../portade1folha.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.7.2/mingw_64/bin/moc.exe
 	C:\Qt\6.7.2\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -I"C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3" -IC:/caminho/para/bibliotecas/poppler-qt5/include -IC:/Qt/6.7.2/mingw_64/include -IC:/Qt/6.7.2/mingw_64/include/QtPrintSupport -IC:/Qt/6.7.2/mingw_64/include/QtWidgets -IC:/Qt/6.7.2/mingw_64/include/QtGui -IC:/Qt/6.7.2/mingw_64/include/QtSql -IC:/Qt/6.7.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\portade1folha.h -o debug\moc_portade1folha.cpp
@@ -5680,22 +5902,7 @@ debug/moc_portade2folhas.cpp: ../../portade2folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../adicionaisdef.h \
 		../../classportade2folhas.h \
 		../../herdavidros.h \
@@ -5706,6 +5913,8 @@ debug/moc_portade2folhas.cpp: ../../portade2folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.7.2/mingw_64/bin/moc.exe
 	C:\Qt\6.7.2\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -I"C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3" -IC:/caminho/para/bibliotecas/poppler-qt5/include -IC:/Qt/6.7.2/mingw_64/include -IC:/Qt/6.7.2/mingw_64/include/QtPrintSupport -IC:/Qt/6.7.2/mingw_64/include/QtWidgets -IC:/Qt/6.7.2/mingw_64/include/QtGui -IC:/Qt/6.7.2/mingw_64/include/QtSql -IC:/Qt/6.7.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\portade2folhas.h -o debug\moc_portade2folhas.cpp
@@ -5913,22 +6122,7 @@ debug/moc_portade4folhas.cpp: ../../portade4folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../adicionaisdef.h \
 		../../classportade4folhas.h \
 		../../herdavidros.h \
@@ -5939,6 +6133,8 @@ debug/moc_portade4folhas.cpp: ../../portade4folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.7.2/mingw_64/bin/moc.exe
 	C:\Qt\6.7.2\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -I"C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3" -IC:/caminho/para/bibliotecas/poppler-qt5/include -IC:/Qt/6.7.2/mingw_64/include -IC:/Qt/6.7.2/mingw_64/include/QtPrintSupport -IC:/Qt/6.7.2/mingw_64/include/QtWidgets -IC:/Qt/6.7.2/mingw_64/include/QtGui -IC:/Qt/6.7.2/mingw_64/include/QtSql -IC:/Qt/6.7.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\portade4folhas.h -o debug\moc_portade4folhas.cpp
@@ -6146,22 +6342,7 @@ debug/moc_portadeabrir.cpp: ../../portadeabrir.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qinputdialog.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
@@ -6169,6 +6350,8 @@ debug/moc_portadeabrir.cpp: ../../portadeabrir.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.7.2/mingw_64/bin/moc.exe
 	C:\Qt\6.7.2\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -I"C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3" -IC:/caminho/para/bibliotecas/poppler-qt5/include -IC:/Qt/6.7.2/mingw_64/include -IC:/Qt/6.7.2/mingw_64/include/QtPrintSupport -IC:/Qt/6.7.2/mingw_64/include/QtWidgets -IC:/Qt/6.7.2/mingw_64/include/QtGui -IC:/Qt/6.7.2/mingw_64/include/QtSql -IC:/Qt/6.7.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\portadeabrir.h -o debug\moc_portadeabrir.cpp
@@ -6567,22 +6750,7 @@ debug/moc_vidroscomuns.cpp: ../../vidroscomuns.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classvidroscomuns.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qinputdialog.h \
@@ -6591,6 +6759,8 @@ debug/moc_vidroscomuns.cpp: ../../vidroscomuns.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.7.2/mingw_64/bin/moc.exe
 	C:\Qt\6.7.2\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -I"C:/Users/Pedro Oliveira/Documents/Desenvolvimento/Artvidros-2023/ArtvidrosV3" -IC:/caminho/para/bibliotecas/poppler-qt5/include -IC:/Qt/6.7.2/mingw_64/include -IC:/Qt/6.7.2/mingw_64/include/QtPrintSupport -IC:/Qt/6.7.2/mingw_64/include/QtWidgets -IC:/Qt/6.7.2/mingw_64/include/QtGui -IC:/Qt/6.7.2/mingw_64/include/QtSql -IC:/Qt/6.7.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\vidroscomuns.h -o debug\moc_vidroscomuns.cpp
@@ -6599,9 +6769,9 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_adicionaisref.h ui_bascula.h ui_boxcanto.h ui_boxfrontal.h ui_dialogareadeprodutos.h ui_dialogareadevendas.h ui_dialogareaorcamentos.h ui_dialogareaorcamentosql.h ui_dialogareaprecos.h ui_dialogboxs.h ui_dialoghelp.h ui_dialogjanelas.h ui_dialoglogin.h ui_dialogportas.h ui_dialogsalvar.h ui_fechamentodepia.h ui_help.h ui_janelade2folhas.h ui_janelade4folhas.h ui_mainwindow.h ui_moldura.h ui_pdfarea.h ui_pivotante.h ui_portade1folha.h ui_portade2folhas.h ui_portade4folhas.h ui_portadeabrir.h ui_sqlarea.h ui_vidroscomuns.h
+compiler_uic_make_all: ui_adicionaisref.h ui_bascula.h ui_boxcanto.h ui_boxfrontal.h ui_dialogareadeprodutos.h ui_dialogareadevendas.h ui_dialogareaorcamentos.h ui_dialogareaorcamentosql.h ui_dialogareaprecos.h ui_dialogboxs.h ui_dialoghelp.h ui_dialogjanelas.h ui_dialoglogin.h ui_dialogpasswords.h ui_dialogportas.h ui_dialogsalvar.h ui_fechamentodepia.h ui_help.h ui_janelade2folhas.h ui_janelade4folhas.h ui_mainwindow.h ui_moldura.h ui_passworddialog.h ui_pdfarea.h ui_pivotante.h ui_portade1folha.h ui_portade2folhas.h ui_portade4folhas.h ui_portadeabrir.h ui_sqlarea.h ui_vidroscomuns.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_adicionaisref.h ui_bascula.h ui_boxcanto.h ui_boxfrontal.h ui_dialogareadeprodutos.h ui_dialogareadevendas.h ui_dialogareaorcamentos.h ui_dialogareaorcamentosql.h ui_dialogareaprecos.h ui_dialogboxs.h ui_dialoghelp.h ui_dialogjanelas.h ui_dialoglogin.h ui_dialogportas.h ui_dialogsalvar.h ui_fechamentodepia.h ui_help.h ui_janelade2folhas.h ui_janelade4folhas.h ui_mainwindow.h ui_moldura.h ui_pdfarea.h ui_pivotante.h ui_portade1folha.h ui_portade2folhas.h ui_portade4folhas.h ui_portadeabrir.h ui_sqlarea.h ui_vidroscomuns.h
+	-$(DEL_FILE) ui_adicionaisref.h ui_bascula.h ui_boxcanto.h ui_boxfrontal.h ui_dialogareadeprodutos.h ui_dialogareadevendas.h ui_dialogareaorcamentos.h ui_dialogareaorcamentosql.h ui_dialogareaprecos.h ui_dialogboxs.h ui_dialoghelp.h ui_dialogjanelas.h ui_dialoglogin.h ui_dialogpasswords.h ui_dialogportas.h ui_dialogsalvar.h ui_fechamentodepia.h ui_help.h ui_janelade2folhas.h ui_janelade4folhas.h ui_mainwindow.h ui_moldura.h ui_passworddialog.h ui_pdfarea.h ui_pivotante.h ui_portade1folha.h ui_portade2folhas.h ui_portade4folhas.h ui_portadeabrir.h ui_sqlarea.h ui_vidroscomuns.h
 ui_adicionaisref.h: ../../adicionaisref.ui \
 		C:/Qt/6.7.2/mingw_64/bin/uic.exe
 	C:\Qt\6.7.2\mingw_64\bin\uic.exe ..\..\adicionaisref.ui -o ui_adicionaisref.h
@@ -6654,6 +6824,10 @@ ui_dialoglogin.h: ../../dialoglogin.ui \
 		C:/Qt/6.7.2/mingw_64/bin/uic.exe
 	C:\Qt\6.7.2\mingw_64\bin\uic.exe ..\..\dialoglogin.ui -o ui_dialoglogin.h
 
+ui_dialogpasswords.h: ../../dialogpasswords.ui \
+		C:/Qt/6.7.2/mingw_64/bin/uic.exe
+	C:\Qt\6.7.2\mingw_64\bin\uic.exe ..\..\dialogpasswords.ui -o ui_dialogpasswords.h
+
 ui_dialogportas.h: ../../dialogportas.ui \
 		C:/Qt/6.7.2/mingw_64/bin/uic.exe
 	C:\Qt\6.7.2\mingw_64\bin\uic.exe ..\..\dialogportas.ui -o ui_dialogportas.h
@@ -6685,6 +6859,10 @@ ui_mainwindow.h: ../../mainwindow.ui \
 ui_moldura.h: ../../moldura.ui \
 		C:/Qt/6.7.2/mingw_64/bin/uic.exe
 	C:\Qt\6.7.2\mingw_64\bin\uic.exe ..\..\moldura.ui -o ui_moldura.h
+
+ui_passworddialog.h: ../../passworddialog.ui \
+		C:/Qt/6.7.2/mingw_64/bin/uic.exe
+	C:\Qt\6.7.2\mingw_64\bin\uic.exe ..\..\passworddialog.ui -o ui_passworddialog.h
 
 ui_pdfarea.h: ../../pdfarea.ui \
 		C:/Qt/6.7.2/mingw_64/bin/uic.exe
@@ -7007,22 +7185,7 @@ debug/adicionaisref.o: ../../adicionaisref.cpp ../../adicionaisref.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		ui_adicionaisref.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/QIcon \
@@ -7062,6 +7225,8 @@ debug/adicionaisref.o: ../../adicionaisref.cpp ../../adicionaisref.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QPushButton \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qabstractbutton.h \
@@ -7276,22 +7441,7 @@ debug/bascula.o: ../../bascula.cpp ../../bascula.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classpivobascula.h \
 		../../herdapivobasc.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
@@ -7301,6 +7451,8 @@ debug/bascula.o: ../../bascula.cpp ../../bascula.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		ui_bascula.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/QIcon \
@@ -7538,22 +7690,7 @@ debug/boxcanto.o: ../../boxcanto.cpp ../../boxcanto.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qinputdialog.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
@@ -7561,6 +7698,8 @@ debug/boxcanto.o: ../../boxcanto.cpp ../../boxcanto.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../classbox.h \
 		../../herdabox.h \
 		ui_boxcanto.h \
@@ -7800,22 +7939,7 @@ debug/boxfrontal.o: ../../boxfrontal.cpp ../../boxfrontal.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qinputdialog.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
@@ -7823,6 +7947,8 @@ debug/boxfrontal.o: ../../boxfrontal.cpp ../../boxfrontal.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../classbox.h \
 		../../herdabox.h \
 		ui_boxfrontal.h \
@@ -9571,6 +9697,12 @@ debug/dialogareadeprodutos.o: ../../dialogareadeprodutos.cpp ../../dialogareadep
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlabel.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qpicture.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QLineEdit \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QTableWidget \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qtablewidget.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qtableview.h \
@@ -11084,22 +11216,7 @@ debug/dialogboxs.o: ../../dialogboxs.cpp ../../dialogboxs.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qinputdialog.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
@@ -11107,6 +11224,8 @@ debug/dialogboxs.o: ../../dialogboxs.cpp ../../dialogboxs.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../classbox.h \
 		../../herdabox.h \
 		../../boxfrontal.h \
@@ -11530,22 +11649,7 @@ debug/dialogjanelas.o: ../../dialogjanelas.cpp ../../dialogjanelas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classjanelade2folhas.h \
 		../../herdajanelas.h \
 		../../janelade4folhas.h \
@@ -11559,6 +11663,8 @@ debug/dialogjanelas.o: ../../dialogjanelas.cpp ../../dialogjanelas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../pivotante.h \
 		../../classpivotantebasc.h \
 		ui_dialogjanelas.h \
@@ -11784,22 +11890,7 @@ debug/dialoglogin.o: ../../dialoglogin.cpp ../../dialoglogin.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classjanelade2folhas.h \
 		../../herdajanelas.h \
 		../../janelade4folhas.h \
@@ -11813,12 +11904,27 @@ debug/dialoglogin.o: ../../dialoglogin.cpp ../../dialoglogin.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../pivotante.h \
 		../../classpivotantebasc.h \
-		../../dialogareadeprodutos.h \
 		../../dialogareaorcamentos.h \
 		../../dialogareaorcamentosql.h \
 		../../pdfarea.h \
+		../../dialogareaprecos.h \
+		../../sqlarea.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
+		../../sqlScreen.h \
 		../../dialoghelp.h \
 		../../dialogportas.h \
 		../../portade2folhas.h \
@@ -11864,6 +11970,207 @@ debug/dialoglogin.o: ../../dialoglogin.cpp ../../dialoglogin.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\dialoglogin.o ..\..\dialoglogin.cpp
+
+debug/dialogpasswords.o: ../../dialogpasswords.cpp ../../dialogpasswords.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qglobal.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtversionchecks.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtconfiginclude.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qconfig.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtcore-config.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtconfigmacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtcoreexports.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtdeprecationmarkers.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtpreprocessorsupport.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qassert.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtnoop.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtypes.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtversion.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtclasshelpermacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsysinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlogging.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qflags.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcompare_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qatomic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qyieldcpu.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qconstructormacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdarwinhelpers.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qexceptionhandling.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qforeach.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qttypetraits.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfunctionpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmalloc.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qminmax.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qnumeric.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qoverload.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qswap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtenvironmentvariables.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtresource.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qttranslation.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtgui-config.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtguiexports.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qwidget.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qwindowdefs.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qnamespace.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfunctionaltools_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobject.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstring.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qchar.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearray.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qrefcount.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qarraydata.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qpair.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qarraydatapointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qarraydataops.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qxptype_traits.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q20functional.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q20memory.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearrayview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringfwd.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q20type_traits.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringliteral.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlatin1stringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qanystringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qutf8stringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringtokenizer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringconverter.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringconverter_base.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlist.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiterator.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringlist.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qalgorithms.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcoreevent.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmetatype.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcompare.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcomparehelpers.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatastream.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiodevicebase.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfloat16.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmath.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiterable.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmetacontainer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontainerinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtaggedpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qscopeguard.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobject_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbindingstorage.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmargins.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q23utility.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qaction.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qkeysequence.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qicon.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsize.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpixmap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpaintdevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qrect.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qpoint.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qcolor.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qrgb.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qrgba64.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qimage.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpixelformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtransform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpolygon.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qregion.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qline.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qvariant.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdebug.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qset.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qhash.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpalette.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qbrush.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qfont.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qendian.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qfontinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qcursor.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qbitmap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qevent.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiodevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qurl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qeventpoint.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qvector2d.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qvectornd.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpointingdevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qinputdevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qscreen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QList \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QObject \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QRect \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QSize \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QSizeF \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/QTransform \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qnativeinterface.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qscreen_platform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qguiapplication.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qeventloop.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfuture.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmutex.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtsan_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qthread.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qexception.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qpromise.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qinputmethod.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlocale.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+		../../sqldatabasecontrol.h \
+		C:/Qt/6.7.2/mingw_64/include/QtSql/QSqlQuery \
+		C:/Qt/6.7.2/mingw_64/include/QtSql/qsqlquery.h \
+		C:/Qt/6.7.2/mingw_64/include/QtSql/qtsqlglobal.h \
+		C:/Qt/6.7.2/mingw_64/include/QtSql/qtsql-config.h \
+		C:/Qt/6.7.2/mingw_64/include/QtSql/qtsqlexports.h \
+		C:/Qt/6.7.2/mingw_64/include/QtSql/qsqldatabase.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QString \
+		ui_dialogpasswords.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\dialogpasswords.o ..\..\dialogpasswords.cpp
 
 debug/dialogportas.o: ../../dialogportas.cpp ../../dialogportas.h \
 		../../portade2folhas.h \
@@ -12069,22 +12376,7 @@ debug/dialogportas.o: ../../dialogportas.cpp ../../dialogportas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../adicionaisdef.h \
 		../../classportade2folhas.h \
 		../../herdavidros.h \
@@ -12095,6 +12387,8 @@ debug/dialogportas.o: ../../dialogportas.cpp ../../dialogportas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../portade4folhas.h \
 		../../classportade4folhas.h \
 		../../portade1folha.h \
@@ -12566,22 +12860,7 @@ debug/fechamentodepia.o: ../../fechamentodepia.cpp ../../fechamentodepia.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classfechamentodepia.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qinputdialog.h \
@@ -12590,6 +12869,8 @@ debug/fechamentodepia.o: ../../fechamentodepia.cpp ../../fechamentodepia.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		ui_fechamentodepia.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/QIcon \
@@ -13131,22 +13412,7 @@ debug/janelade2folhas.o: ../../janelade2folhas.cpp ../../janelade2folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classjanelade2folhas.h \
 		../../herdajanelas.h \
 		ui_janelade2folhas.h \
@@ -13182,6 +13448,8 @@ debug/janelade2folhas.o: ../../janelade2folhas.cpp ../../janelade2folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QPushButton \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qabstractbutton.h \
@@ -13393,22 +13661,7 @@ debug/janelade4folhas.o: ../../janelade4folhas.cpp ../../janelade4folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classjanelade2folhas.h \
 		../../herdajanelas.h \
 		ui_janelade4folhas.h \
@@ -13444,6 +13697,8 @@ debug/janelade4folhas.o: ../../janelade4folhas.cpp ../../janelade4folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QPushButton \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qabstractbutton.h \
@@ -13659,22 +13914,7 @@ debug/main.o: ../../main.cpp ../../dialoglogin.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classjanelade2folhas.h \
 		../../herdajanelas.h \
 		../../janelade4folhas.h \
@@ -13688,12 +13928,27 @@ debug/main.o: ../../main.cpp ../../dialoglogin.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../pivotante.h \
 		../../classpivotantebasc.h \
-		../../dialogareadeprodutos.h \
 		../../dialogareaorcamentos.h \
 		../../dialogareaorcamentosql.h \
 		../../pdfarea.h \
+		../../dialogareaprecos.h \
+		../../sqlarea.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
+		../../sqlScreen.h \
 		../../dialoghelp.h \
 		../../dialogportas.h \
 		../../portade2folhas.h \
@@ -13726,7 +13981,8 @@ debug/main.o: ../../main.cpp ../../dialoglogin.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qsplashscreen.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimer.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qbasictimer.h
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbasictimer.h \
+		../../passworddialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\..\main.cpp
 
 debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
@@ -13933,22 +14189,7 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classjanelade2folhas.h \
 		../../herdajanelas.h \
 		../../janelade4folhas.h \
@@ -13962,12 +14203,27 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		../../pivotante.h \
 		../../classpivotantebasc.h \
-		../../dialogareadeprodutos.h \
 		../../dialogareaorcamentos.h \
 		../../dialogareaorcamentosql.h \
 		../../pdfarea.h \
+		../../dialogareaprecos.h \
+		../../sqlarea.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
+		../../sqlScreen.h \
 		../../dialoghelp.h \
 		../../dialogportas.h \
 		../../portade2folhas.h \
@@ -14223,22 +14479,7 @@ debug/moldura.o: ../../moldura.cpp ../../moldura.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		ui_moldura.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/QIcon \
@@ -14272,6 +14513,8 @@ debug/moldura.o: ../../moldura.cpp ../../moldura.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QPushButton \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qabstractbutton.h \
@@ -14283,6 +14526,223 @@ debug/moldura.o: ../../moldura.cpp ../../moldura.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qinputdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moldura.o ..\..\moldura.cpp
+
+debug/passworddialog.o: ../../passworddialog.cpp ../../passworddialog.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qglobal.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtversionchecks.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtconfiginclude.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qconfig.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtcore-config.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtconfigmacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtcoreexports.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtdeprecationmarkers.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtpreprocessorsupport.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qassert.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtnoop.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtypes.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtversion.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtclasshelpermacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsysinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlogging.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qflags.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcompare_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qatomic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qyieldcpu.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qconstructormacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdarwinhelpers.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qexceptionhandling.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qforeach.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qttypetraits.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfunctionpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmalloc.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qminmax.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qnumeric.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qoverload.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qswap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtenvironmentvariables.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtresource.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qttranslation.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtgui-config.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtguiexports.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qwidget.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qwindowdefs.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qnamespace.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfunctionaltools_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobject.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstring.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qchar.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearray.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qrefcount.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qarraydata.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qpair.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qarraydatapointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qarraydataops.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qxptype_traits.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q20functional.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q20memory.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearrayview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringfwd.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q20type_traits.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringliteral.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlatin1stringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qanystringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qutf8stringview.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringtokenizer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringconverter.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringconverter_base.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlist.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiterator.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringlist.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qalgorithms.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcoreevent.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmetatype.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcompare.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcomparehelpers.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatastream.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiodevicebase.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfloat16.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmath.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiterable.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmetacontainer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontainerinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtaggedpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qscopeguard.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qobject_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qbindingstorage.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmargins.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/q23utility.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qaction.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qkeysequence.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qicon.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsize.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpixmap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpaintdevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qrect.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qpoint.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qcolor.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qrgb.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qrgba64.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qimage.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpixelformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtransform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpolygon.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qregion.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qline.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qvariant.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdebug.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qset.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qhash.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpalette.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qbrush.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qfont.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qendian.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qfontinfo.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qcursor.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qbitmap.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qevent.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qiodevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qurl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qeventpoint.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qvector2d.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qvectornd.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpointingdevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qinputdevice.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qscreen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QList \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QObject \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QRect \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QSize \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QSizeF \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/QTransform \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qnativeinterface.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qscreen_platform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qguiapplication.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qeventloop.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfuture.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qmutex.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qtsan_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qthread.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qexception.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qpromise.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qinputmethod.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qlocale.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+		ui_passworddialog.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QVariant \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QApplication \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QLabel \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlabel.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpicture.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QLineEdit \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QVBoxLayout \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlayout.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QWidget
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\passworddialog.o ..\..\passworddialog.cpp
 
 debug/pdfarea.o: ../../pdfarea.cpp ../../pdfarea.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
@@ -14969,22 +15429,7 @@ debug/pivotante.o: ../../pivotante.cpp ../../pivotante.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classpivotantebasc.h \
 		../../herdapivobasc.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
@@ -14994,6 +15439,8 @@ debug/pivotante.o: ../../pivotante.cpp ../../pivotante.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		ui_pivotante.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/QIcon \
@@ -15232,22 +15679,7 @@ debug/portade1folha.o: ../../portade1folha.cpp ../../portade1folha.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../adicionaisdef.h \
 		../../classportade1folha.h \
 		../../herdavidros.h \
@@ -15258,6 +15690,8 @@ debug/portade1folha.o: ../../portade1folha.cpp ../../portade1folha.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		ui_portade1folha.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/QIcon \
@@ -15496,22 +15930,7 @@ debug/portade2folhas.o: ../../portade2folhas.cpp ../../portade2folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../adicionaisdef.h \
 		../../classportade2folhas.h \
 		../../herdavidros.h \
@@ -15522,6 +15941,8 @@ debug/portade2folhas.o: ../../portade2folhas.cpp ../../portade2folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		ui_portade2folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/QIcon \
@@ -15760,22 +16181,7 @@ debug/portade4folhas.o: ../../portade4folhas.cpp ../../portade4folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../adicionaisdef.h \
 		../../classportade4folhas.h \
 		../../herdavidros.h \
@@ -15786,6 +16192,8 @@ debug/portade4folhas.o: ../../portade4folhas.cpp ../../portade4folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		ui_portade4folhas.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/QIcon \
@@ -16024,22 +16432,7 @@ debug/portadeabrir.o: ../../portadeabrir.cpp ../../portadeabrir.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qinputdialog.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
@@ -16047,6 +16440,8 @@ debug/portadeabrir.o: ../../portadeabrir.cpp ../../portadeabrir.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		ui_portadeabrir.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/QIcon \
@@ -16653,22 +17048,7 @@ debug/vidroscomuns.o: ../../vidroscomuns.cpp ../../vidroscomuns.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../dialogsalvar.h \
-		../../dialogareaprecos.h \
-		../../sqlarea.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QPainter \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpainter.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdir.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfile.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qfileinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qtimezone.h \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/QDesktopServices \
-		C:/Qt/6.7.2/mingw_64/include/QtGui/qdesktopservices.h \
-		../../sqlScreen.h \
+		../../dialogareadeprodutos.h \
 		../../classvidroscomuns.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QInputDialog \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qinputdialog.h \
@@ -16677,6 +17057,8 @@ debug/vidroscomuns.o: ../../vidroscomuns.cpp ../../vidroscomuns.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.2/mingw_64/include/QtGui/qtextoption.h \
 		ui_vidroscomuns.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/QIcon \
@@ -16756,6 +17138,9 @@ debug/moc_dialogjanelas.o: debug/moc_dialogjanelas.cpp
 debug/moc_dialoglogin.o: debug/moc_dialoglogin.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_dialoglogin.o debug\moc_dialoglogin.cpp
 
+debug/moc_dialogpasswords.o: debug/moc_dialogpasswords.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_dialogpasswords.o debug\moc_dialogpasswords.cpp
+
 debug/moc_dialogportas.o: debug/moc_dialogportas.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_dialogportas.o debug\moc_dialogportas.cpp
 
@@ -16776,6 +17161,9 @@ debug/moc_mainwindow.o: debug/moc_mainwindow.cpp
 
 debug/moc_moldura.o: debug/moc_moldura.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_moldura.o debug\moc_moldura.cpp
+
+debug/moc_passworddialog.o: debug/moc_passworddialog.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_passworddialog.o debug\moc_passworddialog.cpp
 
 debug/moc_pdfarea.o: debug/moc_pdfarea.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_pdfarea.o debug\moc_pdfarea.cpp

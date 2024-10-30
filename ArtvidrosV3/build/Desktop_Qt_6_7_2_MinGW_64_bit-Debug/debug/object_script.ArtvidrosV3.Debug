@@ -24,6 +24,7 @@ debug/dialogboxs.o
 debug/dialoghelp.o
 debug/dialogjanelas.o
 debug/dialoglogin.o
+debug/dialogpasswords.o
 debug/dialogportas.o
 debug/dialogsalvar.o
 debug/fechamentodepia.o
@@ -36,6 +37,7 @@ debug/janelade4folhas.o
 debug/main.o
 debug/mainwindow.o
 debug/moldura.o
+debug/passworddialog.o
 debug/pdfarea.o
 debug/pdfgenerator.o
 debug/pdfobjeto.o
@@ -61,6 +63,7 @@ debug/moc_dialogboxs.o
 debug/moc_dialoghelp.o
 debug/moc_dialogjanelas.o
 debug/moc_dialoglogin.o
+debug/moc_dialogpasswords.o
 debug/moc_dialogportas.o
 debug/moc_dialogsalvar.o
 debug/moc_fechamentodepia.o
@@ -68,6 +71,7 @@ debug/moc_janelade2folhas.o
 debug/moc_janelade4folhas.o
 debug/moc_mainwindow.o
 debug/moc_moldura.o
+debug/moc_passworddialog.o
 debug/moc_pdfarea.o
 debug/moc_pivotante.o
 debug/moc_portade1folha.o

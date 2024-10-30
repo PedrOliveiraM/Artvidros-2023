@@ -5,6 +5,7 @@
 #include "dialogareaorcamentos.h"
 #include "dialogareaprecos.h"
 #include "dialoghelp.h"
+#include "dialogpasswords.h"
 #include "dialogportas.h"
 #include "adicionaisref.h"
 #include "fechamentodepia.h"
@@ -45,12 +46,6 @@ private slots:
 
     void on_pushButtonOrcamentos_clicked();
 
-    void on_actionOr_amentos_triggered();
-
-    void on_actionPre_os_triggered();
-
-    void on_actionVendas_triggered();
-
     void on_pushButtonAdicionais_clicked();
 
     void on_pushButtonProdutos_clicked();
@@ -60,6 +55,8 @@ private slots:
     void on_pushButtonAreaVendas_clicked();
 
     void on_pushButtonAdmin_clicked();
+
+    void on_actionSenhas_triggered();
 
 private:
     Ui::MainWindow *ui;
@@ -72,10 +69,12 @@ private:
     DialogBoxs *telaBox;
     DialogAreaDeProdutos *telaAreaProdutos;
     DialogHelp *telaHelp;
+    DialogPasswords *telaSenhas;
 
     Moldura *telaMoldura;
     VidrosComuns *telaVidrosComuns;
     FechamentoDePia *telaFechamento;
+
 
 
 };

@@ -39,6 +39,7 @@ SOURCES += \
     dialoghelp.cpp \
     dialogjanelas.cpp \
     dialoglogin.cpp \
+    dialogpasswords.cpp \
     dialogportas.cpp \
     dialogsalvar.cpp \
     fechamentodepia.cpp \
@@ -51,6 +52,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     moldura.cpp \
+    passworddialog.cpp \
     pdfarea.cpp \
     pdfgenerator.cpp \
     pdfobjeto.cpp \
@@ -90,6 +92,7 @@ HEADERS += \
     dialoghelp.h \
     dialogjanelas.h \
     dialoglogin.h \
+    dialogpasswords.h \
     dialogportas.h \
     dialogsalvar.h \
     fechamentodepia.h \
@@ -101,6 +104,7 @@ HEADERS += \
     janelade4folhas.h \
     mainwindow.h \
     moldura.h \
+    passworddialog.h \
     pdfarea.h \
     pdfgenerator.h \
     pdfobjeto.h \
@@ -127,6 +131,7 @@ FORMS += \
     dialoghelp.ui \
     dialogjanelas.ui \
     dialoglogin.ui \
+    dialogpasswords.ui \
     dialogportas.ui \
     dialogsalvar.ui \
     fechamentodepia.ui \
@@ -135,6 +140,7 @@ FORMS += \
     janelade4folhas.ui \
     mainwindow.ui \
     moldura.ui \
+    passworddialog.ui \
     pdfarea.ui \
     pivotante.ui \
     portade1folha.ui \
