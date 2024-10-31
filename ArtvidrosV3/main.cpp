@@ -1,11 +1,27 @@
-#include "dialoglogin.h"
 #include "mainwindow.h"
 #include <QApplication>
 #include <QSplashScreen>
-#include "QTimer"
+#include <QTimer>
 #include "passworddialog.h"
-#include "qsqldatabase.h"
+#include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QNetworkInterface>
+#include <QMessageBox>
+#include <QDebug>
+
+QString getMacAddress() {
+    foreach (const QNetworkInterface &interface, QNetworkInterface::allInterfaces()) {
+        // Verifica se a interface está ativa e é física (excluindo interfaces virtuais)
+        if (interface.flags().testFlag(QNetworkInterface::IsUp) &&
+            interface.flags().testFlag(QNetworkInterface::IsRunning) &&
+            !interface.flags().testFlag(QNetworkInterface::IsLoopBack)) {
+
+            // Retorna o primeiro endereço MAC válido encontrado
+            return interface.hardwareAddress();
+        }
+    }
+    return QString(); // Retorna uma string vazia se não encontrar um MAC
+}
 
 int main(int argc, char *argv[])
 {
@@ -16,14 +32,14 @@ int main(int argc, char *argv[])
     bancoDeDados.setConnectOptions();
 
     QString dir = qApp->applicationDirPath();
-    QString banco = dir+"/DataBase/OrcamentoDB";
+    QString banco = dir + "/DataBase/ArtvidrosDB";
 
-    qDebug()<<dir;
+    qDebug() << dir;
     bancoDeDados.setDatabaseName(banco);
-    if (!bancoDeDados.open()){
-        qDebug()<<"O BANCO DE DADOS NÃO FOI ABERTO!";
-    }else {
-        qDebug()<<"O BANCO DE DADOS FOI ABERTO!";
+    if (!bancoDeDados.open()) {
+        qDebug() << "O BANCO DE DADOS NÃO FOI ABERTO!";
+    } else {
+        qDebug() << "O BANCO DE DADOS FOI ABERTO!";
     }
 
     QSplashScreen *telaSplash = new QSplashScreen;
@@ -39,8 +55,15 @@ int main(int argc, char *argv[])
     telaSplash->setPixmap(pixmap);
     telaSplash->show();
 
-    MainWindow w;
+    // Obter e exibir o endereço MAC
+    QString macAddress = getMacAddress();
+    qDebug() << "Endereço MAC do dispositivo:" << macAddress;
 
+    // Validar o endereço MAC
+    if(macAddress != "00:D7:6D:BA:21:38") {
+        QMessageBox::critical(nullptr, "Erro", "O programa não pode ser acessado");
+        return -1; // Retorna um valor de erro
+    }
 
     PasswordDialog passwordDialog;
 
@@ -52,9 +75,5 @@ int main(int argc, char *argv[])
         return a.exec();
     }
 
-    //sqlDataBaseControl aux;
-    //aux.upperTableProducts();
-    //aux.lowerTableProducts();
-    //aux.upperTableSale();
     return 0;
 }

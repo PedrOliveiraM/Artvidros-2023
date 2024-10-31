@@ -24,7 +24,7 @@ void DialogLogin::on_pushButtonEntrar_clicked()
         w = new MainWindow;
         w->show();
     } else {
-        QMessageBox::about(this,"Erro ao entrar","Senha ou usuario incorretos !");
+        QMessageBox::about(this,"Erro ao entrar","Senha ou usuario incorretos!");
     }
 }
 

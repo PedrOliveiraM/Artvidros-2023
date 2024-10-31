@@ -130,8 +130,8 @@ public:
         label_2->setText(QCoreApplication::translate("DialogPasswords", "Tipo da Senha", nullptr));
         comboBox->setItemText(0, QString());
         comboBox->setItemText(1, QCoreApplication::translate("DialogPasswords", "INICIAL", nullptr));
-        comboBox->setItemText(2, QCoreApplication::translate("DialogPasswords", "PRODUTO", nullptr));
-        comboBox->setItemText(3, QCoreApplication::translate("DialogPasswords", "VENDA", nullptr));
+        comboBox->setItemText(2, QCoreApplication::translate("DialogPasswords", "PRECOS", nullptr));
+        comboBox->setItemText(3, QCoreApplication::translate("DialogPasswords", "VENDAS", nullptr));
 
         label_3->setText(QCoreApplication::translate("DialogPasswords", "Informe a Senha Atual", nullptr));
         label_4->setText(QCoreApplication::translate("DialogPasswords", "Informe a Nova Senha", nullptr));

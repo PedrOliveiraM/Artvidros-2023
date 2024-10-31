@@ -31,5 +31,7 @@ void DialogPasswords::on_pushButtonEntrar_clicked()
     } else {
         QMessageBox::warning(this,"Erro","A senha antiga está incorreta!");
     }
+
+    close();
 }
 

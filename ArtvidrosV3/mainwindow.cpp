@@ -111,15 +111,14 @@ void MainWindow::on_pushButtonAreaPrecos_2_clicked()
     }
 }
 bool MainWindow::checkPassword(const QString& password) {
-    const QString correctPassword = "2710"; // Substitua "sua_senha" pela senha correta
-    const QString correctPassword2 = "859889"; // Substitua "sua_senha" pela senha correta
-    return password == correctPassword || password == correctPassword2 ;
+    sqlDataBaseControl aux;
+    return aux.login("PRECOS",password);
 }
 
 bool MainWindow::checkPasswordVendas(const QString &password)
 {
-    const QString correctPassword = "859889"; // Substitua "sua_senha" pela senha correta
-    return password == correctPassword ;
+    sqlDataBaseControl aux;
+    return aux.login("VENDAS",password);
 }
 
 
