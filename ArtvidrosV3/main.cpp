@@ -60,20 +60,19 @@ int main(int argc, char *argv[])
     qDebug() << "Endereço MAC do dispositivo:" << macAddress;
 
     // Validar o endereço MAC
-    if(macAddress != "00:D7:6D:BA:21:38") {
-        QMessageBox::critical(nullptr, "Erro", "O programa não pode ser acessado");
+    if(macAddress == "54-27-1E-34-91-69" || macAddress == "00:D7:6D:BA:21:38") {
+        PasswordDialog passwordDialog;
+
+        if (passwordDialog.exec() == QDialog::Accepted) {
+            MainWindow w;
+            w.show();
+            QTimer::singleShot(4000, telaSplash, SLOT(close()));
+            QTimer::singleShot(4000, &w, SLOT(show()));
+            return a.exec();
+        }
+    }else {
+        QMessageBox::critical(nullptr, "Erro", "O programa não pode ser acessado, verifique com o fornecedor");
         return -1; // Retorna um valor de erro
     }
-
-    PasswordDialog passwordDialog;
-
-    if (passwordDialog.exec() == QDialog::Accepted) {
-        MainWindow w;
-        w.show();
-        QTimer::singleShot(4000, telaSplash, SLOT(close()));
-        QTimer::singleShot(4000, &w, SLOT(show()));
-        return a.exec();
-    }
-
     return 0;
 }
