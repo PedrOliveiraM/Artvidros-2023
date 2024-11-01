@@ -1,0 +1,35 @@
+<RCC>
+    <qresource prefix="/">
+        <file>imagens/AberturaArtvidros.png</file>
+        <file>imagens/adicionar-a-cesta.png</file>
+        <file>imagens/alterar.png</file>
+        <file>imagens/banho.png</file>
+        <file>imagens/desconto.png</file>
+        <file>imagens/excluir Normal.png</file>
+        <file>imagens/excluir.png</file>
+        <file>imagens/ficheiro-pdf.png</file>
+        <file>imagens/janela.png</file>
+        <file>imagens/moldura.png</file>
+        <file>imagens/orcamento.png</file>
+        <file>imagens/ordenar.png</file>
+        <file>imagens/pasta.png</file>
+        <file>imagens/pia-da-cozinha.png</file>
+        <file>imagens/porta.png</file>
+        <file>imagens/Preco.png</file>
+        <file>imagens/salvar.png</file>
+        <file>imagens/soma.png</file>
+        <file>imagens/Template_QT_pdf.jpg</file>
+        <file>imagens/vendas.png</file>
+        <file>imagens/vidro comum.png</file>
+        <file>imagens/limpar.png</file>
+        <file>imagens/lupa.png</file>
+        <file>imagens/voltar.png</file>
+        <file>imagens/botao-adicionar.png</file>
+        <file>imagens/adicionar.png</file>
+        <file>imagens/olho.png</file>
+        <file>imagens/caixa.png</file>
+        <file>imagens/admin.png</file>
+        <file>imagens/1.png</file>
+        <file>imagens/2.png</file>
+    </qresource>
+</RCC>
